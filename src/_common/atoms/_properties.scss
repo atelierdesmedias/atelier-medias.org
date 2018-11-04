@@ -1,0 +1,50 @@
+/**
+  * @Filename: properties
+  * @Description: react-main globals properties
+*/
+
+// ----------------------------------------------------------------------------- PATHS
+
+/**
+ * Path to fonts files from css file
+ * Mandatory to use the declareFontFace mixin
+ */
+$fontBasePath: '../fonts/';
+
+// ----------------------------------------------------------------------------- BOURBON LIB CONFIG
+
+$bourbon: (
+        "rails-asset-pipeline": true,
+        "global-font-file-formats": ("eot","ttf", "woff2", "woff"),
+);
+
+// ----------------------------------------------------------------------------- BREAK POINT
+
+// small phone 
+$xsmall: 320px;
+
+// small to medium phone
+$small: 480px;
+
+// portrait tablet to landscape tablet
+$medium: 768px;
+
+// landscape tablet to laptop
+$large: 1024px;
+
+// laptop to desktop
+$xlarge: 1280px;
+
+// desktop to huge screen
+$xxlarge: 1440px;
+
+// desktop to huge huge screen
+$xxxlage: 1800px;
+
+// ----------------------------------------------------------------------------- GRID
+
+// Nbr of column 
+$totalGrid: 12;
+
+// size of 1 column : divise screen in ... column
+$columnWidth: ( 100vw / $totalGrid );

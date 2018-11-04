@@ -1,0 +1,34 @@
+# gitignore file
+
+# ------------------------------------------------------------------------------ POOPS
+
+# Mac 
+.DS_Store
+
+# Ignore ide files
+.idea
+
+# Logs
+logs
+*.log
+
+# Dependency directory
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
+node_modules/
+
+# ------------------------------------------------------------------------------ BUILD
+
+# ignore vendor folder create by composer
+dist/app/vendor/*
+
+# ignore webpack compile assets folder
+dist/assets/
+
+# php config file expose node env variable
+dist/config.php
+
+# bundles list object
+src/bundles.ts
+
+# atoms.ts
+src/_common/atoms.ts

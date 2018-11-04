@@ -1,0 +1,79 @@
+/**
+ * @name: %%name%%.tsx
+ * @description:
+ */
+import React from "react";
+import {ReactView} from "../../../_common/core/ReactView";
+import "./%%name%%.scss";
+
+// -----------------------------------------------------------------------------  STRUCT
+
+export interface Props
+{
+    // element className
+    className           :string
+}
+
+export interface States { }
+
+// -----------------------------------------------------------------------------  CLASS
+
+export default class %%name%% extends ReactView<Props, States>
+{
+
+    // ------------------------------------------------------------------------- INIT
+
+    prepare ()
+    {
+        // Init state here, you can set from props
+        this.initState({
+            // ...
+        });
+    }
+
+    // ------------------------------------------------------------------------- RENDER
+
+    render()
+    {
+        return (
+            <div className={['%%name%%', this.props.className].join(' ')}
+                ref="root"
+            >
+                %%name%%
+            </div>
+        )
+    }
+
+    // ------------------------------------------------------------------------- LIFECYCLE
+
+    /**
+     * When component is mounted
+     */
+    componentDidMount ()
+    {
+
+    }
+
+    /**
+     * Before component will unmount
+     */
+    componentWillUnmount ()
+    {
+
+    }
+
+    /**
+     * If component is updated
+     * @param {Props} pPrevProps
+     * @param {States} pPrevState
+     */
+    componentDidUpdate (pPrevProps:Props, pPrevState:States)
+    {
+
+    }
+
+    // -------------------------------------------------------------------------  HANDLERS
+
+    // -------------------------------------------------------------------------  STATE
+
+}

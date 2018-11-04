@@ -1,0 +1,17 @@
+/**
+  * @Filename: texts.scss
+  * @Description: Texts mixins (title, p, quote...) for this react-main
+*/
+
+// -----------------------------------------------------------------------------  IMPORT
+
+// common styles & mixins
+@import '../atoms/colors';
+
+// ----------------------------------------------------------------------------- MIXIN
+
+@mixin Title-1()
+{
+	color: $color1;
+	font-size: 2rem;
+}

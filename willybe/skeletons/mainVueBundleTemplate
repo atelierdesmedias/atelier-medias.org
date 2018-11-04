@@ -1,0 +1,94 @@
+/**
+ * @name: Main
+ * @description: Main entry from "%%name%%" bundle
+ */
+
+// import main style configuration
+import './Main.scss'
+
+import Vue from 'vue'
+import router from "./router/Router"
+import AppView from "./components/appView/AppView"
+import Logs from "../_common/core/Logs";
+import {EnvUtils} from 'solidify-lib/utils/EnvUtils';
+import {App} from "../_common/core/App";
+import {GlobalConfig} from "../_common/data/GlobalConfig";
+import globalConfig from "../../config/global.config"
+
+
+// ----------------------------------------------------------------------------- REACT INSTANCE
+
+
+export class VueMain extends App
+{
+
+    // ------------------------------------------------------------------------- INIT
+
+    /**
+     * Initialisation des dépendances transverses de l'appView
+     */
+    protected initDependencies () {}
+
+    /**
+     * Init de la configuration
+     */
+    protected initConfig ()
+    {
+
+        // Inject current datas via GlobalConfig singleTon
+        GlobalConfig.instance.inject({
+
+            // get current version application
+            version: globalConfig.version,
+
+            // get current url depend of env
+            url: globalConfig.server[process.env.NODE_ENV].url,
+
+            // get current base url depend of env
+            base: globalConfig.server[process.env.NODE_ENV].base,
+
+            // get atoms
+            atoms: require('../_common/atoms'),
+
+        });
+
+    }
+
+
+    /**
+     * Init envName dependent stuff.
+     */
+    protected initEnv ():void
+    {
+        // Will add envName detection classes helpers to the body
+        EnvUtils.addClasses();
+
+        // add console.log depend of envName
+        Logs.EnvLogs('%%name%% bundle');
+    }
+
+    /**
+     * When everything is ready
+     */
+    protected ready ()
+    {
+         // Main instance
+        new Vue({
+            el: document.querySelector('#App') as Element,
+            components: { AppView },
+            router: router,
+            render: h => h('AppView')
+        });
+
+    }
+
+}
+
+// Main instance AppView
+new VueMain();
+
+// ----------------------------------------------------------------------------- BUS
+
+// EvenBus (permet de faire passer des events entre composant)
+export const EventBus = new Vue();
+

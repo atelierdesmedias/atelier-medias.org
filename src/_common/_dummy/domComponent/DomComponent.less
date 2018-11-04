@@ -1,0 +1,130 @@
+/**
+  * "DomComponent" stylesheet
+  * follow workflow instructions
+  * @desc: manuel d'utilisation de la feuille de style d'un composant
+ */
+
+// -----------------------------------------------------------------------------  IMPORT
+
+/**
+  importe le point de sortie de toutes les mixins et libs que l'on va pouvoir
+  utiliser dans ce fichier scss
+ */
+
+// common style & mixins
+@import '../../common.scss';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+/**
+  METHODE :
+  Dans chaque fichier scss ainsi que dans la DOM, on utilise la méthodologie
+  B.E.M. (BLOCK, ELEMENT, MODIFIER)
+  doc : http://getbem.com/
+
+
+  Contrairement à la syntaxe BEM par defaut, on utilisera le nommage de class en camelCase,
+  les noms sont liés sans espace. Chaque nom commence par une majuscule à l’exception du premier.
+
+  "le nom de ma class ou de mon element" devient "leNomDeMaClassOuDeMonElement"
+
+ */
+
+// nom du block composant (généré par le scaffolding, NE PAS CHANGER)
+.DomComponent
+{
+  // --------------------------------------------------------------------------- PROPERTIES
+
+  /**
+    PROPERTIES :
+    Section dans laquelle on définie des vaiables locales.
+    Si les variables sont globales à plusieurs composants,
+    les placer dans "src/common/atoms/_properties.scss"
+   */
+
+    // Call block element anywhere. Use it like this : .@{$this}_element
+    @this : DomComponent;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+  /**
+   BLOCK :
+   Déclarer ici uniquement les propriétés less relative au block.
+   IMPORTANT : ne jamais positionner un block ici
+   toujours le poisitionner depuis son parent pour une meilleure
+   réutilisation du composant
+   */
+
+  // --------------------------------------------------------------------------- ELEMENTS
+
+  /**
+    ELEMENTS :
+    Déclarer ici les propriétés des éléments du block :
+    (Le saviez vous ? En less, le symbole "&" permet de copier le nom de la class parent)
+
+        &_header
+        {
+
+        }
+
+        deviendra à la compilation :
+
+        .DOMnt_header
+        {
+
+        }
+   */
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  /**
+    MODIFIER :
+    &_header
+      {
+           &-bleu
+           {
+                color : blue;
+           }
+      }
+
+      deviendra a la compilation :
+
+      .DOMnt_header-blue
+      {
+        color: blue;
+      }
+
+   */
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  /**
+    CHILDREN :
+    Cibler directement l'enfant
+
+      & > .myChildren
+      {
+
+      }
+
+      deviendra a la compilation :
+
+      .DOMomponent > .myChildren
+      {
+        color: blue;
+      }
+
+   */
+
+  // --------------------------------------------------------------------------- PATCHES
+
+  /**
+    PATCH :
+    En dernier recours, si besoin de patcher ...
+
+   */
+
+}
+
+
+

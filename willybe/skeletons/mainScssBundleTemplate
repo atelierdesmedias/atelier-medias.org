@@ -1,0 +1,14 @@
+/**
+ * Main style inline
+ * (different of ../src/common/common.scss import by reference in components)
+ */
+@import "../_common/helpers/helpers";
+
+// reset from helpers
+@import '../_common/helpers/reset.scss';
+
+// declare inline layout
+@import '../_common/layouts/body.scss';
+
+// declare font declaration
+@import '../_common/fonts/fontsDeclaration.scss';

@@ -1,0 +1,32 @@
+
+/**
+ * "fonts" stylesheet
+ * declare common font face
+ */
+
+@import '../helpers/_helpers.scss';
+@import '../atoms/_properties.scss';
+
+// ----------------------------------------------------------------------------- MIXIN
+
+@mixin fontProperties()
+{
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// ----------------------------------------------------------------------------- FINAL MIXIN
+
+/**
+ * (pour css loader : ne pas oublier le () de function pour que la mixin soit concidéré comme mixin et ne
+ * passe pas dans la compile inline)
+ */
+
+@mixin MaisonNeue-medium ()
+{
+	font-family : 'maisonneue-medium', sans-serif;
+	@include fontProperties();
+}
+

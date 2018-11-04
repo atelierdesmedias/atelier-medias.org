@@ -1,0 +1,12 @@
+/**
+ * Les declarations de font
+ * inline
+ */
+
+@import "../helpers/helpers";
+
+// ----------------------------------------------------------------------------- FONT DECLARATION
+
+// this is relative path from common folder
+@include declareFontFace('../_common/fonts/', "maisonneue/maisonneue-medium", "maisonneue-medium");
+

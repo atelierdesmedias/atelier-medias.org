@@ -1,0 +1,27 @@
+/**
+  * @Filename: body
+  * @Description: body Layout style
+*/
+
+//------------------------------------------------------------------------  IMPORT
+
+@import '../common';
+
+//------------------------------------------------------------------------  BODY
+
+body
+{
+
+	// global font size
+	font-size: 16px;
+
+  // global color
+	color: $color2;
+
+	// global background
+	background: $color1;
+
+	// font family
+	font-family: sans-serif;
+
+}
