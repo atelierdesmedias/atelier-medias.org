@@ -1,0 +1,127 @@
+{% extends "templates/index.twig" %}
+
+{% block content %}
+
+    <div class="HomePage">
+        <header class="HomePage_header">
+            {#{%#}
+                {#include "./src/project/components/bigCover/bigCover.twig"#}
+                {#with { 'classElement': 'HomePage_bigCover' }#}
+            {#%}#}
+
+            {# banner #}
+            <div class="HomePage_banner">
+                <p class="HomePage_bannerText">
+                    {{ dico.HomePage.banner }}
+                </p>
+                <div class="HomePage_arrowDown"></div>
+            </div>
+
+
+        </header>
+        <section class="HomePage_content" role="main">
+
+            {#importer "coworkersPresentationSection" component#}
+            {#{%#}
+                {#include "./src/project/components/coworkersPresentationSection/coworkersPresentationSection.twig"#}
+                {#with { 'classElement': 'HomePage_coworkersPresentationSection' }#}
+            {#%}#}
+
+            {#importer "coworkersPatchworkSection" component#}
+            {# TODO: SYNC avec le BACK #}
+            {#{%#}
+                {#include "./src/project/components/coworkersPatchworkSection/coworkersPatchworkSection.twig"#}
+                {#with {#}
+                {#classElement: 'HomePage_coworkersPatchworkSection',#}
+                {#coworkers: [#}
+                    {#{#}
+                        {#thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-01.png',#}
+                        {#name: 'Lelia Whitney',#}
+                        {#activity: 'graphiste'#}
+                    {#},#}
+                    {#{#}
+                        {#thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-02.png',#}
+                        {#name: 'Mylène Coucou',#}
+                        {#activity: 'touriste'#}
+                    {#},#}
+                    {#{#}
+                        {#thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-01.png',#}
+                        {#name: 'Lelia Whitney',#}
+                        {#activity: 'graphiste'#}
+                    {#},#}
+                    {#{#}
+                        {#thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-02.png',#}
+                        {#name: 'Mylène Coucou',#}
+                        {#activity: 'touriste'#}
+                    {#},#}
+                    {#{#}
+                        {#thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-01.png',#}
+                        {#name: 'Lelia Whitney',#}
+                        {#activity: 'graphiste'#}
+                    {#},#}
+                    {#{#}
+                        {#thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-02.png',#}
+                        {#name: 'Mylène Coucou',#}
+                        {#activity: 'touriste'#}
+                    {#},#}
+                    {#{#}
+                        {#thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-01.png',#}
+                        {#name: 'Lelia Whitney',#}
+                        {#activity: 'graphiste'#}
+                    {#},#}
+                    {#{#}
+                        {#thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-02.png',#}
+                        {#name: 'Mylène Coucou',#}
+                        {#activity: 'touriste'#}
+                    {#},                    {#}
+                        {#thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-01.png',#}
+                        {#name: 'Lelia Whitney',#}
+                        {#activity: 'graphiste'#}
+                    {#},#}
+                    {#{#}
+                        {#thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-02.png',#}
+                        {#name: 'Mylène Coucou',#}
+                        {#activity: 'touriste'#}
+                    {#},#}
+                    {#{#}
+                        {#thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-01.png',#}
+                        {#name: 'Lelia Whitney',#}
+                        {#activity: 'graphiste'#}
+                    {#},#}
+                    {#{#}
+                        {#thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-02.png',#}
+                        {#name: 'Mylène Coucou',#}
+                        {#activity: 'touriste'#}
+                    {#},#}
+                {#]#}
+            {#}#}
+            {#%}#}
+
+            {# importer "presentationAdmBlock" component #}
+            {#{%#}
+                {#include "./src/project/components/presentationAdmSection/presentationAdmSection.twig"#}
+                {#with { 'classElement': 'HomePage_presentationAdmSection' }#}
+            {#%}#}
+
+            {#importer "adherentSection" component#}
+            {#{%#}
+                {#include "./src/project/components/adherentSection/adherentSection.twig"#}
+                {#with { 'classElement': 'HomePage_adherentSection' }#}
+            {#%}#}
+
+            {#importer "featuresSection" component#}
+            {#{%#}
+                {#include "./src/project/components/featuresSection/featuresSection.twig"#}
+                {#with { 'classElement': 'HomePage_featuresSection' }#}
+            {#%}#}
+
+            {#importer "interestSection" component#}
+            {#{%#}
+                {#include "./src/project/components/interestSection/interestSection.twig"#}
+                {#with { 'classElement': 'HomePage_interestSection' }#}
+            {#%}#}
+
+        </section>
+    </div>
+
+{% endblock %}
