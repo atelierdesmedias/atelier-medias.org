@@ -11,17 +11,22 @@
 
 body
 {
+	// background motif
+	background: url('../_common/images/background-01.jpg') repeat;
 
 	// global font size
 	font-size: 16px;
 
-  // global color
+	// global color
 	color: $color2;
 
-	// global background
-	background: $color1;
+	// global interlignage
+	line-height: 1.5rem;
 
-	// font family
-	font-family: sans-serif;
+	// global interlettrage
+	letter-spacing: 0.03rem;
 
+	// global font
+	@include lato-regular();
 }
+

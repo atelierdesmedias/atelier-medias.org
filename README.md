@@ -1,6 +1,14 @@
-# Project Name
+# ADM site V.2
 
 ## About
+
+Wordpress Atelier des Médias
+
+## BO
+
+- user: a.d.m.
+- pass: 19871987_
+
 
 ## Deploy 
 

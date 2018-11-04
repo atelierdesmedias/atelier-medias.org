@@ -1,0 +1,130 @@
+/**
+  * "HomePage" stylesheet
+  * follow workflow instructions
+ */
+
+// -----------------------------------------------------------------------------  IMPORT
+
+// common style & mixins
+@import '../../../_common/common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.HomePage
+{
+	// --------------------------------------------------------------------------- PROPERTIES
+
+	// Call block element anywhere. Use it like this : .#{$this}_element
+	$this : HomePage;
+
+	// --------------------------------------------------------------------------- BLOCK
+
+
+	// --------------------------------------------------------------------------- ELEMENTS
+
+	&_header
+	{
+		margin: 0;
+	}
+
+	&_bigCover
+	{
+		@include position(relative, 0);
+		z-index: 0;
+	}
+
+	// zone de texte au bottom de bigCover
+	&_banner
+	{
+		// position
+		position: relative;
+		@include size(100%, auto);
+		@include position(absolute, null 0 0 0);
+		padding: 2rem 3rem;
+		z-index: 2;
+		// style
+		background-color: $color7;
+		color: $color1;
+		text-align: center;
+		@include lato-light();
+		font-size: 1.05rem;
+
+		//  la banner passe en dessous du header
+		@media screen and (max-width: $medium){
+			@include position(relative, null);
+			background: $color1;
+			color:$color2;
+			padding-bottom: 0;
+		}
+	}
+
+	&_bannerText
+	{
+		margin:0; // reset
+	}
+
+	&_arrowDown
+	{
+		// position
+		margin: 1rem auto 0;
+		position: relative;
+		@include size(13px);
+		// style
+		border-left: 3px solid $color6;
+		border-bottom: 3px solid $color6;
+		transform: rotate(-45deg);
+	}
+
+	&_content
+	{
+		// contient toutes les sections de la HomePage
+	}
+
+	&_coworkersPresentationSection
+	{
+		padding: 5rem 0;
+	}
+
+	&_coworkersPatchworkSection
+	{
+		//padding: 5rem 0;
+	}
+
+	&_presentationAdmSection
+	{
+		padding: 5rem 0 (10 + 10rem);
+		background: $color1;
+	}
+
+	&_adherentSection
+	{
+
+		// sortie top du container du block enfant
+		position: relative;
+		top: -15rem;
+	}
+
+	&_featuresSection
+	{
+		top: -30rem;
+		padding: 20rem 0 5rem;
+		z-index: -1;
+	}
+
+
+	&_interestSection
+	{
+		top: -30rem;
+	}
+
+
+	// --------------------------------------------------------------------------- MODIFIERS
+
+	// --------------------------------------------------------------------------- CHILDREN
+
+	// --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+

@@ -41,10 +41,18 @@ $xxlarge: 1440px;
 // desktop to huge huge screen
 $xxxlage: 1800px;
 
+
 // ----------------------------------------------------------------------------- GRID
 
-// Nbr of column 
+// Nbr of column
 $totalGrid: 12;
 
 // size of 1 column : divise screen in ... column
 $columnWidth: ( 100vw / $totalGrid );
+
+// relative column width
+$relativeColumnWidth: (100% / $totalGrid);
+
+// hauteur de la mainNav
+$mainNavHeight : 5.8rem;
+

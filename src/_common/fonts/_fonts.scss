@@ -30,3 +30,30 @@
 	@include fontProperties();
 }
 
+
+@mixin lato-regular()
+{
+  font-family: "lato-regular", sans-serif;
+  @include fontProperties();
+}
+
+
+@mixin lato-light()
+{
+  font-family: "lato-light", sans-serif;
+  @include fontProperties();
+}
+
+
+@mixin lato-bold()
+{
+  font-family: "lato-bold", sans-serif;
+  @include fontProperties();
+}
+
+
+@mixin sofia-regular()
+{
+  font-family: "sofia-regular", sans-serif;
+  @include fontProperties();
+}

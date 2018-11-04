@@ -15,7 +15,7 @@ module.exports = {
      *        Base should be : "/"
      */
 
-    base: '/adm/adm-v2/dist/',
+    base: '/adm/adm-v2/dist/public/',
 
     // assets are serve on this url
     url: 'http://localhost:8080/',

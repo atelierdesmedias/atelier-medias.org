@@ -9,4 +9,8 @@
 
 // this is relative path from common folder
 @include declareFontFace('../_common/fonts/', "maisonneue/maisonneue-medium", "maisonneue-medium");
+@include declareFontFace('../_common/fonts/', "lato/lato-regular", "lato-regular");
+@include declareFontFace('../_common/fonts/', "lato/lato-light", "lato-light");
+@include declareFontFace('../_common/fonts/', "lato/lato-bold", "lato-bold");
+@include declareFontFace('../_common/fonts/', "sofia/sofia-regular", "sofia-regular");
 
