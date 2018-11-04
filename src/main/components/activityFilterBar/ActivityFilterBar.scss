@@ -1,0 +1,82 @@
+/**
+  * "activityFilterBar" stylesheet
+  * follow workflow instructions
+ */
+
+// -----------------------------------------------------------------------------  IMPORT
+
+// common style & mixins
+@import '../../../common/_common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.activityFilterBar
+{
+  // --------------------------------------------------------------------------- PROPERTIES
+
+
+    // Call block element anywhere. Use it like this : .#{$this}_element
+    $this : activityFilterBar;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+  background: $color1;
+  padding: 3rem 0;
+
+
+  // --------------------------------------------------------------------------- ELEMENTS
+
+  &_items
+  {
+    @include flex (flex, row, wrap, center, center, 2rem);
+    list-style: none;
+  }
+
+  &_item
+  {
+    &:not(:first-child) {
+      margin-left: 1rem;
+
+      // la ligne de séparation entres les items
+      &:before {
+        content: "";
+        position: relative;
+        display: inline-block;
+        margin-right: 1rem;
+        @include size(1px, 10px);
+        background: $color7;
+      }
+    }
+
+    //@include flexCol(7, 1, 2rem, false );
+
+    @media screen and (max-width: $small) {
+
+    }
+
+
+  }
+
+  &_link
+  {
+    text-decoration: none;
+    text-transform: uppercase;
+    color:$color2;
+
+    &:hover
+    {
+      color:$color3;
+    }
+
+  }
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  // --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+

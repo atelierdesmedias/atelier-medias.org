@@ -1,0 +1,77 @@
+/**
+  * "presentationAdmSection" stylesheet
+  * follow workflow instructions
+ */
+
+// -----------------------------------------------------------------------------  IMPORT
+
+// common style & mixins
+@import '../../../common/_common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.presentationAdmSection
+{
+  // --------------------------------------------------------------------------- PROPERTIES
+
+
+    // Call block element anywhere. Use it like this : .#{$this}_element
+    $this : presentationAdmSection;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+
+  // --------------------------------------------------------------------------- ELEMENTS
+
+  &_wrapper
+  {
+    @include pageGrid();
+  }
+
+  &_content
+  {
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: $large) {
+      display: block;
+    }
+
+  }
+
+  &_title
+  {
+    @include size( ( $relativeColumnWidth * 4 ), auto );
+    @include title();
+
+    @media screen and (max-width: $large) {
+      @include size( 100%, auto );
+    }
+
+  }
+
+  &_text
+  {
+    @include size( ( $relativeColumnWidth * 8 ), auto );
+    display: block;
+
+    @media screen and (max-width: $large) {
+      @include size( 100%, auto );
+    }
+
+    // <p> généré par l'admin WP
+    & > p:not(:first-child) {
+      margin-top: 1rem;
+    }
+  }
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  // --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+

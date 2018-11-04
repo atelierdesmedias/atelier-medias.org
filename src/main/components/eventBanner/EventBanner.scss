@@ -1,0 +1,100 @@
+/**
+  * "eventBanner" stylesheet
+  * follow workflow instructions
+ */
+
+// -----------------------------------------------------------------------------  IMPORT
+
+// common style & mixins
+@import '../../../common/_common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.eventBanner
+{
+  // --------------------------------------------------------------------------- PROPERTIES
+
+
+    // Call block element anywhere. Use it like this : .#{$this}_element
+    $this : eventBanner;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+  max-width: 420px;
+
+  // --------------------------------------------------------------------------- ELEMENTS
+
+  &_content
+  {
+    // position
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: right;
+
+    // style
+    border: 2px solid $color1;
+    border-radius: 5px 0 0 5px;
+    background-color: rgba(0,0,0,0.3);
+    text-decoration: none;
+  }
+
+  &_title
+  {
+    // position
+    position: relative;
+    @include size(100%, 100%);
+    padding: 0 1rem;
+
+    // style
+    font-size: 1.1rem;
+    color:$color1;
+    @include lato-bold();
+
+  }
+
+  &_date
+  {
+    // position
+    display: flex;
+    flex-direction: column;
+    @include size(110px, auto);
+    padding: 5px 0;
+
+    // style
+    color:$color2;
+    background: $color1;
+    text-align: center;
+  }
+
+  &_dayName
+  {
+    // style
+    @include title-smallUppercase($color2);
+    font-size: 0.7rem;
+  }
+
+  &_dayNumber
+  {
+    // style
+    @include lato-bold();
+    font-size: 1.6rem;
+  }
+
+  &_month
+  {
+    // style
+    @include title-smallUppercase($color2);
+    font-size: 0.7rem;
+  }
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  // --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+

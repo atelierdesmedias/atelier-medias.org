@@ -1,0 +1,34 @@
+/**
+  * @Filename: title
+  * @Description: mixin for this project
+*/
+// importer les couleurs
+
+@import "../atoms/colors";
+@import "../fonts/fonts";
+
+// ----------------------------------------------------------------------------- MIXIN
+
+@mixin title()
+{
+  display: block;
+  font-size: 2.5em;
+  line-height: 1em;
+  @include sofia-regular();
+  font-weight: normal;
+}
+
+// formatage des titres petit et uppercase
+// prend une couleur en paramètre
+@mixin title-smallUppercase( $color: $color3 )
+{
+  text-transform: uppercase;
+  @include lato-light();
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  color: $color;
+  text-decoration: none;
+}
+
+
+

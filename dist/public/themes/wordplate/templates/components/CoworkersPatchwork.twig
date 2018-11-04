@@ -1,0 +1,46 @@
+{#
+ * @title: "CoworkersPatchwork" TWIG view component
+ * @description:
+ #}
+
+<div class="CoworkersPatchwork {{ classElement }}">
+
+    {# // TODO : sync avec le back #}
+    {# importer "activityFilterBar" component #}
+    {%
+        include "templates/components/ActivityFilterBar.twig"
+        with {
+            classElement: 'CoworkersPatchwork_activityFilterBar',
+
+            activities: [
+                'édition',
+                'graphisme & illustration',
+                'journalisme & rédaction',
+                'photo & video',
+                'traduction',
+                'web & UX',
+                'autre'
+            ]
+        }
+    %}
+
+    <div class="CoworkersPatchwork_content">
+        <ul class="CoworkersPatchwork_items">
+            {% for coworker in coworkers %}
+                <li class="CoworkersPatchwork_item">
+                    <a class="CoworkersPatchwork_link">
+                        <img class="CoworkersPatchwork_image" src="{{ coworker.thumbUrl  }}" />
+                        <div class="CoworkersPatchwork_description">
+                            <div class="CoworkersPatchwork_descriptionContent">
+                                <div class="CoworkersPatchwork_name">{{ coworker.name }}</div>
+                                <div class="CoworkersPatchwork_activity">{{ coworker.activity }}</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+</div>

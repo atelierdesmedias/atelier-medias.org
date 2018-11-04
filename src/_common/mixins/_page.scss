@@ -1,0 +1,28 @@
+
+/**
+  * @Filename: pageGrid
+  * @Description: mixin for this project
+*/
+
+@import "../atoms/properties";
+
+// ----------------------------------------------------------------------------- MIXIN
+
+
+@mixin pageGrid ()
+{
+    // laptop
+    @include size( ($columnWidth * 8), auto );
+    max-width: 960px;
+    margin: auto;
+
+    // mobile
+    @media screen and (max-width: $large) {
+      @include size( ($columnWidth * 10), auto );
+    }
+
+}
+
+
+
+

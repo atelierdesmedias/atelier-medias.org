@@ -1,0 +1,82 @@
+/**
+  * "bigCover" stylesheet
+  * follow workflow instructions
+ */
+
+// -----------------------------------------------------------------------------  IMPORT
+
+// common style & mixins
+@import '../../../common/_common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.bigCover
+{
+  // --------------------------------------------------------------------------- PROPERTIES
+
+
+    // Call block element anywhere. Use it like this : .#{$this}_element
+    $this : bigCover;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+  overflow: hidden;
+
+  // --------------------------------------------------------------------------- ELEMENTS
+
+  &_video
+  {
+    display: block;
+    @include center();
+    @include size(auto);
+    @include minSize(100%);
+
+    //object-fit: cover; // Not support by IE
+    // solution: placer la video en absolute center et appliquer en JS la taille
+    // du window height sur le container video
+  }
+
+  // la div sur laquelle est appliquée l'image
+  // TODO : image pour mobile
+  &_backgroundImage
+  {
+    // position
+    position: relative;
+    @include size(100%, 100vh);
+    // style
+    background-size: cover;
+    background-position: center;
+    // background-image : directement dans la DOM
+  }
+
+  // gros LOGO ADM centré sur l'image ou la video
+  &_logo
+  {
+    @include center();
+    top:46%;
+    z-index: 1;
+
+    & > svg {
+      @include size(400px);
+      @media screen and (max-width: $small){
+        @include size(320px);
+      }
+    }
+  }
+
+  &_eventBanner
+  {
+    display: none;
+    @include position(absolute, ($mainNavHeight + 1rem) 0 null null);
+  }
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  // --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+

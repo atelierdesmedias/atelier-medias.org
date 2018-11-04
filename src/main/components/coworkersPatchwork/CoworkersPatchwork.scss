@@ -1,0 +1,125 @@
+/**
+  * "CoworkersPatchwork" stylesheet
+  * follow workflow instructions
+ */
+
+// -----------------------------------------------------------------------------  IMPORT
+
+// common style & mixins
+@import '../../../_common/common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.CoworkersPatchwork
+{
+  // --------------------------------------------------------------------------- PROPERTIES
+
+
+    // Call block element anywhere. Use it like this : .#{$this}_element
+    $this : CoworkersPatchwork;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+  // --------------------------------------------------------------------------- ELEMENTS
+
+  &_activityFilterBar
+  {
+    // composnant indépendant
+  }
+
+  &_content
+  {
+
+  }
+
+  &_items
+  {
+    list-style: none;
+    @include flex(flex, row, wrap, flex-start, flex-start, 0);
+  }
+
+  &_item
+  {
+    position: relative;
+    @include flexCol(6, 1, 0);
+
+    @media screen and (max-width: $medium) {
+      @include flexCol(4, 1, 0);
+    }
+
+    @media screen and (max-width: $small) {
+      @include flexCol(2, 1, 0);
+    }
+
+  }
+
+  &_link
+  {
+    display: block;
+    position: relative;
+    margin: 0;
+    line-height: 0;
+    cursor: pointer;
+
+    // afficher le overlay, le nom et le metier du coworker au survol
+    &:hover
+    {
+      .#{$this}_description
+      {
+        display: block;
+      }
+    }
+  }
+
+  &_image
+  {
+    position: relative;
+    @include size(100%);
+  }
+
+  &_description
+  {
+    display: none;
+    @include position(absolute, 0);
+    @include size(100%);
+    background: $color7;
+    z-index: 1;
+  }
+
+  &_descriptionContent
+  {
+    @include center();
+    line-height: initial;
+    width: 100%;
+    text-align: center;
+  }
+
+  &_name
+  {
+    color:$color1;
+  }
+
+  &_activity
+  {
+    margin-top: 4px;
+    text-transform: uppercase;
+    color:$color1;
+  }
+
+
+
+
+
+
+
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  // --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+

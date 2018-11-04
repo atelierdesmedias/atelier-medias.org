@@ -1,0 +1,58 @@
+{#
+ * @title: "AdherentSection" TWIG view component
+ * @description:
+ #}
+
+<div class="AdherentSection {{ classElement }}">
+    <div class="AdherentSection_content">
+
+        {# importer "adherent Block" #}
+        {% include "templates/components/AdherentBlock.twig"
+            with {
+            classElement: 'AdherentSection_adherentBlock',
+            blockModifier: 'adherent',
+            title: {
+                verb: dico.components.adherentBlock.adherent.verb,
+                calificatif: dico.components.adherentBlock.adherent.calificatif,
+            },
+            description: dico.components.adherentBlock.adherent.description,
+            items: dico.components.adherentBlock.adherent.items,
+            price: dico.components.adherentBlock.adherent.price.price,
+            labelPrice: dico.components.adherentBlock.adherent.price.labelPrice
+        } %}
+
+        <div class="AdherentSection_inlineWrapper">
+            {# importer "adherent Block" #}
+            {% include "templates/components/AdherentBlock.twig"
+                with {
+                classElement: 'AdherentSection_adherentBlock',
+                blockModifier: 'fixe',
+                title: {
+                    verb: dico.components.adherentBlock.fixe.verb,
+                    calificatif: dico.components.adherentBlock.fixe.calificatif,
+                },
+                description: dico.components.adherentBlock.fixe.description,
+                items: dico.components.adherentBlock.fixe.items,
+                price: dico.components.adherentBlock.fixe.price.price,
+                labelPrice: dico.components.adherentBlock.fixe.price.labelPrice,
+                note: dico.components.adherentBlock.fixe.note
+            } %}
+
+            {# importer "adherent Block" #}
+            {% include "templates/components/AdherentBlock.twig"
+                with {
+                classElement: 'AdherentSection_adherentBlock',
+                blockModifier: 'nomade',
+                title: {
+                    verb: dico.components.adherentBlock.nomade.verb,
+                    calificatif: dico.components.adherentBlock.nomade.calificatif,
+                },
+                description: dico.components.adherentBlock.nomade.description,
+                items: dico.components.adherentBlock.nomade.items,
+                price: dico.components.adherentBlock.nomade.price.price,
+                labelPrice: dico.components.adherentBlock.nomade.price.labelPrice,
+                note: dico.components.adherentBlock.nomade.note
+            } %}
+        </div>
+    </div>
+</div>

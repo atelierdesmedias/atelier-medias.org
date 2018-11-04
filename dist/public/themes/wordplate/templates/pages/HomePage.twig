@@ -4,110 +4,105 @@
 
     <div class="HomePage">
         <header class="HomePage_header">
-            {#{%#}
-                {#include "./src/project/components/bigCover/bigCover.twig"#}
-                {#with { 'classElement': 'HomePage_bigCover' }#}
-            {#%}#}
+            {%
+                include "templates/components/BigCover.twig"
+                with { 'classElement': 'HomePage_bigCover' }
+            %}
 
             {# banner #}
             <div class="HomePage_banner">
                 <p class="HomePage_bannerText">
-                    {{ dico.HomePage.banner }}
+                    {{ dico.pages.HomePage.banner }}
                 </p>
                 <div class="HomePage_arrowDown"></div>
             </div>
 
-
         </header>
         <section class="HomePage_content" role="main">
-
-            {#importer "coworkersPresentationSection" component#}
-            {#{%#}
-                {#include "./src/project/components/coworkersPresentationSection/coworkersPresentationSection.twig"#}
-                {#with { 'classElement': 'HomePage_coworkersPresentationSection' }#}
-            {#%}#}
-
-            {#importer "coworkersPatchworkSection" component#}
+            {%
+                include "templates/components/CoworkersPresentation.twig"
+                with { 'classElement': 'HomePage_coworkersPresentation' }
+            %}
             {# TODO: SYNC avec le BACK #}
-            {#{%#}
-                {#include "./src/project/components/coworkersPatchworkSection/coworkersPatchworkSection.twig"#}
-                {#with {#}
-                {#classElement: 'HomePage_coworkersPatchworkSection',#}
-                {#coworkers: [#}
-                    {#{#}
-                        {#thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-01.png',#}
-                        {#name: 'Lelia Whitney',#}
-                        {#activity: 'graphiste'#}
-                    {#},#}
-                    {#{#}
-                        {#thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-02.png',#}
-                        {#name: 'Mylène Coucou',#}
-                        {#activity: 'touriste'#}
-                    {#},#}
-                    {#{#}
-                        {#thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-01.png',#}
-                        {#name: 'Lelia Whitney',#}
-                        {#activity: 'graphiste'#}
-                    {#},#}
-                    {#{#}
-                        {#thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-02.png',#}
-                        {#name: 'Mylène Coucou',#}
-                        {#activity: 'touriste'#}
-                    {#},#}
-                    {#{#}
-                        {#thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-01.png',#}
-                        {#name: 'Lelia Whitney',#}
-                        {#activity: 'graphiste'#}
-                    {#},#}
-                    {#{#}
-                        {#thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-02.png',#}
-                        {#name: 'Mylène Coucou',#}
-                        {#activity: 'touriste'#}
-                    {#},#}
-                    {#{#}
-                        {#thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-01.png',#}
-                        {#name: 'Lelia Whitney',#}
-                        {#activity: 'graphiste'#}
-                    {#},#}
-                    {#{#}
-                        {#thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-02.png',#}
-                        {#name: 'Mylène Coucou',#}
-                        {#activity: 'touriste'#}
-                    {#},                    {#}
-                        {#thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-01.png',#}
-                        {#name: 'Lelia Whitney',#}
-                        {#activity: 'graphiste'#}
-                    {#},#}
-                    {#{#}
-                        {#thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-02.png',#}
-                        {#name: 'Mylène Coucou',#}
-                        {#activity: 'touriste'#}
-                    {#},#}
-                    {#{#}
-                        {#thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-01.png',#}
-                        {#name: 'Lelia Whitney',#}
-                        {#activity: 'graphiste'#}
-                    {#},#}
-                    {#{#}
-                        {#thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-02.png',#}
-                        {#name: 'Mylène Coucou',#}
-                        {#activity: 'touriste'#}
-                    {#},#}
-                {#]#}
-            {#}#}
-            {#%}#}
+            {%
+                include "templates/components/CoworkersPatchwork.twig"
+                with {
+                classElement: 'HomePage_coworkersPatchwork',
+                coworkers: [
+                    {
+                        thumbUrl: theme.link ~ '/images/thumb-coworker-01.png',
+                        name: 'Lelia Whitney',
+                        activity: 'graphiste'
+                    },
+                    {
+                        thumbUrl: theme.link ~ '/images/thumb-coworker-02.png',
+                        name: 'Mylène Coucou',
+                        activity: 'touriste'
+                    },
+                    {
+                        thumbUrl: theme.link ~ '/images/thumb-coworker-01.png',
+                        name: 'Lelia Whitney',
+                        activity: 'graphiste'
+                    },
+                    {
+                        thumbUrl: theme.link ~ '/images/thumb-coworker-02.png',
+                        name: 'Mylène Coucou',
+                        activity: 'touriste'
+                    },
+                    {
+                        thumbUrl: theme.link ~ '/images/thumb-coworker-01.png',
+                        name: 'Lelia Whitney',
+                        activity: 'graphiste'
+                    },
+                    {
+                        thumbUrl: theme.link ~ '/images/thumb-coworker-02.png',
+                        name: 'Mylène Coucou',
+                        activity: 'touriste'
+                    },
+                    {
+                        thumbUrl: theme.link ~ '/images/thumb-coworker-01.png',
+                        name: 'Lelia Whitney',
+                        activity: 'graphiste'
+                    },
+                    {
+                        thumbUrl: theme.link ~ '/images/thumb-coworker-02.png',
+                        name: 'Mylène Coucou',
+                        activity: 'touriste'
+                    },                    {
+                        thumbUrl: theme.link ~ '/images/thumb-coworker-01.png',
+                        name: 'Lelia Whitney',
+                        activity: 'graphiste'
+                    },
+                    {
+                        thumbUrl: theme.link ~ '/images/thumb-coworker-02.png',
+                        name: 'Mylène Coucou',
+                        activity: 'touriste'
+                    },
+                    {
+                        thumbUrl: theme.link ~ '/images/thumb-coworker-01.png',
+                        name: 'Lelia Whitney',
+                        activity: 'graphiste'
+                    },
+                    {
+                        thumbUrl: theme.link ~ '/images/thumb-coworker-02.png',
+                        name: 'Mylène Coucou',
+                        activity: 'touriste'
+                    },
+                ]
+            }
+            %}
 
-            {# importer "presentationAdmBlock" component #}
-            {#{%#}
-                {#include "./src/project/components/presentationAdmSection/presentationAdmSection.twig"#}
-                {#with { 'classElement': 'HomePage_presentationAdmSection' }#}
-            {#%}#}
+             {#importer "AdmPresentation" component #}
+            {%
+                include "templates/components/AdmPresentation.twig"
+                with { 'classElement': 'HomePage_admPresentation' }
+            %}
 
             {#importer "adherentSection" component#}
-            {#{%#}
-                {#include "./src/project/components/adherentSection/adherentSection.twig"#}
-                {#with { 'classElement': 'HomePage_adherentSection' }#}
-            {#%}#}
+            {%
+                include "templates/components/AdherentSection.twig"
+                with { 'classElement': 'HomePage_adherentSection' }
+            %}
 
             {#importer "featuresSection" component#}
             {#{%#}

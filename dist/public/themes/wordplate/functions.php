@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 // -----------------------------------------------------------------------------  DEP
 
-//use Symfony\Component\Yaml\Yaml;
-//use Symfony\Component\Yaml\Parser;
-//use Symfony\Component\Yaml\Exception\ParseException;
+
+// import yaml
+use Symfony\Component\Yaml\Yaml;
 
 // -----------------------------------------------------------------------------  TIMBER
 
 // activer Timber (twig WP extension)
-//require_once(__DIR__ . '/vendor/autoload.php');
 $timber = new \Timber\Timber();
 
 // -----------------------------------------------------------------------------  INIT SITE PROPERTIES
@@ -48,8 +47,10 @@ class StarterSite extends \Timber\Site
     function add_to_context( $context )
     {
 
-         $dico = json_decode( file_get_contents(__DIR__ . '/data/french.json'));
-//       $dico = Yaml::parseFile(__DIR__ . '/src/common/dictionary/FR.yml');
+       // $dico = json_decode( file_get_contents(__DIR__ . '/data/french.json'));
+       $dico = Yaml::parseFile(__DIR__ . '/data/_french.yml');
+
+       //dump($dico);exit;
 
         // dico
         $context['dico'] = $dico;
