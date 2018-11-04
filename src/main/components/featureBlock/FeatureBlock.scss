@@ -1,0 +1,76 @@
+/**
+  * "featureBlock" stylesheet
+  * follow workflow instructions
+ */
+
+// -----------------------------------------------------------------------------  IMPORT
+
+// common style & mixins
+@import '../../../common/_common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.featureBlock
+{
+  // --------------------------------------------------------------------------- PROPERTIES
+
+
+    // Call block element anywhere. Use it like this : .#{$this}_element
+    $this : featureBlock;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+  
+  // --------------------------------------------------------------------------- ELEMENTS
+
+  &_content
+  {
+    //background:darkkhaki;
+    @include flex (flex, column, wrap, flex-start, center);
+  }
+
+  &_icon
+  {
+    display: block;
+    position: relative;
+    & > svg
+    {
+      // taille de l'icon
+      @include size(75px, 50px);
+    }
+  }
+  
+  &_description
+  {
+    margin-top: 1rem;
+  }
+
+  &_text
+  {
+    text-align: center;
+    text-transform: uppercase;
+    color:$color9;
+
+    &:nth-child(1)
+    {
+      @include lato-light();
+      font-size: 0.9rem;
+    }
+    &:nth-child(2)
+    {
+      @include lato-bold();
+      font-size: 1.2rem;
+
+    }
+  }
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  // --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+

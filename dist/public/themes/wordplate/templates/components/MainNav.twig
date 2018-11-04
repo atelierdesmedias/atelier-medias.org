@@ -1,0 +1,34 @@
+{#
+ * @title: "MainNav" TWIG view component
+ * @description:
+#}
+
+<div class="MainNav {{ classElement }}">
+    <div class="MainNav_content">
+
+        {# include "menu" component #}
+        {%
+            include "templates/components/Menu.twig"
+            with { 'classElement': 'MainNav_menu' }
+        %}
+
+        {# include "socialBlock" component #}
+        {%
+            include "templates/components/SocialBlock.twig"
+            with { 'classElement': 'MainNav_socialBlock' }
+        %}
+
+        {# include "intranetConnection" component #}
+        {%
+            include "templates/components/IntranetConnection.twig"
+            with { 'classElement': 'MainNav_intranetConnection' }
+        %}
+
+        {# include "languageBlock" component #}
+        {%
+            include "templates/components/LanguageBlock.twig"
+            with { 'classElement': 'MainNav_languageBlock' }
+        %}
+
+    </div>
+</div>

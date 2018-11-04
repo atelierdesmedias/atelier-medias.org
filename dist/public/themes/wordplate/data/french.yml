@@ -81,8 +81,7 @@ components:
         labelPrice: "TTC/mois"
       note: "* sous condition de s'être acquité de l'hadésion annuelle de 15 €"
 
-
-  featureBlock:
+  FeatureBlock:
     - icon: "icon-open-space.svg"
       description:
         - "30 posts de travail"

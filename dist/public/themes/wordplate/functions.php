@@ -47,8 +47,8 @@ class StarterSite extends \Timber\Site
     function add_to_context( $context )
     {
 
-       // $dico = json_decode( file_get_contents(__DIR__ . '/data/french.json'));
-       $dico = Yaml::parseFile(__DIR__ . '/data/_french.yml');
+       // $dico = json_decode( file_get_contents(__DIR__ . '/data/_french.json'));
+       $dico = Yaml::parseFile(__DIR__ . '/data/french.yml');
 
        //dump($dico);exit;
 

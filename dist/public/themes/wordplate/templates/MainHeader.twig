@@ -1,0 +1,21 @@
+{#
+ * @title: "MainHeader" TWIG View component
+ * @description:
+#}
+
+<header class="MainHeader">
+
+
+    {# include du bouton menu mobile #}
+    {%
+        include "templates/components/HamburgerButton.twig"
+        with { 'classElement': 'MainHeader_hamburgerButton' }
+    %}
+
+    {# include de la main Nav (block de navigation) #}
+    {%
+        include "templates/components/MainNav.twig"
+        with { 'classElement': 'MainHeader_mainNav' }
+    %}
+
+</header>

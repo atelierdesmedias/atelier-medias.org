@@ -1,0 +1,70 @@
+/**
+  * "hamburgerButton" stylesheet
+  * follow workflow instructions
+ */
+
+// -----------------------------------------------------------------------------  IMPORT
+
+// common style & mixins
+@import '../../../common/_common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.hamburgerButton
+{
+  // --------------------------------------------------------------------------- PROPERTIES
+
+
+    // Call block element anywhere. Use it like this : .#{$this}_element
+    $this : hamburgerButton;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+  @include size(26px, 26px);
+  cursor: pointer;
+  outline: 0;
+
+  // --------------------------------------------------------------------------- ELEMENTS
+
+
+  &_inner
+  {
+    @include center();
+    @include size(26px, 1em);
+  }
+
+  &_line
+  {
+    display: block;
+    position: absolute;
+    @include size(100%, 2px);
+    background: $color1;
+    border-radius: 1em;
+
+    &-top
+    {
+      top: 0;
+    }
+    &-center
+    {
+      opacity: 1;
+      @include center();
+    }
+    &-bottom
+    {
+      bottom: 0;
+    }
+
+  }
+
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  // --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+

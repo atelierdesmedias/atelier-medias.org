@@ -27,69 +27,69 @@
             {%
                 include "templates/components/CoworkersPatchwork.twig"
                 with {
-                classElement: 'HomePage_coworkersPatchwork',
-                coworkers: [
-                    {
-                        thumbUrl: theme.link ~ '/images/thumb-coworker-01.png',
-                        name: 'Lelia Whitney',
-                        activity: 'graphiste'
-                    },
-                    {
-                        thumbUrl: theme.link ~ '/images/thumb-coworker-02.png',
-                        name: 'Mylène Coucou',
-                        activity: 'touriste'
-                    },
-                    {
-                        thumbUrl: theme.link ~ '/images/thumb-coworker-01.png',
-                        name: 'Lelia Whitney',
-                        activity: 'graphiste'
-                    },
-                    {
-                        thumbUrl: theme.link ~ '/images/thumb-coworker-02.png',
-                        name: 'Mylène Coucou',
-                        activity: 'touriste'
-                    },
-                    {
-                        thumbUrl: theme.link ~ '/images/thumb-coworker-01.png',
-                        name: 'Lelia Whitney',
-                        activity: 'graphiste'
-                    },
-                    {
-                        thumbUrl: theme.link ~ '/images/thumb-coworker-02.png',
-                        name: 'Mylène Coucou',
-                        activity: 'touriste'
-                    },
-                    {
-                        thumbUrl: theme.link ~ '/images/thumb-coworker-01.png',
-                        name: 'Lelia Whitney',
-                        activity: 'graphiste'
-                    },
-                    {
-                        thumbUrl: theme.link ~ '/images/thumb-coworker-02.png',
-                        name: 'Mylène Coucou',
-                        activity: 'touriste'
-                    },                    {
-                        thumbUrl: theme.link ~ '/images/thumb-coworker-01.png',
-                        name: 'Lelia Whitney',
-                        activity: 'graphiste'
-                    },
-                    {
-                        thumbUrl: theme.link ~ '/images/thumb-coworker-02.png',
-                        name: 'Mylène Coucou',
-                        activity: 'touriste'
-                    },
-                    {
-                        thumbUrl: theme.link ~ '/images/thumb-coworker-01.png',
-                        name: 'Lelia Whitney',
-                        activity: 'graphiste'
-                    },
-                    {
-                        thumbUrl: theme.link ~ '/images/thumb-coworker-02.png',
-                        name: 'Mylène Coucou',
-                        activity: 'touriste'
-                    },
-                ]
-            }
+                    classElement: 'HomePage_coworkersPatchwork',
+                    coworkers: [
+                        {
+                            thumbUrl: theme.link ~ '/images/thumb-coworker-01.png',
+                            name: 'Lelia Whitney',
+                            activity: 'graphiste'
+                        },
+                        {
+                            thumbUrl: theme.link ~ '/images/thumb-coworker-02.png',
+                            name: 'Mylène Coucou',
+                            activity: 'touriste'
+                        },
+                        {
+                            thumbUrl: theme.link ~ '/images/thumb-coworker-01.png',
+                            name: 'Lelia Whitney',
+                            activity: 'graphiste'
+                        },
+                        {
+                            thumbUrl: theme.link ~ '/images/thumb-coworker-02.png',
+                            name: 'Mylène Coucou',
+                            activity: 'touriste'
+                        },
+                        {
+                            thumbUrl: theme.link ~ '/images/thumb-coworker-01.png',
+                            name: 'Lelia Whitney',
+                            activity: 'graphiste'
+                        },
+                        {
+                            thumbUrl: theme.link ~ '/images/thumb-coworker-02.png',
+                            name: 'Mylène Coucou',
+                            activity: 'touriste'
+                        },
+                        {
+                            thumbUrl: theme.link ~ '/images/thumb-coworker-01.png',
+                            name: 'Lelia Whitney',
+                            activity: 'graphiste'
+                        },
+                        {
+                            thumbUrl: theme.link ~ '/images/thumb-coworker-02.png',
+                            name: 'Mylène Coucou',
+                            activity: 'touriste'
+                        },                    {
+                            thumbUrl: theme.link ~ '/images/thumb-coworker-01.png',
+                            name: 'Lelia Whitney',
+                            activity: 'graphiste'
+                        },
+                        {
+                            thumbUrl: theme.link ~ '/images/thumb-coworker-02.png',
+                            name: 'Mylène Coucou',
+                            activity: 'touriste'
+                        },
+                        {
+                            thumbUrl: theme.link ~ '/images/thumb-coworker-01.png',
+                            name: 'Lelia Whitney',
+                            activity: 'graphiste'
+                        },
+                        {
+                            thumbUrl: theme.link ~ '/images/thumb-coworker-02.png',
+                            name: 'Mylène Coucou',
+                            activity: 'touriste'
+                        },
+                    ]
+                }
             %}
 
              {#importer "AdmPresentation" component #}
@@ -105,17 +105,16 @@
             %}
 
             {#importer "featuresSection" component#}
-            {#{%#}
-                {#include "./src/project/components/featuresSection/featuresSection.twig"#}
-                {#with { 'classElement': 'HomePage_featuresSection' }#}
-            {#%}#}
+            {%
+                include "templates/components/FeaturesSection.twig"
+                with { 'classElement': 'HomePage_featuresSection' }
+            %}
 
             {#importer "interestSection" component#}
-            {#{%#}
-                {#include "./src/project/components/interestSection/interestSection.twig"#}
-                {#with { 'classElement': 'HomePage_interestSection' }#}
-            {#%}#}
-
+            {%
+                include "templates/components/InterestSection.twig"
+                with { 'classElement': 'HomePage_interestSection' }
+            %}
         </section>
     </div>
 

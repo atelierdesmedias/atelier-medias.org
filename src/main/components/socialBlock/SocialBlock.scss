@@ -1,0 +1,134 @@
+/**
+  * "socialBlock" stylesheet
+  * follow workflow instructions
+ */
+
+// -----------------------------------------------------------------------------  IMPORT
+
+// common style & mixins
+@import '../../../common/_common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.socialBlock
+{
+  // --------------------------------------------------------------------------- PROPERTIES
+
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this : socialBlock;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+  // --------------------------------------------------------------------------- ELEMENTS
+
+  &_items
+  {
+    position: relative;
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: $large) {
+      width: 6.5rem;
+      margin: auto;
+    }
+
+  }
+
+  &_item
+  {
+    position: relative;
+    @include size((6.5rem / 2), $mainNavHeight);
+    border-right: 1px solid $colorNavBarLine;
+
+    @media screen and (max-width: $large) {
+      //@include size(5rem, $mainNavHeight);
+      border-right: 0px; // reset
+    }
+  }
+
+  &_link
+  {
+    cursor: pointer;
+
+    // cercle autour de l'icon
+    &:after {
+      content: '';
+      @include center();
+      @include size(28px);
+      border-radius: 4rem;
+      //border: 1px solid $color4;
+    }
+
+    &:hover
+    {
+      .#{$this}_icon *
+      {
+        fill: $color1;
+      }
+    }
+  }
+
+  &_icon
+  {
+
+    @include center();
+
+    &-facebook
+    {
+      // ajustement du positionnement de l'icon
+      margin: 1px 0 0 -2px;
+
+      & > svg
+      {
+        @include size(18px);
+        @media screen and (max-width: $large) {
+          @include size(35px);
+        }
+
+      }
+    }
+
+    &-twitter
+    {
+      // ajustement du positionnement de l'icon
+      margin: 1px 0 0 0;
+      @media screen and (max-width: $large) {
+        margin: 4px 0 0 0;
+      }
+
+      & > svg
+      {
+        @include size(14px);
+        @media screen and (max-width: $large) {
+          @include size(28px);
+        }
+
+      }
+    }
+
+    & *
+    {
+      // couleur appliquée sur tous les élements enfants
+      fill: $color3;
+
+      &:hover
+      {
+
+      }
+    }
+
+  }
+
+
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  // --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+

@@ -1,0 +1,32 @@
+
+{#
+ * @title: "IntranetConnection" PHP View component
+ * @description: Block de connexion pour les utilisateurs de l'intranet ADM
+#}
+
+<div class="IntranetConnection {{ classElement }}">
+
+    {# TODO dico.components #}
+    <h1 class="IntranetConnection_title">{{ dico.components.IntranetConnection.title }}</h1>
+
+    <form class="IntranetConnection_form" id="IntranetConnection_form">
+
+        {# login #}
+        <input class="IntranetConnection_input IntranetConnection_input-login"
+               title="{{ dico.components.IntranetConnection.login }}"
+               name="{{ dico.components.IntranetConnection.login }}"
+               placeholder="{{ dico.components.IntranetConnection.login }}"
+               type="text"
+        >
+
+        {# password #}
+        <input class="IntranetConnection_input IntranetConnection_input-password"
+               title="{{ dico.components.IntranetConnection.password }}"
+               name="{{ dico.components.IntranetConnection.password }}"
+               placeholder="{{ dico.components.IntranetConnection.password }}"
+               type="text" >
+    </form>
+
+    {# button valider #}
+    <button class="IntranetConnection_button"  type="submit" value="ok" form="IntranetConnection_form">{{ dico.components.IntranetConnection.buttonLabel }}</button>
+</div>

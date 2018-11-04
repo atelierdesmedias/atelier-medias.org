@@ -1,0 +1,52 @@
+/**
+  * "mainFooter" stylesheet
+  * follow workflow instructions
+ */
+
+// -----------------------------------------------------------------------------  IMPORT
+
+// common style & mixins
+@import '../../../common/_common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.mainFooter
+{
+  // --------------------------------------------------------------------------- PROPERTIES
+
+
+    // Call block element anywhere. Use it like this : .#{$this}_element
+    $this : mainFooter;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+  /**
+
+  N'hésite pas à utiliser le framework SASS utilié sur ce projet qui s'appelle
+  "bourbon"
+
+  Voici la doc :
+  https://www.bourbon.io/docs/latest/
+
+  Les deux include ci dessous sont des mixins de Bourbon justement.
+  C'est très pratique et permet un code moins verbeux !
+
+   */
+
+  @include position(relative, null 0 0 0);
+  @include size(100%, 100px);
+
+  background: $color3;
+
+  // --------------------------------------------------------------------------- ELEMENTS
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  // --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+

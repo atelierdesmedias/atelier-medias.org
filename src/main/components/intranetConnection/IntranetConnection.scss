@@ -1,0 +1,147 @@
+/**
+  * "intranetConnection" stylesheet
+  * follow workflow instructions
+ */
+
+// -----------------------------------------------------------------------------  IMPORT
+
+// common style & mixins
+@import '../../../common/_common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.intranetConnection
+{
+  // --------------------------------------------------------------------------- PROPERTIES
+
+
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this : intranetConnection;
+  $inputHeight : 20px;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+  display: flex;
+  align-items: center;
+  @include size(auto, $mainNavHeight);
+
+  @media screen and (max-width: $large) {
+    margin-top: 2rem;
+    display: block;
+    @include size(auto, auto);
+  }
+
+  #{$all-text-inputs} {
+    background: transparent;
+  }
+
+  // --------------------------------------------------------------------------- ELEMENTS
+
+  // INTRANET
+  &_title
+  {
+    @include title-smallUppercase($color4);
+
+    @media screen and (max-width: $large) {
+      text-align: center;
+      //font-size: 1.5rem;
+    }
+
+  }
+
+  &_form
+  {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 1rem;
+
+    @media screen and (max-width: $large) {
+      display: block;
+      text-align: center;
+      margin-left: 0; // reset
+    }
+  }
+
+  &_input
+  {
+    // position
+    position: relative;
+    margin: 0;
+    @include size(140px, $inputHeight);
+    // style
+    color:$color1;
+    padding: 0 10px;
+    border:1px solid $color4;
+    line-height: 22px;
+
+    @media screen and (max-width: $large) {
+      display: block;
+      margin: auto;
+      @include size(100%, $inputHeight * 2);
+      max-width: 250px;
+    }
+
+    // style du texte placeholder dans le input
+    &::-webkit-input-placeholder
+    {
+      text-align: center;
+      @include title-smallUppercase($color4);
+      font-size: 0.75rem;
+
+      @media screen and (max-width: $large) {
+          @include title-smallUppercase($color4);
+      }
+
+
+    }
+
+    // traitement du dernier input de la liste
+    &:last-child
+    {
+      // décaller d'un px vers la gauche pour que le border left se fonde dans
+      // le border right de l'input précédent
+      margin-left: -1px;
+
+      @media screen and (max-width: $large) {
+        margin: 1rem auto 0;
+      }
+
+    }
+
+    &-login {}
+    &-password {}
+  }
+
+  // le button de validation du formulaire
+  &_button
+  {
+    // position
+    margin-left: 0.5rem;
+    // style
+    border:0;
+    outline: none;
+    @include size(30px, $inputHeight);
+    @include title-smallUppercase($color1);
+    @include lato-regular();
+    font-size: 0.7rem;
+    background: none;
+
+    @media screen and (max-width: $large) {
+      display: block;
+      margin: 1rem auto 0;
+
+    }
+
+  }
+
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  // --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+

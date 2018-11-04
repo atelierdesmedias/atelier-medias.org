@@ -1,0 +1,15 @@
+{#
+ * @title : "menu" TWIG view component
+#}
+
+{% if menu %}
+<nav class="Menu {{ classElement }}">
+    <ul class="Menu_items">
+        {% for item in Menu.items %}
+            <li class="Menu_item {{ item.classes|join(' ') }}">
+                <a class="Menu_link" href="{{ item.link }}">{{ item.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endif %}

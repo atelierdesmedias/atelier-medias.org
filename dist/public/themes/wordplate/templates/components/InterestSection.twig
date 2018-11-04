@@ -1,0 +1,17 @@
+{#
+ * @title: "InterestSection" TWIG view component
+ * @description:
+ #}
+
+<div class="InterestSection {{ classElement }}">
+    <div class="InterestSection_wrapper">
+    <div class="InterestSection_content">
+        <div class="InterestSection_description">
+            {% for p in dico.components.InterestSection.description %}
+                <p class="InterestSection_p">{{ p }}</p>
+            {% endfor %}
+        </div>
+        <button class="InterestSection_button">{{ dico.components.InterestSection.labelButton }}</button>
+    </div>
+    </div>
+</div>

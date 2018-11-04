@@ -1,0 +1,64 @@
+/**
+  * "mainHeader" stylesheet
+  * follow workflow instructions
+ */
+
+// -----------------------------------------------------------------------------  IMPORT
+
+// common style & mixins
+@import '../../../common/_common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.mainHeader
+{
+  // --------------------------------------------------------------------------- PROPERTIES
+
+
+    // Call block element anywhere. Use it like this : .#{$this}_element
+    $this : mainHeader;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+  // reset
+  margin: 0;
+
+  // --------------------------------------------------------------------------- ELEMENTS
+
+  &_hamburgerButton
+  {
+    display: none;
+    @media screen and (max-width: $large) {
+
+      // position
+      display: block;
+      @include position(fixed, 0 null null 0);
+      padding: 2rem;
+
+      // apparance
+      background: $color7;
+      z-index: 2;
+    }
+  }
+
+  &_mainNav
+  {
+    @include position(fixed, 0 0 null 0);
+    z-index: 1;
+
+    @media screen and (max-width: $large) {
+      @include position(fixed, 0 0 0 0);
+    }
+
+  }
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  // --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+
