@@ -3,19 +3,19 @@
  * @description:
 #}
 
-<header class="MainHeader">
-
-
-    {# include du bouton menu mobile #}
-    {%
-        include "templates/components/HamburgerButton.twig"
-        with { 'classElement': 'MainHeader_hamburgerButton' }
-    %}
+<header class="MainHeader {{ classElement }}">
 
     {# include de la main Nav (block de navigation) #}
     {%
         include "templates/components/MainNav.twig"
         with { 'classElement': 'MainHeader_mainNav' }
     %}
+
+    {# TODO ! fait bugger #}
+    {# include du bouton menu mobile #}
+    {#{%#}
+        {#include "templates/components/HamburgerButton.twig"#}
+        {#with { 'classElement': 'MainHeader_hamburgerButton' }#}
+    {#%}#}
 
 </header>

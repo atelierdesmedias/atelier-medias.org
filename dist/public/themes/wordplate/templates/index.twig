@@ -20,19 +20,25 @@
 {% endif %}
 
 	{# app #}
-	<div id="AppView">
+	<div class="AppView">
+        {%
+            include "./templates/MainHeader.twig"
+            with { 'classElement': 'AppView_mainHeader' }
+        %}
+
+        {# content #}
         {% block content %}
 			Sorry, no content here.
         {% endblock %}
+
+        {# header #}
+        {#{%#}
+            {#include "templates/MainFooter.twig"#}
+            {#with { 'classElement': 'AppView_mainFooter' }#}
+        {#%}#}
 	</div>
 
-
-	{% block footer %}
-		{{ function('wp_footer') }}
-	{% endblock %}
-
-	{# load bundle #}
+	{# load bundle TODO : rendre cette url dynamique #}
 	<script type="text/javascript" src="{{ 'http://localhost:8080/assets/bundle-main.js' }}"></script>
-
 	</body>
 </html>
