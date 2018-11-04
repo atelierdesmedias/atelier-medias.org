@@ -5,12 +5,12 @@
 
 // ------------------------------------------------------------------------- IMPORTS
 
-import {jView} from '../../../common/core/jView'
-import './featureBlock.scss'
+import './FeatureBlock.scss'
+import {DOMView} from "../../../_common/core/DOMView";
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class featureBlock extends jView
+export class FeatureBlock extends DOMView
 {
 
     // ------------------------------------------------------------------------- TYPE

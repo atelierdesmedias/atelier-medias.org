@@ -5,12 +5,12 @@
 
 // ------------------------------------------------------------------------- IMPORTS
 
-import {jView} from '../../../common/core/jView'
-import './mainHeader.scss'
-import {mainNav} from "../mainNav/mainNav";
-import {hamburgerButton} from "../hamburgerButton/hamburgerButton";
+import {DOMView} from "../../../_common/core/DOMView";
+import './MainHeader.scss'
+import {MainNav} from "../mainNav/MainNav";
+import {HamburgerButton} from "../hamburgerButton/HamburgerButton";
 import {TweenLite} from "gsap";
-import {breakPoint} from '../../../common/helpers/breakPoint';
+import {breakPoint} from '../../../_common/helpers/breakPoint';
 
 
 // States de la mainNav Handler
@@ -23,7 +23,7 @@ enum EToggleMainNavHandler
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class mainHeader extends jView
+export class MainHeader extends DOMView
 {
     // ------------------------------------------------------------------------- LOCALS
 
@@ -32,8 +32,8 @@ export class mainHeader extends jView
 
     // ------------------------------------------------------------------------- TYPE
 
-    private _hamburgerButton: hamburgerButton;
-    private _mainNav: mainNav;
+    private _hamburgerButton: HamburgerButton;
+    private _mainNav: MainNav;
 
 
     // hamburger Button
@@ -54,13 +54,13 @@ export class mainHeader extends jView
     {
 
         // ciblier le mainNav
-        this.$mainNav            = this.$root.find('.mainNav');
+        this.$mainNav            = this.$root.find('.MainNav');
 
         // cibler le hamburger bouton qui se trouve dans ce composant
-        this.$hamburgerButton   = this.$root.find('.hamburgerButton');
-        this.$lineTop           = this.$hamburgerButton.find('.hamburgerButton_line-top');
-        this.$lineCenter        = this.$hamburgerButton.find('.hamburgerButton_line-center');
-        this.$lineBottom        = this.$hamburgerButton.find('.hamburgerButton_line-bottom');
+        this.$hamburgerButton   = this.$root.find('.HamburgerButton');
+        this.$lineTop           = this.$hamburgerButton.find('.HamburgerButton_line-top');
+        this.$lineCenter        = this.$hamburgerButton.find('.HamburgerButton_line-center');
+        this.$lineBottom        = this.$hamburgerButton.find('.HamburgerButton_line-bottom');
     }
 
     /**
@@ -70,10 +70,10 @@ export class mainHeader extends jView
     protected prepareDependencies()
     {
         // importer le hamburger button
-        this._hamburgerButton = new hamburgerButton( $('.hamburgerButton') );
+        this._hamburgerButton = new HamburgerButton( this.$root.find('.HamburgerButton') );
 
         // inclure le main menu
-        this._mainNav = new mainNav( $('.mainNav') );
+        this._mainNav = new MainNav( this.$root.find('.MainNav') );
     }
 
     /**

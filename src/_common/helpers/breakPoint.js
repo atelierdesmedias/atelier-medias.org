@@ -21,7 +21,7 @@ export function breakPoint( size )
         xsmall            : 320,
         small             : 480,
         medium            : 768,
-        large             : 1024,
+        large             : 1023,
         xlarge            : 1280,
         xxlarge           : 1440,
         xxxlarge          : 1800

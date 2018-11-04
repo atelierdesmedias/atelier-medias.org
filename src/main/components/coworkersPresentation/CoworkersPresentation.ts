@@ -1,16 +1,16 @@
 /**
- * this is "coworkersPresentationSection" TS export class
+ * this is "coworkersPresentation" TS export class
  * follow workflow instructions
  */
 
 // ------------------------------------------------------------------------- IMPORTS
 
-import './CoworkersPresentationSection.scss'
+import './CoworkersPresentation.scss'
 import {DOMView} from "../../../_common/core/DOMView";
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class CoworkersPresentationSection extends DOMView
+export class CoworkersPresentation extends DOMView
 {
 
     // ------------------------------------------------------------------------- TYPE

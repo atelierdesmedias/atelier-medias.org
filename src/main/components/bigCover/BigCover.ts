@@ -5,21 +5,21 @@
 
 // ------------------------------------------------------------------------- IMPORTS
 
-import {jView} from '../../../common/core/jView'
-import './bigCover.scss'
-import {eventBanner} from "../eventBanner/eventBanner";
+import {DOMView} from "../../../_common/core/DOMView";
+import './BigCover.scss'
+//import {eventBanner} from "../eventBanner/eventBanner";
 import { TweenLite } from "gsap";
 
 
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class bigCover extends jView
+export class BigCover extends DOMView
 {
 
     // ------------------------------------------------------------------------- TYPE
 
-    private _eventBanner: eventBanner;
+    // private _eventBanner: eventBanner;
     private $video: ZeptoCollection;
 
 
@@ -32,7 +32,7 @@ export class bigCover extends jView
     protected prepareNodes()
     {
         // la video qui tourne en boucle
-        this.$video = this.$root.find('.bigCover_video');
+        this.$video = this.$root.find('.BigCover_video');
     }
 
     /**
@@ -42,7 +42,7 @@ export class bigCover extends jView
     protected prepareDependencies()
     {
         // importer event Banner
-        this._eventBanner = new eventBanner( $('.eventBanner') );
+        // this._eventBanner = new eventBanner( $('.eventBanner') );
     }
 
     /**

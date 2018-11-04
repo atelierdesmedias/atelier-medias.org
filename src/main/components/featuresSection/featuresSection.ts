@@ -5,17 +5,18 @@
 
 // ------------------------------------------------------------------------- IMPORTS
 
-import {jView} from '../../../common/core/jView'
-import './featuresSection.scss'
-import {featureBlock} from "../featureBlock/featureBlock";
+import './FeaturesSection.scss'
+import {FeatureBlock} from "../featureBlock/FeatureBlock";
+import {DOMView} from "../../../_common/core/DOMView";
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class featuresSection extends jView
+export class FeaturesSection extends DOMView
 {
-    private _featureBlock: featureBlock;
 
     // ------------------------------------------------------------------------- TYPE
+
+    private _featureBlock: FeatureBlock;
 
     // ------------------------------------------------------------------------- INIT
 
@@ -34,9 +35,8 @@ export class featuresSection extends jView
      */
     protected prepareDependencies()
     {
-
         // importer le composant feature block (correspond à une icon + son texte associé)
-        this._featureBlock = new featureBlock( $('.featureBlock') );
+        this._featureBlock = new FeatureBlock( this.$root.find('.FeatureBlock') );
     }
 
     /**

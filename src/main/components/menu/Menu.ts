@@ -5,12 +5,12 @@
 
 // ------------------------------------------------------------------------- IMPORTS
 
-import {jView} from '../../../common/core/jView'
-import './menu.scss'
+import './Menu.scss'
+import {DOMView} from "../../../_common/core/DOMView";
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class menu extends jView
+export class Menu extends DOMView
 {
 
     // ------------------------------------------------------------------------- TYPE

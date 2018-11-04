@@ -5,12 +5,12 @@
 
 // ------------------------------------------------------------------------- IMPORTS
 
-import {jView} from '../../../common/core/jView'
-import './eventBanner.scss'
+import {DOMView} from "../../../_common/core/DOMView";
+import './EventBanner.scss'
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class eventBanner extends jView
+export class EventBanner extends DOMView
 {
 
     // ------------------------------------------------------------------------- TYPE

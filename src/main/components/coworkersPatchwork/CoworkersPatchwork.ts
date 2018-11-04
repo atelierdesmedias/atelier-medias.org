@@ -5,18 +5,18 @@
 
 // ------------------------------------------------------------------------- IMPORTS
 
-import {jView} from '../../../common/core/jView'
 import './CoworkersPatchwork.scss'
-import {activityFilterBar} from "../activityFilterBar/activityFilterBar";
+import {ActivityFilterBar} from "../activityFilterBar/ActivityFilterBar";
+import {DOMView} from "../../../_common/core/DOMView";
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class coworkersPatchwork extends jView
+export class CoworkersPatchwork extends DOMView
 {
 
     // ------------------------------------------------------------------------- TYPE
 
-    private _activityFilterBar: activityFilterBar;
+    private _activityFilterBar: ActivityFilterBar;
 
     // ------------------------------------------------------------------------- INIT
 
@@ -37,7 +37,7 @@ export class coworkersPatchwork extends jView
     {
 
         // importer la bar filter coworker en fonction des métiers
-        this._activityFilterBar = new activityFilterBar( '.activityFilterBar' );
+        this._activityFilterBar = new ActivityFilterBar( this.$root.find('.ActivityFilterBar') );
     }
 
     /**

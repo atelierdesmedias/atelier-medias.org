@@ -1,24 +1,23 @@
 /**
-  * "homePage" stylesheet
+  * "HomePage" stylesheet
   * follow workflow instructions
  */
 
 // -----------------------------------------------------------------------------  IMPORT
 
 // common style & mixins
-@import '../../../common/_common';
+@import '../../../_common/common';
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.homePage
+.HomePage
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
     // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : homePage;
+    $this : HomePage;
 
   // --------------------------------------------------------------------------- BLOCK
-
 
   // --------------------------------------------------------------------------- ELEMENTS
 
@@ -77,20 +76,20 @@
 
   &_content
   {
-    // contient toutes les sections de la homePage
+    // contient toutes les sections de la HomePage
   }
 
-  &_coworkersPresentationSection
+  &_coworkersPresentation
   {
     padding: 5rem 0;
   }
 
-  &_coworkersPatchworkSection
+  &_coworkersPatchwork
   {
     //padding: 5rem 0;
   }
 
-  &_presentationAdmSection
+  &_admPresentation
   {
     padding: 5rem 0 (10 + 10rem);
     background: $color1;

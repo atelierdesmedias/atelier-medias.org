@@ -1,21 +1,21 @@
 /**
-  * "socialBlock" stylesheet
+  * "SocialBlock" stylesheet
   * follow workflow instructions
  */
 
 // -----------------------------------------------------------------------------  IMPORT
 
 // common style & mixins
-@import '../../../common/_common';
+@import '../../../_common/common';
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.socialBlock
+.SocialBlock
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
   // Call block element anywhere. Use it like this : .#{$this}_element
-  $this : socialBlock;
+  $this : SocialBlock;
 
   // --------------------------------------------------------------------------- BLOCK
 
@@ -54,7 +54,7 @@
     // cercle autour de l'icon
     &:after {
       content: '';
-      @include center();
+      @include absoluteCenter();
       @include size(28px);
       border-radius: 4rem;
       //border: 1px solid $color4;
@@ -72,7 +72,7 @@
   &_icon
   {
 
-    @include center();
+    @include absoluteCenter();
 
     &-facebook
     {

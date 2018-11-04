@@ -5,16 +5,16 @@
 
 // -----------------------------------------------------------------------------  IMPORT
 // common style & mixins
-@import '../../../common/_common';
+@import '../../../_common/common';
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.featuresSection
+.FeaturesSection
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
   // Call block element anywhere. Use it like this : .#{$this}_element
-  $this: featuresSection;
+  $this: FeaturesSection;
 
   // --------------------------------------------------------------------------- BLOCK
 

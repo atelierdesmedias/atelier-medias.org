@@ -8,7 +8,7 @@ export class DOMView extends Disposable
 	// ------------------------------------------------------------------------- DOM
 
 	// Starting node of our component
-	$root			:HTMLElement;
+	$root			:any;
 
 
 	// ------------------------------------------------------------------------- INIT
@@ -19,7 +19,7 @@ export class DOMView extends Disposable
 	 * @param $pRoot Component's root. If not defined, can still be targeted trough targetRoot middleWare.
 	 * @param pAutoInit Will launch init phase if true. Else, child component have to init manually.
 	 */
-	constructor ($pRoot:HTMLElement = null, pAutoInit = true)
+	constructor ($pRoot:any = null, pAutoInit = true)
 	{
 		// Relay
 		super();

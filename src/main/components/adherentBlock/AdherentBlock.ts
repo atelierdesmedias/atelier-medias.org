@@ -5,12 +5,12 @@
 
 // ------------------------------------------------------------------------- IMPORTS
 
-import {jView} from '../../../common/core/jView'
-import './adherentBlock.scss'
+import './AdherentBlock.scss'
+import {DOMView} from "../../../_common/core/DOMView";
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class adherentBlock extends jView
+export class AdherentBlock extends DOMView
 {
 
     // ------------------------------------------------------------------------- TYPE

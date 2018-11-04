@@ -1,21 +1,21 @@
 /**
-  * "mainNav" stylesheet
+  * "MainNav" stylesheet
   * follow workflow instructions
  */
 
 // -----------------------------------------------------------------------------  IMPORT
 
 // common style & mixins
-@import '../../../common/_common';
+@import '../../../_common/common';
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.mainNav
+.MainNav
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
     // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : mainNav;
+    $this : MainNav;
 
   // --------------------------------------------------------------------------- BLOCK
 
@@ -42,7 +42,7 @@
     @media screen and (max-width: $large) {
       display: block;
       @include size(100%, auto);
-      @include center();
+      @include absoluteCenter();
     }
   }
 
@@ -60,7 +60,7 @@
   {
     // ligne de séparation
     // (placée sur le parent pour qu'elle soit relative uniquement au composant
-    // mainNav et que l'on puisse réutiliser le composant "intranetConnection" sans
+    // MainNav et que l'on puisse réutiliser le composant "intranetConnection" sans
     // cette ligne de séparation à un autre endroit dans le projet)
     border-right: 1px solid $colorNavBarLine;
     padding: 0 1.5rem;

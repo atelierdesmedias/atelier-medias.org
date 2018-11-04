@@ -5,12 +5,12 @@
 
 // ------------------------------------------------------------------------- IMPORTS
 
-import {jView} from '../../../common/core/jView'
-import './intranetConnection.scss'
+import './IntranetConnection.scss'
+import {DOMView} from "../../../_common/core/DOMView";
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class intranetConnection extends jView
+export class IntranetConnection extends DOMView
 {
 
     // ------------------------------------------------------------------------- TYPE

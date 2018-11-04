@@ -10,7 +10,8 @@ import {DOMView} from "../_common/core/DOMView";
 import {EnvUtils} from "solidify-lib/utils/EnvUtils";
 import Logs from "../_common/core/Logs";
 import {GlobalConfig} from "../_common/data/GlobalConfig";
-
+import {AppView} from "./components/appView/AppView";
+import {HomePage} from "./pages/homePage/HomePage";
 // Get current properties
 const envName = require(`../../properties/.envName`);
 const currentProperties = require(`../../properties/${envName}.properties.js`);
@@ -21,6 +22,11 @@ export class main extends DOMView
 {
 
     // ------------------------------------------------------------------------- TYPE
+
+
+    private _AppView: AppView;
+    private _HomePage: HomePage;
+
 
     // ------------------------------------------------------------------------- INIT
 
@@ -84,6 +90,8 @@ export class main extends DOMView
          * @doc: http://zeptojs.com/
          */
 
+        this._AppView = new AppView( this.$root.find('.AppView') );
+
     }
 
     /**
@@ -105,6 +113,14 @@ export class main extends DOMView
          *
          * @doc: http://zeptojs.com/
          */
+
+        // si Home Page
+        if ( this.$root.find('.HomePage').length )
+        {
+            this._HomePage = new HomePage( $('.HomePage') );
+            console.log('homePage');
+        }
+
     }
 
     /**
@@ -123,4 +139,4 @@ export class main extends DOMView
 }
 
 // final main instance
-new main();
+new main( $('body') );

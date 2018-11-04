@@ -4,13 +4,12 @@
  */
 
 // ------------------------------------------------------------------------- IMPORTS
-
-import {jView} from '../../../common/core/jView'
-import './activityFilterBar.scss'
+import {DOMView} from "../../../_common/core/DOMView";
+import './ActivityFilterBar.scss'
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class activityFilterBar extends jView
+export class ActivityFilterBar extends DOMView
 {
 
     // ------------------------------------------------------------------------- TYPE

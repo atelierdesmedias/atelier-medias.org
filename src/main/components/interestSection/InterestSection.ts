@@ -5,12 +5,12 @@
 
 // ------------------------------------------------------------------------- IMPORTS
 
-import {jView} from '../../../common/core/jView'
-import './interestSection.scss'
+import './InterestSection.scss'
+import {DOMView} from "../../../_common/core/DOMView";
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class interestSection extends jView
+export class InterestSection extends DOMView
 {
 
     // ------------------------------------------------------------------------- TYPE

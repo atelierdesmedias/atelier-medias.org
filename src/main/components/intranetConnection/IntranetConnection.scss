@@ -1,22 +1,22 @@
 /**
-  * "intranetConnection" stylesheet
+  * "IntranetConnection" stylesheet
   * follow workflow instructions
  */
 
 // -----------------------------------------------------------------------------  IMPORT
 
 // common style & mixins
-@import '../../../common/_common';
+@import '../../../_common/common';
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.intranetConnection
+.IntranetConnection
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
 
   // Call block element anywhere. Use it like this : .#{$this}_element
-  $this : intranetConnection;
+  $this : IntranetConnection;
   $inputHeight : 20px;
 
   // --------------------------------------------------------------------------- BLOCK

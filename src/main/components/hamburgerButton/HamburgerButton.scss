@@ -1,22 +1,22 @@
 /**
-  * "hamburgerButton" stylesheet
+  * "HamburgerButton" stylesheet
   * follow workflow instructions
  */
 
 // -----------------------------------------------------------------------------  IMPORT
 
 // common style & mixins
-@import '../../../common/_common';
+@import '../../../_common/common';
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.hamburgerButton
+.HamburgerButton
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
 
     // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : hamburgerButton;
+    $this : HamburgerButton;
 
   // --------------------------------------------------------------------------- BLOCK
 
@@ -29,7 +29,7 @@
 
   &_inner
   {
-    @include center();
+    @include absoluteCenter();
     @include size(26px, 1em);
   }
 
@@ -48,7 +48,7 @@
     &-center
     {
       opacity: 1;
-      @include center();
+      @include absoluteCenter();
     }
     &-bottom
     {

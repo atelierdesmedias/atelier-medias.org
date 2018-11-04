@@ -1,22 +1,22 @@
 /**
-  * "eventBanner" stylesheet
+  * "EventBanner" stylesheet
   * follow workflow instructions
  */
 
 // -----------------------------------------------------------------------------  IMPORT
 
 // common style & mixins
-@import '../../../common/_common';
+@import '../../../_common/common';
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.eventBanner
+.EventBanner
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
 
     // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : eventBanner;
+    $this : EventBanner;
 
   // --------------------------------------------------------------------------- BLOCK
 

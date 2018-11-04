@@ -5,12 +5,12 @@
 
 // ------------------------------------------------------------------------- IMPORTS
 
-import {jView} from '../../../common/core/jView'
-import './socialBlock.scss'
+import './SocialBlock.scss'
+import {DOMView} from "../../../_common/core/DOMView";
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class socialBlock extends jView
+export class SocialBlock extends DOMView
 {
 
     // ------------------------------------------------------------------------- TYPE

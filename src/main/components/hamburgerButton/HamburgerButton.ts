@@ -5,12 +5,12 @@
 
 // ------------------------------------------------------------------------- IMPORTS
 
-import {jView} from '../../../common/core/jView'
-import './hamburgerButton.scss'
+import './HamburgerButton.scss'
+import {DOMView} from "../../../_common/core/DOMView";
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class hamburgerButton extends jView
+export class HamburgerButton extends DOMView
 {
 
     // ------------------------------------------------------------------------- TYPE

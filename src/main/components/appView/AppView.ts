@@ -1,30 +1,29 @@
 /**
- * this is "AppView" TS export class
+ * this is "app" TS export class
  * follow workflow instructions
  */
 
-import {DOMView} from "../../../_common/core/DOMView";
-import './AppView.scss'
+// ------------------------------------------------------------------------- IMPORTS
 
-// ----------------------------------------------------------------------------- START EXPORT CLASS
+import './AppView.scss'
+import {DOMView} from '../../../_common/core/DOMView'
+import {MainHeader} from "../mainHeader/MainHeader";
+import {MainFooter} from "../mainFooter/MainFooter";
+
+// ------------------------------------------------------------------------- START EXPORT CLASS
 
 export class AppView extends DOMView
 {
+    // ------------------------------------------------------------------------- TYPE
+
+    private _mainHeader: MainHeader;
+    private _mainFooter: MainFooter;
 
     // ------------------------------------------------------------------------- INIT
 
     /**
-     * Target our root if not already defined via constructor params
-     * (method overwriting DOMView and move to constructor via init)
-     */
-    protected targetRoot ()
-    {
-
-    }
-
-    /**
      * prepare nodes
-     * (method overwriting DOMView and move to constructor via init)
+     * (method overwriting jView and move to constructor via init)
      */
     protected prepareNodes()
     {
@@ -33,16 +32,20 @@ export class AppView extends DOMView
 
     /**
      * prepare dependencies
-     * (method overwriting DOMView and move to constructor via init)
+     * (method overwriting jView and move to constructor via init)
      */
     protected prepareDependencies()
     {
+        // importer le main header
+        this._mainHeader = new MainHeader( this.$root.find('.MainHeader') );
 
+        // importer le main footer
+        this._mainFooter = new MainFooter( this.$root.find('.MainFooter') );
     }
 
     /**
      * prepare events
-     * (method overwriting DOMView and move to constructor via init)
+     * (method overwriting jView and move to constructor via init)
      */
     protected prepareEvents()
     {
@@ -51,7 +54,7 @@ export class AppView extends DOMView
 
     /**
      * after Init
-     * (method overwriting DOMView and move to constructor via init)
+     * (method overwriting jView and move to constructor via init)
      */
     protected afterInit()
     {
@@ -60,5 +63,7 @@ export class AppView extends DOMView
 
     // ------------------------------------------------------------------------- HANDLERS
 
+
+    // ------------------------------------------------------------------------- END EXPORT CLASS
 }
 

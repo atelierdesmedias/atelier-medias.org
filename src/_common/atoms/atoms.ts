@@ -23,7 +23,7 @@ export const Atoms =
     "xsmall": '320px',
     "small": '480px',
     "medium": '768px',
-    "large": '1024px',
+    "large": '1023px',
     "xlarge": '1280px',
     "xxlarge": '1440px',
     "xxxlage": '1800px',

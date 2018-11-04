@@ -6,17 +6,17 @@
 // -----------------------------------------------------------------------------  IMPORT
 
 // common style & mixins
-@import '../../../common/_common';
+@import '../../../_common/common';
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.adherentSection
+.AdherentSection
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
 
     // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : adherentSection;
+    $this : AdherentSection;
 
     // espace entre les blocks verticalement et horizontalement
     $gutterBlock : 8px;

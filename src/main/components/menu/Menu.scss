@@ -1,22 +1,22 @@
 /**
-  * "menu" stylesheet
+  * "Menu" stylesheet
   * follow workflow instructions
  */
 
 // -----------------------------------------------------------------------------  IMPORT
 
 // common style & mixins
-@import '../../../common/_common';
+@import '../../../_common/common';
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.menu
+.Menu
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
 
     // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : menu;
+    $this : Menu;
 
   // --------------------------------------------------------------------------- BLOCK
 
@@ -68,7 +68,7 @@
   &_link
   {
     // position
-    @include center();
+    @include absoluteCenter();
     color: $color3;
 
     // style reset

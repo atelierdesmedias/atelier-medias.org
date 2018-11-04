@@ -5,17 +5,17 @@
 
 // ------------------------------------------------------------------------- IMPORTS
 
-import {jView} from '../../../common/core/jView'
-import './adherentSection.scss'
-import {adherentBlock} from "../adherentBlock/adherentBlock";
+import './AdherentSection.scss'
+import {AdherentBlock} from "../adherentBlock/AdherentBlock";
+import {DOMView} from "../../../_common/core/DOMView";
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class adherentSection extends jView
+export class AdherentSection extends DOMView
 {
     // ------------------------------------------------------------------------- TYPE
 
-    private _adherentBlock: adherentBlock;
+    private _adherentBlock: AdherentBlock;
 
     // ------------------------------------------------------------------------- INIT
 
@@ -35,7 +35,7 @@ export class adherentSection extends jView
     protected prepareDependencies()
     {
         // importer adherent block
-        this._adherentBlock = new adherentBlock( $('.adherentBlock') );
+        this._adherentBlock = new AdherentBlock( this.$root.find('.AdherentBlock') );
     }
 
     /**

@@ -6,17 +6,17 @@
 // -----------------------------------------------------------------------------  IMPORT
 
 // common style & mixins
-@import '../../../common/_common';
+@import '../../../_common/common';
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.featureBlock
+.FeatureBlock
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
 
     // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : featureBlock;
+    $this : FeatureBlock;
 
   // --------------------------------------------------------------------------- BLOCK
 

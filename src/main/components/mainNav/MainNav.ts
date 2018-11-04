@@ -5,23 +5,23 @@
 
 // ----------------------------------------------------------------------------- IMPORTS
 
-import {jView} from '../../../common/core/jView'
-import './mainNav.scss'
-import {menu} from "../menu/menu";
-import {socialBlock} from "../socialBlock/socialBlock";
-import {intranetConnection} from "../intranetConnection/intranetConnection";
-import {languageBlock} from "../languageBlock/languageBlock";
+import './MainNav.scss'
+import {DOMView} from "../../../_common/core/DOMView";
+import {Menu} from "../menu/Menu";
+import {SocialBlock} from "../socialBlock/SocialBlock";
+import {IntranetConnection} from "../intranetConnection/IntranetConnection";
+import {LanguageBlock} from "../languageBlock/LanguageBlock";
 
 // ----------------------------------------------------------------------------- START EXPORT CLASS
 
-export class mainNav extends jView
+export class MainNav extends DOMView
 {
     // ------------------------------------------------------------------------- TYPE
 
-    private _socialBlock: socialBlock;
-    private _intranetConnection: intranetConnection;
-    private _languageBlock: languageBlock;
-    private _menu: menu;
+    private _menu: Menu;
+    private _socialBlock: SocialBlock;
+    private _intranetConnection: IntranetConnection;
+    private _languageBlock: LanguageBlock;
 
     // ------------------------------------------------------------------------- INIT
 
@@ -42,16 +42,16 @@ export class mainNav extends jView
     {
 
         // importer la menu
-        this._menu = new menu( $('.menu') );
+        this._menu = new Menu( this.$root.find('.Menu') );
 
         // importer le social block
-        this._socialBlock = new socialBlock( $('.socialBlock') );
+        this._socialBlock = new SocialBlock( this.$root.find('.SocialBlock') );
         
         // importer le block intranet connection
-        this._intranetConnection = new intranetConnection( $('.intranetConnection') );
+        this._intranetConnection = new IntranetConnection( this.$root.find('.IntranetConnection') );
 
         // importer le block language
-        this._languageBlock = new languageBlock( $('.languageBlock') );
+        this._languageBlock = new LanguageBlock( this.$root.find('.LanguageBlock') );
 
     }
 

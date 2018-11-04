@@ -5,30 +5,31 @@
 
 // ------------------------------------------------------------------------- IMPORTS
 
-import {jView} from '../../../common/core/jView'
-import './homePage.scss'
-import {bigCover} from "../../components/bigCover/bigCover";
-import {presentationAdmSection} from "../../components/presentationAdmSection/presentationAdmSection";
-import {adherentSection} from "../../components/adherentSection/adherentSection";
-import {breakPoint} from '../../../common/helpers/breakPoint';
-import {featuresSection} from "../../components/featuresSection/featuresSection";
-import {interestSection} from "../../components/interestSection/interestSection";
-import {coworkersPatchworkSection} from "../../components/coworkersPatchworkSection/coworkersPatchworkSection";
-import {coworkersPresentationSection} from "../../components/coworkersPresentationSection/coworkersPresentationSection";
+import {DOMView} from "../../../_common/core/DOMView";
+import './HomePage.scss'
+import {BigCover} from "../../components/bigCover/BigCover";
+import {CoworkersPresentation} from "../../components/coworkersPresentation/CoworkersPresentation";
+import {CoworkersPatchwork} from "../../components/coworkersPatchwork/CoworkersPatchwork";
+import {AdmPresentation} from "../../components/admPresentation/AdmPresentation";
+import {AdherentSection} from "../../components/adherentSection/AdherentSection";
+import {FeaturesSection} from "../../components/featuresSection/featuresSection";
+import {InterestSection} from "../../components/interestSection/InterestSection";
+import {breakPoint} from '../../../_common/helpers/breakPoint';
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class homePage extends jView
+export class HomePage extends DOMView
 {
     // ------------------------------------------------------------------------- TYPE
 
-    private _bigCover: bigCover;
-    private _coworkersPresentationSection: coworkersPresentationSection;
-    private _coworkersPatchworkSection: coworkersPatchworkSection;
-    private _presentationAdmSection: presentationAdmSection;
-    private _adherentSection: adherentSection;
-    private _featuresSection: featuresSection;
-    private _interestSection: interestSection;
+    private _bigCover: BigCover;
+
+    private _coworkersPresentation: CoworkersPresentation;
+    private _coworkersPatchworkSection: CoworkersPatchwork;
+    private _admPresentation: AdmPresentation;
+    private _adherentSection: AdherentSection;
+    private _featuresSection: FeaturesSection;
+    private _interestSection: InterestSection;
 
     private $bigCover: ZeptoCollection;
     private $bigCoverBanner: ZeptoCollection;
@@ -41,8 +42,8 @@ export class homePage extends jView
      */
     protected prepareNodes()
     {
-        this.$bigCover = this.$root.find('.bigCover');
-        this.$bigCoverBanner = this.$bigCover.find('.bigCover_banner');
+        this.$bigCover = this.$root.find('.BigCover');
+        this.$bigCoverBanner = this.$bigCover.find('.BigCover_banner');
     }
 
     /**
@@ -52,26 +53,25 @@ export class homePage extends jView
     protected prepareDependencies()
     {
         // inclure la big Cover
-        this._bigCover = new bigCover( $('.bigCover') );
+        this._bigCover = new BigCover( this.$root.find('.BigCover') );
 
+        // inclure coworkersPresentation
+        this._coworkersPresentation = new CoworkersPresentation( this.$root.find('.CoworkersPresentation') );
 
-        // inclure coworkersPresentationSection
-        this._coworkersPresentationSection = new coworkersPresentationSection( $('.coworkersPresentationSection') );
+        // inclure coworkersPatchwork
+        this._coworkersPatchworkSection = new CoworkersPatchwork( this.$root.find('.CoworkersPatchwork') );
 
-        // inclure coworkersPatchworkSection
-        this._coworkersPatchworkSection = new coworkersPatchworkSection( $('.coworkersPatchworkSection') );
+        // inclure le texte de présentation
+        this._admPresentation = new AdmPresentation( this.$root.find('.AdmPresentation') );
 
-        // inclure le texte de présentation 
-        this._presentationAdmSection = new presentationAdmSection( $('.presentationAdmSection') );
-        
         // inclure la section "adherent"
-        this._adherentSection = new adherentSection( $('.adherentSection') );
-        
+        this._adherentSection = new AdherentSection( this.$root.find('.AdherentSection') );
+
         // inclure features section
-        this._featuresSection = new featuresSection( $('.featuresSection') );
+        this._featuresSection = new FeaturesSection( this.$root.find('.FeaturesSection') );
 
         // inclure interest section
-        this._interestSection = new interestSection( $('.interestSection') );
+        this._interestSection = new InterestSection( this.$root.find('.InterestSection') );
         
 
         
@@ -85,7 +85,7 @@ export class homePage extends jView
     {
 
         // cloner la banner de bigCover dans le content de homePage au resize
-        // $(window).on('resize', this.moveBannerOnResizeHandler.bind(this));
+        $(window).on('resize', this.moveBannerOnResizeHandler.bind(this));
     }
 
     /**
@@ -99,23 +99,23 @@ export class homePage extends jView
 
     // ------------------------------------------------------------------------- HANDLERS
 
-    // moveBannerOnResizeHandler ()
-    // {
-    //     if (!breakPoint('medium'))
-    //     {
-    //         console.log('clone');
-    //         this.$bigCoverBanner.clone().addClass('clone');
-    //         let $clone = this.$root.find('.clone');
-    //         $clone.prepend(this.$root);
-    //
-    //         console.log($clone);
-    //
-    //
-    //     } else
-    //     {
-    //
-    //     }
-    // }
+    moveBannerOnResizeHandler ()
+    {
+        // if (!breakPoint('medium'))
+        // {
+        //     //console.log('clone');
+        //     this.$bigCoverBanner.clone().addClass('clone');
+        //     let $clone = this.$root.find('.clone');
+        //     $clone.prepend(this.$root);
+        //
+        //     console.log($clone);
+        //
+        //
+        // } else
+        // {
+        //
+        // }
+    }
 
     // ------------------------------------------------------------------------- CONFIG
 
