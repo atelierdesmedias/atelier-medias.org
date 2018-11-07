@@ -6,7 +6,7 @@
 // ----------------------------------------------------------------------------- DIST
 
 // Assets path
-exports.assetsPath = 'dist/assets/';
+exports.assetsPath = 'dist/public/assets/';
 // exports.assetsPath = root + 'dist/user/themes/willy/assets/';
 
 // grav willybe path
