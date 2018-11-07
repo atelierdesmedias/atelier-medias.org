@@ -94,7 +94,7 @@ module.exports = {
      */
     preBuildPhpConfig : (pEnv) =>
     {
-        Files.new(`${globalConstants.distPath}config.php`).write(
+        Files.new(`${globalConstants.phpConfigPath}config.php`).write(
             TemplateHelper
             (
                 Files.getFiles(`${globalConstants.skeletonsPath}phpConfigTemplate`).read(),

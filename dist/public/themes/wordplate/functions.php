@@ -8,12 +8,13 @@ declare(strict_types=1);
 // import yaml
 use Symfony\Component\Yaml\Yaml;
 
+// Register plugin helpers.
+require template_path('includes/plugins/plate.php');
+
 // -----------------------------------------------------------------------------  TIMBER
 
 // activer Timber (twig WP extension)
 $timber = new \Timber\Timber();
-
-// -----------------------------------------------------------------------------  INIT SITE PROPERTIES
 
 /**
  * Class StarterSite
@@ -31,6 +32,10 @@ class StarterSite extends \Timber\Site
         add_filter( 'timber_context', array( $this, 'add_to_context' ) );
         add_action( 'init', array( $this, 'register_post_types' ) );
         add_action( 'init', array( $this, 'register_taxonomies' ) );
+
+        // montrer la bar d'admin
+        show_admin_bar(false);
+
         parent::__construct();
     }
 
@@ -71,6 +76,15 @@ class StarterSite extends \Timber\Site
         return $twig;
     }
 
+
+    function images_config()
+    {
+        // Remove JPEG compression.
+        add_filter('jpeg_quality', function () {
+            return 100;
+        }, 10, 2);
+    }
+
 }
 
 /**
@@ -81,52 +95,26 @@ new StarterSite();
 
 // -----------------------------------------------------------------------------  CONFIG
 
-
 /**
- * Supprimer les scripts inutils ajoutés par WP
+ * Gestion de chargement scripts JS et CSS
  */
-function remove_wp_scripts()
+function load_scripts()
 {
-    // désactiver les scripts suivants :
-    remove_action( 'wp_print_styles', 'print_emoji_styles' );
-    remove_action( 'admin_print_styles', 'print_emoji_styles' );
-    remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-    remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+    // recupérer les variables d'environement auto générées
+    require_once (__DIR__.'/config.php');
+
+    // si on est en dev
+    if (  $ENV !== 'dev')
+    {
+        // register CSS script
+        wp_register_style( 'bundle-main-css', $CURRENT_ENV_URL."assets/bundle-main.css" , array(), '', 'all' );
+        wp_enqueue_style( 'bundle-main-css' );
+    }
+
+    // register JS script
+    wp_register_script( 'bundle-main-js', $CURRENT_ENV_URL."assets/bundle-main.js", array(), '', true );
+    wp_enqueue_script( 'bundle-main-js' );
+
 }
-add_action('wp_enqueue_scripts', 'remove_wp_scripts', 10);
+add_action('wp_enqueue_scripts', 'load_scripts', 10);
 
-// Register plugin helpers.
-require template_path('includes/plugins/plate.php');
-
-
-// Set theme defaults.
-add_action('after_setup_theme', function () {
-    // Disable the admin toolbar.
-    show_admin_bar(false);
-
-//    // Add post thumbnails support.
-//    add_theme_support('post-thumbnails');
-//
-//    // Add title tag theme support.
-//    add_theme_support('title-tag');
-//
-//    // Add HTML5 theme support.
-//    add_theme_support('html5', [
-//        'caption',
-//        'comment-form',
-//        'comment-list',
-//        'gallery',
-//        'search-form',
-//        'widgets',
-//    ]);
-
-    // Register navigation menus.
-    register_nav_menus([
-        'navigation' => __('Navigation', 'wordplate'),
-    ]);
-});
-
-// Remove JPEG compression.
-add_filter('jpeg_quality', function () {
-    return 100;
-}, 10, 2);

@@ -39,6 +39,10 @@
 	</div>
 
 	{# load bundle TODO : rendre cette url dynamique #}
-	<script type="text/javascript" src="{{ 'http://localhost:8080/assets/bundle-main.js' }}"></script>
+	{#//<script type="text/javascript" src="{{ 'http://localhost:8080/assets/bundle-main.js' }}"></script>#}
+
+	{% block footer %}
+		{{ function('wp_footer') }}
+	{% endblock %}
 	</body>
 </html>

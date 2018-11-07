@@ -9,6 +9,8 @@
 exports.assetsPath = 'dist/public/assets/';
 // exports.assetsPath = root + 'dist/user/themes/willy/assets/';
 
+exports.phpConfigPath = 'dist/public/themes/wordplate/';
+
 // grav willybe path
 exports.gravUserConfigPath = 'dist/user/willybe/';
 
