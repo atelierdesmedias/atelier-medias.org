@@ -20,8 +20,7 @@ See [design online](https://projects.invisionapp.com/share/FMGJ96E57TB#/screens/
 
 - timber 
 
-
-## Back office 
+## Admin test
 
 - user: ADM
 - pass: 19871987
@@ -66,7 +65,7 @@ $ ./push-master-to-staging.sh
                 
 ## Credits
 
- - Willy Brauner - [mail@willybrauner.com](mailto:mail@willybrauner.com) - [willybrauner.com](http://willybrauner.com)  
- - 
+Very inspired Framework of [fuse-base](https://github.com/willybrauner/fuse-base) by [zouloux](https://github.com/zouloux)
+Project dev by ADM developer team.  
  
  
