@@ -18,7 +18,7 @@ export class App extends Disposable
         // Init dependencies
         this.initDependencies();
 
-        // Init app adm
+        // Init app willybe
         this.initConfig();
 
         // Init properties stuff

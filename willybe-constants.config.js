@@ -11,8 +11,8 @@ exports.assetsPath = 'dist/public/assets/';
 
 exports.phpConfigPath = 'dist/public/themes/wordplate/';
 
-// grav adm path
-exports.gravUserConfigPath = 'dist/user/adm/';
+// grav willybe path
+exports.gravUserConfigPath = 'dist/user/willybe/';
 
 // Dist path
 exports.distPath = 'dist/';
@@ -46,7 +46,7 @@ exports.commonBundleName = '_common';
 // ----------------------------------------------------------------------------- CONFIG
 
 // Skeletons path
-exports.skeletonsPath = 'adm/skeletons/';
+exports.skeletonsPath = 'willybe/skeletons/';
 
 // Environment path folder
 exports.propertiesFolderPath = 'properties/';

@@ -1,6 +1,6 @@
 
 /**
- * Webpack adm
+ * Webpack willybe
  */
 const path = require('path');
 const webpack = require('webpack');
@@ -14,9 +14,9 @@ const notifier = require('node-notifier');
 // check if dev
 const isDev = process.env.NODE_ENV === 'dev';
 // get constants
-const globalConstants = require("./adm-constants.config");
+const globalConstants = require("./willybe-constants.config");
 // framework webpack custom config
-const customWebpackConfig = require('./adm-webpack.config');
+const customWebpackConfig = require('./willybe-webpack.config');
 // Get current properties
 const envName = require(`./properties/.envName`);
 const currentProperties = require(`./properties/${envName}.properties.js`);
@@ -216,7 +216,7 @@ const devServerTool = {
         // pass to true if you don't want to print compile file in the console
         quiet: customWebpackConfig.quietConsole,
 
-        // adm
+        // willybe
         stats: {
             colors: true,
             hash: false,
@@ -383,7 +383,7 @@ exports.devConfig = devConfig;
  */
 const prodConfig = merge([
 
-    // base adm
+    // base willybe
     entry,
     output,
     resolve,
@@ -409,7 +409,7 @@ exports.prodConfig = prodConfig;
 
 // ----------------------------------------------------------------------------- EXPORT
 
-// adm export depend of properties
+// willybe export depend of properties
 module.exports.default = isDev
     ? devConfig
     : prodConfig;

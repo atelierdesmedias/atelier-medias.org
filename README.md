@@ -65,7 +65,7 @@ $ ./push-master-to-staging.sh
                 
 ## Credits
 
-Very inspired Framework of [fuse-base](https://github.com/willybrauner/fuse-base) by [zouloux](https://github.com/zouloux).    
-Project dev by ADM developer team.
+Very inspired Framework of [fuse-base](https://github.com/willybrauner/fuse-base) by [zouloux](https://github.com/zouloux)
+Project dev by ADM developer team.  
  
  

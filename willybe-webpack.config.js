@@ -1,5 +1,5 @@
 /**
- * adm webpack config
+ * Willybe webpack config
  * configuration constant use in webpack
  */
 

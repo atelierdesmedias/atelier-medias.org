@@ -7,7 +7,7 @@ const path = require('path');
 const {Files} = require('@zouloux/files');
 const Inquirer = require('inquirer');
 const changeCase = require('change-case');
-const globalConstants = require("../adm-constants.config");
+const globalConstants = require("../willybe-constants.config");
 const colors = require('colors');
 
 /**
@@ -37,7 +37,7 @@ const _getConfigs = () =>
                 // Return name (without properties.js extension)
                 name: path.basename( configFile ).split('.properties.js')[0],
 
-                // Method to read adm and get properties
+                // Method to read willybe and get properties
                 read: () => require(`../${ configFile }`)
             };
         }
