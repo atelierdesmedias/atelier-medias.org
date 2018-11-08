@@ -60,7 +60,7 @@ exports.postCssConfigFile = 'postcss.config.js';
 // ----------------------------------------------------------------------------- APP BUNDLE
 
 // Sub folder to choose for components
-exports.componentSubFolderScaffold = [ 'blocks', 'components', 'molecules', 'pages' ];
+exports.componentSubFolderScaffold = [ 'components', 'molecules', 'pages' ];
 
 // Bundles list filename
 exports.bundlesListFile = 'bundles.ts';
@@ -69,5 +69,5 @@ exports.bundlesListFile = 'bundles.ts';
 exports.appBundleFoldersToScaffold = ['molecules', 'pages', 'components', 'models'];
 
 // Techno to scaffold
-exports.appBundleTechnoToScaffold =  ['React', 'Vue', 'DOM'];
+exports.appBundleTechnoToScaffold =  ['React', 'DOM'];
 

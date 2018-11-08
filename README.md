@@ -1,14 +1,30 @@
-# ADM site V.2
 
-## About
+# ADM wordpress
 
-Wordpress Atelier des Médias
+The theme for the website [atelier-medias.org](http://www.atelier-medias.org/).
+This code is under GPLv3.
 
-## BO
+## TODO
 
-- user: a.d.m.
-- pass: 19871987_
+See [Trello board](https://trello.com/b/0rU5rbGR/site-adm)
 
+## Docs
+
+See [website documentation](https://docs.google.com/spreadsheet/ccc?key=0AnxUXXNvhG7ddEJqTkxPS284a3IxRTctVVp3amhrX0E&usp=drive_web#gid=7)
+
+## Design
+
+See [design online](https://projects.invisionapp.com/share/FMGJ96E57TB#/screens/287421915_Desktop_HD_-_Home)
+    
+## Plugins Dépendances 
+
+- timber 
+
+
+## Back office 
+
+- user: ADM
+- pass: 19871987
 
 ## Deploy 
 
@@ -19,7 +35,7 @@ We only work on `master` branch.
 Use deployer script to push master on staging: 
 
 ```shell
-$ deployer/push-master-to-staging.sh
+$ ./push-master-to-staging.sh
 ```
 
 ### Deploy `production` 
@@ -27,19 +43,10 @@ $ deployer/push-master-to-staging.sh
 Use deployer script to push master on production: 
 
 ```shell
-$ deployer/push-master-to-staging.sh
+$ ./push-master-to-staging.sh
 ```
    
 ## Server
-
-### Prod server 
-
-- url: []()
-- server name: 
-- deployed folder (from root server): `www`
-- database: 
-- branch: `production`
-
 
 ### Staging server
 
@@ -49,14 +56,17 @@ $ deployer/push-master-to-staging.sh
 - database: 
 - branch: `staging`
 
+### Prod server 
 
-## Installation
-
-Check [documentation](docs/).
+- url: []()
+- server name: 
+- deployed folder (from root server): ``
+- database: 
+- branch: `production`
                 
 ## Credits
 
- **Willy Brauner**  
- [mail@willybrauner.com](mailto:mail@willybrauner.com)  
- [willybrauner.com](http://willybrauner.com)  
+ - Willy Brauner - [mail@willybrauner.com](mailto:mail@willybrauner.com) - [willybrauner.com](http://willybrauner.com)  
+ - 
+ 
  
