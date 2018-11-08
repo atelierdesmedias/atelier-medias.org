@@ -9,7 +9,7 @@
 #RewriteCond %{REQUEST_FILENAME} !-d
 #RewriteCond %{REQUEST_URI} !^/assets/$
 #RewriteCond %{HTTP_HOST} ^localhost
-#RewriteRule ^(.*)$ /perso/willybe/dist/index.php?request=$1 [L,QSA]
+#RewriteRule ^(.*)$ /perso/adm/dist/index.php?request=$1 [L,QSA]
 #
 ## Staging
 #

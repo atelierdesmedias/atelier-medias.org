@@ -1,1 +1,1 @@
-module.exports = 'willy';
+module.exports = 'default';
