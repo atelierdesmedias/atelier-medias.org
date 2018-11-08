@@ -21,11 +21,112 @@
   // --------------------------------------------------------------------------- BLOCK
 
   @include position(relative, null 0 0 0);
-  @include size(100%, 100px);
-
-  background: $color3;
+  @include size(100%, 100%);
 
   // --------------------------------------------------------------------------- ELEMENTS
+
+  &_wrapper
+  {
+    // pour pousser le footer du contenu du dessus
+    padding-top:3rem;
+
+
+    @include size(100%, 30rem);
+    background: $color1;
+  }
+
+  &_contactSection
+  {
+    @include flex(flex, row, wrap, center, center);
+    background: $color3;
+    @include size(100%, 10rem);
+  }
+
+  &_creditsSection
+  {
+    @include flex(flex, row, wrap, center, center);
+    //background: $color1;
+    @include size(100%, 10rem);
+  }
+
+  &_items
+  {
+    list-style: none;
+    @include flex(flex, row, wrap, flex-start, flex-start);
+  }
+
+  &_item
+  {
+    position: relative;
+    @include flex(flex, row, wrap, flex-start, flex-start);
+    &:not(:last-child)
+    {
+      &:after
+      {
+        content:'';
+        @include size(1px, 10px);
+        background: $color1;
+        position: relative;
+        margin:0 15px;
+        top:8px;
+      }
+    }
+
+    // ciblier les enfants de -contact
+    // placer un tiret à droite de ces items exepté le dernier
+    &-contact .#{$this}_subItem:not(:last-child)
+    {
+      &:after
+      {
+        content:'';
+        @include size(6px, 1px);
+        background: $color1;
+        position: relative;
+        display: inline-block;
+        margin:0 10px 0 10px;
+        top:1px;
+      }
+    }
+    &-credits .#{$this}_subItem:not(:last-child)
+    {
+      margin-right: 10px;
+    }
+
+  }
+
+  &_subItems
+  {
+    list-style: none;
+    @include flex(flex, row, wrap, flex-start, flex-start);
+  }
+
+  &_subItem
+  {
+    @include flex(flex, row, wrap, center, center);
+  }
+
+  &_link
+  {
+    color:$color1;
+    text-decoration: none;
+  }
+
+  &_address
+  {
+    position: relative;
+    display: inline-block;
+    color:$color1;
+    text-decoration: none;
+  }
+
+
+  &_newsletterWrapper
+  {
+    
+  }
+
+
+
 
   // --------------------------------------------------------------------------- MODIFIERS
 

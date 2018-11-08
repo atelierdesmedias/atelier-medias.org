@@ -3,9 +3,44 @@
  * @description:
 #}
 
-<div class="MainFooter">
+<footer class="MainFooter">
+    <div class="MainFooter_wrapper">
+        <section class="MainFooter_contactSection">
+            <ul class="MainFooter_items">
+                <li class="MainFooter_item MainFooter_item-contact">
+                    <ul class="MainFooter_subItems">
+                        <li class="MainFooter_subItem">
+                            <address class="MainFooter_address">{{ dico.site.address }}</address>
+                        </li>
+                        <li class="MainFooter_subItem">
+                            <a class="MainFooter_link MainFooter_link-tel" href="tel:{{ dico.site.tel }}">tel : {{ dico.site.tel }}</a>
+                        </li>
+                        <li class="MainFooter_subItem">
+                            <a class="MainFooter_link MainFooter_link-mail" href="mailto:{{ dico.site.mail }}">{{ dico.site.mail }}</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="MainFooter_item MainFooter_item-credits">
+                    <ul class="MainFooter_subItems">
+                        <li class="MainFooter_subItem">
+                            <a class="MainFooter_link MainFooter_link-credits" href="{# TODO links #}">{{ dico.generics.credits }}</a>
+                        </li>
+                        <li class="MainFooter_subItem">
+                            <a class="MainFooter_link MainFooter_link-mentions"href="{# TODO links #}">{{ dico.generics.mentions }}</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="MainFooter_item MainFooter_item-press">
+                    <a class="MainFooter_link MainFooter_link-press" href="{# TODO links #}">{{ dico.generics.press }}</a>
+                </li>
+            </ul>
+        </section>
 
-    mainFooter<br>
-    Copyright {{"now"|date('Y')}}
+        <section class="MainFooter_creditsSection">
 
-</div>
+        </section>
+    </div>
+
+    {#Copyright {{"now"|date('Y')}}#}
+
+</footer>

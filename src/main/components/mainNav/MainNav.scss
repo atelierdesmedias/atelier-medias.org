@@ -23,7 +23,8 @@
   background: $color7;
   visibility: visible;
 
-  @media screen and (max-width: $large) {
+  @media screen and (max-width: $large)
+  {
     background: rgba(0,0,0,1);
     // cacher le menu par defaut en mobile
     visibility: hidden;
@@ -40,7 +41,8 @@
     justify-content: flex-end;
 
 
-    @media screen and (max-width: $large) {
+    @media screen and (max-width: $large)
+    {
       display: block;
       @include size(100%, auto);
       @include absoluteCenter();
@@ -60,8 +62,8 @@
   &_intranetConnection
   {
     // ligne de séparation
-    // (placée sur le parent pour qu'elle soit relative uniquement au composant
-    // MainNav et que l'on puisse réutiliser le composant "intranetConnection" sans
+    // (placée sur le parent pour qu'elle soit relative uniquement au composant MainNav
+    // et que l'on puisse réutiliser le composant "intranetConnection" sans
     // cette ligne de séparation à un autre endroit dans le projet)
     border-right: 1px solid $colorNavBarLine;
     padding: 0 1.5rem;
@@ -69,7 +71,8 @@
 
   &_languageBlock
   {
-    @media screen and (max-width: $large) {
+    @media screen and (max-width: $large)
+    {
       display: block;
       margin: 2rem auto;
     }

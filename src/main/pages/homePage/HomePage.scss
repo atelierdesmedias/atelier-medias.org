@@ -19,11 +19,14 @@
 
   // --------------------------------------------------------------------------- BLOCK
 
+  position: relative;
+
   // --------------------------------------------------------------------------- ELEMENTS
 
   &_header
   {
     margin: 0;
+    position: relative;
   }
 
   &_bigCover
@@ -77,6 +80,15 @@
   &_content
   {
     // contient toutes les sections de la HomePage
+    position: relative;
+    // HACK pour le vide créé par les décalage vers le top des éléments enfants
+
+    // TODO : ne marche pas encore comme souhaité
+    // TODO : trouvé un moyen plus propre de faire cela
+    margin-bottom: -30rem;
+
+    background: url('../../../_common/images/background-01.jpg') repeat;
+
   }
 
   &_coworkersPresentation
@@ -97,17 +109,17 @@
 
   &_adherentSection
   {
-
     // sortie top du container du block enfant
     position: relative;
     top: -15rem;
+    z-index: 0;
   }
 
   &_featuresSection
   {
     top: -30rem;
     padding: 20rem 0 5rem;
-    z-index: -1;
+    z-index: 0;
   }
 
 
