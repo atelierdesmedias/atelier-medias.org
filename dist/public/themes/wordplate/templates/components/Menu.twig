@@ -3,7 +3,7 @@
 {% if menu %}
 <nav class="Menu {{ classElement }}">
     <ul class="Menu_items">
-        {% for item in Menu.items %}
+        {% for item in menu.items %}
             <li class="Menu_item {{ item.classes|join(' ') }}">
                 <a class="Menu_link" href="{{ item.link }}">{{ item.title }}</a>
             </li>

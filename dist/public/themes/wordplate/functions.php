@@ -51,15 +51,19 @@ class StarterSite extends \Timber\Site
 
     function add_to_context( $context )
     {
-        // dico
+        // TODO: si multi-langue, charger le dico EN
+        // TODO: et conditionner le chargement en fonction de la langue choisie
+        // ajouter le dico
         $dico = Yaml::parseFile(__DIR__ . '/data/french.yml');
         $context['dico'] = $dico;
 
         // menu
-        $context['menu'] = new Timber\Menu();
+        $context['menu'] = new Timber\Menu('menu');
 
         // site context
         $context['site'] = $this;
+
+        // retourner le context
         return $context;
     }
 
