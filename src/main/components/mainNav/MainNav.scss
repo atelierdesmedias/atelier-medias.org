@@ -24,9 +24,10 @@
   visibility: visible;
 
   @media screen and (max-width: $large) {
-    background: rgba(0,0,0,0.9);
+    background: rgba(0,0,0,1);
     // cacher le menu par defaut en mobile
     visibility: hidden;
+    z-index: 5;
   }
 
   // --------------------------------------------------------------------------- ELEMENTS
