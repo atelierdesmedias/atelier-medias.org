@@ -5,15 +5,16 @@
 
 <div class="BigCover {{ classElement }}">
 
-    {# video #}
-    <video class="BigCover_video"
-           src="{{ theme.path }}/videos/clip.mp4"
-           autoplay muted loop type="video/mp4" />
 
     {# logo ADM #}
     <div class="BigCover_logo">
         {% include "./images/logo-adm-blanc.svg" %}
     </div>
+
+    {# video #}
+    <video class="BigCover_video"
+           src="{{ theme.path }}/videos/clip.mp4"
+           autoplay muted loop type="video/mp4" />
 
     {# // TODO : link image url "home-header.jpg" avec WP back post thumbnail (image à la une) ?>#}
     <div class="BigCover_backgroundImage"

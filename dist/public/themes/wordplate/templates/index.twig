@@ -15,12 +15,10 @@
 </head>
 <body>
 
-{% if (env == 'production')  %}
-{#<link rel="stylesheet" href="<?php echo $CURRENT_ENV_URL . 'assets/css/bundle-main.css?'. date("YmdHis") ?>">#}
-{% endif %}
-
 	{# app #}
 	<div class="AppView">
+
+		{# Header présent sur toutes les pages #}
         {%
             include "./templates/MainHeader.twig"
             with { 'classElement': 'AppView_mainHeader' }
@@ -31,18 +29,17 @@
 			Sorry, no content here.
         {% endblock %}
 
-        {# header #}
-        {#{%#}
-            {#include "templates/MainFooter.twig"#}
-            {#with { 'classElement': 'AppView_mainFooter' }#}
-        {#%}#}
-	</div>
 
-	{# load bundle TODO : rendre cette url dynamique #}
-	{#//<script type="text/javascript" src="{{ 'http://localhost:8080/assets/bundle-main.js' }}"></script>#}
+        {# Footer présent sur toutes les pages #}
+        {%
+            include "templates/MainFooter.twig"
+            with { 'classElement': 'AppView_mainFooter' }
+        %}
+	</div>
 
 	{% block footer %}
 		{{ function('wp_footer') }}
 	{% endblock %}
+
 	</body>
 </html>

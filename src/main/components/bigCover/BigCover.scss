@@ -50,13 +50,14 @@
   // gros LOGO ADM centré sur l'image ou la video
   &_logo
   {
+    display: block;
     @include absoluteCenter();
     top:46%;
     z-index: 1;
 
     & > svg {
       @include size(400px);
-      @media screen and (max-width: $small){
+      @media (max-width: $small) {
         @include size(320px);
       }
     }

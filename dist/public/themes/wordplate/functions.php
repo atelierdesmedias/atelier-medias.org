@@ -109,7 +109,6 @@ function load_scripts()
     // register JS script
     wp_register_script( 'bundle-main-js', $CURRENT_ENV_URL."assets/bundle-main.js", array(), '', true );
     wp_enqueue_script( 'bundle-main-js' );
-
 }
 add_action('wp_enqueue_scripts', 'load_scripts');
 
@@ -127,7 +126,8 @@ function remove_wp_scripts()
 }
 add_action('wp_enqueue_scripts', 'remove_wp_scripts', 10);
 
-function my_deregister_scripts(){
+function my_deregister_scripts()
+{
     wp_deregister_script( 'wp-embed' );
     wp_deregister_script('jquery');
 }
