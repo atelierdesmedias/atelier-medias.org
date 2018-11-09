@@ -16,14 +16,14 @@ See [website documentation](https://docs.google.com/spreadsheet/ccc?key=0AnxUXXN
 
 See [design online](https://projects.invisionapp.com/share/FMGJ96E57TB#/screens/287421915_Desktop_HD_-_Home)
     
-## Plugins Dépendances 
+## Plugins dependances 
 
 - timber 
 
-## Admin test
+## Admin test base `adm-wp.sql`
 
 - user: ADM
-- pass: 19871987
+- pass: root
 
 ## Deploy 
 
