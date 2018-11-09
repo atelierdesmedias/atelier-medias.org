@@ -1,7 +1,7 @@
 
-# ADM wordpress
+# atelierdesmedias.org
 
-The theme for the website [atelier-medias.org](http://www.atelier-medias.org/).
+Wordpress website v.2 [atelier-medias.org](http://www.atelier-medias.org/).
 This code is under GPLv3.
 
 ## TODO
