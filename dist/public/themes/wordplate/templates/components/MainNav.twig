@@ -6,29 +6,38 @@
 <div class="MainNav {{ classElement }}">
     <div class="MainNav_content">
 
-        {# include "menu" component #}
-        {%
-            include "templates/components/Menu.twig"
-            with { 'classElement': 'MainNav_menu' }
-        %}
+        <div class="MainNav_innerContent MainNav_innerContent-logo">
+            {# logo #}
+            <div class="MainNav_logo">
+                {% include "images/logo-adm-noir.svg" %}
+            </div>
+        </div>
 
-        {# include "socialBlock" component #}
-        {%
-            include "templates/components/SocialBlock.twig"
-            with { 'classElement': 'MainNav_socialBlock' }
-        %}
+        <div class="MainNav_innerContent">
+            {# include "menu" component #}
+            {%
+                include "templates/components/Menu.twig"
+                with { 'classElement': 'MainNav_menu' }
+            %}
 
-        {# include "intranetConnection" component #}
-        {%
-            include "templates/components/IntranetConnection.twig"
-            with { 'classElement': 'MainNav_intranetConnection' }
-        %}
+            {# include "socialBlock" component #}
+            {%
+                include "templates/components/SocialBlock.twig"
+                with { 'classElement': 'MainNav_socialBlock' }
+            %}
 
-        {# include "languageBlock" component #}
-        {%
-            include "templates/components/LanguageBlock.twig"
-            with { 'classElement': 'MainNav_languageBlock' }
-        %}
+            {# include "intranetConnection" component #}
+            {#{%#}
+            {#include "templates/components/IntranetConnection.twig"#}
+            {#with { 'classElement': 'MainNav_intranetConnection' }#}
+            {#%}#}
+
+            {# include "languageBlock" component #}
+            {%
+                include "templates/components/LanguageBlock.twig"
+                with { 'classElement': 'MainNav_languageBlock' }
+            %}
+        </div>
 
     </div>
 </div>

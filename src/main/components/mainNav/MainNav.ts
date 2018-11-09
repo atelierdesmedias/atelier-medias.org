@@ -48,7 +48,7 @@ export class MainNav extends DOMView
         this._socialBlock = new SocialBlock( this.$root.find('.SocialBlock') );
         
         // importer le block intranet connection
-        this._intranetConnection = new IntranetConnection( this.$root.find('.IntranetConnection') );
+        //this._intranetConnection = new IntranetConnection( this.$root.find('.IntranetConnection') );
 
         // importer le block language
         this._languageBlock = new LanguageBlock( this.$root.find('.LanguageBlock') );

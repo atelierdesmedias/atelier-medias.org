@@ -36,16 +36,42 @@
   &_content
   {
     @include mainColumnWidthCenter();
+    @include flex(flex, row, wrap, space-between, center);
 
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
+    // mobile
     @media (max-width: $large)
     {
       display: block;
       @include size(100%, auto);
       @include absoluteCenter();
+    }
+  }
+
+  &_innerContent
+  {
+    // desktop
+    @include flex(flex, row, wrap, center, center);
+
+    // mobile
+    @media (max-width: $large)
+    {
+      display: block;
+    }
+
+    &-logo
+    {
+      @media (max-width: $large)
+      {
+        display: none;
+      }
+    }
+  }
+
+  &_logo
+  {
+    & > *
+    {
+      @include size($mainBorder * 0.75);
     }
   }
 
@@ -60,26 +86,27 @@
     // mobile
     @media (max-width: $large)
     {
-      padding: 2.5rem  0 1.5rem;
+      padding: 2rem  0rem;
     }
   }
-
-  &_intranetConnection
-  {
-    display: block;
-    // ligne de séparation
-    // (placée sur le parent pour qu'elle soit relative uniquement au composant MainNav
-    // et que l'on puisse réutiliser le composant "intranetConnection" sans
-    // cette ligne de séparation à un autre endroit dans le projet)
-    border-right: 1px solid $colorNavBarLine;
-    padding: 0 1.5rem;
-
-    // mobile
-    @media (max-width: $large)
-    {
-      display: none;
-    }
-  }
+  //
+  //&_intranetConnection
+  //{
+  //  display: block;
+  //  // ligne de séparation
+  //  // (placée sur le parent pour qu'elle soit relative uniquement au composant MainNav
+  //  // et que l'on puisse réutiliser le composant "intranetConnection" sans
+  //  // cette ligne de séparation à un autre endroit dans le projet)
+  //  @include sepNavItem();
+  //
+  //  padding: 0 1.5rem;
+  //
+  //  // mobile
+  //  @media (max-width: $large)
+  //  {
+  //    display: none;
+  //  }
+  //}
 
   &_languageBlock
   {
@@ -87,19 +114,19 @@
     @media (max-width: $large)
     {
       position: relative;
-      padding: 2.5rem 0 0 0;
+      padding: 0 0 0 0;
       display: block;
 
-      &:after
-      {
-        content:"";
-        display: block;
-        @include size(10px, 1px);
-        background: $grey77Color;
-        @include absoluteCenter();
-        top:20px;
-
-      }
+      //&:after
+      //{
+      //  content:"";
+      //  display: block;
+      //  @include size(10px, 1px);
+      //  background: $grey77Color;
+      //  @include absoluteCenter();
+      //  top:20px;
+      //
+      //}
     }
   }
 

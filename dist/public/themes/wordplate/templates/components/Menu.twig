@@ -5,7 +5,11 @@
     <ul class="Menu_items">
         {% for item in menu.items %}
             <li class="Menu_item {{ item.classes|join(' ') }}">
-                <a class="Menu_link" href="{{ item.link }}">{{ item.title }}</a>
+                <a class="Menu_link" href="{{ item.link }}">
+                    <div class="Menu_innerLink">
+                        {{ item.title }}
+                    </div>
+                </a>
             </li>
         {% endfor %}
     </ul>

@@ -19,7 +19,8 @@
 
   // --------------------------------------------------------------------------- BLOCK
 
-  @include size( ($relativeColumnWidth * 1) , auto );
+
+  @include size( auto, auto);
 
   @media (max-width: $large) {
     @include size( auto , auto );
@@ -30,9 +31,7 @@
   &_items
   {
     // position
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex(flex,row,wrap,center,center);
     margin: auto 1.5rem;
 
     // style
@@ -41,28 +40,33 @@
 
   &_item
   {
+    height: $mainBorder;
+
     &:last-child
     {
-      margin-left: 0.8rem;
+      margin-left: 1rem;
     }
   }
 
   &_link
   {
+    @include flex(flex,row,wrap,center,center);
+    @include size(100%);
     // style
     @include title-smallUppercase($grey77Color);
     @include lato-bold();
     @media (max-width: $large) {
      font-size: 1rem;
     }
-
-
-    &-active
+    &-active,
+    &:hover
     {
       color: $turqoiseColor;
     }
 
+
   }
+
   // --------------------------------------------------------------------------- MODIFIERS
 
   // --------------------------------------------------------------------------- CHILDREN

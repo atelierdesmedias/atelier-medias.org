@@ -36,14 +36,12 @@
     // position
     position: relative;
     @include size(100%, $mainBorder);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex(flex, row, wrap, flex-start, center);
+
     // style
-    // ...
     list-style: none;
 
-    @media (max-width: $large) {
+      @media (max-width: $large) {
       display: block;
       @include size(100%, auto);
     }
@@ -52,19 +50,28 @@
 
   &_item
   {
-
     // position
     position: relative;
-    @include size(100%, $mainBorder);
-    padding: 0 3.2rem;
+    height: $mainBorder;
+    padding: 0 2.2rem;
 
     // style
-    border-right: 1px solid $colorNavBarLine;
+   @include sepNavItem();
 
     @media (max-width: $large) {
-      border-right: 0;
+      border: 0;
       padding: 1.5rem 3.2rem;
     }
+
+
+    &.current-menu-item
+    {
+      > a
+      {
+        color:$turqoiseColor;
+      }
+    }
+
   }
 
   &_link
@@ -72,8 +79,10 @@
     // style reset
     border: 0;
     text-decoration: none;
-    // position
-    @include absoluteCenter();
+
+    @include flex(flex, row, wrap, center, center);
+    @include size(100%);
+
     color: $grey77Color;
     @include lato-bold();
 
@@ -81,6 +90,11 @@
     {
       color: $turqoiseColor;
     }
+  }
+
+
+  &_innerLink
+  {
 
   }
 

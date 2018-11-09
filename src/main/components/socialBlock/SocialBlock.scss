@@ -23,10 +23,13 @@
 
   &_items
   {
-    position: relative;
     list-style: none;
-    display: flex;
-    align-items: center;
+    position: relative;
+    @include flex(flex,row, wrap, center, center);
+    padding: 0 1rem;
+
+
+    //background:red;
 
     @media (max-width: $large) {
       width: 6.5rem;
@@ -37,91 +40,88 @@
   &_item
   {
     position: relative;
-    @include size((6.5rem / 1.5), $mainBorder);
-    border-right: 1px solid $colorNavBarLine;
+    height:$mainBorder;
+    @include sepNavItem();
 
-    @media (max-width: $large) {
-      //@include size(5rem, $mainNavHeight);
-      border-right: 0; // reset
+    &:not(:last-child)
+    {
+      margin-right:0.75rem;
+    }
+
+    @media (max-width: $large)
+    {
+      // reset
+      border-right: 0;
     }
   }
 
   &_link
   {
-    cursor: pointer;
+    @include flex(flex,row,wrap,center,center);
+    @include size(100%);
 
+    cursor: pointer;
     // cercle autour de l'icon
-    &:after {
-      content: '';
-      @include absoluteCenter();
-      @include size(28px);
-      border-radius: 4rem;
-      //border: 1px solid $color4;
-    }
+    //&:after {
+    //  content: '';
+    //  @include absoluteCenter();
+    //  @include size(28px);
+    //  border-radius: 4rem;
+    //  border: 1px solid $turqoiseColor;
+    //}
 
     &:hover
     {
       .#{$this}_icon *
       {
-        fill: $blackColor;
+        fill: $turqoiseColor;
       }
     }
   }
 
-  &_icon
+  &_innerLink
   {
-
-    @include absoluteCenter();
+    position: relative;
 
     &-facebook
     {
-      // ajustement du positionnement de l'icon
-      margin: 1px 0 0 -2px;
+      top:0;
       @media (max-width: $large)
       {
-        margin: 1px 0 0 4px;
+        top:3px;
       }
-
-      & > svg
+      
+      & svg
       {
         @include size(19px);
         @media (max-width: $large)
         {
           @include size(26px);
         }
-
       }
     }
 
     &-twitter
     {
-      // ajustement du positionnement de l'icon
-      margin: 1px 0 0 0;
       @media (max-width: $large)
       {
-        margin: 4px 0 0 -7px;
+        top:5px;
       }
 
-      & > svg
+      & svg
       {
-        @include size(14px);
+        @include size(16.5px);
         @media (max-width: $large)
         {
-          @include size(24px);
+          @include size(26px);
         }
-
       }
     }
 
     & *
     {
       // couleur appliquée sur tous les élements enfants
-      fill: $turqoiseColor;
-
-      &:hover
-      {
-
-      }
+      fill: $grey77Color;
     }
 
   }
