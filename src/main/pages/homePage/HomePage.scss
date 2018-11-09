@@ -14,8 +14,8 @@
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
-    // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : HomePage;
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this : HomePage;
 
   // --------------------------------------------------------------------------- BLOCK
 
@@ -25,14 +25,26 @@
 
   &_header
   {
-    margin: 0;
+    
     position: relative;
+    margin: 0;
+
   }
 
   &_bigCover
   {
-    @include position(relative, 0);
     z-index: 0;
+    position: relative;
+    @include mainColumnWidthCenter();
+    @include margin($mainBorder null);
+    // la hauteur est setée en js
+
+    // mobile
+    @media screen and (max-width: $large)
+    {
+      @include margin(0 auto);
+    }
+
   }
 
   // zone de texte au bottom de bigCover
@@ -40,7 +52,7 @@
   {
     // position
     position: relative;
-    @include size(100%, auto);
+    @include mainColumnWidthCenter();
     @include position(absolute, null 0 0 0);
     padding: 2rem 3rem;
     z-index: 2;
@@ -86,9 +98,8 @@
     // TODO : ne marche pas encore comme souhaité
     // TODO : trouvé un moyen plus propre de faire cela
     margin-bottom: -30rem;
-
     background: url('../../../_common/images/background-01.jpg') repeat;
-
+    @include mainColumnWidthCenter();
   }
 
   &_coworkersPresentation
@@ -112,7 +123,7 @@
     // sortie top du container du block enfant
     position: relative;
     top: -15rem;
-    z-index: 0;
+    z-index: 1;
   }
 
   &_featuresSection
@@ -121,7 +132,6 @@
     padding: 20rem 0 5rem;
     z-index: 0;
   }
-
 
   &_interestSection
   {

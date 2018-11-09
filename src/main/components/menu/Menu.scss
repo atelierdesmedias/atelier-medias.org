@@ -24,7 +24,8 @@
 
   // style
   @include title-smallUppercase();
-  @media screen and (max-width: $large) {
+  @media screen and (max-width: $large)
+  {
     font-size: 1.5rem;
   }
 
@@ -34,7 +35,7 @@
   {
     // position
     position: relative;
-    @include size(100%, $mainNavHeight);
+    @include size(100%, $mainBorder);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,33 +55,31 @@
 
     // position
     position: relative;
-    @include size(100%, $mainNavHeight);
+    @include size(100%, $mainBorder);
     padding: 0 3.2rem;
 
     // style
     border-right: 1px solid $colorNavBarLine;
 
     @media screen and (max-width: $large) {
-      border-right: 0px;
+      border-right: 0;
+      padding: 1.5rem 3.2rem;
     }
   }
 
   &_link
   {
-    // position
-    @include absoluteCenter();
-    color: $color3;
-
     // style reset
     border: 0;
     text-decoration: none;
-
-
-
+    // position
+    @include absoluteCenter();
+    color: $color9;
+    @include lato-bold();
 
     &:hover
     {
-      color:$color1;
+      color:$color3;
     }
 
   }

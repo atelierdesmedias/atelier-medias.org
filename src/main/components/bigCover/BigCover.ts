@@ -9,7 +9,7 @@ import {DOMView} from "../../../_common/core/DOMView";
 import './BigCover.scss'
 //import {eventBanner} from "../eventBanner/eventBanner";
 import { TweenLite } from "gsap";
-
+import {breakPoint} from "src/_common/helpers/breakPoint";
 
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
@@ -45,13 +45,18 @@ export class BigCover extends DOMView
         // this._eventBanner = new eventBanner( $('.eventBanner') );
     }
 
+    protected initComponents()
+    {
+        // init la taille du container
+        this.applyVideoPositionHandler();
+    }
     /**
      * prepare events
      * (method overwriting jView and move to constructor via init)
      */
     protected prepareEvents()
     {
-        window.addEventListener('resize', this.applyVideoHeightHandler.bind(this))
+        window.addEventListener('resize', this.applyVideoPositionHandler.bind(this))
     }
 
     /**
@@ -60,18 +65,24 @@ export class BigCover extends DOMView
      */
     protected afterInit()
     {
-        // init la taille du container
-        this.applyVideoHeightHandler();
+
     }
 
     // ------------------------------------------------------------------------- HANDLERS
 
-    protected applyVideoHeightHandler () :void
+    protected applyVideoPositionHandler () :void
     {
+        // utiliser le meme ratio qu'en css pour calculer les grille
+        let columnGrid = ($(window).width() / 12);
+
         // appliquer la taille du container a la video
-        // pour qu'elle fasse toujours 100% de hauteur
-        TweenLite.set( this.$root, {
-            height: $(window).height()
+        TweenLite.set( this.$root,
+            {
+            // hauteur de la video
+            height:
+                breakPoint('large')
+                    ? $(window).height() - ((columnGrid * 0.65) * 2)
+                    : $(window).height()
         })
 
 
@@ -82,7 +93,7 @@ export class BigCover extends DOMView
     public dispose () :void
     {
         // supprimer l'écoute de l'event
-        window.removeEventListener('resize', this.applyVideoHeightHandler.bind(this))
+        window.removeEventListener('resize', this.applyVideoPositionHandler.bind(this))
     }
 
 

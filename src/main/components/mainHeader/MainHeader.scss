@@ -32,11 +32,11 @@
 
       // position
       display: block;
-      @include position(fixed, 0 null null 0);
+      @include position(fixed, 0 0 null null );
       padding: 2rem;
 
       // apparance
-      background: $color7;
+      background: $color1;
       z-index: 10;
     }
   }
@@ -44,7 +44,7 @@
   &_mainNav
   {
     @include position(fixed, 0 0 null 0);
-    z-index: 1;
+    z-index: 5;
 
     @media screen and (max-width: $large) {
       @include position(fixed, 0 0 0 0);

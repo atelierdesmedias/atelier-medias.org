@@ -49,10 +49,11 @@ $totalGrid: 12;
 
 // size of 1 column : divise screen in ... column
 $columnWidth: ( 100vw / $totalGrid );
+$columnHeight: ( 100vh / $totalGrid );
 
 // relative column width
 $relativeColumnWidth: (100% / $totalGrid);
 
 // hauteur de la mainNav
-$mainNavHeight : 5.8rem;
+$mainBorder: ($columnWidth * 0.65);
 

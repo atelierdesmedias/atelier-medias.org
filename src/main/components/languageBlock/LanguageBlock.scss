@@ -14,7 +14,6 @@
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
-
     // Call block element anywhere. Use it like this : .#{$this}_element
     $this : LanguageBlock;
 
@@ -51,7 +50,8 @@
   &_link
   {
     // style
-    @include title-smallUppercase($color1);
+    @include title-smallUppercase($color9);
+    @include lato-bold();
     @media screen and (max-width: $large) {
      font-size: 1rem;
     }

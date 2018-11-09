@@ -149,6 +149,8 @@ export class MainHeader extends DOMView
             // cacher le mainNav
             : this.changeStateMainNavHandler( EToggleMainNavHandler.CLOSE );
 
+        // reset l'apparition de la mainNav sans anim
+        this.mainNavAnim(0);
     }
 
     // ------------------------------------------------------------------------- ANIM
@@ -156,10 +158,10 @@ export class MainHeader extends DOMView
     /**
      * Animer la mainNav en function du state
      */
-    protected mainNavAnim () :void
+    protected mainNavAnim (pDuration = 0.3) :void
     {
         // animer l'apparition
-        TweenLite.to(this.$mainNav, .3, {
+        TweenLite.to(this.$mainNav, pDuration, {
             autoAlpha: this._isOpen ? 1 : 0
         });
     }

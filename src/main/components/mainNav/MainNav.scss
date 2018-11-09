@@ -20,12 +20,12 @@
   // --------------------------------------------------------------------------- BLOCK
 
   // style
-  background: $color7;
+  background: $color1;
   visibility: visible;
 
   @media screen and (max-width: $large)
   {
-    background: rgba(0,0,0,1);
+    //background: rgba(0,0,0,1);
     // cacher le menu par defaut en mobile
     visibility: hidden;
     z-index: 5;
@@ -35,11 +35,11 @@
 
   &_content
   {
-    @include size(100%, $mainNavHeight);
+    @include mainColumnWidthCenter();
+
     display: flex;
     align-items: center;
     justify-content: flex-end;
-
 
     @media screen and (max-width: $large)
     {
@@ -57,24 +57,49 @@
   &_socialBlock 
   {
 
+    // mobile
+    @media (max-width: $large)
+    {
+      padding: 2.5rem  0 1.5rem;
+    }
   }
 
   &_intranetConnection
   {
+    display: block;
     // ligne de séparation
     // (placée sur le parent pour qu'elle soit relative uniquement au composant MainNav
     // et que l'on puisse réutiliser le composant "intranetConnection" sans
     // cette ligne de séparation à un autre endroit dans le projet)
     border-right: 1px solid $colorNavBarLine;
     padding: 0 1.5rem;
+
+    // mobile
+    @media (max-width: $large)
+    {
+      display: none;
+    }
   }
 
   &_languageBlock
   {
-    @media screen and (max-width: $large)
+    // mobile
+    @media (max-width: $large)
     {
+      position: relative;
+      padding: 2.5rem 0 0 0;
       display: block;
-      margin: 2rem auto;
+
+      &:after
+      {
+        content:"";
+        display: block;
+        @include size(10px, 1px);
+        background: $color9;
+        @include absoluteCenter();
+        top:20px;
+
+      }
     }
   }
 

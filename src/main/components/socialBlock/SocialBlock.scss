@@ -32,18 +32,17 @@
       width: 6.5rem;
       margin: auto;
     }
-
   }
 
   &_item
   {
     position: relative;
-    @include size((6.5rem / 2), $mainNavHeight);
+    @include size((6.5rem / 1.5), $mainBorder);
     border-right: 1px solid $colorNavBarLine;
 
     @media screen and (max-width: $large) {
       //@include size(5rem, $mainNavHeight);
-      border-right: 0px; // reset
+      border-right: 0; // reset
     }
   }
 
@@ -64,7 +63,7 @@
     {
       .#{$this}_icon *
       {
-        fill: $color1;
+        fill: $color2;
       }
     }
   }
@@ -78,12 +77,17 @@
     {
       // ajustement du positionnement de l'icon
       margin: 1px 0 0 -2px;
+      @media screen and (max-width: $large)
+      {
+        margin: 1px 0 0 4px;
+      }
 
       & > svg
       {
-        @include size(18px);
-        @media screen and (max-width: $large) {
-          @include size(35px);
+        @include size(19px);
+        @media screen and (max-width: $large)
+        {
+          @include size(26px);
         }
 
       }
@@ -93,15 +97,17 @@
     {
       // ajustement du positionnement de l'icon
       margin: 1px 0 0 0;
-      @media screen and (max-width: $large) {
-        margin: 4px 0 0 0;
+      @media screen and (max-width: $large)
+      {
+        margin: 4px 0 0 -7px;
       }
 
       & > svg
       {
         @include size(14px);
-        @media screen and (max-width: $large) {
-          @include size(28px);
+        @media screen and (max-width: $large)
+        {
+          @include size(24px);
         }
 
       }

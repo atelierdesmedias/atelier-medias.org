@@ -17,19 +17,9 @@
 
   // Call block element anywhere. Use it like this : .#{$this}_element
   $this : IntranetConnection;
-  $inputHeight : 20px;
+  $inputHeight : 40px;
 
   // --------------------------------------------------------------------------- BLOCK
-
-  display: flex;
-  align-items: center;
-  @include size(auto, $mainNavHeight);
-
-  @media screen and (max-width: $large) {
-    margin-top: 2rem;
-    display: block;
-    @include size(auto, auto);
-  }
 
   #{$all-text-inputs} {
     background: transparent;
@@ -37,10 +27,25 @@
 
   // --------------------------------------------------------------------------- ELEMENTS
 
+
+  &_wrapper
+  {
+    display: flex;
+    align-items: center;
+    @include size(auto, $mainBorder);
+
+    @media  (max-width: $large) {
+      margin-top: 2rem;
+      display: block;
+      @include size(auto, auto);
+    }
+  }
+
   // INTRANET
   &_title
   {
-    @include title-smallUppercase($color4);
+    @include title-smallUppercase($color9);
+    @include lato-bold();
 
     @media screen and (max-width: $large) {
       text-align: center;
@@ -67,7 +72,7 @@
     // position
     position: relative;
     margin: 0;
-    @include size(140px, $inputHeight);
+    @include size(190px, $inputHeight);
     // style
     color:$color1;
     padding: 0 10px;
@@ -85,7 +90,7 @@
     &::-webkit-input-placeholder
     {
       text-align: center;
-      @include title-smallUppercase($color4);
+      @include title-smallUppercase($color5);
       font-size: 0.75rem;
 
       @media screen and (max-width: $large) {
@@ -115,21 +120,27 @@
   // le button de validation du formulaire
   &_button
   {
+    cursor: pointer;
     // position
     margin-left: 0.5rem;
     // style
     border:0;
     outline: none;
     @include size(30px, $inputHeight);
-    @include title-smallUppercase($color1);
+    @include title-smallUppercase($color5);
     @include lato-regular();
     font-size: 0.7rem;
     background: none;
 
-    @media screen and (max-width: $large) {
+    @media (max-width: $large)
+    {
       display: block;
       margin: 1rem auto 0;
+    }
 
+    &:hover
+    {
+      color:$color3;
     }
 
   }

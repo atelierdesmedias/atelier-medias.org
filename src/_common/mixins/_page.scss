@@ -8,7 +8,25 @@
 
 // ----------------------------------------------------------------------------- MIXIN
 
+/**
+ *
+ */
+@mixin mainColumnWidthCenter()
+{
+    @include size(100vw - ($mainBorder * 2), auto );
+    @include margin(null auto);
 
+    // mobile
+    @media screen and (max-width: $large)
+    {
+        @include size(100%, auto);
+    }
+}
+
+
+/**
+ *
+ */
 @mixin pageGrid ()
 {
     // laptop
@@ -17,12 +35,10 @@
     margin: auto;
 
     // mobile
-    @media screen and (max-width: $large) {
+    @media screen and (max-width: $large)
+    {
       @include size( ($columnWidth * 10), auto );
     }
 
 }
-
-
-
 
