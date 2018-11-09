@@ -6,15 +6,29 @@
 
 //------------------------------------------------------------------------------  BASIC
 
-$color1: #ffffff;
-$color2: #000000;
-$color3: #84CBD5; // bleu vert
-$color4: #e2e2e2; // gris clair
-$color5: #908C8A; // gris medium clair
-$color6: #CDD244; // vert clair
-$color7: rgba(0,0,0,0.4);
-$color8: #CDD244; // vert pomme
-$color9: #4D4D4D; // gris foncé
+$whiteColor: #ffffff;
+$blackColor: #000000;
+
+// bleu vert
+$turqoiseColor: #84CBD5;
+
+// vert pomme 1
+$appleGreenColor: #CDD244;
+
+// vert pomme 2
+$appleGreen2Color: #CDD244;
+
+// black overlay
+$blackOverlayColor: rgba(0,0,0,0.4);
+
+// gris clair
+$grey226Color: #e2e2e2;
+
+// gris medium clair
+$grey144Color: #908C8A;
+
+// gris foncé
+$grey77Color: #4D4D4D;
 
 //------------------------------------------------------------------------------  ELEMENTS
 

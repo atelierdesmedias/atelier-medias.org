@@ -20,7 +20,7 @@
 
 // formatage des titres petit et uppercase
 // prend une couleur en paramètre
-@mixin title-smallUppercase( $color: $color3 )
+@mixin title-smallUppercase( $color: $turqoiseColor )
 {
   text-transform: uppercase;
   @include lato-light();

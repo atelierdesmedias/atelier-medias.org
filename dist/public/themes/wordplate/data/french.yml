@@ -155,4 +155,4 @@ components:
     labelButton: "ça m'interesse !"
 
   SuscribeNewsletter:
-    placeholder: "S'inscrire à la newsletter"
+    placeholder: "newsletter"

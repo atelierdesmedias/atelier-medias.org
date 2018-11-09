@@ -12,55 +12,73 @@
 
 .MainFooter
 {
+  // IMPORTANT : composant mobile first
   // --------------------------------------------------------------------------- PROPERTIES
 
-  // IMPORTANT : composant mobile fist 
-
-    // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : MainFooter;
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this : MainFooter;
 
   // --------------------------------------------------------------------------- BLOCK
 
   @include position(relative, null 0 0 0);
   @include size(100%, 100%);
-
+  background: $whiteColor;
 
   // --------------------------------------------------------------------------- ELEMENTS
 
   &_wrapper
   {
-    // pour pousser le footer du contenu du dessus
-    padding-top:3rem;
-
-    @include size(100%, 30rem);
-    background: $color1;
+    background: $grey77Color;
   }
+
+  &_wrapperOuter
+  {
+    padding: $mainBorder 0;
+    @include size(100%, 30rem);
+  }
+
+  &_wrapperInner
+  {
+    position: relative;
+    @include contentColumnWidthCenter();
+  }
+
+  &_rowSection
+  {
+    @media (min-width: $large)
+    {
+      position: relative;
+      @include flex(flex, row, wrap, flex-start, flex-start,1rem);
+    }
+  }
+
+  // ---------------------- Les sections
 
   &_contactSection
   {
-    background: $color3;
-  }
-
-  &_contactSectionInner
-  {
-    //@include contentColumnWidthCenter();
-    @include flex(flex, row, wrap, flex-start, center);
-    @include size(100%);
-    padding: 2.5rem;
     @media (min-width:$large)
     {
-      min-width: 10rem;
+      @include flexCol(2,1,1rem,false);
+    }
+  }
+
+  &_suscribeNewsletterSection
+  {
+    padding-top: 2rem;
+    @media (min-width:$large)
+    {
+      // reset
+      padding-top: 0;
+      @include flexCol(2,1,1rem,false);
     }
   }
 
   &_creditsSection
   {
-    @include size(100%, 10rem);
-    @media (min-width:$large)
-    {
-      min-width: 10rem;
-    }
+
   }
+
+  // ---------------------- les éléments de section
 
   &_items
   {
@@ -70,19 +88,16 @@
 
   &_item
   {
-    position: relative;
-    @include margin(1rem null);
-
     &:not(:last-child)
     {
       &:after
       {
         content:'';
-        @include size(10px, 1px);
         display: block;
-        background: $color1;
+        @include size(10px, 1px);
+        background: $whiteColor;
         position: relative;
-        margin:15px 0;
+        margin:10px 0;
       }
     }
 
@@ -104,7 +119,7 @@
 
   &_link
   {
-    color:$color1;
+    color: $whiteColor;
     text-decoration: none;
   }
 
@@ -112,19 +127,17 @@
   {
     position: relative;
     display: inline-block;
-    color:$color1;
+    color: $whiteColor;
     text-decoration: none;
   }
 
-  &_newsletterWrapper
-  {
-
-  }
 
   &_suscribeNewsletter
   {
 
   }
+
+
 
 
   // --------------------------------------------------------------------------- MODIFIERS

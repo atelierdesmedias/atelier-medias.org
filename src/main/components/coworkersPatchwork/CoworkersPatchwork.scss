@@ -82,7 +82,7 @@
     display: none;
     @include position(absolute, 0);
     @include size(100%);
-    background: $color7;
+    background: $blackOverlayColor;
     z-index: 1;
   }
 
@@ -96,14 +96,14 @@
 
   &_name
   {
-    color:$color1;
+    color: $whiteColor;
   }
 
   &_activity
   {
     margin-top: 4px;
     text-transform: uppercase;
-    color:$color1;
+    color: $whiteColor;
   }
 
 

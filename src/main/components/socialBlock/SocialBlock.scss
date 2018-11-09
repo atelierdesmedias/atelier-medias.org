@@ -63,7 +63,7 @@
     {
       .#{$this}_icon *
       {
-        fill: $color2;
+        fill: $blackColor;
       }
     }
   }
@@ -116,7 +116,7 @@
     & *
     {
       // couleur appliquée sur tous les élements enfants
-      fill: $color3;
+      fill: $turqoiseColor;
 
       &:hover
       {

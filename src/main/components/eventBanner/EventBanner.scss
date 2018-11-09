@@ -33,7 +33,7 @@
     text-align: right;
 
     // style
-    border: 2px solid $color1;
+    border: 2px solid $whiteColor;
     border-radius: 5px 0 0 5px;
     background-color: rgba(0,0,0,0.3);
     text-decoration: none;
@@ -48,7 +48,7 @@
 
     // style
     font-size: 1.1rem;
-    color:$color1;
+    color: $whiteColor;
     @include lato-bold();
 
   }
@@ -62,15 +62,15 @@
     padding: 5px 0;
 
     // style
-    color:$color2;
-    background: $color1;
+    color: $blackColor;
+    background: $whiteColor;
     text-align: center;
   }
 
   &_dayName
   {
     // style
-    @include title-smallUppercase($color2);
+    @include title-smallUppercase($blackColor);
     font-size: 0.7rem;
   }
 
@@ -84,7 +84,7 @@
   &_month
   {
     // style
-    @include title-smallUppercase($color2);
+    @include title-smallUppercase($blackColor);
     font-size: 0.7rem;
   }
 

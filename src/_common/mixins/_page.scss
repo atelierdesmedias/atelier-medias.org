@@ -15,13 +15,13 @@
  */
 @mixin mainColumnWidthCenter()
 {
-    @include size(100vw - ($mainBorder * 2), auto );
-    @include margin(null auto);
+    @include size(100%, auto);
 
-    // mobile
-    @media (max-width: $large)
+    // desktop
+    @media (min-width: $large)
     {
-        @include size(100%, auto);
+        @include size(100vw - ($mainBorder * 2), auto );
+        @include margin(null auto);
     }
 }
 

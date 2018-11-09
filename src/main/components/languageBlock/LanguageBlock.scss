@@ -50,7 +50,7 @@
   &_link
   {
     // style
-    @include title-smallUppercase($color9);
+    @include title-smallUppercase($grey77Color);
     @include lato-bold();
     @media (max-width: $large) {
      font-size: 1rem;
@@ -59,7 +59,7 @@
 
     &-active
     {
-      color: $color3;
+      color: $turqoiseColor;
     }
 
   }

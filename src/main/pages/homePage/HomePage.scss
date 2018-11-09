@@ -57,8 +57,8 @@
     padding: 2rem 3rem;
     z-index: 2;
     // style
-    background-color: $color7;
-    color: $color1;
+    background-color: $blackOverlayColor;
+    color: $whiteColor;
     text-align: center;
     @include lato-light();
     font-size: 1.05rem;
@@ -66,8 +66,8 @@
     //  la banner passe en dessous du header
     @media (max-width: $medium){
       @include position(relative, null);
-      background: $color1;
-      color:$color2;
+      background: $whiteColor;
+      color: $blackColor;
       padding-bottom: 0;
     }
   }
@@ -84,8 +84,8 @@
     position: relative;
     @include size(13px);
     // style
-    border-left: 3px solid $color6;
-    border-bottom: 3px solid $color6;
+    border-left: 3px solid $appleGreenColor;
+    border-bottom: 3px solid $appleGreenColor;
     transform: rotate(-45deg);
   }
 
@@ -115,7 +115,7 @@
   &_admPresentation
   {
     padding: 5rem 0 (10 + 10rem);
-    background: $color1;
+    background: $whiteColor;
   }
 
   &_adherentSection

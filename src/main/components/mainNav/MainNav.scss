@@ -20,7 +20,7 @@
   // --------------------------------------------------------------------------- BLOCK
 
   // style
-  background: $color1;
+  background: $whiteColor;
   visibility: visible;
 
   @media (max-width: $large)
@@ -95,7 +95,7 @@
         content:"";
         display: block;
         @include size(10px, 1px);
-        background: $color9;
+        background: $grey77Color;
         @include absoluteCenter();
         top:20px;
 

@@ -22,7 +22,7 @@
 
   position: relative;
   min-height: (960px / 2);
-  color: $color1;
+  color: $whiteColor;
   margin: auto;
   padding: 3.5rem 2rem;
 
@@ -126,7 +126,7 @@
   {
     display: flex;
     justify-content: center;
-    border: 1px solid $color1;
+    border: 1px solid $whiteColor;
     margin-top: 2rem;
     padding: 1rem;
   }
@@ -159,12 +159,12 @@
 
   &-adherent
   {
-    background: $color9;
+    background: $grey77Color;
   }
 
   &-fixe
   {
-    background: $color8;
+    background: $appleGreen2Color;
 
     .#{$this}_item
     {
@@ -175,7 +175,7 @@
 
   &-nomade
   {
-    background: $color3;
+    background: $turqoiseColor;
 
     .#{$this}_item
     {

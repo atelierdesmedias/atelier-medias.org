@@ -21,7 +21,7 @@
   // --------------------------------------------------------------------------- BLOCK
 
   position: relative;
-  background: $color1;
+  background: $whiteColor;
   padding: 3rem 0;
 
   // --------------------------------------------------------------------------- ELEMENTS
@@ -44,7 +44,7 @@
   &_p
   {
     text-align: center;
-    color: $color7;
+    color: $blackOverlayColor;
   }
 
   &_button
@@ -59,14 +59,14 @@
 
     // position
     margin: 1.5rem auto 0;
-    border: 1px solid $color3;
+    border: 1px solid $turqoiseColor;
     padding:2rem ;
 
     // text
     display: block;
     text-align: center;
     text-transform: uppercase;
-    color: $color3;
+    color: $turqoiseColor;
     font-size: 1.7rem;
     @include lato-regular();
 
@@ -75,8 +75,8 @@
 
     &:hover
     {
-      color: $color1;
-      background: $color3;
+      color: $whiteColor;
+      background: $turqoiseColor;
     }
 
   }

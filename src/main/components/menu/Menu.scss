@@ -74,12 +74,12 @@
     text-decoration: none;
     // position
     @include absoluteCenter();
-    color: $color9;
+    color: $grey77Color;
     @include lato-bold();
 
     &:hover
     {
-      color:$color3;
+      color: $turqoiseColor;
     }
 
   }

@@ -44,7 +44,7 @@
   // INTRANET
   &_title
   {
-    @include title-smallUppercase($color9);
+    @include title-smallUppercase($grey77Color);
     @include lato-bold();
 
     @media (max-width: $large) {
@@ -74,9 +74,9 @@
     margin: 0;
     @include size(190px, $inputHeight);
     // style
-    color:$color1;
+    color: $whiteColor;
     padding: 0 10px;
-    border:1px solid $color4;
+    border:1px solid $grey226Color;
     line-height: 22px;
 
     @media (max-width: $large) {
@@ -90,11 +90,11 @@
     &::-webkit-input-placeholder
     {
       text-align: center;
-      @include title-smallUppercase($color5);
+      @include title-smallUppercase($grey144Color);
       font-size: 0.75rem;
 
       @media (max-width: $large) {
-          @include title-smallUppercase($color4);
+          @include title-smallUppercase($grey226Color);
       }
 
 
@@ -127,7 +127,7 @@
     border:0;
     outline: none;
     @include size(30px, $inputHeight);
-    @include title-smallUppercase($color5);
+    @include title-smallUppercase($grey144Color);
     @include lato-regular();
     font-size: 0.7rem;
     background: none;
@@ -140,7 +140,7 @@
 
     &:hover
     {
-      color:$color3;
+      color: $turqoiseColor;
     }
 
   }

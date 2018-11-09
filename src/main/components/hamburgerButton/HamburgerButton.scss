@@ -38,7 +38,7 @@
     display: block;
     position: absolute;
     @include size(100%, 2px);
-    background: $color2;
+    background: $blackColor;
     border-radius: 1em;
 
     &-top

@@ -20,7 +20,7 @@
 
   // --------------------------------------------------------------------------- BLOCK
 
-  background: $color1;
+  background: $whiteColor;
   padding: 3rem 0;
 
 
@@ -44,7 +44,7 @@
         display: inline-block;
         margin-right: 1rem;
         @include size(1px, 10px);
-        background: $color7;
+        background: $blackOverlayColor;
       }
     }
 
@@ -61,11 +61,11 @@
   {
     text-decoration: none;
     text-transform: uppercase;
-    color:$color2;
+    color: $blackColor;
 
     &:hover
     {
-      color:$color3;
+      color: $turqoiseColor;
     }
 
   }
