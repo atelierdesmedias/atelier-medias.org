@@ -1,5 +1,5 @@
 
-# atelierdesmedias.org
+# atelier-medias.org
 
 Wordpress website v.2 [atelier-medias.org](http://www.atelier-medias.org/).
 This code is under GPLv3.
@@ -10,7 +10,7 @@ Check github board
 
 ## Docs
 
-Check [website documentation](https://docs.google.com/spreadsheet/ccc?key=0AnxUXXNvhG7ddEJqTkxPS284a3IxRTctVVp3amhrX0E&usp=drive_web#gid=7)
+Check [docs](docs/) folder 
 
 ## Design
 
@@ -67,4 +67,3 @@ $ ./push-master-to-staging.sh
 
 Very inspired Framework of [fuse-base](https://github.com/solid-js/fuse-base) by [zouloux](https://github.com/zouloux).  
 Project dev by ADM developer team.
-
