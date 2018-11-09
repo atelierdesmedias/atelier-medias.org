@@ -21,7 +21,7 @@
 
   @include size( ($relativeColumnWidth * 1) , auto );
 
-  @media screen and (max-width: $large) {
+  @media (max-width: $large) {
     @include size( auto , auto );
   }
 
@@ -52,7 +52,7 @@
     // style
     @include title-smallUppercase($color9);
     @include lato-bold();
-    @media screen and (max-width: $large) {
+    @media (max-width: $large) {
      font-size: 1rem;
     }
 

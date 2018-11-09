@@ -7,6 +7,7 @@
 
 import './MainFooter.scss'
 import {DOMView} from "../../../_common/core/DOMView";
+import {SuscribeNewsletter} from "../suscribeNewsletter/SuscribeNewsletter";
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
@@ -15,21 +16,12 @@ export class MainFooter extends DOMView
 
     // ------------------------------------------------------------------------- TYPE
 
+    protected _suscribeNewsletter :SuscribeNewsletter;
+
     // ------------------------------------------------------------------------- INIT
-
-
-    /**
-     * Target our root if not already defined via constructor params
-     * (method overwriting DOMView and move to constructor via init)
-     */
-    protected targetRoot ()
-    {
-
-    }
 
     /**
      * prepare nodes
-     * (method overwriting jView and move to constructor via init)
      */
     protected prepareNodes()
     {
@@ -38,16 +30,22 @@ export class MainFooter extends DOMView
 
     /**
      * prepare dependencies
-     * (method overwriting jView and move to constructor via init)
      */
     protected prepareDependencies()
+    {
+        this._suscribeNewsletter = new SuscribeNewsletter( this.$root.find('.MainRooter_suscribeNewsletter') )
+    }
+
+    /**
+     *  init components
+     */
+    protected initComponents()
     {
 
     }
 
     /**
      * prepare events
-     * (method overwriting jView and move to constructor via init)
      */
     protected prepareEvents()
     {
@@ -56,7 +54,6 @@ export class MainFooter extends DOMView
 
     /**
      * after Init
-     * (method overwriting jView and move to constructor via init)
      */
     protected afterInit()
     {

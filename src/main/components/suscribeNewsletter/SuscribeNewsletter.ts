@@ -1,22 +1,17 @@
 /**
- * this is "socialBlock" TS export class
+ * this is "SuscribeNewsletter.twig" TS export class
  * follow workflow instructions
  */
 
-// ------------------------------------------------------------------------- IMPORTS
-
-import './SocialBlock.scss'
 import {DOMView} from "../../../_common/core/DOMView";
+import './SuscribeNewsletter.scss'
 
-// ------------------------------------------------------------------------- START EXPORT CLASS
+// ----------------------------------------------------------------------------- START EXPORT CLASS
 
-export class SocialBlock extends DOMView
+export class SuscribeNewsletter extends DOMView
 {
 
-    // ------------------------------------------------------------------------- TYPE
-
     // ------------------------------------------------------------------------- INIT
-
 
     /**
      * Target our root if not already defined via constructor params
@@ -29,7 +24,7 @@ export class SocialBlock extends DOMView
 
     /**
      * prepare nodes
-     *
+
      */
     protected prepareNodes()
     {
@@ -38,7 +33,7 @@ export class SocialBlock extends DOMView
 
     /**
      * prepare dependencies
-     *
+
      */
     protected prepareDependencies()
     {
@@ -47,7 +42,7 @@ export class SocialBlock extends DOMView
 
     /**
      * prepare events
-     *
+
      */
     protected prepareEvents()
     {
@@ -56,7 +51,7 @@ export class SocialBlock extends DOMView
 
     /**
      * after Init
-     *
+
      */
     protected afterInit()
     {
@@ -65,7 +60,5 @@ export class SocialBlock extends DOMView
 
     // ------------------------------------------------------------------------- HANDLERS
 
-
-    // ------------------------------------------------------------------------- END EXPORT CLASS
 }
 

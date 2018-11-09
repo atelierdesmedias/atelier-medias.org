@@ -14,6 +14,7 @@
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
+  // IMPORTANT : composant mobile fist 
 
     // Call block element anywhere. Use it like this : .#{$this}_element
     $this : MainFooter;
@@ -23,6 +24,7 @@
   @include position(relative, null 0 0 0);
   @include size(100%, 100%);
 
+
   // --------------------------------------------------------------------------- ELEMENTS
 
   &_wrapper
@@ -30,79 +32,74 @@
     // pour pousser le footer du contenu du dessus
     padding-top:3rem;
 
-
     @include size(100%, 30rem);
     background: $color1;
   }
 
   &_contactSection
   {
-    @include flex(flex, row, wrap, center, center);
     background: $color3;
-    @include size(100%, 10rem);
+  }
+
+  &_contactSectionInner
+  {
+    //@include contentColumnWidthCenter();
+    @include flex(flex, row, wrap, flex-start, center);
+    @include size(100%);
+    padding: 2.5rem;
+    @media (min-width:$large)
+    {
+      min-width: 10rem;
+    }
   }
 
   &_creditsSection
   {
-    @include flex(flex, row, wrap, center, center);
-    //background: $color1;
     @include size(100%, 10rem);
+    @media (min-width:$large)
+    {
+      min-width: 10rem;
+    }
   }
 
   &_items
   {
     list-style: none;
-    @include flex(flex, row, wrap, flex-start, flex-start);
+    display: block;
   }
 
   &_item
   {
     position: relative;
-    @include flex(flex, row, wrap, flex-start, flex-start);
+    @include margin(1rem null);
+
     &:not(:last-child)
     {
       &:after
       {
         content:'';
-        @include size(1px, 10px);
+        @include size(10px, 1px);
+        display: block;
         background: $color1;
         position: relative;
-        margin:0 15px;
-        top:8px;
+        margin:15px 0;
       }
     }
 
-    // ciblier les enfants de -contact
-    // placer un tiret à droite de ces items exepté le dernier
-    &-contact .#{$this}_subItem:not(:last-child)
-    {
-      &:after
-      {
-        content:'';
-        @include size(6px, 1px);
-        background: $color1;
-        position: relative;
-        display: inline-block;
-        margin:0 10px 0 10px;
-        top:1px;
-      }
-    }
     &-credits .#{$this}_subItem:not(:last-child)
     {
       margin-right: 10px;
     }
-
   }
 
   &_subItems
   {
     list-style: none;
-    @include flex(flex, row, wrap, flex-start, flex-start);
   }
 
   &_subItem
   {
-    @include flex(flex, row, wrap, center, center);
+
   }
 
   &_link
@@ -119,13 +116,15 @@
     text-decoration: none;
   }
 
-
   &_newsletterWrapper
   {
 
   }
 
+  &_suscribeNewsletter
+  {
 
+  }
 
 
   // --------------------------------------------------------------------------- MODIFIERS

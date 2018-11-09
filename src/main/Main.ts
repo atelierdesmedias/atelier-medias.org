@@ -32,7 +32,7 @@ export class main extends DOMView
 
     /**
      * after Init
-     * (method overwriting DOMView and move to constructor via init)
+
      */
     protected afterInit()
     {

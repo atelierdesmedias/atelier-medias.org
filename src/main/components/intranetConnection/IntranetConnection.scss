@@ -47,7 +47,7 @@
     @include title-smallUppercase($color9);
     @include lato-bold();
 
-    @media screen and (max-width: $large) {
+    @media (max-width: $large) {
       text-align: center;
       //font-size: 1.5rem;
     }
@@ -60,7 +60,7 @@
     justify-content: flex-start;
     margin-left: 1rem;
 
-    @media screen and (max-width: $large) {
+    @media (max-width: $large) {
       display: block;
       text-align: center;
       margin-left: 0; // reset
@@ -79,7 +79,7 @@
     border:1px solid $color4;
     line-height: 22px;
 
-    @media screen and (max-width: $large) {
+    @media (max-width: $large) {
       display: block;
       margin: auto;
       @include size(100%, $inputHeight * 2);
@@ -93,7 +93,7 @@
       @include title-smallUppercase($color5);
       font-size: 0.75rem;
 
-      @media screen and (max-width: $large) {
+      @media (max-width: $large) {
           @include title-smallUppercase($color4);
       }
 
@@ -107,7 +107,7 @@
       // le border right de l'input précédent
       margin-left: -1px;
 
-      @media screen and (max-width: $large) {
+      @media (max-width: $large) {
         margin: 1rem auto 0;
       }
 

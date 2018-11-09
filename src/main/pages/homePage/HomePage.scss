@@ -40,7 +40,7 @@
     // la hauteur est setée en js
 
     // mobile
-    @media screen and (max-width: $large)
+    @media (max-width: $large)
     {
       @include margin(0 auto);
     }
@@ -64,7 +64,7 @@
     font-size: 1.05rem;
 
     //  la banner passe en dessous du header
-    @media screen and (max-width: $medium){
+    @media (max-width: $medium){
       @include position(relative, null);
       background: $color1;
       color:$color2;

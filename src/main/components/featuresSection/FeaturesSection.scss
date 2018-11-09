@@ -25,7 +25,7 @@
 
   &_wrapper
   {
-    @include pageGrid();
+    @include contentColumnWidthCenter();
   }
 
   &_content
@@ -38,11 +38,11 @@
     margin-top: 3rem;
     @include flexCol (4, 1, 1rem, false);
 
-    @media screen and (max-width: $medium) {
+    @media (max-width: $medium) {
       @include flexCol (2, 1, 1rem, false);
     }
 
-    @media screen and (max-width: $small) {
+    @media (max-width: $small) {
       @include flexCol (1, 1, 1rem, false);
     }
   }

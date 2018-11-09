@@ -15,16 +15,14 @@ export class %%name%% extends DOMView
 
     /**
      * Target our root if not already defined via constructor params
-     * (method overwriting DOMView and move to constructor via init)
      */
-    protected targetRoot ()
+    protected targetRoot()
     {
 
     }
 
     /**
      * prepare nodes
-     * (method overwriting DOMView and move to constructor via init)
      */
     protected prepareNodes()
     {
@@ -33,7 +31,6 @@ export class %%name%% extends DOMView
 
     /**
      * prepare dependencies
-     * (method overwriting DOMView and move to constructor via init)
      */
     protected prepareDependencies()
     {
@@ -41,8 +38,15 @@ export class %%name%% extends DOMView
     }
 
     /**
+     *  init components
+     */
+    protected initComponents()
+    {
+
+    }
+
+    /**
      * prepare events
-     * (method overwriting DOMView and move to constructor via init)
      */
     protected prepareEvents()
     {
@@ -51,7 +55,6 @@ export class %%name%% extends DOMView
 
     /**
      * after Init
-     * (method overwriting DOMView and move to constructor via init)
      */
     protected afterInit()
     {

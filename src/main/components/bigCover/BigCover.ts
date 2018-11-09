@@ -10,6 +10,7 @@ import './BigCover.scss'
 //import {eventBanner} from "../eventBanner/eventBanner";
 import { TweenLite } from "gsap";
 import {breakPoint} from "src/_common/helpers/breakPoint";
+import {EventBanner} from "../eventBanner/EventBanner";
 
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
@@ -19,15 +20,13 @@ export class BigCover extends DOMView
 
     // ------------------------------------------------------------------------- TYPE
 
-    // private _eventBanner: eventBanner;
+    private _eventBanner: EventBanner;
     private $video: ZeptoCollection;
-
 
     // ------------------------------------------------------------------------- INIT
 
     /**
      * prepare nodes
-     * (method overwriting jView and move to constructor via init)
      */
     protected prepareNodes()
     {
@@ -37,12 +36,11 @@ export class BigCover extends DOMView
 
     /**
      * prepare dependencies
-     * (method overwriting jView and move to constructor via init)
      */
     protected prepareDependencies()
     {
         // importer event Banner
-        // this._eventBanner = new eventBanner( $('.eventBanner') );
+        this._eventBanner = new EventBanner( this.$root.find('.EventBanner') );
     }
 
     protected initComponents()
@@ -52,7 +50,6 @@ export class BigCover extends DOMView
     }
     /**
      * prepare events
-     * (method overwriting jView and move to constructor via init)
      */
     protected prepareEvents()
     {
@@ -61,7 +58,6 @@ export class BigCover extends DOMView
 
     /**
      * after Init
-     * (method overwriting jView and move to constructor via init)
      */
     protected afterInit()
     {
@@ -70,21 +66,22 @@ export class BigCover extends DOMView
 
     // ------------------------------------------------------------------------- HANDLERS
 
+    /**
+     * Appliquer une taille au container video
+     */
     protected applyVideoPositionHandler () :void
     {
         // utiliser le meme ratio qu'en css pour calculer les grille
         let columnGrid = ($(window).width() / 12);
 
         // appliquer la taille du container a la video
-        TweenLite.set( this.$root,
-            {
+        TweenLite.set( this.$root, {
             // hauteur de la video
             height:
                 breakPoint('large')
                     ? $(window).height() - ((columnGrid * 0.65) * 2)
                     : $(window).height()
         })
-
 
     }
 

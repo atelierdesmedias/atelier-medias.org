@@ -23,7 +23,7 @@
 
   // --------------------------------------------------------------------------- BLOCK
 
-  @include pageGrid();
+  @include contentColumnWidthCenter();
 
   // --------------------------------------------------------------------------- ELEMENTS
 
@@ -37,7 +37,7 @@
     @include flex (flex, row, wrap, center, flex-start, $gutterBlock);
     margin-top: $gutterBlock;
 
-    @media screen and (max-width: $medium) {
+    @media (max-width: $medium) {
       display: block;
     }
   }

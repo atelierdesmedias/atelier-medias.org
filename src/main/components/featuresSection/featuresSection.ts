@@ -22,7 +22,7 @@ export class FeaturesSection extends DOMView
 
     /**
      * prepare nodes
-     * (method overwriting jView and move to constructor via init)
+     *
      */
     protected prepareNodes()
     {
@@ -31,7 +31,7 @@ export class FeaturesSection extends DOMView
 
     /**
      * prepare dependencies
-     * (method overwriting jView and move to constructor via init)
+     *
      */
     protected prepareDependencies()
     {
@@ -41,7 +41,7 @@ export class FeaturesSection extends DOMView
 
     /**
      * prepare events
-     * (method overwriting jView and move to constructor via init)
+     *
      */
     protected prepareEvents()
     {
@@ -50,7 +50,7 @@ export class FeaturesSection extends DOMView
 
     /**
      * after Init
-     * (method overwriting jView and move to constructor via init)
+     *
      */
     protected afterInit()
     {

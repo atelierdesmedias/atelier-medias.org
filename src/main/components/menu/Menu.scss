@@ -24,7 +24,7 @@
 
   // style
   @include title-smallUppercase();
-  @media screen and (max-width: $large)
+  @media (max-width: $large)
   {
     font-size: 1.5rem;
   }
@@ -43,7 +43,7 @@
     // ...
     list-style: none;
 
-    @media screen and (max-width: $large) {
+    @media (max-width: $large) {
       display: block;
       @include size(100%, auto);
     }
@@ -61,7 +61,7 @@
     // style
     border-right: 1px solid $colorNavBarLine;
 
-    @media screen and (max-width: $large) {
+    @media (max-width: $large) {
       border-right: 0;
       padding: 1.5rem 3.2rem;
     }

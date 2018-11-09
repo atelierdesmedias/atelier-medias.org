@@ -26,11 +26,11 @@
   margin: auto;
   padding: 3.5rem 2rem;
 
-  @media screen and (max-width: $medium) {
+  @media (max-width: $medium) {
     @include size( ($relativeColumnWidth * 10));
       margin-top: 1rem;
   }
-  @media screen and (max-width: $small) {
+  @media (max-width: $small) {
     @include size( 100% );
     padding:2rem 2rem 3rem;
   }
@@ -43,7 +43,7 @@
     width:75%;
     margin: auto;
     
-    @media screen and (max-width: $medium) {
+    @media (max-width: $medium) {
 
       position: relative;
       top:auto;
@@ -53,7 +53,7 @@
       margin-top: 1rem;
     }
 
-    @media screen and (max-width: $small) {
+    @media (max-width: $small) {
       width: 100%;
     }
     
@@ -75,7 +75,7 @@
     padding: 0;
     margin: 0;
 
-    @media screen and (max-width: $small) {
+    @media (max-width: $small) {
       display: block;
     }
 
@@ -94,7 +94,7 @@
     margin-top: -10px;
     margin-left: 10px;
 
-    @media screen and (max-width: $small) {
+    @media (max-width: $small) {
      margin-top: 0;
     }
   }

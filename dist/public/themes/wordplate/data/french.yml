@@ -153,3 +153,6 @@ components:
       - "Pour vous présenter les lieux de l'association et pour apprendre à vous connaître,"
       - "nous vous invitons à déjeuner avec nous un mardi midi !"
     labelButton: "ça m'interesse !"
+
+  SuscribeNewsletter:
+    placeholder: "S'inscrire à la newsletter"

@@ -20,7 +20,7 @@ export class InterestSection extends DOMView
 
     /**
      * Target our root if not already defined via constructor params
-     * (method overwriting DOMView and move to constructor via init)
+
      */
     protected targetRoot ()
     {
@@ -29,7 +29,7 @@ export class InterestSection extends DOMView
 
     /**
      * prepare nodes
-     * (method overwriting jView and move to constructor via init)
+     *
      */
     protected prepareNodes()
     {
@@ -38,7 +38,7 @@ export class InterestSection extends DOMView
 
     /**
      * prepare dependencies
-     * (method overwriting jView and move to constructor via init)
+     *
      */
     protected prepareDependencies()
     {
@@ -47,7 +47,7 @@ export class InterestSection extends DOMView
 
     /**
      * prepare events
-     * (method overwriting jView and move to constructor via init)
+     *
      */
     protected prepareEvents()
     {
@@ -56,7 +56,7 @@ export class InterestSection extends DOMView
 
     /**
      * after Init
-     * (method overwriting jView and move to constructor via init)
+     *
      */
     protected afterInit()
     {

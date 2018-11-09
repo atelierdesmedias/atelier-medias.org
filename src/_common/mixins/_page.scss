@@ -5,11 +5,13 @@
 */
 
 @import "../atoms/properties";
+@import "~bourbon/core/bourbon";
 
 // ----------------------------------------------------------------------------- MIXIN
 
 /**
- *
+ * container principal
+ * permetant les marges blanches de chaque côté des pages
  */
 @mixin mainColumnWidthCenter()
 {
@@ -17,7 +19,7 @@
     @include margin(null auto);
 
     // mobile
-    @media screen and (max-width: $large)
+    @media (max-width: $large)
     {
         @include size(100%, auto);
     }
@@ -25,19 +27,19 @@
 
 
 /**
- *
+ * la column de text et contenu qui ne dépassera jamais 960px
  */
-@mixin pageGrid ()
+@mixin contentColumnWidthCenter()
 {
     // laptop
-    @include size( ($columnWidth * 8), auto );
+    width: ($columnWidth * 8);
     max-width: 960px;
     margin: auto;
 
     // mobile
-    @media screen and (max-width: $large)
+    @media (max-width: $large)
     {
-      @include size( ($columnWidth * 10), auto );
+        width: ($columnWidth * 10);
     }
 
 }

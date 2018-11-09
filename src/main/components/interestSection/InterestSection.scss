@@ -28,7 +28,7 @@
 
   &_wrapper
   {
-    @include pageGrid();
+    @include contentColumnWidthCenter();
   }
 
   &_content

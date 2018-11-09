@@ -27,7 +27,7 @@ export class MainNav extends DOMView
 
     /**
      * prepare nodes
-     * (method overwriting jView and move to constructor via init)
+     *
      */
     protected prepareNodes()
     {
@@ -36,7 +36,7 @@ export class MainNav extends DOMView
 
     /**
      * prepare dependencies
-     * (method overwriting jView and move to constructor via init)
+     *
      */
     protected prepareDependencies()
     {
@@ -57,7 +57,7 @@ export class MainNav extends DOMView
 
     /**
      * prepare events
-     * (method overwriting jView and move to constructor via init)
+     *
      */
     protected prepareEvents()
     {
@@ -66,7 +66,7 @@ export class MainNav extends DOMView
 
     /**
      * after Init
-     * (method overwriting jView and move to constructor via init)
+     *
      */
     protected afterInit()
     {

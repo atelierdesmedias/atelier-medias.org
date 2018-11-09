@@ -23,7 +23,7 @@
   background: $color1;
   visibility: visible;
 
-  @media screen and (max-width: $large)
+  @media (max-width: $large)
   {
     //background: rgba(0,0,0,1);
     // cacher le menu par defaut en mobile
@@ -41,7 +41,7 @@
     align-items: center;
     justify-content: flex-end;
 
-    @media screen and (max-width: $large)
+    @media (max-width: $large)
     {
       display: block;
       @include size(100%, auto);

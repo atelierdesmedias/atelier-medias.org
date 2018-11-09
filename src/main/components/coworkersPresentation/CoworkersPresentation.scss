@@ -26,7 +26,7 @@
 
   &_wrapper
   {
-    @include pageGrid();
+    @include contentColumnWidthCenter();
   }
 
   &_content
@@ -35,7 +35,7 @@
     display: flex;
     align-items: center;
 
-    @media screen and (max-width: $large) {
+    @media (max-width: $large) {
       display: block;
     }
 
@@ -46,7 +46,7 @@
     @include size( ( $relativeColumnWidth * 4 ), auto );
     @include title();
 
-    @media screen and (max-width: $large) {
+    @media (max-width: $large) {
       @include size( 100%, auto );
     }
 
@@ -57,7 +57,7 @@
     @include size( ( $relativeColumnWidth * 8 ), auto );
     display: block;
 
-    @media screen and (max-width: $large) {
+    @media (max-width: $large) {
       @include size( 100%, auto );
     }
 
