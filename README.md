@@ -4,13 +4,13 @@
 Wordpress website v.2 [atelier-medias.org](http://www.atelier-medias.org/).
 This code is under GPLv3.
 
-## TODO
+## Todo
 
-See [Trello board](https://trello.com/b/0rU5rbGR/site-adm)
+Check github board
 
 ## Docs
 
-See [website documentation](https://docs.google.com/spreadsheet/ccc?key=0AnxUXXNvhG7ddEJqTkxPS284a3IxRTctVVp3amhrX0E&usp=drive_web#gid=7)
+Check [website documentation](https://docs.google.com/spreadsheet/ccc?key=0AnxUXXNvhG7ddEJqTkxPS284a3IxRTctVVp3amhrX0E&usp=drive_web#gid=7)
 
 ## Design
 
@@ -65,7 +65,7 @@ $ ./push-master-to-staging.sh
                 
 ## Credits
 
-Very inspired Framework of [fuse-base](https://github.com/willybrauner/fuse-base) by [zouloux](https://github.com/zouloux).  
-Project dev by ADM developer team.  
+Very inspired Framework of [fuse-base](https://github.com/solid-js/fuse-base) by [zouloux](https://github.com/zouloux).  
+Project dev by ADM developer team.
  
  
