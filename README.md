@@ -14,7 +14,7 @@ Check [website documentation](https://docs.google.com/spreadsheet/ccc?key=0AnxUX
 
 ## Design
 
-See [design online](https://projects.invisionapp.com/share/FMGJ96E57TB#/screens/287421915_Desktop_HD_-_Home)
+Check [design online](https://projects.invisionapp.com/share/FMGJ96E57TB#/screens/287421915_Desktop_HD_-_Home)
     
 ## Plugins dependances 
 
@@ -51,7 +51,7 @@ $ ./push-master-to-staging.sh
 
 - url: []()
 - server name: 
-- deployed folder (from root server): `staging` 
+- deployed folder (from root server):
 - database: 
 - branch: `staging`
 
@@ -59,7 +59,7 @@ $ ./push-master-to-staging.sh
 
 - url: []()
 - server name: 
-- deployed folder (from root server): ``
+- deployed folder (from root server): 
 - database: 
 - branch: `production`
                 
@@ -67,5 +67,4 @@ $ ./push-master-to-staging.sh
 
 Very inspired Framework of [fuse-base](https://github.com/solid-js/fuse-base) by [zouloux](https://github.com/zouloux).  
 Project dev by ADM developer team.
- 
- 
+
