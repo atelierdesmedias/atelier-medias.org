@@ -33,6 +33,7 @@
   @media (max-width: $small) {
     @include size( 100% );
     padding:2rem 2rem 3rem;
+    margin-top: 0rem;
   }
 
   // --------------------------------------------------------------------------- ELEMENTS
@@ -52,6 +53,7 @@
     }
     @media (max-width: $small) {
       width: 100%;
+      margin-top:0;
     }
   }
 
@@ -94,7 +96,7 @@
   &_items
   {
     margin-top: 2rem;
-    //list-style: circle;
+    padding-left: 20px;
   }
 
   &_item

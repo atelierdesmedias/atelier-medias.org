@@ -38,9 +38,10 @@
 
   &_description
   {
-    
+    //max-width: 420px;
+    margin:auto;
   }
-  
+
   &_p
   {
     text-align: center;
@@ -65,13 +66,13 @@
     // text
     display: block;
     text-align: center;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     color: $turqoiseColor;
     font-size: 1.7rem;
     @include lato-regular();
 
     // transition
-    transition: 200ms all ease-in-out;
+    transition: 10ms all ease-in-out;
 
     &:hover
     {

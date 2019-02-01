@@ -36,7 +36,6 @@
     @media (max-width: $large) {
       display: block;
     }
-
   }
 
   &_title
@@ -54,7 +53,7 @@
   {
     @include size( ( $relativeColumnWidth * 8 ), auto );
     display: block;
-
+    margin-top: 2rem;
     @media (max-width: $large) {
       @include size( 100%, auto );
     }

@@ -24,6 +24,9 @@
   // --------------------------------------------------------------------------- BLOCK
 
   @include contentColumnWidthCenter();
+  @media(max-width: $medium) {
+    width:100%;
+  }
 
   // --------------------------------------------------------------------------- ELEMENTS
 
@@ -39,6 +42,10 @@
 
     @media (max-width: $medium) {
       display: block;
+    }
+
+    @media (max-width: $small) {
+      margin-top:0;
     }
   }
 
