@@ -66,5 +66,5 @@ exports.bundlesListFile = 'bundles.ts';
 exports.appBundleFoldersToScaffold = ['molecules', 'pages', 'components', 'models'];
 
 // Techno to scaffold
-exports.appBundleTechnoToScaffold =  ['React', 'DOM'];
+exports.appBundleTechnoToScaffold =  ['DOM'];
 
