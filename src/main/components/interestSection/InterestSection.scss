@@ -14,9 +14,8 @@
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
-
-    // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : InterestSection;
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this : InterestSection;
 
   // --------------------------------------------------------------------------- BLOCK
 
@@ -38,7 +37,6 @@
 
   &_description
   {
-    //max-width: 420px;
     margin:auto;
   }
 
@@ -50,7 +48,6 @@
 
   &_button
   {
-
     //reset
     background: none;
     font: inherit;
@@ -74,6 +71,10 @@
     // transition
     transition: 10ms all ease-in-out;
 
+    &:first-letter
+    {
+      text-transform: capitalize;
+    }
     &:hover
     {
       color: $whiteColor;

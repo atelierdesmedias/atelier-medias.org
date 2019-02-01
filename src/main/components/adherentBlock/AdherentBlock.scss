@@ -14,9 +14,8 @@
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
-
-    // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : AdherentBlock;
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this : AdherentBlock;
 
   // --------------------------------------------------------------------------- BLOCK
 
@@ -27,13 +26,13 @@
   padding: 3.5rem 2rem;
 
   @media (max-width: $medium) {
-    @include size( ($relativeColumnWidth * 10));
+    @include size(($relativeColumnWidth * 10));
       margin-top: 1rem;
   }
   @media (max-width: $small) {
-    @include size( 100% );
+    @include size(100%);
     padding:2rem 2rem 3rem;
-    margin-top: 0rem;
+    margin-top: 0;
   }
 
   // --------------------------------------------------------------------------- ELEMENTS
@@ -166,8 +165,6 @@
     }
 
   }
-
-
 
   // --------------------------------------------------------------------------- CHILDREN
 
