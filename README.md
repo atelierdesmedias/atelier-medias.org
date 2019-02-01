@@ -5,32 +5,25 @@ Wordpress website v.2 [atelier-medias.org](http://www.atelier-medias.org/).
 This code is under GPLv3.
 
 ## Todo
-
-Check github board
+Check [https://github.com/atelierdesmedias/atelier-medias.org/projects/1](github board).
 
 ## Docs
-
 Check [docs](docs/) folder 
 
 ## Design
-
 Check [design online](https://projects.invisionapp.com/share/FMGJ96E57TB#/screens/287421915_Desktop_HD_-_Home)
     
 ## Plugins dependances 
-
 - timber 
 
 ## Admin test base `adm-wp.sql`
-
 - user: ADM
 - pass: root
 
 ## Deploy 
-
 We only work on `master` branch.
 
 ### Deploy `staging`
-
 Use deployer script to push master on staging: 
 
 ```shell
@@ -38,15 +31,12 @@ $ ./push-master-to-staging.sh
 ```
 
 ### Deploy `production` 
-
 Use deployer script to push master on production: 
-
 ```shell
 $ ./push-master-to-staging.sh
 ```
    
 ## Server
-
 ### Staging server
 
 - url: []()
