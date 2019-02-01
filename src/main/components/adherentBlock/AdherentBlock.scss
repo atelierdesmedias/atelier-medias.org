@@ -42,9 +42,7 @@
     @include absoluteCenter();
     width:75%;
     margin: auto;
-    
     @media (max-width: $medium) {
-
       position: relative;
       top:auto;
       left:auto;
@@ -52,16 +50,9 @@
       transform: none;
       margin-top: 1rem;
     }
-
     @media (max-width: $small) {
       width: 100%;
     }
-    
-  }
-
-  &_header
-  {
-
   }
 
   &_title
@@ -71,20 +62,16 @@
     font-size: 1.5rem;
     font-weight: normal;
     justify-content: center;
-    //line-height: 3em;
     padding: 0;
     margin: 0;
-
     @media (max-width: $small) {
       display: block;
     }
-
   }
 
   &_verb
   {
     @include lato-light();
-    //text-transform: uppercase;
   }
 
   &_calificatif
@@ -93,28 +80,21 @@
     font-size: 2.5rem;
     margin-top: -10px;
     margin-left: 10px;
-
     @media (max-width: $small) {
      margin-top: 0;
     }
-  }
-
-  &_content
-  {
-
   }
 
   &_description
   {
     @include lato-bold();
     margin-top: 2rem;
-
   }
 
   &_items
   {
     margin-top: 2rem;
-    list-style: circle;
+    //list-style: circle;
   }
 
   &_item
@@ -154,9 +134,8 @@
   // --------------------------------------------------------------------------- MODIFIERS
 
   /**
-  le background change en fonction du modifier block
+   * le background change en fonction du modifier block
    */
-
   &-adherent
   {
     background: $grey77Color;
@@ -166,9 +145,10 @@
   {
     background: $appleGreen2Color;
 
-    .#{$this}_item
+    .#{$this}_item,
+    .#{$this}_note
     {
-      //color: $color2;
+      color: $grey40Color;
     }
 
   }
@@ -177,9 +157,10 @@
   {
     background: $turqoiseColor;
 
-    .#{$this}_item
+    .#{$this}_item,
+    .#{$this}_note
     {
-      //color: $color2;
+      color: $grey40Color;
     }
 
   }
