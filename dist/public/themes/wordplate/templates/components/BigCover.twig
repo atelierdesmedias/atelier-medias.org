@@ -5,7 +5,6 @@
 
 <div class="BigCover {{ classElement }}">
 
-
     {# logo ADM #}
     <div class="BigCover_logo">
         {% include "./images/logo-adm-blanc.svg" %}
@@ -14,17 +13,24 @@
     {# video #}
     <video class="BigCover_video"
            src="{{ theme.path }}/videos/clip.mp4"
-           autoplay muted loop type="video/mp4" />
+           autoplay="true"
+           muted="true"
+           loop="true"
+           playsinline="true"
+           type="video/mp4"
+    >
+    </video>
 
-    {# // TODO : link image url "home-header.jpg" avec WP back post thumbnail (image à la une) ?>#}
-    <div class="BigCover_backgroundImage"
-         style="background-image: url('{{ theme.path }}/images/home-header.jpg')">
+    {# importer le composant eventBanner #}
+    {%
+        include "templates/components/EventBanner.twig"
+        with { 'classElement': 'BigCover_eventBanner' }
+    %}
 
-        {# importer le composant eventBanner #}
-        {%
-            include "templates/components/EventBanner.twig"
-            with { 'classElement': 'BigCover_eventBanner' }
-        %}
-    </div>
+    {# importer le composant arrow Down #}
+    {%
+        include "templates/molecules/ArrowDown.twig"
+        with { 'classElement': 'BigCover_arrowDown' }
+    %}
 
 </div>

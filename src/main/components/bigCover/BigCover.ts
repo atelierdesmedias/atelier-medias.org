@@ -7,10 +7,10 @@
 
 import {DOMView} from "../../../_common/core/DOMView";
 import './BigCover.scss'
-//import {eventBanner} from "../eventBanner/eventBanner";
 import { TweenLite } from "gsap";
 import {breakPoint} from "src/_common/helpers/breakPoint";
 import {EventBanner} from "../eventBanner/EventBanner";
+import {ArrowDown} from "../../molecules/arrowDown/ArrowDown";
 
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
@@ -21,6 +21,7 @@ export class BigCover extends DOMView
     // ------------------------------------------------------------------------- TYPE
 
     private _eventBanner: EventBanner;
+    private _arrowDown: ArrowDown;
     private $video: ZeptoCollection;
 
     // ------------------------------------------------------------------------- INIT
@@ -41,6 +42,9 @@ export class BigCover extends DOMView
     {
         // importer event Banner
         this._eventBanner = new EventBanner( this.$root.find('.EventBanner') );
+
+        // Importer la molécule Arrow Down
+        this._arrowDown = new ArrowDown( this.$root.find('.ArrowDown') );
     }
 
     protected initComponents()

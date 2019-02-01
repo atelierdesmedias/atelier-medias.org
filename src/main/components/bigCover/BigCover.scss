@@ -34,19 +34,6 @@
     // du window height sur le container video
   }
 
-  // la div sur laquelle est appliquée l'image
-  // TODO : image pour mobile
-  &_backgroundImage
-  {
-    // position
-    position: relative;
-    @include size(100%, 100vh);
-    // style
-    background-size: cover;
-    background-position: center;
-    // background-image : directement dans la DOM
-  }
-
   // gros LOGO ADM centré sur l'image ou la video
   &_logo
   {
@@ -67,6 +54,12 @@
   {
     display: none;
     @include position(absolute, ($mainBorder) 0 null null);
+  }
+
+  &_arrowDown
+  {
+    @include absoluteCenter(x);
+    bottom: 2em;
   }
 
   // --------------------------------------------------------------------------- MODIFIERS

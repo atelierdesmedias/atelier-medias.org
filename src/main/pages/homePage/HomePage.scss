@@ -44,18 +44,6 @@
     }
   }
 
-  &_arrowDown
-  {
-    // position
-    margin: 1rem auto 0;
-    position: relative;
-    @include size(13px);
-    // style
-    border-left: 3px solid $appleGreenColor;
-    border-bottom: 3px solid $appleGreenColor;
-    transform: rotate(-45deg);
-  }
-
   &_content
   {
     // contient toutes les sections de la HomePage
@@ -72,6 +60,10 @@
   &_coworkersPresentation
   {
     padding: 5rem 0;
+    @media(max-width: $medium)
+    {
+      padding: 3rem 0;
+    }
   }
 
   &_coworkersPatchwork

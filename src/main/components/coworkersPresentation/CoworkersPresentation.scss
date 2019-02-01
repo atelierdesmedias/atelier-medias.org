@@ -31,14 +31,11 @@
 
   &_content
   {
-
     display: flex;
     align-items: center;
-
     @media (max-width: $large) {
       display: block;
     }
-
   }
 
   &_title
@@ -49,7 +46,6 @@
     @media (max-width: $large) {
       @include size( 100%, auto );
     }
-
   }
 
   &_text
@@ -58,6 +54,7 @@
     display: block;
 
     @media (max-width: $large) {
+      margin-top: 2rem;
       @include size( 100%, auto );
     }
 
