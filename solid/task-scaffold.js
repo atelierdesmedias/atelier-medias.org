@@ -83,7 +83,7 @@ const askComponentSubFolder = () => {
     return Inquirer.prompt({
         type: 'list',
         name: 'type',
-        message: 'Witch subFolder of the react-main?',
+        message: 'Select your sub-folder',
         choices: globalConstants.componentSubFolderScaffold
     })
 };
@@ -95,7 +95,7 @@ const askBundleName = () => {
     return Inquirer.prompt({
         type: 'input',
         name: 'name',
-        message: 'What\'s your bundle name (dash-case) ?'
+        message: 'What\'s your bundle name (dash-case)?'
     })
 };
 
@@ -107,7 +107,7 @@ const askName = () => {
     return Inquirer.prompt({
         type: 'input',
         name: 'name',
-        message: 'What\'s your component name (PascalCase) ?'
+        message: 'What\'s your component name (PascalCase)?'
     })
 };
 
@@ -256,23 +256,33 @@ const componentBuilder = (pComponentType, pComponentBundle, pComponentSubFolder,
         )
     );
 
-
+    // Twig directory path to put components
+    const twigDirPath = `${globalConstants.twigTemplatesPath}${pComponentSubFolder}/`;
     // Define twig Template
     const twigTemplate = [
         `{# ${pUpperName} Component #}`,
-        `<div class="${pUpperName} {{ classElement }}">`,
+        `<div class="${pUpperName}">`,
         `   ${pUpperName}`,
         `</div>`
         ].join('\n');
 
     // Scaffold Twig component File
-    Files.new(`${globalConstants.twigTemplatesPath}${pComponentSubFolder}/${pUpperName}.twig`).write(
+    Files.new(`${twigDirPath}${pUpperName}.twig`).write(
         twigTemplate
     );
 
-    console.log('');
-    console.log(`${pUpperName}`.yellow.bold + ` has just been built in ` + `${dirPath}`.yellow + ` folder 👍`);
-    console.log('');
+    console.log([
+        ``,
+        `🎉 Solid scaffolder is killing!`.cyan.bold,
+        ``,
+        `👍 ${pUpperName}.scss`.yellow.bold,
+        `   ${pUpperName}.ts`.yellow.bold,
+        `   → folder path: ` + `${dirPath}`.grey,
+        ``,
+        `👍 ${pUpperName}.twig`.yellow.bold,
+        `   → folder path: ` + `${twigDirPath}`.grey,
+         ``,
+    ].join('\n'));
 };
 
 

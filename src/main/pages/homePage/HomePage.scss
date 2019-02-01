@@ -25,10 +25,8 @@
 
   &_header
   {
-    
     position: relative;
     margin: 0;
-
   }
 
   &_bigCover
@@ -44,37 +42,6 @@
     {
       @include margin(0 auto);
     }
-
-  }
-
-  // zone de texte au bottom de bigCover
-  &_banner
-  {
-    // position
-    position: relative;
-    @include mainColumnWidthCenter();
-    @include position(absolute, null 0 0 0);
-    padding: 2rem 3rem;
-    z-index: 2;
-    // style
-    background-color: $blackOverlayColor;
-    color: $whiteColor;
-    text-align: center;
-    @include lato-light();
-    font-size: 1.05rem;
-
-    //  la banner passe en dessous du header
-    @media (max-width: $medium){
-      @include position(relative, null);
-      background: $whiteColor;
-      color: $blackColor;
-      padding-bottom: 0;
-    }
-  }
-
-  &_bannerText
-  {
-    margin:0; // reset
   }
 
   &_arrowDown
