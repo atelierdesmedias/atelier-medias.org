@@ -88,7 +88,8 @@
 
   &_descriptionContent
   {
-    @include absoluteCenter();
+    @include absoluteCenter(x);
+    bottom:2em;
     line-height: initial;
     width: 100%;
     text-align: center;

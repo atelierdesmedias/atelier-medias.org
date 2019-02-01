@@ -24,34 +24,28 @@
   padding: 3rem 0;
 
 
+
   // --------------------------------------------------------------------------- ELEMENTS
 
   &_items
   {
-    @include flex (flex, row, wrap, center, center, 2rem);
+    @include flex (flex, row, wrap, center, flex-start);
     list-style: none;
+
+
+    @media(max-width: $medium)
+    {
+      width: ($columnWidth * 11);
+      margin: auto;
+    }
   }
 
   &_item
   {
-    &:not(:first-child) {
-      margin-left: 1rem;
-
-      // la ligne de séparation entres les items
-      &:before {
-        content: "";
-        position: relative;
-        display: inline-block;
-        margin-right: 1rem;
-        @include size(1px, 10px);
-        background: $blackOverlayColor;
-      }
-    }
-
-    //@include flexCol(7, 1, 2rem, false );
-
-    @media (max-width: $small) {
-
+    margin: 0 0.25em;
+    @media(max-width: $medium)
+    {
+      margin: 0 0.25em;
     }
 
 
@@ -60,12 +54,17 @@
   &_link
   {
     text-decoration: none;
-    text-transform: uppercase;
     color: $blackColor;
+    line-height:3.2em;
+
+    padding: 0.75em 1em;
+    border-radius: 2em;
+    background-color: #EEE;
 
     &:hover
     {
-      color: $turqoiseColor;
+      //color: $turqoiseColor;
+      background-color: #DDD;
     }
 
   }

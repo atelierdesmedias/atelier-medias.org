@@ -158,7 +158,7 @@ export class MainHeader extends DOMView
     /**
      * Animer la mainNav en function du state
      */
-    protected mainNavAnim (pDuration = 0.3) :void
+    protected mainNavAnim (pDuration = 0.1) :void
     {
         // animer l'apparition
         TweenLite.to(this.$mainNav, pDuration, {
@@ -169,25 +169,20 @@ export class MainHeader extends DOMView
     /**
      * animation des lignes du hamburger Button
      */
-    protected hamburgerButtonLinesAnim () :void
+    protected hamburgerButtonLinesAnim (pDuration:number = 0.1) :void
     {
-        let pDuration:number = 0.6;
 
         // animation des "lines" du HamburgerButton
-        TweenLite.to(this.$lineTop, pDuration * 0.3, {
+        TweenLite.to(this.$lineTop, pDuration, {
             rotation: this._isOpen ? 43 : 0,
-            top: this._isOpen ? 6 : 0,
-            // ease: Power3.easeInOut
+            top: this._isOpen ? 6 : 0
         });
-
-        TweenLite.to(this.$lineCenter, pDuration * 0.3, {
-            opacity: this._isOpen  ? 0 : 1,
-            // ease: Power3.easeInOut
+        TweenLite.to(this.$lineCenter, pDuration, {
+            opacity: this._isOpen  ? 0 : 1
         });
-        TweenLite.to(this.$lineBottom, pDuration * 0.3, {
+        TweenLite.to(this.$lineBottom, pDuration, {
             rotation: this._isOpen ? -43 : 0,
-            bottom: this._isOpen ? 8 : 0,
-            // ease: Power3.easeInOut
+            bottom: this._isOpen ? 8 : 0
         });
     }
 
