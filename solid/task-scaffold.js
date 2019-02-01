@@ -9,7 +9,7 @@ const {Files} = require('@zouloux/files');
 const {TemplateHelper} = require('./helper-template');
 const Inquirer = require('inquirer');
 const changeCase = require('change-case');
-const globalConstants = require('../willybe-constants.config');
+const globalConstants = require('../solid-constants.config');
 const colors = require('colors');
 const path = require('path');
 

@@ -1,5 +1,5 @@
 /**
- * Willybe webpack config
+ * Solid webpack config
  * configuration constant use in webpack
  */
 
