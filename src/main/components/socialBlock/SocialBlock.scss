@@ -90,7 +90,7 @@
       {
         top:3px;
       }
-      
+
       & svg
       {
         @include size(19px);
@@ -103,6 +103,8 @@
 
     &-twitter
     {
+      top:1px;
+
       @media (max-width: $large)
       {
         top:5px;

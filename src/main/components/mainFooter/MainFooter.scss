@@ -48,6 +48,11 @@
   &_content
   {
     color:$whiteColor;
+
+    &-grey
+    {
+      color:$grey144Color;
+    }
   }
 
   &_items
@@ -90,6 +95,7 @@
       @include size(200px, auto);
     }
     * {
+      //fill: $grey144Color;
       fill: $grey226Color;
     }
   }
@@ -119,6 +125,12 @@
   {
     color: $whiteColor;
     text-decoration: none;
+    transition:$transition;
+
+    &:hover
+    {
+      color:$grey144Color
+    }
   }
 
 
