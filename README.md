@@ -5,7 +5,7 @@ Wordpress website v.2 [atelier-medias.org](http://www.atelier-medias.org/).
 This code is under GPLv3.
 
 ## Todo
-Check [https://github.com/atelierdesmedias/atelier-medias.org/projects/1](github board).
+Check [github board](https://github.com/atelierdesmedias/atelier-medias.org/projects/1).
 
 ## Docs
 Check [docs](docs/) folder 
