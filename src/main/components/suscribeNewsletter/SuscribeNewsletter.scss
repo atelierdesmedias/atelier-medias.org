@@ -18,7 +18,9 @@
 
 	// Call block element anywhere, ex: #{$this}_element
 	$this: SuscribeNewsletter;
-	$inputHeight: 40px;
+	$inputHeight: auto;
+	$arrowSize: 30px;
+	$transition: 200ms ease-out;
 
 	// --------------------------------------------------------------------------- BLOCK
 
@@ -26,27 +28,52 @@
 
 	&_wrapper
 	{
-		@include flex(flex,row,nowrap,flex-start,center);
+		display: block;
 	}
 
 	&_input
 	{
-		// position
-		position: relative;
+		cursor:pointer;
 		display: block;
-		@include size(80%, $inputHeight);
-		max-width: 250px;
-		// style
+		width:auto;
+		font-size:1rem;
 		color: $whiteColor;
-		border:1px solid $grey226Color;
-		background:none;
+		background: none;
+		border: none;
+		padding: 0 0 0.5rem 0.1rem;
+		border-bottom: 1px solid $grey144Color;
+		transition: $transition;
 
 		// style du texte placeholder dans le input
 		&::-webkit-input-placeholder
 		{
-			text-align: center;
-			font-size: initial;
+			text-align: left;
 			color: $whiteColor;
+			padding: 0 0.3rem 0.3rem 0;
+			transition: $transition;
+		}
+
+		&:focus
+		{
+			outline: none;
+			width:90%;
+			transition: $transition;
+
+			&::-webkit-input-placeholder
+			{
+				text-align: left;
+				font-size: initial;
+				color: transparent;
+			}
+		}
+
+		&:hover:not(:focus)
+		{
+			&::-webkit-input-placeholder
+			{
+				color:$grey144Color;
+				transition: $transition;
+			}
 		}
 	}
 
@@ -54,40 +81,23 @@
 	{
 		// reset
 		@include resetButtonStyle();
-
 		position: relative;
-		// position
-		margin-left: 0.5rem;
-		@include size($inputHeight, $inputHeight);
+		margin-top: 10px;
+		@include hitZone();
 
-		// style
 		background: transparent;
-		border:1px solid $grey226Color;
-		transition: 200ms ease-in-out;
+		color: $grey144Color;
+		transition: $transition;
 
-		@media (min-width: $large)
+		&:focus
 		{
-			@include size($inputHeight, $inputHeight);
-			border:1px solid $grey226Color;
-		}
-
-		&:after
-		{
-			content:'';
-			@include absoluteCenter();
-			@include triangle("right", $inputHeight / 3, $inputHeight / 3, $grey226Color);
-
+			outline: none;
 		}
 
 		&:hover
 		{
-			background: $grey226Color;
-
-			&:after
-			{
-				content:'';
-				@include triangle("right", $inputHeight / 3, $inputHeight / 3, $grey77Color);
-			}
+			color: $whiteColor;
+			cursor: pointer;
 		}
 
 	}

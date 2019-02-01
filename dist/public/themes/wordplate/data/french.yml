@@ -6,7 +6,11 @@
 # SITE INFOS
 #
 site:
-  address:  "9 quai André Lassagne - 69001 LYON"
+  name: "Atelier des Médias"
+  address: "9 quai André Lassagne"
+  CP: "69001"
+  city: "Lyon"
+  mapLink: "https://goo.gl/maps/2umvy7X5zpj"
   tel: "09 81 65 99 53"
   mail: "contact@atelierdesmedias.com"
 
@@ -14,10 +18,12 @@ site:
 # GENERICS
 #
 generics:
-  credits: "Credits"
-  mentions: "Mentions"
+  credits: "Crédits"
+  mentions: "Mentions Legales"
   press: "Presse"
-
+  contact: "Contact"
+  newsletter: "Newsletter"
+  about: "À propos"
 #
 # PAGES
 #
@@ -36,9 +42,7 @@ components:
   MainHeader:
 
   MainFooter:
-    credits:
-      - "L’Atelier des Médias est une iniative soutenue par la"
-      - "et fait partie du collectif"
+    about: "L’Atelier des Médias est une iniative soutenue par la MACIF fait partie du collectif Coworking Grand Lyon."
 
   IntranetConnection:
     title: "intranet"
@@ -152,7 +156,10 @@ components:
       - "Vous voulez rejoindre notre espace de coworking ?"
       - "Pour vous présenter les lieux de l'association et pour apprendre à vous connaître,"
       - "nous vous invitons à déjeuner avec nous un mardi midi !"
-    labelButton: "ça m'interesse !"
+    labelButton: "ça m'intéresse !"
 
   SuscribeNewsletter:
-    placeholder: "newsletter"
+    placeholder: "Renseignez votre mail"
+    validate: "valider"
+
+
