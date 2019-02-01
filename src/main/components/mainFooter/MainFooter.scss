@@ -54,22 +54,22 @@
   {
     list-style: none;
     display: block;
-    @include flex(flex, row, wrap, flex-start, flex-start,1rem);
+    @include flex(flex, row, wrap, flex-start, flex-start,3rem);
   }
 
   &_item
   {
     // pousser le contenu de chaque item vers le bas
     margin:1.5em 0;
-    @include flexCol(3,1,1rem,false);
+    @include flexCol(3,1,3rem);
 
     @media (max-width: $large)
     {
-      @include flexCol(2,1,1rem,false);
+      @include flexCol(2,1,3rem);
     }
     @media (max-width: $medium)
     {
-      @include flexCol(1,1,1rem,false);
+      @include flexCol(1,1,3rem);
     }
   }
 
@@ -79,6 +79,7 @@
 
   &_logo
   {
+    margin-top:0.5rem;
     &-macif svg
     {
       @include size(50px, auto);
@@ -88,9 +89,9 @@
     {
       @include size(200px, auto);
     }
-    //* {
-    //  fill: $grey144Color;
-    //}
+    * {
+      fill: $grey226Color;
+    }
   }
 
   &_title
