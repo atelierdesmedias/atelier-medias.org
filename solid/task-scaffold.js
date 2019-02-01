@@ -256,6 +256,20 @@ const componentBuilder = (pComponentType, pComponentBundle, pComponentSubFolder,
         )
     );
 
+
+    // Define twig Template
+    const twigTemplate = [
+        `{# ${pUpperName} Component #}`,
+        `<div class="${pUpperName} {{ classElement }}">`,
+        `   ${pUpperName}`,
+        `</div>`
+        ].join('\n');
+
+    // Scaffold Twig component File
+    Files.new(`${globalConstants.twigTemplatesPath}${pComponentSubFolder}/${pUpperName}.twig`).write(
+        twigTemplate
+    );
+
     console.log('');
     console.log(`${pUpperName}`.yellow.bold + ` has just been built in ` + `${dirPath}`.yellow + ` folder 👍`);
     console.log('');
