@@ -29,13 +29,9 @@
   {
     display: none;
     @media (max-width: $large) {
-
-      // position
       display: block;
       @include position(fixed, 0 0 null null );
       padding: 2rem;
-
-      // apparance
       background: $whiteColor;
       z-index: 10;
     }
@@ -49,8 +45,15 @@
     @media (max-width: $large) {
       @include position(fixed, 0 0 0 0);
     }
-
   }
+
+  &_arrowDown
+  {
+    @include absoluteCenter(x);
+    bottom: 1.5em;
+    z-index: 1;
+  }
+
 
   // --------------------------------------------------------------------------- MODIFIERS
 

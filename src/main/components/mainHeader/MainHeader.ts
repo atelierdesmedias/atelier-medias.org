@@ -11,6 +11,7 @@ import {MainNav} from "../mainNav/MainNav";
 import {HamburgerButton} from "../hamburgerButton/HamburgerButton";
 import {TweenLite} from "gsap";
 import {breakPoint} from '../../../_common/helpers/breakPoint';
+import {ArrowDown} from "../../molecules/arrowDown/ArrowDown";
 
 
 // States de la mainNav Handler
@@ -34,7 +35,7 @@ export class MainHeader extends DOMView
 
     private _hamburgerButton: HamburgerButton;
     private _mainNav: MainNav;
-
+    private _arrowDown: ArrowDown;
 
     // hamburger Button
     private $hamburgerButton: ZeptoCollection;
@@ -74,6 +75,9 @@ export class MainHeader extends DOMView
 
         // inclure le main menu
         this._mainNav = new MainNav( this.$root.find('.MainNav') );
+
+        // Importer la molécule Arrow Down
+        this._arrowDown = new ArrowDown( this.$root.find('.ArrowDown') );
     }
 
     /**

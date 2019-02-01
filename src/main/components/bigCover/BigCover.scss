@@ -56,12 +56,6 @@
     @include position(absolute, ($mainBorder) 0 null null);
   }
 
-  &_arrowDown
-  {
-    @include absoluteCenter(x);
-    bottom: 2em;
-  }
-
   // --------------------------------------------------------------------------- MODIFIERS
 
   // --------------------------------------------------------------------------- CHILDREN

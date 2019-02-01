@@ -35,8 +35,8 @@
 	{
 		@include position(relative, 50% null null 50%);
 		@include size(20px);
-		border-left: 3px solid $appleGreenColor;
-		border-bottom: 3px solid $appleGreenColor;
+		border-left: 3px solid $turqoiseColor;
+		border-bottom: 3px solid $turqoiseColor;
 		transform: translate(-50%, -50%) rotate(-45deg);
 		animation: toggle 2s ease-in-out infinite;
 	}
