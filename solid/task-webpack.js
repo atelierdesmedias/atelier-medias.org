@@ -3,12 +3,13 @@ const colors = require('colors');
 
 const shell = require('./helper-shell');
 
-
-
 // define message
 const compileMessage = ( pMessage ) => {
-    console.log("-".yellow);
-    console.log(`${pMessage}`.yellow);
+
+    console.log([
+        ``,
+        `${pMessage}`.cyan
+    ].join('\n'));
 };
 
 // ----------------------------------------------------------------------------- TASKS
@@ -36,7 +37,7 @@ module.exports = {
         require('./task-prebuild').preBuildAtoms();
 
         // start webpack
-        compileMessage('start webpack dev-server');
+        compileMessage('🚚 Start webpack dev-server');
         shell.exec('npm run dev');
 
         // if not return make runnable return undefined
@@ -61,7 +62,7 @@ module.exports = {
         require('./task-prebuild').preBuildAtoms();
 
         // start webpack
-        compileMessage('start webpack production');
+        compileMessage('😱 Start webpack production');
         shell.exec('npm run production', (err) =>
         {
             compileMessage('webpack production end');

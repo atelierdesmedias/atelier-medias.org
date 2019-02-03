@@ -14,7 +14,6 @@ exports.phpConfigPath = 'dist/public/themes/wordplate/';
 // Path to twig component template
 exports.twigTemplatesPath = 'dist/public/themes/wordplate/templates/';
 
-
 // Dist path
 exports.distPath = 'dist/';
 

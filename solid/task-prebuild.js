@@ -12,9 +12,13 @@ const fileTabs = "\t\t\t";
 const fileTabRegex = new RegExp(`(\n${fileTabs})`, 'gmi');
 
 // define message
-const compileMessage = ( pMessage ) => {
-    console.log("-".blue);
-    console.log(`${pMessage}`.blue);
+const compileMessage = ( pMessage, pDest ) => {
+    console.log([
+        ``,
+        `${pMessage}`.cyan,
+        `   → folder path: ${pDest}`.grey
+        ].join('\n')
+    );
 };
 
 /**
@@ -82,7 +86,7 @@ module.exports = {
             };`
         );
 
-        compileMessage('prebuild bundle list');
+        compileMessage('📒 Pre-build bundles list', globalConstants.srcPath);
     },
 
 
@@ -111,7 +115,7 @@ module.exports = {
             )
         );
 
-        compileMessage('prebuild php config file');
+        compileMessage('📄 Pre-build PHP config file', globalConstants.phpConfigPath);
     },
 
 
@@ -202,7 +206,7 @@ module.exports = {
             )
         );
 
-        compileMessage('prebuild atoms file');
+        compileMessage('🐼 Pre-build atoms file', `${ globalConstants.srcPath }${ globalConstants.commonBundleName }/${ globalConstants.atomsFolder }`);
     },
 
 
@@ -226,7 +230,7 @@ module.exports = {
                 `
         );
 
-        compileMessage('prebuild yaml env properties');
+        compileMessage('🚩 Pre-build yaml env properties');
     }
 
 
