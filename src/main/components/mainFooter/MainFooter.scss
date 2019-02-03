@@ -49,10 +49,10 @@
   {
     color:$whiteColor;
 
-    &-grey
-    {
-      color:$grey144Color;
-    }
+    //&-grey
+    //{
+    //  color:$grey144Color;
+    //}
   }
 
   &_items
@@ -94,8 +94,9 @@
     {
       @include size(200px, auto);
     }
-    * {
-      //fill: $grey144Color;
+
+    *
+    {
       fill: $grey226Color;
     }
   }
