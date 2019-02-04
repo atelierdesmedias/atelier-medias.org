@@ -66,7 +66,7 @@ const _showError = ( pReason, reject ) =>
 	}
 
 	// Sound
-	console.log("\007");
+	// console.log("\007");
 
 	// Reject
 	reject({});
@@ -106,12 +106,12 @@ const _getPropertiesFromEnvName = (currentEnv) =>
 
 	// Selected config from env
 	return filteredConfigs[0].read();
-}
+};
 
 /**
  * Cached version of current env properties.
  */
-let cacheCurrentEnvProperties
+let cacheCurrentEnvProperties;
 
 
 // ----------------------------------------------------------------------------- PUBLIC API
@@ -131,6 +131,8 @@ module.exports = {
 		// Return cache if already loaded
 		if (cacheCurrentEnvProperties != null) return cacheCurrentEnvProperties;
 
+		console.log('cacheCurrentEnvProperties', cacheCurrentEnvProperties);
+
 		// Get selected env
 		const currentEnv = _getSelectedEnv();
 
@@ -139,6 +141,8 @@ module.exports = {
 
 		// Get current properties
 		const currentEnvProperties = _getPropertiesFromEnvName( currentEnv );
+
+		console.log(currentEnvProperties);
 
 		// Return null if there is properties
 		if (currentEnvProperties == null) return null;

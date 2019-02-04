@@ -17,6 +17,9 @@ exports.twigTemplatesPath = 'dist/public/themes/wordplate/templates/';
 // Path to the properties folder
 exports.propertiesPath = 'properties/';
 
+// Path to the selected env file
+exports.envPath = 'properties/.envName';
+
 // Dist path
 exports.distPath = 'dist/';
 

@@ -67,6 +67,12 @@ module.exports = {
     // scaffold bundle or component
     scaffold :() => require('./solid/task-scaffold').scaffold(),
 
+    // Create environment
+    createEnv : () => require('./solid/task-properties').createEnv(),
+
+    // Select environment
+     selectEnv : () => require('./solid/task-properties').selectEnv(),
+
 };
 // use make renable to launch these tasks
 require('make-runnable/custom')({ printOutputFrame : false });

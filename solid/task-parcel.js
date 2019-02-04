@@ -1,16 +1,9 @@
 // Node path utils
 const path = require('path');
-
 // File manager
 const { Files } = require('@zouloux/files');
-
 // Bundler
 const Bundler = require('parcel-bundler');
-
-// Capitalize First letter helper
-// TODO : à virer puisque la dépendance change-case est utilisée dans le projet
-const { CapitalizeFirst } = require('./helper-capitalize');
-
 // Load solid constants
 const solidConstants = require('../solid-constants.config');
 
@@ -81,25 +74,6 @@ const _options = (pEnv) =>
 	}
 };
 
-
-// ----------------------------------------------------------------------------- DEPLOY
-
-// Get deployed properties
-let deployedEnvProperties;
-
-/**
- * Init deploy properties and deploy.
- * Will ask user to select an env and stop process if this is not alread done.
- */
-const _initDeployerAndDeploy = () =>
-{
-	// Get properties
-	// deployedEnvProperties = require('./task-deploy').getPropertiesFromCurrentEnv();
-
-	// Deploy and stop if there is an issue
-	// require('./task-deploy').deploy();
-};
-
 // ----------------------------------------------------------------------------- PUBLIC SCOPE
 
 /**
@@ -116,16 +90,19 @@ module.exports = {
 		await require('./task-clean').cleanBundles();
 
 		// Pre-build step
-		console.log(`\nPre-building static dependencies: `.yellow);
-		// await require('./task-prebuild').preBuildPhpConfig();
+		await require('./task-prebuild').preBuildPhpConfig();
+		await require('./task-prebuild').preBuildAtoms();
 		// await require('./task-prebuild').preBuildBundleList();
-		// await require('./task-prebuild').preBuildAtoms();
+		// await require('./task-prebuild').preBuildFonts();
 
 		// init bundler with entry point & options
 		const bundler = new Bundler(entryFiles, _options(pEnv));
 
-		// Init deploy properties and deploy
-		await _initDeployerAndDeploy();
+		// Deploy step
+		// Get properties
+		await require('./task-deploy').getPropertiesFromCurrentEnv();
+		// Deploy and stop if there is an issue
+		await require('./task-deploy').deploy();
 
 		// if dev environnement
 		(pEnv === "dev")

@@ -74,7 +74,7 @@ const _showError = ( pReason, reject ) =>
     {
         console.log('');
         console.log(`No env selected.`.red.bold);
-        console.log(`  → Please create your properties file into ${ solidConstants.propertiesPath.bold } and feed properties from ${'default.properties.js'.bold} file.`.red);
+        console.log(`  → Please create your properties file into ${ globalConstants.propertiesPath.bold } and feed properties from ${'default.properties.js'.bold} file.`.red);
         console.log(`  → Then select your env with ${'node solid selectEnv'.bold}`.red)
         console.log('');
     }
@@ -85,7 +85,7 @@ const _showError = ( pReason, reject ) =>
         console.log('');
         console.log(`Bad env`.red.bold);
         console.log(`  →  This env is not found.`.red);
-        console.log(`  →  Please check that its corresponding ${'.properties.js'.bold} file exists inside ${ solidConstants.propertiesPath.bold } directory`.red);
+        console.log(`  →  Please check that its corresponding ${'.properties.js'.bold} file exists inside ${ globalConstants.propertiesPath.bold } directory`.red);
         console.log('');
     }
 

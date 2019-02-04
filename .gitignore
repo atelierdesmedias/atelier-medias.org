@@ -25,7 +25,7 @@ node_modules/
 dist/app/vendor/*
 
 # ignore webpack compile assets folder
-dist/assets/
+dist/public/assets/
 
 # php config file expose node env variable
 dist/config.php
