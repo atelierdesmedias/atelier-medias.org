@@ -1,0 +1,5 @@
+
+// Import common styles as reference
+@import (reference) '../%%commonPath%%/Bundle.less';
+
+// You can import other app bundle Bundle.less as reference if needed here :

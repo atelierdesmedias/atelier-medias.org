@@ -8,7 +8,7 @@
 import {DOMView} from "../../../_common/core/DOMView";
 import './BigCover.scss'
 import { TweenLite } from "gsap";
-import {breakPoint} from "src/_common/helpers/breakPoint";
+import {breakPoint} from "../../../_common/helpers/breakPoint";
 import {EventBanner} from "../eventBanner/EventBanner";
 
 // ------------------------------------------------------------------------- START EXPORT CLASS

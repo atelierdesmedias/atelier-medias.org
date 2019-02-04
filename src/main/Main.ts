@@ -12,9 +12,12 @@ import Logs from "../_common/core/Logs";
 import {GlobalConfig} from "../_common/data/GlobalConfig";
 import {AppView} from "./components/appView/AppView";
 import {HomePage} from "./pages/homePage/HomePage";
+
+
 // Get current properties
-const envName = require(`../../properties/.envName`);
-const currentProperties = require(`../../properties/${envName}.properties.js`);
+// TODO :
+//const envName = require(`../../properties/.envName`);
+//const currentProperties = require(`../../properties/${envName}.properties.js`);
 
 // ----------------------------------------------------------------------------- EXPORT CLASS
 
@@ -64,10 +67,10 @@ export class main extends DOMView
             version: require('../../package.json').version,
 
             // get current url depend of properties
-            url: currentProperties.url,
+            // url: currentProperties.url,
 
             // get current base url depend of properties
-            base: currentProperties.base,
+            // base: currentProperties.base,
 
         });
     }

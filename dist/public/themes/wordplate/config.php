@@ -6,11 +6,11 @@
 */
 
 // current environment variable
-$ENV = "dev";
+$ENV = "undefined";
 
 // current envName url
-$CURRENT_ENV_URL = "http://localhost:8080/";
+$CURRENT_ENV_URL = "undefined";
 
 // current envName base
-$CURRENT_ENV_BASE = "/adm/adm-v2/dist/public/";
+$CURRENT_ENV_BASE = "undefined";
 

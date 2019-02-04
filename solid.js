@@ -1,28 +1,73 @@
-/**
- * @name: Solid
- * @description: node tasks
- */
+// /**
+//  * @name: Solid
+//  * @description: node tasks
+//  */
+// const path = require('path');
+// process.env.PATH += (path.delimiter + path.join(__dirname, 'node_modules', '.bin'));
+//
+// module.exports = {
+//
+//     // task dev
+//     dev : () => require('./solid/task-webpack').dev(),
+//
+//     // task production
+//     production : () => require('./solid/task-webpack').production(),
+//
+//     // Create environment
+//     createEnv : () => require('./solid/task-properties').createEnv(),
+//
+//     // Select environment
+//     selectEnv : () => require('./solid/task-properties').selectEnv(),
+//
+//     // Scaffold component
+//     scaffold : () => require('./solid/task-scaffold').scaffold(),
+//
+// };
+// require('make-runnable/custom')({ printOutputFrame: false });
+//
+//
+
+// resolve path
 const path = require('path');
-process.env.PATH += (path.delimiter + path.join(__dirname, 'node_modules', '.bin'));
+
+// Some colors in the terminal @see : https://github.com/marak/colors.js/
+require('colors');
+
+// Get Files helper for easy Files/Folder manipulating
+const { Files } = require('@zouloux/files');
+
+// fix about make runnable
+process.env.PATH += (
+    path.delimiter + path.join(__dirname, 'node_modules', '.bin')
+);
+
+
+/**
+ * TODO: on utilise ici la dependance make runnable pour executer
+ * TODO: une function spécifique
+ *
+ * node solid dev --> require task dev from task-parcel
+ * ...
+ *
+ * Surement un moyen de ne pas utiliser cette dépendance.
+ *
+ */
 
 module.exports = {
 
-    // task dev
-    dev : () => require('./solid/task-webpack').dev(),
+    // start dev
+    dev : () => require('./solid/task-parcel').dev(),
 
-    // task production
-    production : () => require('./solid/task-webpack').production(),
+    // start production
+    production : () => require('./solid/task-parcel').production(),
 
-    // Create environment
-    createEnv : () => require('./solid/task-properties').createEnv(),
+    // clean cache, assets...
+    clean : () => require('./solid/task-clean').clean(),
 
-    // Select environment
-    selectEnv : () => require('./solid/task-properties').selectEnv(),
-
-    // Scaffold component
-    scaffold : () => require('./solid/task-scaffold').scaffold(),
+    // scaffold bundle or component
+    scaffold :() => require('./solid/task-scaffold').scaffold(),
 
 };
-require('make-runnable/custom')({ printOutputFrame: false });
-
+// use make renable to launch these tasks
+require('make-runnable/custom')({ printOutputFrame : false });
 

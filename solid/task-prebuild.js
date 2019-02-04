@@ -6,8 +6,8 @@ const {Files} = require('@zouloux/files');
 const {TemplateHelper} = require('./helper-template');
 const globalConstants = require("../solid-constants.config");
 const colors = require('colors');
-const envName = require(`../properties/.envName`);
-const currentProperties = require(`../properties/${envName}.properties.js`);
+//const envName = require(`../properties/.envName`);
+//const currentProperties = require(`../properties/${envName}.properties.js`);
 const fileTabs = "\t\t\t";
 const fileTabRegex = new RegExp(`(\n${fileTabs})`, 'gmi');
 
@@ -107,10 +107,10 @@ module.exports = {
                     envName: pEnv,
 
                     // current Env URL
-                    currentEnvURL: currentProperties.url,
+                    //currentEnvURL: currentProperties.url,
 
                     // current properties base
-                    currentEnvBase: currentProperties.base,
+                    //currentEnvBase: currentProperties.base,
                 }
             )
         );
@@ -208,33 +208,6 @@ module.exports = {
 
         compileMessage('🐼 Pre-build atoms file', `${ globalConstants.srcPath }${ globalConstants.commonBundleName }/${ globalConstants.atomsFolder }`);
     },
-
-
-
-    /**
-     * Pre Build Yaml env properties
-     * Use it about grav CMS
-     */
-    preBuildYamlProperties : () =>
-    {
-        Files.new(`${globalConstants.gravUserConfigPath}env.yaml`).write(
-            `
-                # current environment variable
-                env: '${process.env.NODE_ENV}'
-                
-                # current envName URL
-                currentEnvUrl: '${currentProperties.url}'
-                
-                # current envName base
-                currentEnvBase: '${currentProperties.base}'    
-                `
-        );
-
-        compileMessage('🚩 Pre-build yaml env properties');
-    }
-
-
-
 
 
 };

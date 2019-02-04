@@ -1,0 +1,51 @@
+
+module.exports = {
+
+	// Packing layout ('horizontal' / 'vertical' / 'diagonal' / 'packed')
+	layout: 'packed',
+
+	// Sprite device ratio. Default is 1.
+	pixelRatio: 1,
+
+	layoutOptions: {
+
+		// Minimum space in pixel between each image
+		// Can avoid bleeding between images if the sprite is scaled
+		// Advised to use a multiple of 2
+		padding: 2,
+
+		// Sprite scaling. Default is 1
+		scaling: 1,
+
+		// Force power of two dimensions for GPU optimisation
+		powerOfTwo: false
+	},
+
+	compositorOptions: {
+
+		// PNG output compression level (from 0 to 9)
+		compressionLevel	: 6,
+
+		// Filter applied at composition ('all', 'none', 'sub', 'up', 'average', 'paeth')
+		filter          	: 'none'
+	},
+
+	// Remove this object to bypass imagemin
+	imagemin : {
+
+		// Output quality
+		//quality: '30-60',
+
+		// Dithering level
+		//floyd: .5,
+
+		// True to disable dithering
+		//nofs: true,
+
+		// Reduce number of color depth bits (from 0 to 4)
+		//posterize: 0,
+
+		// Speed trade-off (1: no speed opt, 10: Max speed but lower quality)
+		//speed: 3
+	}
+}

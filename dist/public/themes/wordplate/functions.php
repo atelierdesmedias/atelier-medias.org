@@ -106,12 +106,12 @@ function load_scripts()
     if (  $ENV !== 'dev')
     {
         // register CSS script
-        wp_register_style( 'bundle-main-css', $CURRENT_ENV_URL."assets/bundle-main.css" , array(), '', 'all' );
+        wp_register_style( 'bundle-main-css', $CURRENT_ENV_URL."assets/bundle.css" , array(), '', 'all' );
         wp_enqueue_style( 'bundle-main-css' );
     }
 
     // register JS script
-    wp_register_script( 'bundle-main-js', $CURRENT_ENV_URL."assets/bundle-main.js", array(), '', true );
+    wp_register_script( 'bundle-main-js', $CURRENT_ENV_URL."assets/bundle.js", array(), '', true );
     wp_enqueue_script( 'bundle-main-js' );
 }
 add_action('wp_enqueue_scripts', 'load_scripts');

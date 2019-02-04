@@ -2,7 +2,7 @@
 
 # ------------------------------------------------------------------------------ POOPS
 
-# Mac 
+# Mac
 .DS_Store
 
 # Ignore ide files
@@ -17,6 +17,9 @@ logs
 node_modules/
 
 # ------------------------------------------------------------------------------ BUILD
+
+.cache/
+.cache/*
 
 # ignore vendor folder create by composer
 dist/app/vendor/*

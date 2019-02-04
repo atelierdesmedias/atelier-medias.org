@@ -1,0 +1,67 @@
+import "./%%capitalComponentName%%.less";
+import { createElement } from "react";
+const React = { createElement };
+import {ReactView} from "solidify-lib/react/ReactView";
+
+// ----------------------------------------------------------------------------- STRUCT
+
+export interface Props
+{
+
+}
+
+export interface States
+{
+	// Declare states with ? to allow them to be set without sending all state back
+	// myStateProp  ?:  string;
+}
+
+
+export class %%capitalComponentName%% extends ReactView<Props, States>
+{
+	// ------------------------------------------------------------------------- INIT
+
+	prepare ()
+	{
+		// Init state here, you can set from props
+		this.initState({
+			// ...
+		});
+	}
+
+
+	// ------------------------------------------------------------------------- RENDERING
+
+	render ()
+	{
+		return <div className="%%capitalComponentName%%" ref="root">
+			%%capitalComponentName%%
+		</div>
+	}
+
+
+	// ------------------------------------------------------------------------- LIFECYCLE
+
+	componentDidMount ()
+	{
+
+	}
+
+	componentWillUnmount ()
+	{
+
+	}
+
+	componentDidUpdate (pPrevProps:Props, pPrevState:States)
+	{
+
+	}
+
+
+	// ------------------------------------------------------------------------- HANDLERS
+
+
+	// ------------------------------------------------------------------------- STATES
+
+
+}

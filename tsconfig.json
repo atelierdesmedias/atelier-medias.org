@@ -1,70 +1,53 @@
 {
 	"compilerOptions": {
-		"module": "es2015",
-		"target": "es5",
+		"module": "commonjs",
+		"target": "es6",
+
 		"moduleResolution": "node",
 
-		"baseUrl": ".",
-		"removeComments": true,
-
 		"jsx": "react",
+		"jsxFactory": "createElement",
 
-		"noEmitOnError": false,
+		"lib": ["es6", "dom", "es2015.promise"],
+
+		"baseUrl": "src",
+		"paths": {
+			"solidify-lib": ["../node_modules/solidify-lib/*"]
+		},
+
 		"isolatedModules": false,
+		"noEmitOnError": false,
 		"experimentalDecorators": true,
-		"allowSyntheticDefaultImports": true,
 		"emitDecoratorMetadata": true,
+
 		"declaration": false,
 		"noImplicitAny": false,
-
-		"strictPropertyInitialization": false,
 		"suppressImplicitAnyIndexErrors": true,
+
+		"allowSyntheticDefaultImports" : true,
+
+		"removeComments": true,
 		"preserveConstEnums": true,
-		"allowUnreachableCode": true,
-		"allowJs": true,
 
-		// disable about hot module reload
-		"importHelpers": false,
-		"noEmitHelpers": false
+		"importHelpers" : true,
+		"noEmitHelpers" : true,
+
+		"allowUnreachableCode" : true
 	},
-
-	"lib": [
-		"es6",
-		"dom",
-		"es2015",
-		"es2015.promise"
-	],
-
-	"typesRoots": [
-		"node_modules/@types"
-	],
-
-	"types": [
-		"node"
-	],
 
 	"include" : [
-		"./src/**/**/*",
-		"./node_modules/solidify-lib/*",
+		"./**/*",
+		"../node_modules/solidify-lib/*",
+		"src/common/custom.d.ts"
 	],
 
-	"exclude" : [
-		"node_modules/*"
+	"exclude": [
+		"../node_modules/*"
 	],
-
-	"paths": {
-		"solidify-lib": ["./node_modules/solidify-lib/*"]
-	},
 
 	"compileOnSave": false,
 	"buildOnSave": false,
 	"atom": {
 		"rewriteTsconfig": false
 	}
-
 }
-
-
-
-
-

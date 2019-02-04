@@ -1,0 +1,101 @@
+import {App} from "solidify-lib/core/App";
+import {Router} from "solidify-lib/navigation/Router";
+import {GlobalConfig} from "../_common/data/GlobalConfig";
+import {Button} from "./components/appView/Button";
+import {SolidBundles} from "solidify-lib/helpers/SolidBundles";
+
+// App bundle name on local module scope
+let appBundleName:string;
+
+
+export class Bundle extends App
+{
+	// ------------------------------------------------------------------------- SINGLETON
+
+	// Bundle app instance reference
+	protected static __instance	:Bundle;
+
+	/**
+	 * Get Bundle app instance
+	 */
+	static get instance ():Bundle
+	{
+		return Bundle.__instance;
+	}
+
+
+	// ------------------------------------------------------------------------- INIT
+
+	/**
+	 * App constructor
+	 */
+	constructor ( pParams:any = null )
+	{
+		// Inject params into config
+		GlobalConfig.instance.inject( pParams );
+
+		// Get app bundle name now it's loaded
+		appBundleName = require('./index').name;
+
+		// Register init of this app bundle and get init count to avoid HMR
+		SolidBundles.registerAppBundleInit( appBundleName );
+
+		// Relay construction
+		super(
+			// Do not launch init sequence if this is an HMR trigger
+			SolidBundles.getAppBundleInitCount( appBundleName ) == 0,
+			pParams
+		);
+	}
+
+	/**
+	 * Prepare app
+	 */
+	protected prepare ( pParams:any = null )
+	{
+		// Register app instance as singleton
+		Bundle.__instance = this;
+	}
+
+	/**
+	 * Init configuration.
+	 */
+	protected initConfig ()
+	{
+		// Init specific GlobalConfig here
+		//GlobalConfig.instance.inject( ... );
+	}
+
+	/**
+	 * Init env dependent stuff.
+	 */
+	protected initEnv ():void
+	{
+		// Will add env detection classes helpers to the body.
+		EnvUtils.addClasses();
+	}
+
+
+	// ------------------------------------------------------------------------- ROUTES
+
+	/**
+	 * Init routes system
+	 */
+	protected initRoutes ():void { }
+
+
+	// ------------------------------------------------------------------------- READY
+
+	// App view instance
+	protected _appView		:Button;
+	get appView ():Button { return this._appView; }
+
+	/**
+	 * When everything is ready
+	 */
+	protected ready ()
+	{
+		// DOM app view
+		this._appView = new Button( GlobalConfig.instance.root );
+	}
+}
