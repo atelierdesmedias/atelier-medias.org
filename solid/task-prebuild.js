@@ -98,6 +98,7 @@ module.exports = {
      */
     preBuildPhpConfig : (pEnv) =>
     {
+        // écrire le fichier avec un template renseigné de variables choisies
         Files.new(`${globalConstants.phpConfigPath}config.php`).write(
             TemplateHelper
             (
@@ -115,7 +116,32 @@ module.exports = {
             )
         );
 
+        // message de sortie
         compileMessage('📄 Pre-build PHP config file', globalConstants.phpConfigPath);
+    },
+
+    /**
+     * Prebuild dot env config
+     * This file contains current environment properties
+     *
+     */
+    preBuildDotEnvConfig : () =>
+    {
+        // template de dotEnv
+        const template = [
+            '# WARNING : Do not edit this auto-generated file',
+            `${
+                Object.keys( currentProperties.dotEnv ).map(
+                    propertyName => `${propertyName}=${currentProperties.dotEnv[propertyName]}`
+                ).join("\n")
+            }`
+        ].join('\n');
+
+        // écrire le nouveau fichier
+        Files.new(`${globalConstants.distPath}.env`).write( template );
+
+        // message de sortie
+        compileMessage('📄 Pre-build dot ENV config file', globalConstants.distPath);
     },
 
 

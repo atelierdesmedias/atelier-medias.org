@@ -30,11 +30,13 @@ module.exports = {
         // PreBuild bundle list
         require('./task-prebuild').preBuildBundleList();
 
-        // PreBuild php config
+        // PreBuild config
         require('./task-prebuild').preBuildPhpConfig(env);
+        require('./task-prebuild').preBuildDotEnvConfig();
 
         // Prebuild Atoms
         require('./task-prebuild').preBuildAtoms();
+
 
         // start webpack
         compileMessage('🚚 Start webpack dev-server');
@@ -57,6 +59,7 @@ module.exports = {
 
         // PreBuild php config
         require('./task-prebuild').preBuildPhpConfig(env);
+        require('./task-prebuild').preBuildDotEnvConfig();
 
         // Prebuild Atoms
         require('./task-prebuild').preBuildAtoms();

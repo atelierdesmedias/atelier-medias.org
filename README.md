@@ -1,59 +1,51 @@
 
 # atelier-medias.org
 
-Wordpress website v.2 [atelier-medias.org](http://www.atelier-medias.org/).
-This code is under GPLv3.
 
-## Todo
+## About
+Wordpress website v.2 [atelier-medias.org](http://www.atelier-medias.org/).
+
+## Todo list
 Check [github board](https://github.com/atelierdesmedias/atelier-medias.org/projects/1).
 
 ## Docs
-Check [docs](docs/) folder 
+Check [docs](docs/) folder.
 
 ## Design
 Check [design online](https://projects.invisionapp.com/share/FMGJ96E57TB#/screens/287421915_Desktop_HD_-_Home)
-    
-## Plugins dependances 
-- timber 
-
-## Admin test base `adm-wp.sql`
+     
+## Admin back-office
+- url:
 - user: ADM
 - pass: root
 
-## Deploy 
-We only work on `master` branch.
-
-### Deploy `staging`
-Use deployer script to push master on staging: 
-
-```shell
-$ ./push-master-to-staging.sh
-```
-
-### Deploy `production` 
-Use deployer script to push master on production: 
-```shell
-$ ./push-master-to-staging.sh
-```
-   
-## Server
-### Staging server
-
+## Staging
 - url: []()
 - server name: 
 - deployed folder (from root server):
 - database: 
 - branch: `staging`
 
-### Prod server 
+Use deployer script to push master on staging: 
+```shell
+$ ./push-master-to-staging.sh
+```
 
+## Production  
 - url: []()
 - server name: 
 - deployed folder (from root server): 
 - database: 
 - branch: `production`
-                
-## Credits
 
-Very inspired Framework of [fuse-base](https://github.com/solid-js/fuse-base) by [zouloux](https://github.com/zouloux).  
+Use deployer script to push master on production: 
+```shell
+$ ./push-master-to-staging.sh
+```
+             
+## Credits
+Inspired Framework of [fuse-base](https://github.com/solid-js/fuse-base).  
 Project dev by ADM developer team.
+
+## Licence
+This code is under GPLv3.

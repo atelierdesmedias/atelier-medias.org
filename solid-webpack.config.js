@@ -13,7 +13,7 @@ exports.libraries = {
 /**
  * Pass to true if you don't want to print compile file in the console
  */
-exports.quietConsole = true;
+exports.quietConsole = false;
 
 /**
  * Clear console between each compilation
