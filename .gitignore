@@ -2,7 +2,7 @@
 
 # ------------------------------------------------------------------------------ POOPS
 
-# Mac 
+# Mac
 .DS_Store
 
 # Ignore ide files
@@ -25,6 +25,12 @@ dist/app/vendor/*
 # ignore webpack compile assets folder
 dist/assets/
 
+# auto generated dot env
+dist/.env
+
+# auto generated config php
+dist/public/themes/worldplate/config.php
+
 # php config file expose node env variable
 dist/config.php
 
@@ -33,3 +39,7 @@ src/bundles.ts
 
 # atoms.ts
 src/_common/atoms.ts
+
+# env properties selected
+properties/.envName.js
+
