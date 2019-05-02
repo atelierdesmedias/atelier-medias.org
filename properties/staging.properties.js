@@ -15,10 +15,11 @@ module.exports = {
      *        Base should be : "/"
      */
 
-    base: '/',
+    base: '/adm/adm-v2/dist/public/',
 
     // assets are serve on this url
-    url: '',
+    // keep relative URL about staging and production
+    url: '/',
 
     /**
      * Les propriété du dotEnv.
@@ -34,13 +35,11 @@ module.exports = {
 
             // Cibler le chemin complet vers point d'entrée wordpress (dist/public)
             // Pas de slash à la fin
-            WP_URL: "",
-
-            // Meme URL que WP url avec "/wordpress" à la fin
-            WP_SITEURL:"",
+            WP_URL: "http://localhost/adm/adm-v2/dist/public",
+            WP_SITEURL:"http://localhost/adm/adm-v2/dist/public",
 
             // Le nom de la base de données
-            DB_NAME: "",
+            DB_NAME: "admwp",
         }
     )
 };

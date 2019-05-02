@@ -3,6 +3,9 @@
  */
 module.exports = {
 
+    // assets are serve on this url
+    url: 'http://localhost:8080/',
+
     /**
      * Application base.
      *
@@ -16,9 +19,6 @@ module.exports = {
      */
 
     base: '/adm/adm-v2/dist/public/',
-
-    // assets are serve on this url
-    url: 'http://localhost:8080/',
 
     /**
      * Les propriété du dotEnv.

@@ -6,10 +6,10 @@
 */
 
 // current environment variable
-$ENV = "dev";
+$ENV = "production";
 
 // current envName url
-$CURRENT_ENV_URL = "http://localhost:8080/";
+$CURRENT_ENV_URL = "/";
 
 // current envName base
 $CURRENT_ENV_BASE = "/adm/adm-v2/dist/public/";

@@ -18,7 +18,8 @@ module.exports = {
     base: '/',
 
     // assets are serve on this url
-    url: '',
+    // keep relative URL about staging and production
+    url: '/',
 
     /**
      * Les propriété du dotEnv.
@@ -36,11 +37,10 @@ module.exports = {
             // Pas de slash à la fin
             WP_URL: "",
 
-            // Meme URL que WP url avec "/wordpress" à la fin
+            // Cibler le chemin complet vers point d'entrée wordpress (dist/public)
+            // Pas de slash à la fin
+            WP_URL: "",
             WP_SITEURL:"",
-
-            // Le nom de la base de données
-            DB_NAME: "",
         }
     )
 };

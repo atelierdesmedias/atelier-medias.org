@@ -212,8 +212,10 @@ module.exports = {
             }
             // Select env
             _selectEnv( selectedEnvName );
-            // Done
-            resolve();
+
+            // fix: Make runnable return undefine if Promise is resolve
+            //  without argument
+            resolve('');
         }
 
         // if there is no envName as argument, select in env list
@@ -230,8 +232,11 @@ module.exports = {
             {
                 // Select env
                 _selectEnv( answer.envName );
-                // Done
-                resolve();
+
+                // fix: Make runnable return undefine if Promise is resolve
+                //  without argument
+                resolve('');
+
             });
 
         }
