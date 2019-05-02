@@ -16,11 +16,12 @@ env:
 
 # Ajouter le domaine au ficher known host de la machine virtuelle
 addons:
-  ssh_known_hosts: atelier-medias.org
+  ssh_known_hosts: "atelier-medias.org"
 
 # config SSH
 before_install:
-# confirm the fingerprint of the unknown server
+  # confirm the fingerprint of the unknown server
+  - echo ${DEPLOY_FTP_USER}
   - echo -e "Host atelier-medias.orgntStrictHostKeyChecking non" >> ~/.ssh/config
   - openssl aes-256-cbc -K ${SSH_ENCRYPTED_PRIVATE_KEY} -iv ${SSH_ENCRYPTED_PRIVATE_KEY} -in deploy_rsa.enc -out /tmp/deploy_rsa -d
   - eval "$(ssh-agent -s)"
