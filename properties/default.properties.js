@@ -39,7 +39,6 @@ module.exports = {
         DISALLOW_FILE_EDIT: true,
         SAVEQUERIES: true,
         FS_METHOD: 'direct',
-        // ACF_PRO_KEY: 'b3JkZXJfaWQ9MzI4MjZ8dHlwZT1wZXJzb25hbHxkYXRlPTIwMTQtMDctMDcgMTU6MDI6MDE=',
 
     }
 };
