@@ -2,13 +2,21 @@ language: php
 php:
   - 7.1
 
-before_script:
-  - composer install
-    
-script:
-  # selectionner l'env
-  - node solid selectEnv staging
+before_install:
+  - apt-get update
+  - apt-get install -y nodejs
 
-  # builder les sources
+install:
+  - composer install
+  - npm install
+
+script:
+  - node solid selectEnv staging
+  if: branch = master
+
+  - node solid selectEnv staging
+  if: branch = staging
+  
   - node solid production
+  # TODO deployer
 
