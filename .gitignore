@@ -23,7 +23,7 @@ node_modules/
 dist/app/vendor/*
 
 # ignore webpack compile assets folder
-dist/assets/
+dist/public/assets/
 
 # auto generated dot env
 dist/.env
