@@ -17,8 +17,7 @@ addons:
 before_install:
   # confirm the fingerprint of the unknown server
   - echo -e "Host atelier-medias.orgntStrictHostKeyChecking non" >> ~/.ssh/config
-
-  - openssl aes-256-cbc -K $SSH_ENCRYPTED_PRIVATE_KEY -in deploy_rsa.enc -out /tmp/deploy_rsa -d
+  - openssl aes-256-cbc -K $SSH_ENCRYPTED_PRIVATE_KEY -iv $SSH_ENCRYPTED_PRIVATE_KEY -in deploy_rsa.enc -out /tmp/deploy_rsa -d
   - eval "$(ssh-agent -s)"
   - chmod 600 /tmp/deploy_rsa
   - ssh-add /tmp/deploy_rsa
@@ -36,18 +35,13 @@ install:
   # installer des dépendances node
   - yarn install
 
-# SSH config
+# selectionner l'environnement de dev en fonction de la branch
 before_script:
-  - openssl aes-256-cbc -K $SSH_ENCRYPTED_PRIVATE_KEY -iv $encrypted_<...>_iv -in deploy_rsa.enc -out /tmp/deploy_rsa -d
-  - eval "$(ssh-agent -s)"
-  - chmod 600 /tmp/deploy_rsa
-  - ssh-add /tmp/deploy_rsa
-
-script:
-  # selectionner l'environnement de dev en fonction de la branch
   - if [ "$TRAVIS_BRANCH" == "master" ]; then node solid selectEnv staging; fi
   - if [ "$TRAVIS_BRANCH" == "staging" ]; then node solid selectEnv staging; fi
   - if [ "$TRAVIS_BRANCH" == "production" ]; then node solid selectEnv production; fi
+
+script:
   # builder les sources front
   - node solid production
   # pousser le tout sur le serveur
