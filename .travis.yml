@@ -1,7 +1,6 @@
 sudo: required
 cache: npm
 
-
 language: php
 php:
   - 7.1
@@ -17,7 +16,7 @@ addons:
 before_install:
   # confirm the fingerprint of the unknown server
   - echo -e "Host atelier-medias.orgntStrictHostKeyChecking non" >> ~/.ssh/config
-  - openssl aes-256-cbc -K $SSH_ENCRYPTED_PRIVATE_KEY -iv $SSH_ENCRYPTED_PRIVATE_KEY -in deploy_rsa.enc -out /tmp/deploy_rsa -d
+  #- openssl aes-256-cbc -K $SSH_ENCRYPTED_PRIVATE_KEY -iv $SSH_ENCRYPTED_PRIVATE_KEY -in deploy_rsa.enc -out /tmp/deploy_rsa -d
   - eval "$(ssh-agent -s)"
   - chmod 600 /tmp/deploy_rsa
   - ssh-add /tmp/deploy_rsa
