@@ -1,22 +1,49 @@
+sudo: required
+
 language: php
 php:
   - 7.1
 
+env:
+  - NODE_RELEASE=10.x
+
 before_install:
-  - apt-get update
-  - apt-get install -y nodejs
+  # installer node
+  - curl -sL "https://deb.nodesource.com/setup_${NODE_RELEASE}"
+  - sudo apt-get install -y nodejs
 
 install:
+  # aller dans le dossier dist/
+  - cd dist/
+  # installer les dependances php
   - composer install
-  - npm install
+  # retourner à la racine
+  - cd ..
+  # installer des dépendances node
+  - yarn install
+
+# SSH config
+#before_script:
+
+  ## Add the SSH key stored in SSH_PRIVATE_KEY variable to the agent store
+  ## We're using tr to fix line endings which makes ed25519 keys work
+  ## without extra base64 encoding.
+  #- ssh-add <(echo "$SSH_PRIVATE_KEY" | base64 -d)
+
+  ## Create the SSH directory and give it the right permissions
+  #- mkdir -p ~/.ssh
+  #- chmod 700 ~/.ssh
+  #- echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+  #- chmod 644 ~/.ssh/known_hosts
 
 script:
-  - node solid selectEnv staging
-  if: branch = master
-
-  - node solid selectEnv staging
-  if: branch = staging
-  
+  # selectionner l'environnement de dev en fonction de la branch
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then node solid selectEnv staging; fi
+  - if [ "$TRAVIS_BRANCH" == "staging" ]; then node solid selectEnv staging; fi
+  - if [ "$TRAVIS_BRANCH" == "production" ]; then node solid selectEnv production; fi
+  # builder les sources front
   - node solid production
-  # TODO deployer
+  # pousser le tout sur le serveur
+  - echo "pousser sur le serveur"
+  #- scp -r -p dist/public/ robot@atelier-media.org:/var/html/www/
 
