@@ -1,0 +1,14 @@
+language: php
+php:
+  - 7.1
+
+before_script:
+  - composer install
+    
+script:
+  # selectionner l'env
+  - node solid selectEnv staging
+
+  # builder les sources
+  - node solid production
+
