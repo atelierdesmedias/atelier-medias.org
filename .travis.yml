@@ -50,7 +50,7 @@ script:
   # builder les sources
   - node solid production
   # transférer les sources sur le serveur
-  - if [ "$TRAVIS_BRANCH" == "staging" ]; then rsync --checksum -i -r -a -e ssh --omit-dir-times --quiet --delete dist/public/ $SSH_USER@$DEPLOY_HOST:${DEPLOY_STAGING_FOLDER}; fi
+  - if [ "$TRAVIS_BRANCH" == "staging" ]; then rsync --checksum -i -r -a -e ssh --omit-dir-times --quiet --delete dist/ $SSH_USER@$DEPLOY_HOST:${DEPLOY_STAGING_FOLDER}; fi
   # TODO: decommenter pour la mise en prod
-  # - if [ "$TRAVIS_BRANCH" == "production" ]; then rsync --checksum -i -r -a -e ssh --omit-dir-times --quiet --delete dist/public/ $SSH_USER@$DEPLOY_HOST:${DEPLOY_PROD_FOLDER}; fi
+  # - if [ "$TRAVIS_BRANCH" == "production" ]; then rsync --checksum -i -r -a -e ssh --omit-dir-times --quiet --delete dist/ $SSH_USER@$DEPLOY_HOST:${DEPLOY_PROD_FOLDER}; fi
 
