@@ -2,7 +2,7 @@
 # atelier-medias.org
  
 ![Travis (.org) branch](https://img.shields.io/travis/atelierdesmedias/atelier-medias.org/staging.svg?label=build%20staging)
-[Travis (.org) branch](https://img.shields.io/travis/atelierdesmedias/atelier-medias.org/production.svg?label=build%20production)
+![Travis (.org) branch](https://img.shields.io/travis/atelierdesmedias/atelier-medias.org/production.svg?label=build%20production)
 
 ## About
 Wordpress website v.2 [atelier-medias.org](http://www.atelier-medias.org/).
