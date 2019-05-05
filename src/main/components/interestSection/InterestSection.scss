@@ -36,6 +36,10 @@
     color: $blackOverlayColor;
   }
 
+  &_link {
+    text-decoration: none;
+  }
+
   &_button {
     //reset
     background: none;
@@ -58,7 +62,6 @@
 
     // Style
     transition: 10ms ease-in-out;
-
     &:first-letter {
       text-transform: capitalize;
     }
