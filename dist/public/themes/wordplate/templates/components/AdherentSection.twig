@@ -13,11 +13,11 @@
             blockModifier: 'adherent',
             title: {
                 verb: dico.components.AdherentBlock.adherent.verb,
-                calificatif: dico.components.AdherentBlock.adherent.calificatif,
+                calificatif: post.meta('adherents_blocks').adhesion.title,
             },
-            description: dico.components.AdherentBlock.adherent.description,
-            items: dico.components.AdherentBlock.adherent.items,
-            price: dico.components.AdherentBlock.adherent.price.price,
+            description: post.meta('adherents_blocks').adhesion.description,
+            text: post.meta('adherents_blocks').adhesion.text,
+            price: post.meta('adherents_blocks').adhesion.price,
             labelPrice: dico.components.AdherentBlock.adherent.price.labelPrice
         } %}
 
@@ -29,13 +29,13 @@
                 blockModifier: 'fixe',
                 title: {
                     verb: dico.components.AdherentBlock.fixe.verb,
-                    calificatif: dico.components.AdherentBlock.fixe.calificatif,
+                    calificatif: post.meta('adherents_blocks').fixe.title,
                 },
-                description: dico.components.AdherentBlock.fixe.description,
-                items: dico.components.AdherentBlock.fixe.items,
-                price: dico.components.AdherentBlock.fixe.price.price,
+                description: post.meta('adherents_blocks').fixe.description,
+                text: post.meta('adherents_blocks').fixe.text,
+                price: post.meta('adherents_blocks').fixe.price,
                 labelPrice: dico.components.AdherentBlock.fixe.price.labelPrice,
-                note: dico.components.AdherentBlock.fixe.note
+                note: post.meta('adherents_blocks').fixe.note
             } %}
 
             {# importer "adherent Block" #}
@@ -45,13 +45,13 @@
                 blockModifier: 'nomade',
                 title: {
                     verb: dico.components.AdherentBlock.nomade.verb,
-                    calificatif: dico.components.AdherentBlock.nomade.calificatif,
+                    calificatif: post.meta('adherents_blocks').nomade.title,
                 },
-                description: dico.components.AdherentBlock.nomade.description,
-                items: dico.components.AdherentBlock.nomade.items,
-                price: dico.components.AdherentBlock.nomade.price.price,
+                description: post.meta('adherents_blocks').nomade.description,
+                text: post.meta('adherents_blocks').nomade.text,
+                price: post.meta('adherents_blocks').nomade.price,
                 labelPrice: dico.components.AdherentBlock.nomade.price.labelPrice,
-                note: dico.components.AdherentBlock.nomade.note
+                note: post.meta('adherents_blocks').nomade.note
             } %}
         </div>
     </div>

@@ -14,13 +14,11 @@
         </header>
         <section class="AdherentBlock_content">
             {% if description %}
-            <div class="AdherentBlock_description">{{ description }}</div>
+                <div class="AdherentBlock_description">{{ description }}</div>
             {% endif %}
-            <ul class="AdherentBlock_items">
-                {% for item in items %}
-                    <li class="AdherentBlock_item">{{ item }}</li>
-                {% endfor %}
-            </ul>
+            {% if text %}
+                <div class="AdherentBlock_text">{{ text }}</div>
+            {% endif %}
             <div class="AdherentBlock_priceBlock">
                 <div class="AdherentBlock_price">{{ price }} €</div>
                 <div class="AdherentBlock_labelPrice">{{ labelPrice }}</div>

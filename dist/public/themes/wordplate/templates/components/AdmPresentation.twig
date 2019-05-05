@@ -8,13 +8,11 @@
 
     <section class="AdmPresentation_wrapper">
         <div class="AdmPresentation_content">
-            <h1 class="AdmPresentation_title">{{ dico.components.AdmPresentation.title }}</h1>
-
+            <h1 class="AdmPresentation_title">
+                {{ post.meta('adm_presentation').title }}
+            </h1>
             <div class="AdmPresentation_text">
-                {# TODO text en ADMIN depuis la page "home" #}
-                {% for paragraph in dico.components.AdmPresentation.paragraphs %}
-                    <p>{{ paragraph }}</p>
-                {% endfor %}
+                {{ post.meta('adm_presentation').text }}
             </div>
         </div>
     </section>

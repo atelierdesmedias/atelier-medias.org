@@ -2,20 +2,17 @@
   * "interestSection" stylesheet
   * follow workflow instructions
  */
-
 // -----------------------------------------------------------------------------  IMPORT
-
 // common style & mixins
 @import '../../../_common/common';
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.InterestSection
-{
+.InterestSection {
   // --------------------------------------------------------------------------- PROPERTIES
 
   // Call block element anywhere. Use it like this : .#{$this}_element
-  $this : InterestSection;
+  $this: InterestSection;
 
   // --------------------------------------------------------------------------- BLOCK
 
@@ -25,29 +22,21 @@
 
   // --------------------------------------------------------------------------- ELEMENTS
 
-  &_wrapper
-  {
+  &_wrapper {
     @include contentColumnWidthCenter();
   }
 
-  &_content
-  {
+  &_content {
     margin: auto;
   }
 
-  &_description
-  {
-    margin:auto;
-  }
-
-  &_p
-  {
+  &_description {
+    margin: auto;
     text-align: center;
     color: $blackOverlayColor;
   }
 
-  &_button
-  {
+  &_button {
     //reset
     background: none;
     font: inherit;
@@ -59,7 +48,7 @@
     display: block;
     margin: 1.5rem auto 0;
     border: 1px solid $turqoiseColor;
-    padding:1.75rem 2rem;
+    padding: 1.75rem 2rem;
 
     // text
     text-align: center;
@@ -68,15 +57,13 @@
     @include lato-regular();
 
     // Style
-    border-radius: 0.6rem;
     transition: 10ms ease-in-out;
 
-    &:first-letter
-    {
+    &:first-letter {
       text-transform: capitalize;
     }
-    &:hover
-    {
+
+    &:hover {
       color: $whiteColor;
       background: $turqoiseColor;
     }

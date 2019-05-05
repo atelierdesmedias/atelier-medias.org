@@ -7,13 +7,10 @@
     <section class="CoworkersPresentation_wrapper">
         <div class="CoworkersPresentation_content">
             <h1 class="CoworkersPresentation_title">
-                {{ dico.components.CoworkersPresentation.title }}
+                {{ post.meta('coworkers_presentation').title }}
             </h1>
             <div class="CoworkersPresentation_text">
-                {# TODO text en ADMIN depuis la page "home" #}
-                {% for paragraph in dico.components.CoworkersPresentation.paragraphs %}
-                    <p>{{ paragraph }}</p>
-                {% endfor %}
+                {{ post.meta('coworkers_presentation').text }}
             </div>
         </div>
     </section>

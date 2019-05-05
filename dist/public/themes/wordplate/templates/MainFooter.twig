@@ -21,8 +21,8 @@
                             <section class="MainFooter_content">
                                 <a class="MainFooter_link" href="{{ mapLink }}">
                                     <address class="MainFooter_address">
-                                        {{ dico.site.address }}<br>
-                                        {{ dico.site.CP }}, {{ dico.site.city }}
+                                        {{ contact.meta('address').street }}<br>
+                                        {{ contact.meta('address').cp }}, {{ contact.meta('address').city }}
                                     </address>
                                 </a>
                             </section>
@@ -36,10 +36,10 @@
                             <section class="MainFooter_content">
                                 <ul class="MainFooter_subItems">
                                     <li class="MainFooter_subItem">
-                                        <a class="MainFooter_link MainFooter_link-tel" href="tel:{{ dico.site.tel }}">{{ dico.site.tel }}</a>
+                                        <a class="MainFooter_link MainFooter_link-tel" href="tel:{{ contact.meta('contact').tel }}">{{ dico.site.tel }}</a>
                                     </li>
                                     <li class="MainFooter_subItem">
-                                        <a class="MainFooter_link MainFooter_link-mail" href="mailto:{{ dico.site.mail }}">{{ dico.site.mail }}</a>
+                                        <a class="MainFooter_link MainFooter_link-mail" href="mailto:{{ contact.meta('contact').mail }}">{{ contact.meta('contact').mail }}</a>
                                     </li>
                                 </ul>
                             </section>
@@ -87,7 +87,7 @@
                                 </h1>
                             </header>
                             <section class="MainFooter_content MainFooter_content-grey">
-                                {{ dico.components.MainFooter.about }}
+                                {{ contact.about }}
                             </section>
                         </li>
                         <li class="MainFooter_item">
@@ -102,13 +102,8 @@
                         </li>
                     </ul>
                 </section>
-
             </div>
-
         </div>
         </div>
     </div>
-
-    {#Copyright {{"now"|date('Y')}}#}
-
 </footer>
