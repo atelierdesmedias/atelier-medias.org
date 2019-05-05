@@ -47,22 +47,13 @@ before_script:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then node solid selectEnv staging; fi
   - if [ "$TRAVIS_BRANCH" == "staging" ]; then node solid selectEnv staging; fi
   - if [ "$TRAVIS_BRANCH" == "production" ]; then node solid selectEnv production; fi
-  # builder les sources front
-  - node solid production
 
-deploy:
-  - provider: script
-    skip-cleanup: true
-    # pousser le tout sur le serveur
-    script: rsync -r --delete-after --quiet -O --delete dist/public/ $SSH_USER@$DEPLOY_HOST:${DEPLOY_STAGING_FOLDER}
-    on:
-      branch: master
-  - provider: script
-    skip-cleanup: true
-    # pousser le tout sur le serveur
-    script: rsync -r --delete-after --quiet -O --delete dist/public/ $SSH_USER@$DEPLOY_HOST:${DEPLOY_STAGING_FOLDER}
-    on:
-      branch: staging
+script:
+  # builder les sources
+  - node solid production
+  # transférer les sources sur le serveur
+  - rsync --checksum -i -r -a -e ssh -O --delete dist/public/ $SSH_USER@$DEPLOY_HOST:${DEPLOY_STAGING_FOLDER}
+
 
 
 
