@@ -53,16 +53,14 @@ before_script:
 deploy:
   - provider: script
     skip-cleanup: true
-    local-dir: dist
     # pousser le tout sur le serveur
-    script: rsync -r --delete-after --quiet --delete dist/public/ $SSH_USER@$DEPLOY_HOST:${DEPLOY_STAGING_FOLDER}
+    script: rsync -r --delete-after --quiet -O --delete dist/public/ $SSH_USER@$DEPLOY_HOST:${DEPLOY_STAGING_FOLDER}
     on:
       branch: master
   - provider: script
     skip-cleanup: true
-    local-dir: dist
     # pousser le tout sur le serveur
-    script: rsync -r --delete-after --quiet --delete dist/public/ $SSH_USER@$DEPLOY_HOST:${DEPLOY_STAGING_FOLDER}
+    script: rsync -r --delete-after --quiet -O --delete dist/public/ $SSH_USER@$DEPLOY_HOST:${DEPLOY_STAGING_FOLDER}
     on:
       branch: staging
 
