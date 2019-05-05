@@ -1,16 +1,13 @@
 <?php
-
 /*
  * This file is part of WordPlate.
  *
- * (c) Vincent Klaiber <hello@vinkla.com>
+ * (c) Vincent Klaiber <hello@doubledip.se>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 declare(strict_types=1);
-
 /*
 |--------------------------------------------------------------------------
 | Register The Composer Auto Loader
@@ -22,9 +19,7 @@ declare(strict_types=1);
 | loading of any our classes "manually".
 |
 */
-
 require __DIR__.'/../vendor/autoload.php';
-
 /*
 |--------------------------------------------------------------------------
 | Create The Application
@@ -35,11 +30,9 @@ require __DIR__.'/../vendor/autoload.php';
 | the container for the system binding all of the various parts.
 |
 */
-
 $application = new WordPlate\Application(
-    realpath(__DIR__)
+    realpath(__DIR__.'/../')
 );
-
 /*
 |--------------------------------------------------------------------------
 | Custom WordPress Constants
@@ -49,9 +42,7 @@ $application = new WordPlate\Application(
 | application class. You may of course use the env() helper function.
 |
 */
-
 // define('WP_ALLOW_MULTISITE', env('WP_ALLOW_MULTISITE', true));
-
 /*
 |--------------------------------------------------------------------------
 | WordPress Database Table Prefix
@@ -61,9 +52,7 @@ $application = new WordPlate\Application(
 | a unique prefix. Only numbers, letters, and underscores please!
 |
 */
-
 $table_prefix = env('WP_PREFIX', 'wp_');
-
 /*
 |--------------------------------------------------------------------------
 | Run The Application
@@ -75,9 +64,7 @@ $table_prefix = env('WP_PREFIX', 'wp_');
 | browser and delight our users.
 |
 */
-
 $application->run();
-
 /*
 |--------------------------------------------------------------------------
 | Bootstrap WordPress Framework
@@ -88,5 +75,4 @@ $application->run();
 | include here in order to support WP-CLI.
 |
 */
-
 require_once ABSPATH.'wp-settings.php';
