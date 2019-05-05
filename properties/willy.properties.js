@@ -3,8 +3,10 @@
  */
 module.exports = {
 
+
     // assets are serve on this url
-    url: 'http://localhost:8080/',
+    url: 'http://localhost:3000/',
+    port:3000,
 
     /**
      * Application base.

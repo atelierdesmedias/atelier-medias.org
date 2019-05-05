@@ -15,6 +15,24 @@ const compileMessage = ( pMessage ) => {
 // ----------------------------------------------------------------------------- TASKS
 
 /**
+ * Prebuild tasks
+ * @param pEnv
+ * @private
+ */
+const _prebuild = (async (pEnv) =>
+{
+    // PreBuild bundle list
+    await require('./task-prebuild').preBuildBundleList();
+
+    // PreBuild config
+    await require('./task-prebuild').preBuildPhpConfig(pEnv);
+    await require('./task-prebuild').preBuildDotEnvConfig();
+
+    // Prebuild Atoms
+    await require('./task-prebuild').preBuildAtoms();
+});
+
+/**
  * PUBLIC API
  */
 module.exports = {
@@ -22,56 +40,35 @@ module.exports = {
     /**
      * Dev task
      */
-    dev : () =>
+    dev : (async () =>
     {
-        // current env
-        const env = 'dev';
-
-        // PreBuild bundle list
-        require('./task-prebuild').preBuildBundleList();
-
-        // PreBuild config
-        require('./task-prebuild').preBuildPhpConfig(env);
-        require('./task-prebuild').preBuildDotEnvConfig();
-
-        // Prebuild Atoms
-        require('./task-prebuild').preBuildAtoms();
-
+        // start prebuild
+        await _prebuild('dev');
 
         // start webpack
-        compileMessage('🚚 Start webpack dev-server');
-        shell.exec('npm run dev');
+        await compileMessage('🚚 Start webpack dev-server');
+        await shell.exec('yarn dev');
 
         // if not return make runnable return undefined
         return '';
-    },
+    }),
 
     /**
      * Production task
      */
-    production : () =>
+    production : (async () =>
     {
-        // current env
-        const env = 'production';
-
-        // PreBuild bundle list
-        require('./task-prebuild').preBuildBundleList();
-
-        // PreBuild php config
-        require('./task-prebuild').preBuildPhpConfig(env);
-        require('./task-prebuild').preBuildDotEnvConfig();
-
-        // Prebuild Atoms
-        require('./task-prebuild').preBuildAtoms();
+        // start prebuild
+        await _prebuild('production');
 
         // start webpack
-        compileMessage('😱 Start webpack production');
-        shell.exec('npm run production', (err) =>
+        await compileMessage('😱 Start webpack production');
+        await shell.exec('npm run production', (err) =>
         {
             compileMessage('webpack production end');
         });
 
         // if not return make runnable return undefined
         return '';
-    },
+    }),
 };

@@ -206,7 +206,10 @@ const devServerTool = {
     devServer: {
 
         // content base to serve local dev assets
-        contentBase: globalConstants.distPath,
+        contentBase: path.join(__dirname, globalConstants.distPath),
+        compress: true,
+        port: currentProperties.port,
+        hot: true,
 
         // display error overlay on screen
         overlay: true,

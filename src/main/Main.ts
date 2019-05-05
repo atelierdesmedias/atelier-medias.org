@@ -23,10 +23,8 @@ export class main extends DOMView
 
     // ------------------------------------------------------------------------- TYPE
 
-
     private _AppView: AppView;
     private _HomePage: HomePage;
-
 
     // ------------------------------------------------------------------------- INIT
 
