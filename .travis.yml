@@ -26,7 +26,7 @@ before_install:
   - openssl aes-256-cbc -K $encrypted_087b74a6dd92_key -iv $encrypted_087b74a6dd92_iv -in robot-id_rsa.enc -out robot-id_rsa -d
   - eval "$(ssh-agent -s)"
   # - chmod 600 /tmp/robot-id_rsa
-  ssh-add robot-id_rsa
+  - ssh-add robot-id_rsa
 
 install:
   # installer node
