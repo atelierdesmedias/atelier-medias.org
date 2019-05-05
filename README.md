@@ -1,8 +1,8 @@
 
 # atelier-medias.org
  
-[![Build Status](https://travis-ci.com/atelierdesmedias/atelier-medias.org.svg?branch=staging)](https://travis-ci.com/atelierdesmedias/atelier-medias.org)
-[![Build Status](https://travis-ci.com/atelierdesmedias/atelier-medias.org.svg?branch=production)](https://travis-ci.com/atelierdesmedias/atelier-medias.org)
+[![Build Status](https://travis-ci.org/atelierdesmedias/atelier-medias.org.svg?branch=staging)](https://travis-ci.org/atelierdesmedias/atelier-medias.org)
+[![Build Status](https://travis-ci.org/atelierdesmedias/atelier-medias.org.svg?branch=production)](https://travis-ci.org/atelierdesmedias/atelier-medias.org)
 
 ## About
 Wordpress website v.2 [atelier-medias.org](http://www.atelier-medias.org/).
