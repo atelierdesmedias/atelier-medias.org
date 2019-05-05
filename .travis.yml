@@ -12,6 +12,9 @@ branches:
     - staging
     - production
 
+env:
+  - NODE_RELEASE=10.x
+
 # Ajouter le domaine au ficher known host de la machine virtuelle
 addons:
   ssh_known_hosts:
@@ -29,7 +32,7 @@ before_install:
 
 install:
   # installer node
-  - curl -sL "https://deb.nodesource.com/setup_10.x
+  - curl -sL "https://deb.nodesource.com/setup_${NODE_RELEASE}"
   - sudo apt-get install -y nodejs
   # aller dans le dossier dist/
   - cd dist/
