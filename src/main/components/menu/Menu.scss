@@ -2,21 +2,18 @@
   * "Menu" stylesheet
   * follow workflow instructions
  */
-
 // -----------------------------------------------------------------------------  IMPORT
-
 // common style & mixins
 @import '../../../_common/common';
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.Menu
-{
+.Menu {
   // --------------------------------------------------------------------------- PROPERTIES
 
 
-    // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : Menu;
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this: Menu;
 
   // --------------------------------------------------------------------------- BLOCK
 
@@ -24,15 +21,13 @@
 
   // style
   @include title-smallUppercase();
-  @media (max-width: $large)
-  {
+  @media (max-width: $large) {
     font-size: 1.5rem;
   }
 
   // --------------------------------------------------------------------------- ELEMENTS
 
-  &_items
-  {
+  &_items {
     // position
     position: relative;
     @include size(100%, $mainBorder);
@@ -41,41 +36,30 @@
     // style
     list-style: none;
 
-      @media (max-width: $large) {
+    @media (max-width: $large) {
       display: block;
       @include size(100%, auto);
     }
-
   }
 
-  &_item
-  {
-    // position
+  &_item {
     position: relative;
     height: $mainBorder;
     padding: 0 1.5rem;
-
-    // style
-   @include sepNavItem();
-
+    @include sepNavItem();
     @media (max-width: $large) {
       border: 0;
       padding: 1.5rem 3.2rem;
     }
 
-
-    &.current-menu-item
-    {
-      > a
-      {
-        color:$turqoiseColor;
+    &.current-menu-item {
+      & > a {
+        color: $turqoiseColor;
       }
     }
-
   }
 
-  &_link
-  {
+  &_link {
     // style reset
     border: 0;
     text-decoration: none;
@@ -86,16 +70,9 @@
     color: $grey77Color;
     @include lato-bold();
 
-    &:hover
-    {
+    &:hover {
       color: $turqoiseColor;
     }
-  }
-
-
-  &_innerLink
-  {
-
   }
 
   // --------------------------------------------------------------------------- MODIFIERS
