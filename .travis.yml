@@ -8,7 +8,6 @@ php:
 
 branches:
   only:
-    - master
     - staging
     - production
 
@@ -44,7 +43,6 @@ install:
 
 # selectionner l'environnement de dev en fonction de la branch
 before_script:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then node solid selectEnv staging; fi
   - if [ "$TRAVIS_BRANCH" == "staging" ]; then node solid selectEnv staging; fi
   - if [ "$TRAVIS_BRANCH" == "production" ]; then node solid selectEnv production; fi
 
@@ -52,10 +50,7 @@ script:
   # builder les sources
   - node solid production
   # transférer les sources sur le serveur
-  - rsync --checksum -i -r -a -e ssh --omit-dir-times --quiet --delete dist/public/ $SSH_USER@$DEPLOY_HOST:${DEPLOY_STAGING_FOLDER}
-
-
-
-
-
+  - if [ "$TRAVIS_BRANCH" == "staging" ]; then rsync --checksum -i -r -a -e ssh --omit-dir-times --quiet --delete dist/public/ $SSH_USER@$DEPLOY_HOST:${DEPLOY_STAGING_FOLDER}; fi
+  # TODO: activer pour la mise en prod
+  # - if [ "$TRAVIS_BRANCH" == "production" ]; then rsync --checksum -i -r -a -e ssh --omit-dir-times --quiet --delete dist/public/ $SSH_USER@$DEPLOY_HOST:${DEPLOY_PROD_FOLDER}; fi
 
