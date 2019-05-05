@@ -1,8 +1,7 @@
 
 # atelier-medias.org
  
-[![Build Status](https://travis-ci.com/atelierdesmedias/atelier-medias.org.svg?branch=master)](https://travis-ci.com/atelierdesmedias/atelier-medias.org)
-[![Build Status](https://travis-ci.com/atelierdesmedias/atelier-medias.org.svg?branch=stagin)](https://travis-ci.com/atelierdesmedias/atelier-medias.org)
+[![Build Status](https://travis-ci.com/atelierdesmedias/atelier-medias.org.svg?branch=staging)](https://travis-ci.com/atelierdesmedias/atelier-medias.org)
 [![Build Status](https://travis-ci.com/atelierdesmedias/atelier-medias.org.svg?branch=production)](https://travis-ci.com/atelierdesmedias/atelier-medias.org)
 
 ## About
@@ -17,16 +16,13 @@ Check [docs](docs/) folder.
 ## Design
 Check [design online](https://projects.invisionapp.com/share/FMGJ96E57TB#/screens/287421915_Desktop_HD_-_Home)
      
-## Admin back-office
-- url:
+## Admin back-office on admwp.sql
+
 - user: ADM
 - pass: root
 
 ## Staging
-- url: []()
-- server name: 
-- deployed folder (from root server):
-- database: 
+- url: [staging.atelier-medias.org](http://staging.atelier-medias.org)
 - branch: `staging`
 
 Use deployer script to push master on staging: 
@@ -35,15 +31,12 @@ $ ./push-master-to-staging.sh
 ```
 
 ## Production  
-- url: []()
-- server name: 
-- deployed folder (from root server): 
-- database: 
+- url: [atelier-medias.org](http://atelier-medias.org) 
 - branch: `production`
 
 Use deployer script to push master on production: 
 ```shell
-$ ./push-master-to-staging.sh
+$ ./push-master-to-production.sh
 ```
              
 ## Credits
