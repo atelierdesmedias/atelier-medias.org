@@ -52,7 +52,7 @@ script:
   # builder les sources
   - node solid production
   # transférer les sources sur le serveur
-  - rsync --checksum -i -r -a -e ssh -O --delete dist/public/ $SSH_USER@$DEPLOY_HOST:${DEPLOY_STAGING_FOLDER}
+  - rsync --checksum -i -r -a -e -O ssh --delete dist/public/ $SSH_USER@$DEPLOY_HOST:${DEPLOY_STAGING_FOLDER}
 
 
 
