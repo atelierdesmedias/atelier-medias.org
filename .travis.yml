@@ -47,7 +47,6 @@ before_script:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then node solid selectEnv staging; fi
   - if [ "$TRAVIS_BRANCH" == "staging" ]; then node solid selectEnv staging; fi
   - if [ "$TRAVIS_BRANCH" == "production" ]; then node solid selectEnv production; fi
-
   # builder les sources front
   - node solid production
 
