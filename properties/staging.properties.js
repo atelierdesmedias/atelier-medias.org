@@ -15,7 +15,7 @@ module.exports = {
      *        Base should be : "/"
      */
 
-    base: '/adm/adm-v2/dist/public/',
+    base: '/',
 
     // assets are serve on this url
     // keep relative URL about staging and production
@@ -30,14 +30,17 @@ module.exports = {
         require('./default.properties').dotEnv,
         {
             // Activer le mode debug
-            WP_ENV: "local",
+            WP_ENV: "production",
+
+            // activer en preprod
             WP_DEBUG: "true",
 
             // Cibler le chemin complet vers point d'entrée wordpress (dist/public)
             // Pas de slash à la fin
-            // TODO à revoir en fonction de la création sous-domaine
-            WP_URL: "http://staging.atelier-media.org",
-            WP_SITEURL:"http://staging.atelier-media.org",
+            WP_URL: "http://staging.atelier-media.org/public",
+
+            // Meme URL que WP url avec "/wordpress" à la fin
+            WP_SITEURL:"http://staging.atelier-media.org/public/wordpress",
 
             // Le nom de la base de données
             DB_NAME: "admwpstaging",
