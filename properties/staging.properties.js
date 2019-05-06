@@ -37,10 +37,10 @@ module.exports = {
 
             // Cibler le chemin complet vers point d'entrée wordpress (dist/public)
             // Pas de slash à la fin
-            WP_URL: "http://staging.atelier-media.org/public",
+            WP_URL: "http://staging.atelier-medias.org",
 
             // Meme URL que WP url avec "/wordpress" à la fin
-            WP_SITEURL:"http://staging.atelier-media.org/public/wordpress",
+            WP_SITEURL:"http://staging.atelier-medias.org/wordpress",
 
             // Le nom de la base de données
             DB_NAME: "admwpstaging",
