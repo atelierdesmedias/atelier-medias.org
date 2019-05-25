@@ -75,11 +75,19 @@ class StarterSite extends \Timber\Site
         $context['site'] = $this;
 
         // coworkers context
-        $coworkers = Yaml::parseFile(COWORKERS_YAML);
-        if (is_array($coworkers)) {
-            $context['coworkers'] = $coworkers;
-        } else {
-            $context['coworkers'] = [];
+        $context['coworkers'] = [];
+
+        // si le fichier yaml exist
+        if (file_exists(COWORKERS_YAML))
+        {
+            // parser le yaml
+            $coworkers = Yaml::parseFile(COWORKERS_YAML);
+
+            // si c'est bien un tableau
+            if (is_array($coworkers)) {
+                // injecter les datas dans context
+                $context['coworkers'] = $coworkers;
+            }
         }
 
         // retourner le context
@@ -122,7 +130,7 @@ function load_scripts()
     require_once (__DIR__.'/config.php');
 
     // si on est en dev
-    if (  $ENV !== 'dev')
+    if ($ENV !== 'dev')
     {
         // register CSS script
         wp_register_style( 'bundle-main-css', $CURRENT_ENV_URL."assets/bundle-main.css" , array(), '', 'all' );
