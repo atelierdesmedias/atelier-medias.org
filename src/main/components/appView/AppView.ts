@@ -23,7 +23,6 @@ export class AppView extends DOMView
 
     /**
      * prepare nodes
-     *
      */
     protected prepareNodes()
     {
@@ -32,7 +31,6 @@ export class AppView extends DOMView
 
     /**
      * prepare dependencies
-     *
      */
     protected prepareDependencies()
     {
@@ -45,7 +43,6 @@ export class AppView extends DOMView
 
     /**
      * prepare events
-     *
      */
     protected prepareEvents()
     {
@@ -54,7 +51,6 @@ export class AppView extends DOMView
 
     /**
      * after Init
-     *
      */
     protected afterInit()
     {

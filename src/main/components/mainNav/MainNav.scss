@@ -66,9 +66,9 @@
   }
 
   &_socialBlock {
-    margin-left:1rem;
+    margin-left: 1rem;
     @media (max-width: $large) {
-      margin-left:0; // reset
+      margin-left: 0; // reset
       padding: 2rem 0;
     }
   }

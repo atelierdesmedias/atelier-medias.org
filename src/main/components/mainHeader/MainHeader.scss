@@ -2,21 +2,18 @@
   * "MainHeader" stylesheet
   * follow workflow instructions
  */
-
 // -----------------------------------------------------------------------------  IMPORT
-
 // common style & mixins
 @import '../../../_common/common';
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.MainHeader
-{
+.MainHeader {
   // --------------------------------------------------------------------------- PROPERTIES
 
 
-    // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : MainHeader;
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this: MainHeader;
 
   // --------------------------------------------------------------------------- BLOCK
 
@@ -25,20 +22,18 @@
 
   // --------------------------------------------------------------------------- ELEMENTS
 
-  &_hamburgerButton
-  {
+  &_hamburgerButton {
     display: none;
     @media (max-width: $large) {
       display: block;
-      @include position(fixed, 0 0 null null );
+      @include position(fixed, 0 0 null null);
       padding: 2rem;
       background: $whiteColor;
       z-index: 10;
     }
   }
 
-  &_mainNav
-  {
+  &_mainNav {
     @include position(fixed, 0 0 null 0);
     z-index: 5;
 
@@ -47,8 +42,7 @@
     }
   }
 
-  &_arrowDown
-  {
+  &_arrowDown {
     @include absoluteCenter(x);
     bottom: 1.5em;
     z-index: 1;

@@ -2,21 +2,18 @@
   * "EventBanner" stylesheet
   * follow workflow instructions
  */
-
 // -----------------------------------------------------------------------------  IMPORT
-
 // common style & mixins
 @import '../../../_common/common';
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.EventBanner
-{
+.EventBanner {
   // --------------------------------------------------------------------------- PROPERTIES
 
 
-    // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : EventBanner;
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this: EventBanner;
 
   // --------------------------------------------------------------------------- BLOCK
 
@@ -24,66 +21,48 @@
 
   // --------------------------------------------------------------------------- ELEMENTS
 
-  &_content
-  {
-    // position
+  &_content {
     position: relative;
     display: flex;
     align-items: center;
     text-align: right;
-
-    // style
     border: 2px solid $whiteColor;
     border-radius: 5px 0 0 5px;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0, 0, 0, 0.3);
     text-decoration: none;
   }
 
-  &_title
-  {
-    // position
+  &_title {
     position: relative;
     @include size(100%, 100%);
     padding: 0 1rem;
-
-    // style
     font-size: 1.1rem;
     color: $whiteColor;
     @include lato-bold();
 
   }
 
-  &_date
-  {
-    // position
+  &_date {
     display: flex;
     flex-direction: column;
     @include size(110px, auto);
     padding: 5px 0;
-
-    // style
     color: $blackColor;
     background: $whiteColor;
     text-align: center;
   }
 
-  &_dayName
-  {
-    // style
+  &_dayName {
     @include title-smallUppercase($blackColor);
     font-size: 0.7rem;
   }
 
-  &_dayNumber
-  {
-    // style
+  &_dayNumber {
     @include lato-bold();
     font-size: 1.6rem;
   }
 
-  &_month
-  {
-    // style
+  &_month {
     @include title-smallUppercase($blackColor);
     font-size: 0.7rem;
   }

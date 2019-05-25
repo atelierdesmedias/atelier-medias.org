@@ -1,4 +1,3 @@
-
 /**
  * Webpack Solid
  */
@@ -26,7 +25,6 @@ const bundles = require(`./${globalConstants.srcPath}${globalConstants.bundlesLi
 // ----------------------------------------------------------------------------- WEBPACK
 
 const entry = {
-
     entry: {
         // import auto-generated bundles.ts object who contains bundles entries files paths
         ...bundles
@@ -34,73 +32,55 @@ const entry = {
 };
 
 const output = {
-
     output: {
-
         // need an absolute path
-        path: path.resolve( globalConstants.assetsPath ),
-
+        path: path.resolve(globalConstants.assetsPath),
         // give name of bundle entry to the output file with [name]
         filename: '[name].js',
-
         publicPath: isDev
             ? currentProperties.url + globalConstants.assetsFolder
             : '',
     },
-
 };
 
 const resolve = {
-
     resolve: {
-
-        // extentions preference order
         extensions: [
             '.js', '.ts', '.tsx'
         ],
-
-        // alias
-        alias: {
-
-        },
-
+        alias: {},
         modules: [
             path.resolve('node_modules'),
             path.resolve(__dirname, './'),
             globalConstants.srcPath,
         ]
     },
-
 };
 
 const tsModule = {
-
     module: {
         rules: [
             {
                 test: [/\.tsx$/, /\.ts$/],
                 use: [
-                    { loader : 'babel-loader' },
-                    { loader : 'awesome-typescript-loader' }
+                    {loader: 'babel-loader'},
+                    {loader: 'awesome-typescript-loader'}
                 ],
             },
             {
                 test: /\.js$/,
-                use: [ { loader : 'babel-loader' } ],
+                use: [{loader: 'babel-loader'}],
                 exclude: /(node_modules)/,
             },
-
         ]
     },
 };
 
 const cssModule = {
-
     module: {
         rules: [{
             test: /\.(css|scss)$/,
             use: ExtractTextPlugin.extract({
-
                 fallback: 'style-loader',
                 use: [
                     {
@@ -111,7 +91,7 @@ const cssModule = {
                         options: {
                             ident: 'postcss',
                             plugins: (loader) => [
-                                require('postcss-import')({ root: loader.resourcePath }),
+                                require('postcss-import')({root: loader.resourcePath}),
                                 require('postcss-preset-env')(),
                                 require('cssnano')()
                             ]
@@ -128,19 +108,15 @@ const cssModule = {
     plugins: [
         new ExtractTextPlugin({
             filename: '[name].css',
-
             // inject style in  <head> tag or generate export file
             disable: isDev,
-
             // chunks
             allChunks: true
         }),
-
     ]
 };
 
 const imagesModule = {
-
     module: {
         rules: [
             {
@@ -149,15 +125,12 @@ const imagesModule = {
                     {
                         loader: "sizeof-loader",
                         options: {
-
                             // utiliser file loader pour générer des images importé
                             // dans assets (default is false)
                             useFileLoader: true,
-
                             name: isDev
                                 ? "[name].[ext]"
                                 : "[name].[hash:8].[ext]",
-
                             publicPath: isDev
                                 ? currentProperties.url + globalConstants.assetsFolder
                                 : "/" + globalConstants.assetsFolder
@@ -169,9 +142,7 @@ const imagesModule = {
     }
 };
 
-
 const fontsModule = {
-
     module: {
         rules: [
             {
@@ -181,7 +152,6 @@ const fontsModule = {
                         loader: 'file-loader',
                         options: {
                             name: isDev ? '[name].[ext]' : '[hash:8].[ext]',
-
                             publicPath: isDev
                                 ? currentProperties.url + globalConstants.assetsFolder
                                 : "/" + globalConstants.assetsFolder
@@ -196,30 +166,22 @@ const fontsModule = {
 
 
 const sourceMapTool = {
-
     devtool: "cheap-module-eval-source-map"
-
 };
 
 const devServerTool = {
-
     devServer: {
-
         // content base to serve local dev assets
         contentBase: path.join(__dirname, globalConstants.distPath),
         compress: true,
         port: currentProperties.port,
         hot: true,
-
         // display error overlay on screen
         overlay: true,
-
         // friendly webpack error
         // https://github.com/geowarin/friendly-errors-webpack-plugin
         // pass to true if you don't want to print compile file in the console
         quiet: customWebpackConfig.quietConsole,
-
-        // solid
         stats: {
             colors: true,
             hash: false,
@@ -236,7 +198,6 @@ const devServerTool = {
             warnings: true,
             publicPath: false
         },
-
         headers: {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods": "GET",
@@ -269,7 +230,6 @@ const stateTool = {
 
 
 const defineEnvPlugin = {
-
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV) || 'dev'
@@ -279,19 +239,14 @@ const defineEnvPlugin = {
 
 
 const providePlugin = {
-
     plugins: [
-        new webpack.ProvidePlugin( customWebpackConfig.libraries )
+        new webpack.ProvidePlugin(customWebpackConfig.libraries)
     ],
-
 };
 
 const cleanWebpackPlugin = {
-
     plugins: [
-
-        new CleanWebpackPlugin( path.resolve(globalConstants.assetsPath), {
-
+        new CleanWebpackPlugin(path.resolve(globalConstants.assetsPath), {
             // Absolute path to your webpack root folder (paths appended to this)
             // Default: root of your package
             //root: path.resolve(globalConstants.assetsPath),
@@ -310,13 +265,12 @@ const cleanWebpackPlugin = {
     ]
 };
 
+/**
+ * Console formater
+ * (dev + prod)
+ */
 const friendlyErrorsPlugin = {
-
     plugins: [
-        /**
-         * Console formater
-         * (dev + prod)
-         */
         new FriendlyErrors({
             onErrors: function (severity, errors) {
                 if (severity !== 'error') {
@@ -328,24 +282,18 @@ const friendlyErrorsPlugin = {
                     message: severity + ': ' + error.name,
                     subtitle: error.file || '',
                     sound: customWebpackConfig.soundError ? 'Pop' : '',
-                    // icon: ICON
                 })
             },
             clearConsole: customWebpackConfig.clearConsole,
         }),
-
     ]
 };
 
 const manifestPlugin = {
-
     plugins: [
         new ManifestPlugin()
     ]
-
 };
-
-
 
 // -----------------------------------------------------------------------------  DEV CONFIG
 

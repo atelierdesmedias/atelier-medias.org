@@ -2,34 +2,28 @@
   * "admPresentation" stylesheet
   * follow workflow instructions
  */
-
 // -----------------------------------------------------------------------------  IMPORT
-
 // common style & mixins
 @import '../../../_common/common';
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.AdmPresentation
-{
+.AdmPresentation {
   // --------------------------------------------------------------------------- PROPERTIES
 
 
-    // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : AdmPresentation;
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this: AdmPresentation;
 
   // --------------------------------------------------------------------------- BLOCK
 
-
   // --------------------------------------------------------------------------- ELEMENTS
 
-  &_wrapper
-  {
+  &_wrapper {
     @include contentColumnWidthCenter();
   }
 
-  &_content
-  {
+  &_content {
     display: flex;
     align-items: center;
 
@@ -38,24 +32,21 @@
     }
   }
 
-  &_title
-  {
-    @include size( ( $relativeColumnWidth * 4 ), auto );
+  &_title {
+    @include size(($relativeColumnWidth * 4), auto);
     @include title();
 
     @media (max-width: $large) {
-      @include size( 100%, auto );
+      @include size(100%, auto);
     }
-
   }
 
-  &_text
-  {
-    @include size( ( $relativeColumnWidth * 8 ), auto );
+  &_text {
+    @include size(($relativeColumnWidth * 8), auto);
     display: block;
     margin-top: 2rem;
     @media (max-width: $large) {
-      @include size( 100%, auto );
+      @include size(100%, auto);
     }
 
     // <p> généré par l'admin WP

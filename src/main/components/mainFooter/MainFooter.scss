@@ -2,21 +2,18 @@
   * "MainFooter" stylesheet
   * follow workflow instructions
  */
-
 // -----------------------------------------------------------------------------  IMPORT
-
 // common style & mixins
 @import '../../../_common/common';
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.MainFooter
-{
+.MainFooter {
 
   // --------------------------------------------------------------------------- PROPERTIES
 
   // Call block element anywhere. Use it like this : .#{$this}_element
-  $this : MainFooter;
+  $this: MainFooter;
   $transition: 200ms ease-out;
 
   // --------------------------------------------------------------------------- BLOCK
@@ -27,54 +24,41 @@
 
   // --------------------------------------------------------------------------- ELEMENTS
 
-  &_wrapper
-  {
+  &_wrapper {
     background: $grey77Color;
   }
 
-  &_wrapperOuter
-  {
+  &_wrapperOuter {
     padding: $mainBorder 0;
     width: 100%;
     min-height: 30rem;
   }
 
-  &_wrapperInner
-  {
+  &_wrapperInner {
     position: relative;
     @include contentColumnWidthCenter();
   }
 
-  &_content
-  {
-    color:$whiteColor;
-
-    //&-grey
-    //{
-    //  color:$grey144Color;
-    //}
+  &_content {
+    color: $whiteColor;
   }
 
-  &_items
-  {
+  &_items {
     list-style: none;
     display: block;
-    @include flex(flex, row, wrap, flex-start, flex-start,3rem);
+    @include flex(flex, row, wrap, flex-start, flex-start, 3rem);
   }
 
-  &_item
-  {
+  &_item {
     // pousser le contenu de chaque item vers le bas
-    margin:1.5em 0;
-    @include flexCol(3,1,3rem);
+    margin: 1.5em 0;
+    @include flexCol(3, 1, 3rem);
 
-    @media (max-width: $large)
-    {
-      @include flexCol(2,1,3rem);
+    @media (max-width: $large) {
+      @include flexCol(2, 1, 3rem);
     }
-    @media (max-width: $medium)
-    {
-      @include flexCol(1,1,3rem);
+    @media (max-width: $medium) {
+      @include flexCol(1, 1, 3rem);
     }
   }
 
@@ -82,55 +66,48 @@
     list-style: none;
   }
 
-  &_logo
-  {
-    margin-top:0.5rem;
-    &-macif svg
-    {
+  &_logo {
+    margin-top: 0.5rem;
+
+    &-macif svg {
       @include size(50px, auto);
     }
 
-    &-coworking svg
-    {
+    &-coworking svg {
       @include size(200px, auto);
     }
 
-    *
-    {
+    * {
       fill: $grey226Color;
     }
   }
 
-  &_title
-  {
-    font-size:1rem;
+  &_title {
+    font-size: 1rem;
     font-weight: normal;
-    color:$grey144Color;
+    color: $grey144Color;
   }
 
-  &_content
-  {
-    margin-top:2em;
-    font-size:1rem;
+  &_content {
+    margin-top: 2em;
+    font-size: 1rem;
+
     &, & * {
-      font-style:normal;
+      font-style: normal;
     }
 
-    @media (max-width: $medium)
-    {
-      margin-top:1em;
+    @media (max-width: $medium) {
+      margin-top: 1em;
     }
   }
 
-  &_link
-  {
+  &_link {
     color: $whiteColor;
     text-decoration: none;
-    transition:$transition;
+    transition: $transition;
 
-    &:hover
-    {
-      color:$grey144Color
+    &:hover {
+      color: $grey144Color
     }
   }
 

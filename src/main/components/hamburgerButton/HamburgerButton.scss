@@ -2,21 +2,18 @@
   * "HamburgerButton" stylesheet
   * follow workflow instructions
  */
-
 // -----------------------------------------------------------------------------  IMPORT
-
 // common style & mixins
 @import '../../../_common/common';
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.HamburgerButton
-{
+.HamburgerButton {
   // --------------------------------------------------------------------------- PROPERTIES
 
 
-    // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : HamburgerButton;
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this: HamburgerButton;
 
   // --------------------------------------------------------------------------- BLOCK
 
@@ -26,32 +23,26 @@
 
   // --------------------------------------------------------------------------- ELEMENTS
 
-
-  &_inner
-  {
+  &_inner {
     @include absoluteCenter();
     @include size(26px, 1em);
   }
 
-  &_line
-  {
+  &_line {
     display: block;
     position: absolute;
     @include size(100%, 2px);
     background: $blackColor;
     border-radius: 1em;
 
-    &-top
-    {
+    &-top {
       top: 0;
     }
-    &-center
-    {
+    &-center {
       opacity: 1;
       @include absoluteCenter();
     }
-    &-bottom
-    {
+    &-bottom {
       bottom: 0;
     }
 

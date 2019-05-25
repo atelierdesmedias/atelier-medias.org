@@ -1,20 +1,17 @@
 /**
   * "BigCover" stylesheet
  */
-
 // -----------------------------------------------------------------------------  IMPORT
-
 // common style & mixins
 @import '../../../_common/common';
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.BigCover
-{
+.BigCover {
   // --------------------------------------------------------------------------- PROPERTIES
 
   // Call block element anywhere. Use it like this : .#{$this}_element
-  $this : BigCover;
+  $this: BigCover;
 
   // --------------------------------------------------------------------------- BLOCK
 
@@ -22,8 +19,7 @@
 
   // --------------------------------------------------------------------------- ELEMENTS
 
-  &_video
-  {
+  &_video {
     display: block;
     @include absoluteCenter();
     @include size(auto);
@@ -35,11 +31,10 @@
   }
 
   // gros LOGO ADM centré sur l'image ou la video
-  &_logo
-  {
+  &_logo {
     display: block;
     @include absoluteCenter();
-    top:46%;
+    top: 46%;
     z-index: 1;
 
     & > svg {
@@ -50,8 +45,7 @@
     }
   }
 
-  &_eventBanner
-  {
+  &_eventBanner {
     display: none;
     @include position(absolute, ($mainBorder) 0 null null);
   }

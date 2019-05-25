@@ -9,14 +9,12 @@
 
             {% for feature in dico.components.FeatureBlock %}
                 {# importer "feature block component #}
-                {%
-                    include "templates/components/FeatureBlock.twig"
+                {% include "templates/components/FeatureBlock.twig"
                     with {
-                        classElement: 'FeaturesSection_featureBlock',
-                        icon: feature.icon,
-                        description: feature.description
-                    }
-                %}
+                    classElement: 'FeaturesSection_featureBlock',
+                    icon: feature.icon,
+                    description: feature.description
+                } %}
             {% endfor %}
         </section>
     </div>

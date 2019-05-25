@@ -15,8 +15,7 @@ import {ArrowDown} from "../../molecules/arrowDown/ArrowDown";
 
 
 // States de la mainNav Handler
-enum EToggleMainNavHandler
-{
+enum EToggleMainNavHandler {
     OPEN,
     CLOSE,
     TOGGLE
@@ -24,8 +23,7 @@ enum EToggleMainNavHandler
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class MainHeader extends DOMView
-{
+export class MainHeader extends DOMView {
     // ------------------------------------------------------------------------- LOCALS
 
     // état de l'ouverture
@@ -51,46 +49,42 @@ export class MainHeader extends DOMView
      * prepare nodes
      *
      */
-    protected prepareNodes()
-    {
+    protected prepareNodes() {
 
         // ciblier le mainNav
-        this.$mainNav            = this.$root.find('.MainNav');
+        this.$mainNav = this.$root.find('.MainNav');
 
         // cibler le hamburger bouton qui se trouve dans ce composant
-        this.$hamburgerButton   = this.$root.find('.HamburgerButton');
-        this.$lineTop           = this.$hamburgerButton.find('.HamburgerButton_line-top');
-        this.$lineCenter        = this.$hamburgerButton.find('.HamburgerButton_line-center');
-        this.$lineBottom        = this.$hamburgerButton.find('.HamburgerButton_line-bottom');
+        this.$hamburgerButton = this.$root.find('.HamburgerButton');
+        this.$lineTop = this.$hamburgerButton.find('.HamburgerButton_line-top');
+        this.$lineCenter = this.$hamburgerButton.find('.HamburgerButton_line-center');
+        this.$lineBottom = this.$hamburgerButton.find('.HamburgerButton_line-bottom');
     }
 
     /**
      * prepare dependencies
      *
      */
-    protected prepareDependencies()
-    {
+    protected prepareDependencies() {
         // importer le hamburger button
-        this._hamburgerButton = new HamburgerButton( this.$root.find('.HamburgerButton') );
+        this._hamburgerButton = new HamburgerButton(this.$root.find('.HamburgerButton'));
 
         // inclure le main menu
-        this._mainNav = new MainNav( this.$root.find('.MainNav') );
+        this._mainNav = new MainNav(this.$root.find('.MainNav'));
 
         // Importer la molécule Arrow Down
-        this._arrowDown = new ArrowDown( this.$root.find('.ArrowDown') );
+        this._arrowDown = new ArrowDown(this.$root.find('.ArrowDown'));
     }
 
     /**
      * prepare events
      *
      */
-    protected prepareEvents()
-    {
+    protected prepareEvents() {
         // changer l'affichage de la mainNav en function du click hamburger Button
-        this.$hamburgerButton.click( () =>
-        {
+        this.$hamburgerButton.click(() => {
             // passer la methode toggle mainNav avec le param toggle
-            this.changeStateMainNavHandler( EToggleMainNavHandler.TOGGLE )
+            this.changeStateMainNavHandler(EToggleMainNavHandler.TOGGLE)
         });
 
         // reset le state de la mainNav en function du reszie
@@ -103,8 +97,7 @@ export class MainHeader extends DOMView
      * after Init
      *
      */
-    protected afterInit()
-    {
+    protected afterInit() {
 
     }
 
@@ -113,21 +106,15 @@ export class MainHeader extends DOMView
     /**
      * Mobile toggle
      */
-    protected changeStateMainNavHandler ( pState: EToggleMainNavHandler )
-    {
+    protected changeStateMainNavHandler(pState: EToggleMainNavHandler) {
 
-        if ( pState == EToggleMainNavHandler.TOGGLE )
-        {
+        if (pState == EToggleMainNavHandler.TOGGLE) {
             // toggle du state
             this._isOpen = !this._isOpen;
-        }
-        else if ( pState == EToggleMainNavHandler.OPEN )
-        {
+        } else if (pState == EToggleMainNavHandler.OPEN) {
             // passer open à true
             this._isOpen = true;
-        }
-        else  if ( pState == EToggleMainNavHandler.CLOSE )
-        {
+        } else if (pState == EToggleMainNavHandler.CLOSE) {
             // passer open à false (cacher le mainNav)
             this._isOpen = false;
         }
@@ -144,14 +131,13 @@ export class MainHeader extends DOMView
      * si mobile : le reset est de cacher le mainNav
      * si laptop : le reset est de montrer le mainNav
      */
-    protected resetMainNavStateHandler()
-    {
+    protected resetMainNavStateHandler() {
         // si plus grand que large
         breakPoint('large')
             // monter le mainNav
-            ? this.changeStateMainNavHandler( EToggleMainNavHandler.OPEN )
+            ? this.changeStateMainNavHandler(EToggleMainNavHandler.OPEN)
             // cacher le mainNav
-            : this.changeStateMainNavHandler( EToggleMainNavHandler.CLOSE );
+            : this.changeStateMainNavHandler(EToggleMainNavHandler.CLOSE);
 
         // reset l'apparition de la mainNav sans anim
         this.mainNavAnim(0);
@@ -162,8 +148,7 @@ export class MainHeader extends DOMView
     /**
      * Animer la mainNav en function du state
      */
-    protected mainNavAnim (pDuration = 0.1) :void
-    {
+    protected mainNavAnim(pDuration = 0.1): void {
         // animer l'apparition
         TweenLite.to(this.$mainNav, pDuration, {
             autoAlpha: this._isOpen ? 1 : 0
@@ -173,8 +158,7 @@ export class MainHeader extends DOMView
     /**
      * animation des lignes du hamburger Button
      */
-    protected hamburgerButtonLinesAnim (pDuration:number = 0.1) :void
-    {
+    protected hamburgerButtonLinesAnim(pDuration: number = 0.1): void {
 
         // animation des "lines" du HamburgerButton
         TweenLite.to(this.$lineTop, pDuration, {
@@ -182,7 +166,7 @@ export class MainHeader extends DOMView
             top: this._isOpen ? 6 : 0
         });
         TweenLite.to(this.$lineCenter, pDuration, {
-            opacity: this._isOpen  ? 0 : 1
+            opacity: this._isOpen ? 0 : 1
         });
         TweenLite.to(this.$lineBottom, pDuration, {
             rotation: this._isOpen ? -43 : 0,

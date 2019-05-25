@@ -2,22 +2,18 @@
   * "IntranetConnection" stylesheet
   * follow workflow instructions
  */
-
 // -----------------------------------------------------------------------------  IMPORT
-
 // common style & mixins
 @import '../../../_common/common';
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.IntranetConnection
-{
+.IntranetConnection {
   // --------------------------------------------------------------------------- PROPERTIES
 
-
   // Call block element anywhere. Use it like this : .#{$this}_element
-  $this : IntranetConnection;
-  $inputHeight : 40px;
+  $this: IntranetConnection;
+  $inputHeight: 40px;
 
   // --------------------------------------------------------------------------- BLOCK
 
@@ -27,14 +23,12 @@
 
   // --------------------------------------------------------------------------- ELEMENTS
 
-
-  &_wrapper
-  {
+  &_wrapper {
     display: flex;
     align-items: center;
     @include size(auto, $mainBorder);
 
-    @media  (max-width: $large) {
+    @media (max-width: $large) {
       margin-top: 2rem;
       display: block;
       @include size(auto, auto);
@@ -42,20 +36,16 @@
   }
 
   // INTRANET
-  &_title
-  {
+  &_title {
     @include title-smallUppercase($grey77Color);
     @include lato-bold();
 
     @media (max-width: $large) {
       text-align: center;
-      //font-size: 1.5rem;
     }
-
   }
 
-  &_form
-  {
+  &_form {
     display: flex;
     justify-content: flex-start;
     margin-left: 1rem;
@@ -67,16 +57,13 @@
     }
   }
 
-  &_input
-  {
-    // position
+  &_input {
     position: relative;
     margin: 0;
     @include size(190px, $inputHeight);
-    // style
     color: $whiteColor;
     padding: 0 10px;
-    border:1px solid $grey226Color;
+    border: 1px solid $grey226Color;
     line-height: 22px;
 
     @media (max-width: $large) {
@@ -87,22 +74,18 @@
     }
 
     // style du texte placeholder dans le input
-    &::-webkit-input-placeholder
-    {
+    &::-webkit-input-placeholder {
       text-align: center;
       @include title-smallUppercase($grey144Color);
       font-size: 0.75rem;
 
       @media (max-width: $large) {
-          @include title-smallUppercase($grey226Color);
+        @include title-smallUppercase($grey226Color);
       }
-
-
     }
 
     // traitement du dernier input de la liste
-    &:last-child
-    {
+    &:last-child {
       // décaller d'un px vers la gauche pour que le border left se fonde dans
       // le border right de l'input précédent
       margin-left: -1px;
@@ -110,41 +93,30 @@
       @media (max-width: $large) {
         margin: 1rem auto 0;
       }
-
     }
-
-    &-login {}
-    &-password {}
   }
 
   // le button de validation du formulaire
-  &_button
-  {
-    cursor: pointer;
-    // position
+  &_button {
     margin-left: 0.5rem;
-    // style
-    border:0;
+    border: 0;
     outline: none;
+    cursor: pointer;
     @include size(30px, $inputHeight);
     @include title-smallUppercase($grey144Color);
     @include lato-regular();
     font-size: 0.7rem;
     background: none;
 
-    @media (max-width: $large)
-    {
+    @media (max-width: $large) {
       display: block;
       margin: 1rem auto 0;
     }
 
-    &:hover
-    {
+    &:hover {
       color: $turqoiseColor;
     }
-
   }
-
 
   // --------------------------------------------------------------------------- MODIFIERS
 

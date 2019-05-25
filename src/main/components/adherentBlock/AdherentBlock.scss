@@ -87,6 +87,7 @@
     ul {
       margin-top: 2rem;
       padding-left: 20px;
+
       li {
         @include lato-light();
       }
@@ -134,7 +135,6 @@
     .#{$this}_note {
       color: $grey40Color;
     }
-
   }
 
   &-nomade {

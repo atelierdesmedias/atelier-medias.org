@@ -2,41 +2,35 @@
   * "adherentSection" stylesheet
   * follow workflow instructions
  */
-
 // -----------------------------------------------------------------------------  IMPORT
-
 // common style & mixins
 @import '../../../_common/common';
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.AdherentSection
-{
+.AdherentSection {
   // --------------------------------------------------------------------------- PROPERTIES
 
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this: AdherentSection;
 
-    // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : AdherentSection;
-
-    // espace entre les blocks verticalement et horizontalement
-    $gutterBlock : 8px;
+  // espace entre les blocks verticalement et horizontalement
+  $gutterBlock: 8px;
 
   // --------------------------------------------------------------------------- BLOCK
 
   @include contentColumnWidthCenter();
   @media(max-width: $medium) {
-    width:100%;
+    width: 100%;
   }
 
   // --------------------------------------------------------------------------- ELEMENTS
 
-  &_content
-  {
+  &_content {
 
   }
 
-  &_inlineWrapper
-  {
+  &_inlineWrapper {
     @include flex (flex, row, wrap, center, flex-start, $gutterBlock);
     margin-top: $gutterBlock;
 
@@ -45,12 +39,11 @@
     }
 
     @media (max-width: $small) {
-      margin-top:0;
+      margin-top: 0;
     }
   }
 
-  &_adherentBlock
-  {
+  &_adherentBlock {
     @include flexCol (2, 1, $gutterBlock);
   }
 

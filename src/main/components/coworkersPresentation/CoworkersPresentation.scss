@@ -2,35 +2,27 @@
   * "CoworkersPresentation" stylesheet
   * follow workflow instructions
  */
-
 // -----------------------------------------------------------------------------  IMPORT
-
 // common style & mixins
 @import '../../../_common/common';
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.CoworkersPresentation
-{
+.CoworkersPresentation {
   // --------------------------------------------------------------------------- PROPERTIES
 
-
-    // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : CoworkersPresentation;
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this: CoworkersPresentation;
 
   // --------------------------------------------------------------------------- BLOCK
 
-  //padding: 5rem 0;
-
   // --------------------------------------------------------------------------- ELEMENTS
 
-  &_wrapper
-  {
+  &_wrapper {
     @include contentColumnWidthCenter();
   }
 
-  &_content
-  {
+  &_content {
     display: flex;
     align-items: center;
     @media (max-width: $large) {
@@ -38,24 +30,22 @@
     }
   }
 
-  &_title
-  {
-    @include size( ( $relativeColumnWidth * 4 ), auto );
+  &_title {
+    @include size(($relativeColumnWidth * 4), auto);
     @include title();
 
     @media (max-width: $large) {
-      @include size( 100%, auto );
+      @include size(100%, auto);
     }
   }
 
-  &_text
-  {
-    @include size( ( $relativeColumnWidth * 8 ), auto );
+  &_text {
+    @include size(($relativeColumnWidth * 8), auto);
     display: block;
 
     @media (max-width: $large) {
       margin-top: 2rem;
-      @include size( 100%, auto );
+      @include size(100%, auto);
     }
 
     // <p> généré par l'admin WP
@@ -63,6 +53,7 @@
       margin-top: 1rem;
     }
   }
+
   // --------------------------------------------------------------------------- MODIFIERS
 
   // --------------------------------------------------------------------------- CHILDREN

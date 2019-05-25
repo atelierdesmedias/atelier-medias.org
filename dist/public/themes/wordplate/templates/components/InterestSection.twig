@@ -5,13 +5,15 @@
 
 <div class="InterestSection {{ classElement }}">
     <div class="InterestSection_wrapper">
-    <div class="InterestSection_content">
-        <div class="InterestSection_description">
-            {{ post.meta('interest').text }}
+        <div class="InterestSection_content">
+            <div class="InterestSection_description">
+                {{ post.meta('interest').text }}
+            </div>
+            <a class="InterestSection_link"
+               href="mailto:{{ contact.meta('contact').mail_suscribe }}"
+               target="_blank">
+                <button class="InterestSection_button">{{ dico.components.InterestSection.labelButton }}</button>
+            </a>
         </div>
-        <a class="InterestSection_link" href="mailto:{{ contact.meta('contact').mail_suscribe }}" target="_blank">
-            <button class="InterestSection_button">{{ dico.components.InterestSection.labelButton }}</button>
-        </a>
-    </div>
     </div>
 </div>

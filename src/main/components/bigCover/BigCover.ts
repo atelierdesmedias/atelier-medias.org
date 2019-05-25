@@ -38,20 +38,20 @@ export class BigCover extends DOMView
     {
         // importer event Banner
         this._eventBanner = new EventBanner( this.$root.find('.EventBanner') );
-
     }
 
     protected initComponents()
     {
-        // init la taille du container
-        this.applyVideoPositionHandler();
+        // init la taille du container video
+        this.videoSize();
     }
     /**
      * prepare events
      */
     protected prepareEvents()
     {
-        window.addEventListener('resize', this.applyVideoPositionHandler.bind(this))
+        // écouter le resize
+        window.addEventListener('resize', ()=> this.resizeHandler() );
     }
 
     /**
@@ -64,13 +64,24 @@ export class BigCover extends DOMView
 
     // ------------------------------------------------------------------------- HANDLERS
 
+
+    /**
+     * Action au resize
+     */
+    protected resizeHandler = ():void =>
+    {
+        // Appliquer une taille au container video
+        this.videoSize();
+    };
+
+
     /**
      * Appliquer une taille au container video
      */
-    protected applyVideoPositionHandler () :void
+    protected videoSize () :void
     {
         // utiliser le meme ratio qu'en css pour calculer les grille
-        let columnGrid = ($(window).width() / 12);
+        const columnGrid = ($(window).width() / 12);
 
         // appliquer la taille du container a la video
         TweenLite.set( this.$root, {
@@ -88,7 +99,7 @@ export class BigCover extends DOMView
     public dispose () :void
     {
         // supprimer l'écoute de l'event
-        window.removeEventListener('resize', this.applyVideoPositionHandler.bind(this))
+        window.removeEventListener('resize', this.resizeHandler)
     }
 
 

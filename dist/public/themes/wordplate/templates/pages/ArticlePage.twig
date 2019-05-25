@@ -7,7 +7,8 @@
                 <h1 class="article-h1">{{ post.title }}</h1>
                 <h2 class="article-h2">{{ post.subtitle }}</h2>
                 <p class="blog-author">
-                    <span>By</span> {{ post.author.name }} <span>&bull;</span> {{ post.post_date|date }}
+                    <span>By</span> {{ post.author.name }}
+                    <span>&bull;</span> {{ post.post_date|date }}
                 </p>
                 {{ post.content }}
             </section>

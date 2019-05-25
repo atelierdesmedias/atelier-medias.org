@@ -15,16 +15,12 @@
 
         <div class="MainNav_innerContent">
             {# include "menu" component #}
-            {%
-                include "templates/components/Menu.twig"
-                with { 'classElement': 'MainNav_menu' }
-            %}
+            {% include "templates/components/Menu.twig"
+                with { 'classElement': 'MainNav_menu' } %}
 
             {# include "socialBlock" component #}
-            {%
-                include "templates/components/SocialBlock.twig"
-                with { 'classElement': 'MainNav_socialBlock' }
-            %}
+            {% include "templates/components/SocialBlock.twig"
+                with { 'classElement': 'MainNav_socialBlock' } %}
 
             {#
             include "languageBlock" component

@@ -5,7 +5,6 @@
 
 // import main style configuration
 import './Main.scss'
-
 import {DOMView} from "../_common/core/DOMView";
 import {EnvUtils} from "solidify-lib/utils/EnvUtils";
 import Logs from "../_common/core/Logs";
