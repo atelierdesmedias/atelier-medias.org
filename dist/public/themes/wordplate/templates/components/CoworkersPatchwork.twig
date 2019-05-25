@@ -25,14 +25,22 @@
 
     <div class="CoworkersPatchwork_content">
         <ul class="CoworkersPatchwork_items">
-            {% for coworker in coworkers %}
+            {% for coworker in pCoworkers|slice(0, 12) %}
                 <li class="CoworkersPatchwork_item">
                     <a class="CoworkersPatchwork_link">
-                        <img class="CoworkersPatchwork_image" src="{{ coworker.thumbUrl  }}" />
-                        <div class="CoworkersPatchwork_description">
-                            <div class="CoworkersPatchwork_descriptionContent">
-                                <div class="CoworkersPatchwork_name">{{ coworker.name }}</div>
-                                <div class="CoworkersPatchwork_activity">{{ coworker.activity }}</div>
+                        <div
+                            class="CoworkersPatchwork_image"
+                            style="background-image: url( {{ coworker._profile_picture|replace({' ': '%20'}) }}) "
+                        >
+                            <div class="CoworkersPatchwork_description">
+                                <div class="CoworkersPatchwork_descriptionContent">
+                                    <div class="CoworkersPatchwork_name">
+                                        <span>{{ coworker.first_name }} </span>
+                                        <br/>
+                                        <span>{{ coworker.last_name }}</span>
+                                    </div>
+                                    <div class="CoworkersPatchwork_activity">{{ coworker.activity }}</div>
+                                </div>
                             </div>
                         </div>
                     </a>

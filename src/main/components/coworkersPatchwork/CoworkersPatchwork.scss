@@ -46,6 +46,7 @@
     margin: 0;
     line-height: 0;
     cursor: pointer;
+    padding-bottom: 100%;
 
     // afficher le overlay, le nom et le metier du coworker au survol
     &:hover {
@@ -56,7 +57,9 @@
   }
 
   &_image {
-    position: relative;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
     @include size(100%);
   }
 

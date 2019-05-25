@@ -50,7 +50,9 @@ function adm_setting_section_callback_function() {
 function adm_coworkers_url_callback_function() {
     echo '<input name="adm_coworkers_url" id="adm_coworkers_url" type="text" value="'.get_option( 'adm_coworkers_url' ).'" class="code">';
 
-    if ($_GET['settings-updated'] == 'true') {
-        sync_coworkers();
+    if (isset($_GET['settings-updated']) && $_GET['settings-updated'] == 'true') {
+        if (function_exists('sync_coworkers')) {
+            sync_coworkers();
+        }
     }
 }

@@ -4,3 +4,4 @@ plugins/*
 upgrade
 uploads
 wordpress
+themes/wordplate/data/coworkers.yml

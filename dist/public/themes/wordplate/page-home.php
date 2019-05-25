@@ -13,7 +13,7 @@ $contact_page_id = 11;
 $contact = new TimberPost( $contact_page_id );
 $data['contact'] = $contact;
 
-//dump($data); exit;
+//dump($data);
 
 Timber::render('templates/pages/HomePage.twig', $data);
 

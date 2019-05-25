@@ -14,72 +14,11 @@
                 include "templates/components/CoworkersPresentation.twig"
                 with { 'classElement': 'HomePage_coworkersPresentation' }
             %}
-            {# TODO: SYNC avec le BACK #}
             {%
                 include "templates/components/CoworkersPatchwork.twig"
                 with {
                     classElement: 'HomePage_coworkersPatchwork',
-                    coworkers: [
-                        {
-                            thumbUrl: theme.link ~ '/images/thumb-coworker-01.png',
-                            name: 'Lelia Whitney',
-                            activity: 'graphiste'
-                        },
-                        {
-                            thumbUrl: theme.link ~ '/images/thumb-coworker-02.png',
-                            name: 'Mylène Coucou',
-                            activity: 'touriste'
-                        },
-                        {
-                            thumbUrl: theme.link ~ '/images/thumb-coworker-01.png',
-                            name: 'Lelia Whitney',
-                            activity: 'graphiste'
-                        },
-                        {
-                            thumbUrl: theme.link ~ '/images/thumb-coworker-02.png',
-                            name: 'Mylène Coucou',
-                            activity: 'touriste'
-                        },
-                        {
-                            thumbUrl: theme.link ~ '/images/thumb-coworker-01.png',
-                            name: 'Lelia Whitney',
-                            activity: 'graphiste'
-                        },
-                        {
-                            thumbUrl: theme.link ~ '/images/thumb-coworker-02.png',
-                            name: 'Mylène Coucou',
-                            activity: 'touriste'
-                        },
-                        {
-                            thumbUrl: theme.link ~ '/images/thumb-coworker-01.png',
-                            name: 'Lelia Whitney',
-                            activity: 'graphiste'
-                        },
-                        {
-                            thumbUrl: theme.link ~ '/images/thumb-coworker-02.png',
-                            name: 'Mylène Coucou',
-                            activity: 'touriste'
-                        },                    {
-                            thumbUrl: theme.link ~ '/images/thumb-coworker-01.png',
-                            name: 'Lelia Whitney',
-                            activity: 'graphiste'
-                        },
-                        {
-                            thumbUrl: theme.link ~ '/images/thumb-coworker-02.png',
-                            name: 'Mylène Coucou',
-                            activity: 'touriste'
-                        },
-                        {
-                            thumbUrl: theme.link ~ '/images/thumb-coworker-01.png',
-                            name: 'Lelia Whitney',
-                            activity: 'graphiste'
-                        },
-                        {
-                            thumbUrl: theme.link ~ '/images/thumb-coworker-02.png',
-                            name: 'Mylène Coucou',
-                            activity: 'touriste'
-                        },
-                    ]
+                    pCoworkers: coworkers
                 }
             %}
 
