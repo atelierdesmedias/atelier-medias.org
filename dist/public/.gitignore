@@ -2,6 +2,7 @@ languages
 mu-plugins
 plugins/*
 !plugins/index.php
+!plugins/wp-xwiki-adm
 upgrade
 uploads
 wordpress
