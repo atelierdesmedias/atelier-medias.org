@@ -4,6 +4,17 @@ declare(strict_types=1);
 
 // -----------------------------------------------------------------------------  DEP
 
+// path to coworkers yml file
+define('COWORKERS_YAML', __DIR__ . '/data/coworkers.yml');
+
+// add custom settings in admin
+include(__DIR__.'/includes/custom/settings.php');
+
+// load custom sync function
+include(__DIR__.'/includes/custom/sync.php');
+
+// schedule custom cron jobs
+include(__DIR__.'/includes/custom/cron.php');
 
 // import yaml
 use Symfony\Component\Yaml\Yaml;
@@ -62,6 +73,14 @@ class StarterSite extends \Timber\Site
 
         // site context
         $context['site'] = $this;
+
+        // coworkers context
+        $coworkers = Yaml::parseFile(COWORKERS_YAML);
+        if (is_array($coworkers)) {
+            $context['coworkers'] = $coworkers;
+        } else {
+            $context['coworkers'] = [];
+        }
 
         // retourner le context
         return $context;
@@ -136,5 +155,4 @@ function my_deregister_scripts()
     wp_deregister_script('jquery');
 }
 add_action( 'wp_footer', 'my_deregister_scripts' );
-
 
