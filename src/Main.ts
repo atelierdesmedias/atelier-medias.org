@@ -10,9 +10,6 @@ import {GlobalConfig} from "./data/GlobalConfig";
 import {AppView} from "./components/appView/AppView";
 import {HomePage} from "./pages/homePage/HomePage";
 import {EnvUtils} from "./helpers/solidify-lib/utils/EnvUtils"
-// Get current properties
-// const envName = require(`../properties/.envName`);
-// const currentProperties = require(`../properties/${envName}.properties.js`);
 
 // ----------------------------------------------------------------------------- EXPORT CLASS
 
@@ -58,12 +55,6 @@ export class main extends DOMView
 
             // get current version application
             version: require('../package.json').version,
-
-            // // get current url depend of properties
-            // url: currentProperties.url,
-            //
-            // // get current base url depend of properties
-            // base: currentProperties.base,
 
         });
     }
@@ -128,7 +119,7 @@ export class main extends DOMView
         EnvUtils.addClasses();
 
         // add console.log depend of envName
-        Logs.EnvLogs("main");
+        Logs.EnvLogs(GlobalConfig.instance.version);
 
     }
 

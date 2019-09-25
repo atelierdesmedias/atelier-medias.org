@@ -1,11 +1,12 @@
 {
-	"name": "adm",
+	"name": "atelier-medias.org",
 	"version": "2.0.0",
-	"description": "site atelier des medias",
+	"description": "atelier-medias.org coworking website",
 	"scripts": {
-		"dev": "node ./config/tasks/task-dev.js && cross-env NODE_ENV=development webpack-dev-server --config config/webpack/webpack.dev.js",
-		"build": "cross-env NODE_ENV=production webpack --config config/webpack/webpack.prod.js",
-		"scaffold": "node ./config/tasks/task-scaffold.js"
+		"dev": "./scripts/dev.sh",
+		"build": "./scripts/build.sh",
+		"scaffold": "node ./config/tasks/task-scaffold.js",
+		"prettier": "./scripts/prettier.sh"
 	},
 	"keywords": [
 		"adm",
@@ -54,6 +55,7 @@
 		"postcss-import": "^12.0.1",
 		"postcss-loader": "^3.0.0",
 		"postcss-preset-env": "^6.3.0",
+		"prettier": "^1.18.2",
 		"sass-loader": "^8.0.0",
 		"sizeof-loader": "^1.1.1",
 		"style-loader": "^0.23.1",
@@ -70,4 +72,5 @@
 		"webpack-merge": "^4.1.4",
 		"webpackbar": "^4.0.0"
 	}
+
 }

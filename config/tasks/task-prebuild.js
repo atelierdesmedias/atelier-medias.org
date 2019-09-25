@@ -1,7 +1,7 @@
 const path = require('path');
 const paths = require('../paths');
 const {Files} = require('@zouloux/files');
-const {TemplateHelper} = require('../helpers/helper-template');
+const {QuickTemplate} = require('../helpers/helper-template');
 //const globalConstants = require("../../solid-constants.config");
 const colors = require('colors');
 const fileTabs = "\t\t\t";
@@ -35,7 +35,7 @@ module.exports = {
     {
         // écrire le fichier avec un template renseigné de variables choisies
         Files.new(`${paths.phpConfigPath}config.php`).write(
-            TemplateHelper
+            QuickTemplate
             (
                 Files.getFiles(`${paths.skeletonsPath}phpConfigTemplate`).read(),
                 {
