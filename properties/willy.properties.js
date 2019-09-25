@@ -20,7 +20,7 @@ module.exports = {
      *        Base should be : "/"
      */
 
-    base: '/adm/adm-v2/dist/public/',
+    base: '/atelier-des-medias/atelier-medias.org/trunk/dist/public/',
 
     /**
      * Les propriété du dotEnv.
