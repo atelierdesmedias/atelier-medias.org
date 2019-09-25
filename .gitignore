@@ -35,7 +35,7 @@ dist/public/themes/wordplate/config.php
 dist/config.php
 
 # atoms.ts
-src/atoms.ts
+src/atoms/atoms.ts
 
 # env properties selected
 properties/.envName.js
