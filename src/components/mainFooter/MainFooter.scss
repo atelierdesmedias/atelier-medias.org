@@ -1,0 +1,124 @@
+/**
+  * "MainFooter" stylesheet
+  * follow workflow instructions
+ */
+// -----------------------------------------------------------------------------  IMPORT
+// common style & mixins
+@import '../../common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.MainFooter {
+
+  // --------------------------------------------------------------------------- PROPERTIES
+
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this: MainFooter;
+  $transition: 200ms ease-out;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+  @include position(relative, null 0 0 0);
+  @include size(100%, 100%);
+  background: $whiteColor;
+
+  // --------------------------------------------------------------------------- ELEMENTS
+
+  &_wrapper {
+    background: $grey77Color;
+  }
+
+  &_wrapperOuter {
+    padding: $mainBorder 0;
+    width: 100%;
+    min-height: 30rem;
+  }
+
+  &_wrapperInner {
+    position: relative;
+    @include contentColumnWidthCenter();
+  }
+
+  &_content {
+    color: $whiteColor;
+  }
+
+  &_items {
+    list-style: none;
+    display: block;
+    @include flex(flex, row, wrap, flex-start, flex-start, 3rem);
+  }
+
+  &_item {
+    // pousser le contenu de chaque item vers le bas
+    margin: 1.5em 0;
+    @include flexCol(3, 1, 3rem);
+
+    @media (max-width: $large) {
+      @include flexCol(2, 1, 3rem);
+    }
+    @media (max-width: $medium) {
+      @include flexCol(1, 1, 3rem);
+    }
+  }
+
+  &_subItems {
+    list-style: none;
+  }
+
+  &_logo {
+    margin-top: 0.5rem;
+
+    &-macif svg {
+      @include size(50px, auto);
+    }
+
+    &-coworking svg {
+      @include size(200px, auto);
+    }
+
+    * {
+      fill: $grey226Color;
+    }
+  }
+
+  &_title {
+    font-size: 1rem;
+    font-weight: normal;
+    color: $grey144Color;
+  }
+
+  &_content {
+    margin-top: 2em;
+    font-size: 1rem;
+
+    &, & * {
+      font-style: normal;
+    }
+
+    @media (max-width: $medium) {
+      margin-top: 1em;
+    }
+  }
+
+  &_link {
+    color: $whiteColor;
+    text-decoration: none;
+    transition: $transition;
+
+    &:hover {
+      color: $grey144Color
+    }
+  }
+
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  // --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+

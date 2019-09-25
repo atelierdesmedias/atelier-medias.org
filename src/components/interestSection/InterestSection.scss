@@ -1,0 +1,86 @@
+/**
+  * "interestSection" stylesheet
+  * follow workflow instructions
+ */
+// -----------------------------------------------------------------------------  IMPORT
+// common style & mixins
+@import '../../common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.InterestSection {
+  // --------------------------------------------------------------------------- PROPERTIES
+
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this: InterestSection;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+  position: relative;
+  background: $whiteColor;
+  padding: 3rem 0;
+
+  // --------------------------------------------------------------------------- ELEMENTS
+
+  &_wrapper {
+    @include contentColumnWidthCenter();
+  }
+
+  &_content {
+    margin: auto;
+  }
+
+  &_description {
+    margin: auto;
+    text-align: center;
+    color: $blackOverlayColor;
+  }
+
+  &_link {
+    text-decoration: none;
+  }
+
+  &_button {
+    //reset
+    background: none;
+    font: inherit;
+    line-height: normal;
+    outline: none;
+    cursor: pointer;
+
+    // position
+    display: block;
+    margin: 1.5rem auto 0;
+    border: 1px solid $turqoiseColor;
+    padding: 1.75rem 2rem;
+
+    // text
+    text-align: center;
+    color: $turqoiseColor;
+    font-size: 1.7rem;
+    @include lato-regular();
+
+    // Style
+    transition: 10ms ease-in-out;
+
+    &:first-letter {
+      text-transform: capitalize;
+    }
+
+    &:hover {
+      color: $whiteColor;
+      background: $turqoiseColor;
+    }
+
+  }
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  // --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+

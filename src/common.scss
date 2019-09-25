@@ -1,0 +1,27 @@
+
+/**
+ * @Filename: react-main.scss
+ * @Description: common styles
+**/
+
+//------------------------------------------------------------------------------  COMMON
+
+// lib
+@import "../node_modules/bourbon/core/bourbon";
+
+// helpers
+@import "helpers/_helpers";
+
+// mixins
+@import "mixins/_elements";
+@import "mixins/_texts";
+@import "mixins/_overlay";
+@import "mixins/_page";
+@import "mixins/_title";
+
+// fonts
+@import "fonts/_fonts";
+
+// Properties
+@import "atoms/_colors";
+@import "atoms/_properties";

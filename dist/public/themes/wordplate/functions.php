@@ -8,13 +8,13 @@ declare(strict_types=1);
 define('COWORKERS_YAML', __DIR__ . '/data/coworkers.yml');
 
 // add custom settings in admin
-include(__DIR__.'/includes/custom/settings.php');
+include(__DIR__ . '/includes/custom/settings.php');
 
 // load custom sync function
-include(__DIR__.'/includes/custom/sync.php');
+include(__DIR__ . '/includes/custom/sync.php');
 
 // schedule custom cron jobs
-include(__DIR__.'/includes/custom/cron.php');
+include(__DIR__ . '/includes/custom/cron.php');
 
 // import yaml
 use Symfony\Component\Yaml\Yaml;
@@ -35,14 +35,14 @@ class StarterSite extends \Timber\Site
 
     function __construct()
     {
-        add_theme_support( 'post-formats' );
-        add_theme_support( 'post-thumbnails' );
-        add_theme_support( 'menus' );
-        add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
+        add_theme_support('post-formats');
+        add_theme_support('post-thumbnails');
+        add_theme_support('menus');
+        add_theme_support('html5', array('comment-list', 'comment-form', 'search-form', 'gallery', 'caption'));
         //        add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
-        add_filter( 'timber_context', array( $this, 'add_to_context' ) );
-        add_action( 'init', array( $this, 'register_post_types' ) );
-        add_action( 'init', array( $this, 'register_taxonomies' ) );
+        add_filter('timber_context', array($this, 'add_to_context'));
+        add_action('init', array($this, 'register_post_types'));
+        add_action('init', array($this, 'register_taxonomies'));
 
         // montrer la bar d'admin
         show_admin_bar(false);
@@ -60,7 +60,7 @@ class StarterSite extends \Timber\Site
         // this is where you can register custom taxonomies
     }
 
-    function add_to_context( $context )
+    function add_to_context($context)
     {
         // TODO: si multi-langue, charger le dico EN
         // TODO: et conditionner le chargement en fonction de la langue choisie
@@ -78,8 +78,7 @@ class StarterSite extends \Timber\Site
         $context['coworkers'] = [];
 
         // si le fichier yaml exist
-        if (file_exists(COWORKERS_YAML))
-        {
+        if (file_exists(COWORKERS_YAML)) {
             // parser le yaml
             $coworkers = Yaml::parseFile(COWORKERS_YAML);
 
@@ -94,10 +93,10 @@ class StarterSite extends \Timber\Site
         return $context;
     }
 
-    function add_to_twig( $twig )
+    function add_to_twig($twig)
     {
         /* this is where you can add your own functions to twig */
-        $twig->addExtension( new Twig_Extension_StringLoader() );
+        $twig->addExtension(new Twig_Extension_StringLoader());
         // $twig->addFilter('myfoo', new Twig_SimpleFilter('myfoo', array($this, 'myfoo')));
         return $twig;
     }
@@ -127,20 +126,20 @@ new StarterSite();
 function load_scripts()
 {
     // recupérer les variables d'environement auto générées
-    require_once (__DIR__.'/config.php');
+    require_once(__DIR__ . '/config.php');
 
     // si on est en dev
-    if ($ENV !== 'dev')
-    {
+    if ($ENV !== 'dev') {
         // register CSS script
-        wp_register_style( 'bundle-main-css', $CURRENT_ENV_URL."assets/bundle-main.css" , array(), '', 'all' );
-        wp_enqueue_style( 'bundle-main-css' );
+        wp_register_style('bundle-main-css', $CURRENT_ENV_URL . "assets/main.css", array(), '', 'all');
+        wp_enqueue_style('bundle-main-css');
     }
 
     // register JS script
-    wp_register_script( 'bundle-main-js', $CURRENT_ENV_URL."assets/bundle-main.js", array(), '', true );
-    wp_enqueue_script( 'bundle-main-js' );
+    wp_register_script('bundle-main-js', $CURRENT_ENV_URL . "assets/main.js", array(), '', true);
+    wp_enqueue_script('bundle-main-js');
 }
+
 add_action('wp_enqueue_scripts', 'load_scripts');
 
 
@@ -150,17 +149,19 @@ add_action('wp_enqueue_scripts', 'load_scripts');
 function remove_wp_scripts()
 {
     // désactiver les scripts suivants :
-    remove_action( 'wp_print_styles', 'print_emoji_styles' );
-    remove_action( 'admin_print_styles', 'print_emoji_styles' );
-    remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-    remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+    remove_action('wp_print_styles', 'print_emoji_styles');
+    remove_action('admin_print_styles', 'print_emoji_styles');
+    remove_action('wp_head', 'print_emoji_detection_script', 7);
+    remove_action('admin_print_scripts', 'print_emoji_detection_script');
 }
+
 add_action('wp_enqueue_scripts', 'remove_wp_scripts', 10);
 
 function my_deregister_scripts()
 {
-    wp_deregister_script( 'wp-embed' );
+    wp_deregister_script('wp-embed');
     wp_deregister_script('jquery');
 }
-add_action( 'wp_footer', 'my_deregister_scripts' );
+
+add_action('wp_footer', 'my_deregister_scripts');
 

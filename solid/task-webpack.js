@@ -47,7 +47,7 @@ module.exports = {
 
         // start webpack
         await compileMessage('🚚 Start webpack dev-server');
-        await shell.exec('yarn dev');
+        await shell.exec('npm run dev');
 
         // if not return make runnable return undefined
         return '';
@@ -63,7 +63,7 @@ module.exports = {
 
         // start webpack
         await compileMessage('😱 Start webpack production');
-        await shell.exec('npm run production', (err) =>
+        await shell.exec('npm run build', (err) =>
         {
             compileMessage('webpack production end');
         });

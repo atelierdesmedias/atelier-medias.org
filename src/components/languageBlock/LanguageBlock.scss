@@ -1,0 +1,67 @@
+/**
+  * "LanguageBlock" stylesheet
+  * follow workflow instructions
+ */
+// -----------------------------------------------------------------------------  IMPORT
+// common style & mixins
+@import '../../common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.LanguageBlock {
+  // --------------------------------------------------------------------------- PROPERTIES
+
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this: LanguageBlock;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+  @include size(auto, auto);
+
+  @media (max-width: $large) {
+    @include size(auto, auto);
+  }
+
+  // --------------------------------------------------------------------------- ELEMENTS
+
+  &_items {
+    @include flex(flex, row, wrap, center, center);
+    margin: auto 1.5rem;
+    list-style: none;
+  }
+
+  &_item {
+    height: $mainBorder;
+
+    &:last-child {
+      margin-left: 1rem;
+    }
+  }
+
+  &_link {
+    @include flex(flex, row, wrap, center, center);
+    @include size(100%);
+    @include title-smallUppercase($grey77Color);
+    @include lato-bold();
+    @media (max-width: $large) {
+      font-size: 1rem;
+    }
+
+    &-active,
+    &:hover {
+      color: $turqoiseColor;
+    }
+
+
+  }
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  // --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+

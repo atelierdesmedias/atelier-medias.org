@@ -1,0 +1,79 @@
+/**
+  * "EventBanner" stylesheet
+  * follow workflow instructions
+ */
+// -----------------------------------------------------------------------------  IMPORT
+// common style & mixins
+@import '../../common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.EventBanner {
+  // --------------------------------------------------------------------------- PROPERTIES
+
+
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this: EventBanner;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+  max-width: 420px;
+
+  // --------------------------------------------------------------------------- ELEMENTS
+
+  &_content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    border: 2px solid $whiteColor;
+    border-radius: 5px 0 0 5px;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+  }
+
+  &_title {
+    position: relative;
+    @include size(100%, 100%);
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    color: $whiteColor;
+    @include lato-bold();
+
+  }
+
+  &_date {
+    display: flex;
+    flex-direction: column;
+    @include size(110px, auto);
+    padding: 5px 0;
+    color: $blackColor;
+    background: $whiteColor;
+    text-align: center;
+  }
+
+  &_dayName {
+    @include title-smallUppercase($blackColor);
+    font-size: 0.7rem;
+  }
+
+  &_dayNumber {
+    @include lato-bold();
+    font-size: 1.6rem;
+  }
+
+  &_month {
+    @include title-smallUppercase($blackColor);
+    font-size: 0.7rem;
+  }
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  // --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+

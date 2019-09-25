@@ -1,0 +1,94 @@
+/**
+  * "MainNav" stylesheet
+  * follow workflow instructions
+ */
+// -----------------------------------------------------------------------------  IMPORT
+// common style & mixins
+@import '../../common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.MainNav {
+  // --------------------------------------------------------------------------- PROPERTIES
+
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this: MainNav;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+  background: $whiteColor;
+  visibility: visible;
+
+  @media (max-width: $large) {
+    // cacher le menu par defaut en mobile
+    visibility: hidden;
+    z-index: 5;
+  }
+
+  // --------------------------------------------------------------------------- ELEMENTS
+
+  &_content {
+    @include mainColumnWidthCenter();
+    @include flex(flex, row, wrap, space-between, center);
+
+    // mobile
+    @media (max-width: $large) {
+      display: block;
+      @include size(100%, auto);
+      @include absoluteCenter();
+    }
+  }
+
+  &_innerContent {
+    // desktop
+    @include flex(flex, row, wrap, center, center);
+
+    // mobile
+    @media (max-width: $large) {
+      display: block;
+    }
+
+    &-logo {
+      @media (max-width: $large) {
+        display: none;
+      }
+    }
+  }
+
+  &_logo {
+    & > * {
+      @include size($mainBorder * 0.75);
+    }
+  }
+
+  &_menu {
+
+  }
+
+  &_socialBlock {
+    margin-left: 1rem;
+    @media (max-width: $large) {
+      margin-left: 0; // reset
+      padding: 2rem 0;
+    }
+  }
+
+  &_languageBlock {
+    // mobile
+    @media (max-width: $large) {
+      position: relative;
+      padding: 0 0 0 0;
+      display: block;
+    }
+  }
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  // --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+

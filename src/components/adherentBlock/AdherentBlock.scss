@@ -1,0 +1,157 @@
+/**
+  * "AdherentBlock" stylesheet
+  * follow workflow instructions
+ */
+// -----------------------------------------------------------------------------  IMPORT
+// common style & mixins
+@import '../../common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.AdherentBlock {
+  // --------------------------------------------------------------------------- PROPERTIES
+
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this: AdherentBlock;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+  position: relative;
+  min-height: (960px / 2);
+  color: $whiteColor;
+  margin: auto;
+  padding: 3.5rem 2rem;
+  @media (max-width: $medium) {
+    @include size(($relativeColumnWidth * 10));
+    margin-top: 1rem;
+  }
+  @media (max-width: $small) {
+    @include size(100%);
+    padding: 2rem 2rem 3rem;
+    margin-top: 0;
+  }
+
+  // --------------------------------------------------------------------------- ELEMENTS
+
+  &_wrapper {
+    @include absoluteCenter();
+    width: 75%;
+    margin: auto;
+    @media (max-width: $medium) {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: 75%;
+      transform: none;
+      margin-top: 1rem;
+    }
+    @media (max-width: $small) {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+  &_title {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: normal;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    @media (max-width: $small) {
+      display: block;
+    }
+  }
+
+  &_verb {
+    @include lato-light();
+  }
+
+  &_calificatif {
+    @include title();
+    font-size: 2.5rem;
+    margin-top: -10px;
+    margin-left: 10px;
+    @media (max-width: $small) {
+      margin-top: 0;
+    }
+  }
+
+  &_description {
+    @include lato-bold();
+    margin-top: 2rem;
+  }
+
+  &_text {
+    ul {
+      margin-top: 2rem;
+      padding-left: 20px;
+
+      li {
+        @include lato-light();
+      }
+    }
+  }
+
+  &_priceBlock {
+    display: flex;
+    justify-content: center;
+    border: 1px solid $whiteColor;
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+
+  &_price {
+    @include lato-bold();
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  &_labelPrice {
+    margin-left: .5rem;
+  }
+
+  &_note {
+    @include lato-light();
+    font-size: .73rem;
+    line-height: 1rem;
+    margin-top: 1rem;
+  }
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  /**
+   * le background change en fonction du modifier block
+   */
+  &-adherent {
+    background: $grey77Color;
+  }
+
+  &-fixe {
+    background: $appleGreen2Color;
+
+    .#{$this}_item,
+    .#{$this}_note {
+      color: $grey40Color;
+    }
+  }
+
+  &-nomade {
+    background: $turqoiseColor;
+
+    .#{$this}_item,
+    .#{$this}_note {
+      color: $grey40Color;
+    }
+
+  }
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  // --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+

@@ -54,9 +54,6 @@ exports.propertiesFolderPath = 'properties/';
 // Selected env file Path
 exports.envNamePath = 'properties/.envName.js';
 
-// Post css configuration
-exports.postCssConfigFile = 'postcss.config.js';
-
 // ----------------------------------------------------------------------------- APP BUNDLE
 
 // Sub folder to choose for components

@@ -1,6 +1,6 @@
 sudo: required
 cache:
-  - yarn
+  - npm
 
 language: php
 php:
@@ -39,7 +39,7 @@ install:
   # retourner à la racine
   - cd ..
   # installer des dépendances front
-  - yarn install
+  - npm ci
 
 # selectionner l'environnement de dev en fonction de la branch
 before_script:

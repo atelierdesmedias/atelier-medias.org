@@ -1,0 +1,62 @@
+/**
+  * "BigCover" stylesheet
+ */
+// -----------------------------------------------------------------------------  IMPORT
+// common style & mixins
+@import '../../common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.BigCover {
+  // --------------------------------------------------------------------------- PROPERTIES
+
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this: BigCover;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+  overflow: hidden;
+
+  // --------------------------------------------------------------------------- ELEMENTS
+
+  &_video {
+    display: block;
+    @include absoluteCenter();
+    @include size(auto);
+    min-width: 100%;
+    min-height: 100%;
+    //object-fit: cover; // Not support by IE
+    // solution: placer la video en absolute center et appliquer en JS la taille
+    // du window height sur le container video
+  }
+
+  // gros LOGO ADM centré sur l'image ou la video
+  &_logo {
+    display: block;
+    @include absoluteCenter();
+    top: 46%;
+    z-index: 1;
+
+    & > svg {
+      @include size(400px);
+      @media (max-width: $small) {
+        @include size(320px);
+      }
+    }
+  }
+
+  &_eventBanner {
+    display: none;
+    @include position(absolute, ($mainBorder) 0 null null);
+  }
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  // --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+

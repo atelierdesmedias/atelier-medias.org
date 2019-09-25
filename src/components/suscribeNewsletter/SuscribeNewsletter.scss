@@ -1,0 +1,100 @@
+/**
+* this is "SuscribeNewsletter.twig" stylesheet
+* follow workflow instructions
+*/
+// -----------------------------------------------------------------------------  IMPORT
+// common styles & mixins
+@import '../../common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.SuscribeNewsletter {
+  // IMPORTANT : composant mobile first
+  // --------------------------------------------------------------------------- PROPERTIES
+
+  // Call block element anywhere, ex: #{$this}_element
+  $this: SuscribeNewsletter;
+  $inputHeight: auto;
+  $arrowSize: 30px;
+  $transition: 200ms ease-out;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+  // --------------------------------------------------------------------------- ELEMENTS
+
+  &_wrapper {
+    display: block;
+  }
+
+  &_input {
+    cursor: pointer;
+    display: block;
+    width: auto;
+    font-size: 1rem;
+    color: $whiteColor;
+    background: none;
+    border: none;
+    padding: 0 0 0.5rem 0.1rem;
+    border-bottom: 1px solid $grey144Color;
+    transition: $transition;
+
+    // style du texte placeholder dans le input
+    &::-webkit-input-placeholder {
+      text-align: left;
+      color: $whiteColor;
+      padding: 0 0.3rem 0.3rem 0;
+      transition: $transition;
+    }
+
+    &:focus {
+      outline: none;
+      width: 90%;
+      transition: $transition;
+
+      &::-webkit-input-placeholder {
+        text-align: left;
+        font-size: initial;
+        color: transparent;
+      }
+    }
+
+    &:hover:not(:focus) {
+      &::-webkit-input-placeholder {
+        color: $grey144Color;
+        transition: $transition;
+      }
+    }
+  }
+
+  &_button {
+    // reset
+    @include resetButtonStyle();
+    position: relative;
+    margin-top: 10px;
+    @include hitZone();
+
+    background: transparent;
+    color: $grey144Color;
+    transition: $transition;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      color: $whiteColor;
+      cursor: pointer;
+    }
+
+  }
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  // --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+

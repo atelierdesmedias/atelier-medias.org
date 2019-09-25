@@ -1,0 +1,29 @@
+{
+  "name": "solidify-lib",
+  "version": "1.9.9",
+  "description": "Solidify typescript framework for robust and modular web applications",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solid-js/solidify.git"
+  },
+  "keywords": [
+    "solid",
+    "solidify",
+    "lib",
+    "library",
+    "framework",
+    "typescript",
+    "modular",
+    "web",
+    "application"
+  ],
+  "author": "Alexis Bouhet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/solid-js/solidify/issues"
+  },
+  "homepage": "https://github.com/solid-js/solidify#readme"
+}

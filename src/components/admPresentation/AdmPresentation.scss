@@ -1,0 +1,67 @@
+/**
+  * "admPresentation" stylesheet
+  * follow workflow instructions
+ */
+// -----------------------------------------------------------------------------  IMPORT
+// common style & mixins
+@import '../../common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.AdmPresentation {
+  // --------------------------------------------------------------------------- PROPERTIES
+
+
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this: AdmPresentation;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+  // --------------------------------------------------------------------------- ELEMENTS
+
+  &_wrapper {
+    @include contentColumnWidthCenter();
+  }
+
+  &_content {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $large) {
+      display: block;
+    }
+  }
+
+  &_title {
+    @include size(($relativeColumnWidth * 4), auto);
+    @include title();
+
+    @media (max-width: $large) {
+      @include size(100%, auto);
+    }
+  }
+
+  &_text {
+    @include size(($relativeColumnWidth * 8), auto);
+    display: block;
+    margin-top: 2rem;
+    @media (max-width: $large) {
+      @include size(100%, auto);
+    }
+
+    // <p> généré par l'admin WP
+    & > p:not(:first-child) {
+      margin-top: 1rem;
+    }
+  }
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  // --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+

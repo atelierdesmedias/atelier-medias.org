@@ -1,0 +1,87 @@
+/**
+  * "Menu" stylesheet
+  * follow workflow instructions
+ */
+// -----------------------------------------------------------------------------  IMPORT
+// common style & mixins
+@import '../../common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.Menu {
+  // --------------------------------------------------------------------------- PROPERTIES
+
+
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this: Menu;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+  // position
+
+  // style
+  @include title-smallUppercase();
+  @media (max-width: $large) {
+    font-size: 1.5rem;
+  }
+
+  // --------------------------------------------------------------------------- ELEMENTS
+
+  &_items {
+    // position
+    position: relative;
+    @include size(100%, $mainBorder);
+    @include flex(flex, row, wrap, flex-start, center);
+
+    // style
+    list-style: none;
+
+    @media (max-width: $large) {
+      display: block;
+      @include size(100%, auto);
+    }
+  }
+
+  &_item {
+    position: relative;
+    height: $mainBorder;
+    padding: 0 1.5rem;
+    @include sepNavItem();
+    @media (max-width: $large) {
+      border: 0;
+      padding: 1.5rem 3.2rem;
+    }
+
+    &.current-menu-item {
+      & > a {
+        color: $turqoiseColor;
+      }
+    }
+  }
+
+  &_link {
+    // style reset
+    border: 0;
+    text-decoration: none;
+
+    @include flex(flex, row, wrap, center, center);
+    @include size(100%);
+
+    color: $grey77Color;
+    @include lato-bold();
+
+    &:hover {
+      color: $turqoiseColor;
+    }
+  }
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  // --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+

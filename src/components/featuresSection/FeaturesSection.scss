@@ -1,0 +1,54 @@
+/**
+  * "featuresSection" stylesheet
+  * follow workflow instructions
+ */
+// -----------------------------------------------------------------------------  IMPORT
+// common style & mixins
+@import '../../common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.FeaturesSection {
+  // --------------------------------------------------------------------------- PROPERTIES
+
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this: FeaturesSection;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+  position: relative;
+  background: $whiteColor;
+
+  // --------------------------------------------------------------------------- ELEMENTS
+
+  &_wrapper {
+    @include contentColumnWidthCenter();
+  }
+
+  &_content {
+    @include flex (flex, row, wrap, flex-start, flex-start, 1rem);
+  }
+
+  &_featureBlock {
+    margin-top: 3rem;
+    @include flexCol (4, 1, 1rem, false);
+
+    @media (max-width: $medium) {
+      @include flexCol (2, 1, 1rem, false);
+    }
+
+    @media (max-width: $small) {
+      @include flexCol (1, 1, 1rem, false);
+    }
+  }
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  // --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+

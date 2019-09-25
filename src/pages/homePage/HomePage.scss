@@ -1,0 +1,110 @@
+/**
+  * "HomePage" stylesheet
+  * follow workflow instructions
+ */
+
+// -----------------------------------------------------------------------------  IMPORT
+
+// common style & mixins
+@import '../../common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.HomePage
+{
+  // --------------------------------------------------------------------------- PROPERTIES
+
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this : HomePage;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+  position: relative;
+
+  // --------------------------------------------------------------------------- ELEMENTS
+
+  &_header
+  {
+    position: relative;
+    margin: 0;
+  }
+
+  &_bigCover
+  {
+    z-index: 0;
+    position: relative;
+    @include mainColumnWidthCenter();
+    @include margin($mainBorder null);
+    // la hauteur est setée en js
+
+    // mobile
+    @media (max-width: $large)
+    {
+      @include margin(0 auto);
+    }
+  }
+
+  &_content
+  {
+    // contient toutes les sections de la HomePage
+    position: relative;
+    // HACK pour le vide créé par les décalage vers le top des éléments enfants
+
+    // TODO : ne marche pas encore comme souhaité
+    // TODO : trouvé un moyen plus propre de faire cela
+    margin-bottom: -30rem;
+    background: url('../../images/background-01.jpg') repeat;
+    @include mainColumnWidthCenter();
+  }
+
+  &_coworkersPresentation
+  {
+    padding: 5rem 0;
+    @media(max-width: $medium)
+    {
+      padding: 3rem 0;
+    }
+  }
+
+  &_coworkersPatchwork
+  {
+    //padding: 5rem 0;
+  }
+
+  &_admPresentation
+  {
+    padding: 5rem 0 (10 + 10rem);
+    background: $whiteColor;
+  }
+
+  &_adherentSection
+  {
+    // sortie top du container du block enfant
+    position: relative;
+    top: -15rem;
+    z-index: 1;
+  }
+
+  &_featuresSection
+  {
+    top: -30rem;
+    padding: 20rem 0 5rem;
+    z-index: 0;
+  }
+
+  &_interestSection
+  {
+    top: -30rem;
+  }
+
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  // --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+
