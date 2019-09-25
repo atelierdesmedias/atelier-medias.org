@@ -1,12 +1,8 @@
-
-@import "../atoms/colors";
-
-
+@import '../atoms/colors';
 
 /**
   * separation entre les items du menu
  */
-@mixin sepNavItem()
-{
+@mixin sepNavItem() {
   //border-right: 1px solid $colorNavBarLine;
 }

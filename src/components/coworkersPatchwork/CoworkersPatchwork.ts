@@ -5,62 +5,49 @@
 
 // ------------------------------------------------------------------------- IMPORTS
 
-import './CoworkersPatchwork.scss'
-import {ActivityFilterBar} from "../activityFilterBar/ActivityFilterBar";
-import {DOMView} from "../../helpers/solidify-lib/core/DOMView";
+import './CoworkersPatchwork.scss';
+import {ActivityFilterBar} from '../activityFilterBar/ActivityFilterBar';
+import {DOMView} from '../../helpers/solidify-lib/core/DOMView';
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class CoworkersPatchwork extends DOMView
-{
+export class CoworkersPatchwork extends DOMView {
+  // ------------------------------------------------------------------------- TYPE
 
-    // ------------------------------------------------------------------------- TYPE
+  private _activityFilterBar: ActivityFilterBar;
 
-    private _activityFilterBar: ActivityFilterBar;
+  // ------------------------------------------------------------------------- INIT
 
-    // ------------------------------------------------------------------------- INIT
+  /**
+   * prepare nodes
+   *
+   */
+  protected prepareNodes() {}
 
-    /**
-     * prepare nodes
-     *
-     */
-    protected prepareNodes()
-    {
+  /**
+   * prepare dependencies
+   *
+   */
+  protected prepareDependencies() {
+    // importer la bar filter coworker en fonction des métiers
+    this._activityFilterBar = new ActivityFilterBar(
+      this.$root.find('.ActivityFilterBar')
+    );
+  }
 
-    }
+  /**
+   * prepare events
+   *
+   */
+  protected prepareEvents() {}
 
-    /**
-     * prepare dependencies
-     *
-     */
-    protected prepareDependencies()
-    {
+  /**
+   * after Init
+   *
+   */
+  protected afterInit() {}
 
-        // importer la bar filter coworker en fonction des métiers
-        this._activityFilterBar = new ActivityFilterBar( this.$root.find('.ActivityFilterBar') );
-    }
+  // ------------------------------------------------------------------------- HANDLERS
 
-    /**
-     * prepare events
-     *
-     */
-    protected prepareEvents()
-    {
-
-    }
-
-    /**
-     * after Init
-     *
-     */
-    protected afterInit()
-    {
-
-    }
-
-    // ------------------------------------------------------------------------- HANDLERS
-
-
-    // ------------------------------------------------------------------------- END EXPORT CLASS
+  // ------------------------------------------------------------------------- END EXPORT CLASS
 }
-

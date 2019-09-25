@@ -9,8 +9,14 @@
  * position an element with flex
  */
 
-@mixin flex ($flex:flex, $direction:row, $wrap:wrap, $justifyContent:flex-start, $alignItems:flex-start, $firstChildGutter:0)
-{
+@mixin flex(
+  $flex: flex,
+  $direction: row,
+  $wrap: wrap,
+  $justifyContent: flex-start,
+  $alignItems: flex-start,
+  $firstChildGutter: 0
+) {
   // flex, inline-flex
   display: $flex;
 
@@ -27,30 +33,25 @@
   align-items: $alignItems;
 
   // remove gutter of children first-child
-  @if ($firstChildGutter > 0)
-  {
+  @if ($firstChildGutter > 0) {
     margin-left: -$firstChildGutter;
   }
 }
-
 
 /**
  * flex
  * (à placer sur les éléments enfant)
  */
-@mixin flexCol ($totalGrid, $numberOfGrid, $gutter:0, $center:false)
-{
+@mixin flexCol($totalGrid, $numberOfGrid, $gutter: 0, $center: false) {
   width: calc(100% / #{$totalGrid} * #{$numberOfGrid} - #{$gutter});
   flex: 0 0 auto;
 
-  @if ($center == false)
-  {
+  @if ($center == false) {
     margin-left: $gutter;
   }
-  @if ($center == true)
-  {
-    margin-left:auto;
-    margin-right:auto;
+  @if ($center == true) {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -59,24 +60,18 @@
 /**
  * absolute center an element
  */
-@mixin absoluteCenter($axis:xy)
-{
+@mixin absoluteCenter($axis: xy) {
   position: absolute;
 
-  @if ($axis == xy) or ($axis == null)
-  {
+  @if ($axis == xy) or ($axis == null) {
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-  }
-  @else if ($axis == x)
-  {
+  } @else if ($axis == x) {
     transform: translateX(-50%);
     top: auto;
     left: 50%;
-  }
-  @else if ($axis == y)
-  {
+  } @else if ($axis == y) {
     transform: translateY(-50%);
     top: 50%;
     left: auto;
@@ -87,12 +82,11 @@
  * back to relative position
  */
 
-@mixin resetAbsoluteCenter ()
-{
+@mixin resetAbsoluteCenter() {
   position: relative;
   top: auto;
   left: auto;
-  transform: translate(0,0);
+  transform: translate(0, 0);
 }
 
 // ----------------------------------------------------------------------------- RESET
@@ -101,8 +95,7 @@
  * reset button style
  */
 
-@mixin resetButtonStyle ()
-{
+@mixin resetButtonStyle() {
   background: none;
   border: 0;
   color: inherit;
@@ -116,19 +109,17 @@
  * reset focus button style
  */
 
-@mixin resetFocusButtonStyle ()
-{
-  outline-style:none;
-  box-shadow:none;
-  border-color:transparent;
+@mixin resetFocusButtonStyle() {
+  outline-style: none;
+  box-shadow: none;
+  border-color: transparent;
 }
 
 /**
  * reset select style
  */
 
-@mixin resetSelectFormStyle ()
-{
+@mixin resetSelectFormStyle() {
   appearance: none;
   line-height: normal;
   background-image: none;
@@ -140,10 +131,12 @@
  * Set bigger hitzone with :after.
  */
 
-@mixin hitZone ($horizontalSize: 10px, $verticalSize: 10px, $color: transparent)
-{
-  &:after
-  {
+@mixin hitZone(
+  $horizontalSize: 10px,
+  $verticalSize: 10px,
+  $color: transparent
+) {
+  &:after {
     content: '';
     position: absolute;
     top: -$verticalSize;
@@ -161,8 +154,7 @@
  * Hide visible scrollBar on IE10+ and chrome PC
  */
 
-@mixin scrollPatch ()
-{
+@mixin scrollPatch() {
   // Compatibilité IE / iPad
   overflow-scrolling: touch;
   -webkit-overflow-scrolling: touch;
@@ -171,8 +163,7 @@
   -ms-overflow-style: none;
 
   // Masquer les scrollbar sur chrome
-  &::-webkit-scrollbar
-  {
+  &::-webkit-scrollbar {
     width: 0 !important;
     height: 0 !important;
   }
@@ -182,11 +173,9 @@
  * Force scrollBar to be shown
  */
 
-@mixin showScrollBar ()
-{
+@mixin showScrollBar() {
   -ms-overflow-style: scrollbar;
-  &::-webkit-scrollbar
-  {
+  &::-webkit-scrollbar {
     width: auto;
     height: auto;
   }
@@ -196,8 +185,7 @@
  * Enable vertical scroll on an element and patch it.
  */
 
-@mixin verticalScroll ()
-{
+@mixin verticalScroll() {
   overflow: hidden;
   overflow-y: scroll;
   @include scrollPatch();
@@ -207,8 +195,7 @@
  * Enable horizontal scroll on an element and patch it.
  */
 
-@mixin horizontalScroll ()
-{
+@mixin horizontalScroll() {
   overflow: hidden;
   overflow-x: scroll;
   @include scrollPatch();
@@ -220,8 +207,7 @@
  * Disable text selection on an element
  */
 
-@mixin disableSelection ()
-{
+@mixin disableSelection() {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -234,8 +220,7 @@
  * Enable text selection on an element
  */
 
-@mixin enableSelection ()
-{
+@mixin enableSelection() {
   -webkit-user-select: all;
   -khtml-user-select: all;
   -moz-user-select: all;
@@ -247,8 +232,7 @@
  * Remove touch callout on safari mobile
  */
 
-@mixin disableTouchCallout ()
-{
+@mixin disableTouchCallout() {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
@@ -259,8 +243,7 @@
  * ex: @include line (320px, 2px, @color_link, 0);
  */
 
-@mixin line ($x, $y, $color, $radius)
-{
+@mixin line($x, $y, $color, $radius) {
   display: block;
   position: relative;
   width: $x;
@@ -275,15 +258,21 @@
  * Declare and load a font
  */
 
-@mixin declareFontFace ($basePath, $fontFileName, $fontFamilyName, $fontWeight:normal, $fontStyle: normal, $SVGName: '')
-{
-  @font-face
-  {
+@mixin declareFontFace(
+  $basePath,
+  $fontFileName,
+  $fontFamilyName,
+  $fontWeight: normal,
+  $fontStyle: normal,
+  $SVGName: ''
+) {
+  @font-face {
     font-family: $fontFamilyName;
 
-    src:  url('#{$basePath}#{$fontFileName}.eot?#iefix')    format('embedded-opentype'),
-    url('#{$basePath}#{$fontFileName}.woff')                format('woff'),
-    url('#{$basePath}#{$fontFileName}.ttf')                 format('truetype');
+    src: url('#{$basePath}#{$fontFileName}.eot?#iefix')
+        format('embedded-opentype'),
+      url('#{$basePath}#{$fontFileName}.woff') format('woff'),
+      url('#{$basePath}#{$fontFileName}.ttf') format('truetype');
     //url('#{$basePath}#{$fontFileName}.svg##{$SVGName}')       format('svg');
 
     font-weight: $fontWeight;
@@ -295,12 +284,10 @@
  * Smooth fonts
  */
 
-@mixin fontSmooth ()
-{
+@mixin fontSmooth() {
   // Activer l'anti-aliasing
   font-smooth: always;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
-

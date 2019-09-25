@@ -1,4 +1,3 @@
-
 /**
 * this is "ArrowDown" stylesheet
 * follow workflow instructions
@@ -11,43 +10,42 @@
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.ArrowDown
-{
+.ArrowDown {
+  // --------------------------------------------------------------------------- PROPERTIES
 
-	// --------------------------------------------------------------------------- PROPERTIES
+  // Call block element anywhere, ex: #{$this}_element
+  $this: ArrowDown;
 
-	// Call block element anywhere, ex: #{$this}_element
-	$this: ArrowDown;
+  @keyframes toggle {
+    0% {
+      margin-bottom: 0;
+    }
+    50% {
+      margin-bottom: 6px;
+    }
+    100% {
+      margin-bottom: 0;
+    }
+  }
 
-	@keyframes toggle {
-		0% { margin-bottom:0 }
-		50% { margin-bottom: 6px }
-		100% { margin-bottom:0 }
-	}
+  // --------------------------------------------------------------------------- BLOCK
 
-	// --------------------------------------------------------------------------- BLOCK
+  // positionné depuis le parent
 
-	// positionné depuis le parent
+  // --------------------------------------------------------------------------- ELEMENTS
 
-	// --------------------------------------------------------------------------- ELEMENTS
+  &_icon {
+    @include position(relative, 50% null null 50%);
+    @include size(20px);
+    border-left: 3px solid $turqoiseColor;
+    border-bottom: 3px solid $turqoiseColor;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    animation: toggle 2s ease-in-out infinite;
+  }
 
-	&_icon
-	{
-		@include position(relative, 50% null null 50%);
-		@include size(20px);
-		border-left: 3px solid $turqoiseColor;
-		border-bottom: 3px solid $turqoiseColor;
-		transform: translate(-50%, -50%) rotate(-45deg);
-		animation: toggle 2s ease-in-out infinite;
-	}
+  // --------------------------------------------------------------------------- MODIFIERS
 
-	// --------------------------------------------------------------------------- MODIFIERS
+  // --------------------------------------------------------------------------- CHILDREN
 
-	// --------------------------------------------------------------------------- CHILDREN
-
-	// --------------------------------------------------------------------------- PATCHES
-
+  // --------------------------------------------------------------------------- PATCHES
 }
-
-
-

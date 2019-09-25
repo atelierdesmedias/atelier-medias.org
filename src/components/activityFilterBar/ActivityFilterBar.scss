@@ -22,11 +22,10 @@
   // --------------------------------------------------------------------------- ELEMENTS
 
   &_items {
-    @include flex (flex, row, wrap, center, flex-start);
+    @include flex(flex, row, wrap, center, flex-start);
     list-style: none;
 
-
-    @media(max-width: $medium) {
+    @media (max-width: $medium) {
       width: ($columnWidth * 11);
       margin: auto;
     }
@@ -34,7 +33,7 @@
 
   &_item {
     margin: 0 0.25em;
-    @media(max-width: $medium) {
+    @media (max-width: $medium) {
       margin: 0 0.25em;
     }
   }
@@ -46,12 +45,11 @@
 
     padding: 0.75em 1em;
     border-radius: 2em;
-    background-color: #EEE;
+    background-color: #eee;
 
     &:hover {
-      background-color: #DDD;
+      background-color: #ddd;
     }
-
   }
 
   // --------------------------------------------------------------------------- MODIFIERS
@@ -59,8 +57,4 @@
   // --------------------------------------------------------------------------- CHILDREN
 
   // --------------------------------------------------------------------------- PATCHES
-
 }
-
-
-

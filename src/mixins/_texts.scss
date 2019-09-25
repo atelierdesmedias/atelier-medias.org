@@ -10,8 +10,7 @@
 
 // ----------------------------------------------------------------------------- MIXIN
 
-@mixin Title-1()
-{
-	color: $whiteColor;
-	font-size: 2rem;
+@mixin Title-1() {
+  color: $whiteColor;
+  font-size: 2rem;
 }

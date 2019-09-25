@@ -2,24 +2,20 @@
  * Website Data
  */
 
-class Data
-{
-    site: {
-        title: '',
-        subTitle: '',
-        url: '',
+class Data {
+  site: {
+    title: '';
+    subTitle: '';
+    url: '';
+  };
+
+  pages: {
+    homePage: {
+      title: 'home';
     };
+  };
 
-    pages: {
-        homePage: {
-            title: 'home',
-        },
-    };
-
-    components: {
-
-    };
-
+  components: {};
 }
 
 export const data = new Data();

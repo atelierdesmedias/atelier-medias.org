@@ -3,65 +3,43 @@
  * follow workflow instructions
  */
 
-import {DOMView} from "../../helpers/solidify-lib/core/DOMView";
-import './ArrowDown.scss'
+import {DOMView} from '../../helpers/solidify-lib/core/DOMView';
+import './ArrowDown.scss';
 
 // ----------------------------------------------------------------------------- START EXPORT CLASS
 
-export class ArrowDown extends DOMView
-{
+export class ArrowDown extends DOMView {
+  // ------------------------------------------------------------------------- INIT
 
-    // ------------------------------------------------------------------------- INIT
+  /**
+   * Target our root if not already defined via constructor params
+   */
+  protected targetRoot() {}
 
-    /**
-     * Target our root if not already defined via constructor params
-     */
-    protected targetRoot()
-    {
+  /**
+   * prepare nodes
+   */
+  protected prepareNodes() {}
 
-    }
+  /**
+   * prepare dependencies
+   */
+  protected prepareDependencies() {}
 
-    /**
-     * prepare nodes
-     */
-    protected prepareNodes()
-    {
+  /**
+   *  init components
+   */
+  protected initComponents() {}
 
-    }
+  /**
+   * prepare events
+   */
+  protected prepareEvents() {}
 
-    /**
-     * prepare dependencies
-     */
-    protected prepareDependencies()
-    {
+  /**
+   * after Init
+   */
+  protected afterInit() {}
 
-    }
-
-    /**
-     *  init components
-     */
-    protected initComponents()
-    {
-
-    }
-
-    /**
-     * prepare events
-     */
-    protected prepareEvents()
-    {
-
-    }
-
-    /**
-     * after Init
-     */
-    protected afterInit()
-    {
-
-    }
-
-    // ------------------------------------------------------------------------- HANDLERS
-
+  // ------------------------------------------------------------------------- HANDLERS
 }
-

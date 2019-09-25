@@ -1,4 +1,3 @@
-
 /**
  * "fonts" stylesheet
  * declare common font face
@@ -9,8 +8,7 @@
 
 // ----------------------------------------------------------------------------- MIXIN
 
-@mixin fontProperties()
-{
+@mixin fontProperties() {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -24,36 +22,27 @@
  * passe pas dans la compile inline)
  */
 
-@mixin MaisonNeue-medium ()
-{
-	font-family : 'maisonneue-medium', sans-serif;
-	@include fontProperties();
-}
-
-
-@mixin lato-regular()
-{
-  font-family: "lato-regular", sans-serif;
+@mixin MaisonNeue-medium() {
+  font-family: 'maisonneue-medium', sans-serif;
   @include fontProperties();
 }
 
-
-@mixin lato-light()
-{
-  font-family: "lato-light", sans-serif;
+@mixin lato-regular() {
+  font-family: 'lato-regular', sans-serif;
   @include fontProperties();
 }
 
-
-@mixin lato-bold()
-{
-  font-family: "lato-bold", sans-serif;
+@mixin lato-light() {
+  font-family: 'lato-light', sans-serif;
   @include fontProperties();
 }
 
+@mixin lato-bold() {
+  font-family: 'lato-bold', sans-serif;
+  @include fontProperties();
+}
 
-@mixin sofia-regular()
-{
-  font-family: "sofia-regular", sans-serif;
+@mixin sofia-regular() {
+  font-family: 'sofia-regular', sans-serif;
   @include fontProperties();
 }

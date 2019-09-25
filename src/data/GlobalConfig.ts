@@ -4,62 +4,55 @@
  * - theses properties were injected in Main.tsx
  */
 
-export class GlobalConfigProperties
-{
-    // version application
-    public version      :string;
+export class GlobalConfigProperties {
+  // version application
+  public version: string;
 
-    // url of application
-    public url		    :string;
+  // url of application
+  public url: string;
 
-    // Base http path to access to the app, from process.properties
-    public base		    :string;
+  // Base http path to access to the app, from process.properties
+  public base: string;
 
-    // atom object from less
-    public atoms        :any
+  // atom object from less
+  public atoms: any;
 }
 
 /**
  * Singleton Config class.
  * Do not touch.
  */
-export class GlobalConfig extends GlobalConfigProperties
-{
-    // ------------------------------------------------------------------------- SINGLETON
+export class GlobalConfig extends GlobalConfigProperties {
+  // ------------------------------------------------------------------------- SINGLETON
 
-    // Singleton
-    protected static __instance:GlobalConfig;
+  // Singleton
+  protected static __instance: GlobalConfig;
 
-    /**
-     * Get GlobalConfig singleton instance.
-     */
-    static get instance ()
-    {
-        // Create instance
-        if (GlobalConfig.__instance == null)
-        {
-            GlobalConfig.__instance = new GlobalConfig();
-        }
-
-        // Return singleton instance
-        return GlobalConfig.__instance;
+  /**
+   * Get GlobalConfig singleton instance.
+   */
+  static get instance() {
+    // Create instance
+    if (GlobalConfig.__instance == null) {
+      GlobalConfig.__instance = new GlobalConfig();
     }
 
+    // Return singleton instance
+    return GlobalConfig.__instance;
+  }
 
-    // ------------------------------------------------------------------------- INJECT
+  // ------------------------------------------------------------------------- INJECT
 
-    /**
-     * Inject arbitrary properties inside this object.
-     */
-    inject (pProps:any)
-    {
-        // Check if props are injectable
-        if (pProps == null || typeof pProps !== 'object') return;
+  /**
+   * Inject arbitrary properties inside this object.
+   */
+  inject(pProps: any) {
+    // Check if props are injectable
+    if (pProps == null || typeof pProps !== 'object') return;
 
-        // Inject props
-        for (let i in pProps)
-        {
-            this[i] = pProps[i];
-        }
+    // Inject props
+    for (let i in pProps) {
+      this[i] = pProps[i];
     }
+  }
 }

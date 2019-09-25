@@ -5,64 +5,49 @@
 
 // ------------------------------------------------------------------------- IMPORTS
 
-import './MainFooter.scss'
-import {DOMView} from "../../helpers/solidify-lib/core/DOMView";
-import {SuscribeNewsletter} from "../suscribeNewsletter/SuscribeNewsletter";
+import './MainFooter.scss';
+import {DOMView} from '../../helpers/solidify-lib/core/DOMView';
+import {SuscribeNewsletter} from '../suscribeNewsletter/SuscribeNewsletter';
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class MainFooter extends DOMView
-{
+export class MainFooter extends DOMView {
+  // ------------------------------------------------------------------------- TYPE
 
-    // ------------------------------------------------------------------------- TYPE
+  protected _suscribeNewsletter: SuscribeNewsletter;
 
-    protected _suscribeNewsletter :SuscribeNewsletter;
+  // ------------------------------------------------------------------------- INIT
 
-    // ------------------------------------------------------------------------- INIT
+  /**
+   * prepare nodes
+   */
+  protected prepareNodes() {}
 
-    /**
-     * prepare nodes
-     */
-    protected prepareNodes()
-    {
+  /**
+   * prepare dependencies
+   */
+  protected prepareDependencies() {
+    this._suscribeNewsletter = new SuscribeNewsletter(
+      this.$root.find('.MainRooter_suscribeNewsletter')
+    );
+  }
 
-    }
+  /**
+   *  init components
+   */
+  protected initComponents() {}
 
-    /**
-     * prepare dependencies
-     */
-    protected prepareDependencies()
-    {
-        this._suscribeNewsletter = new SuscribeNewsletter( this.$root.find('.MainRooter_suscribeNewsletter') )
-    }
+  /**
+   * prepare events
+   */
+  protected prepareEvents() {}
 
-    /**
-     *  init components
-     */
-    protected initComponents()
-    {
+  /**
+   * after Init
+   */
+  protected afterInit() {}
 
-    }
+  // ------------------------------------------------------------------------- HANDLERS
 
-    /**
-     * prepare events
-     */
-    protected prepareEvents()
-    {
-
-    }
-
-    /**
-     * after Init
-     */
-    protected afterInit()
-    {
-
-    }
-
-    // ------------------------------------------------------------------------- HANDLERS
-
-
-    // ------------------------------------------------------------------------- END EXPORT CLASS
+  // ------------------------------------------------------------------------- END EXPORT CLASS
 }
-

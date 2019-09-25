@@ -3,62 +3,43 @@
  * follow workflow instructions
  */
 
-import {DOMView} from "../../helpers/solidify-lib/core/DOMView";
-import './SuscribeNewsletter.scss'
+import {DOMView} from '../../helpers/solidify-lib/core/DOMView';
+import './SuscribeNewsletter.scss';
 
 // ----------------------------------------------------------------------------- START EXPORT CLASS
 
-export class SuscribeNewsletter extends DOMView
-{
+export class SuscribeNewsletter extends DOMView {
+  // ------------------------------------------------------------------------- INIT
 
-    // ------------------------------------------------------------------------- INIT
-
-    /**
+  /**
      * Target our root if not already defined via constructor params
 
      */
-    protected targetRoot ()
-    {
+  protected targetRoot() {}
 
-    }
-
-    /**
+  /**
      * prepare nodes
 
      */
-    protected prepareNodes()
-    {
+  protected prepareNodes() {}
 
-    }
-
-    /**
+  /**
      * prepare dependencies
 
      */
-    protected prepareDependencies()
-    {
+  protected prepareDependencies() {}
 
-    }
-
-    /**
+  /**
      * prepare events
 
      */
-    protected prepareEvents()
-    {
+  protected prepareEvents() {}
 
-    }
-
-    /**
+  /**
      * after Init
 
      */
-    protected afterInit()
-    {
+  protected afterInit() {}
 
-    }
-
-    // ------------------------------------------------------------------------- HANDLERS
-
+  // ------------------------------------------------------------------------- HANDLERS
 }
-

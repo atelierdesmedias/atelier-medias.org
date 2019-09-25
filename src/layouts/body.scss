@@ -9,24 +9,22 @@
 
 //------------------------------------------------------------------------  BODY
 
-body
-{
-	// background motif
-	background: $whiteColor;
+body {
+  // background motif
+  background: $whiteColor;
 
-	// global font size
-	font-size: 16px;
+  // global font size
+  font-size: 16px;
 
-	// global color
-	color: $blackColor;
+  // global color
+  color: $blackColor;
 
-	// global interlignage
-	line-height: 1.5rem;
+  // global interlignage
+  line-height: 1.5rem;
 
-	// global interlettrage
-	letter-spacing: 0.01rem;
+  // global interlettrage
+  letter-spacing: 0.01rem;
 
-	// global font
-	@include lato-regular();
+  // global font
+  @include lato-regular();
 }
-

@@ -14,13 +14,18 @@ $fontBasePath: '../fonts/';
 // ----------------------------------------------------------------------------- BOURBON LIB CONFIG
 
 $bourbon: (
-        "rails-asset-pipeline": true,
-        "global-font-file-formats": ("eot","ttf", "woff2", "woff"),
+  'rails-asset-pipeline': true,
+  'global-font-file-formats': (
+    'eot',
+    'ttf',
+    'woff2',
+    'woff'
+  )
 );
 
 // ----------------------------------------------------------------------------- BREAK POINT
 
-// small phone 
+// small phone
 $xsmall: 320px;
 
 // small to medium phone
@@ -41,19 +46,17 @@ $xxlarge: 1440px;
 // desktop to huge huge screen
 $xxxlage: 1800px;
 
-
 // ----------------------------------------------------------------------------- GRID
 
 // Nbr of column
 $totalGrid: 12;
 
 // size of 1 column : divise screen in ... column
-$columnWidth: ( 100vw / $totalGrid );
-$columnHeight: ( 100vh / $totalGrid );
+$columnWidth: (100vw / $totalGrid);
+$columnHeight: (100vh / $totalGrid);
 
 // relative column width
 $relativeColumnWidth: (100% / $totalGrid);
 
 // hauteur de la mainNav
 $mainBorder: ($columnWidth * 0.65);
-

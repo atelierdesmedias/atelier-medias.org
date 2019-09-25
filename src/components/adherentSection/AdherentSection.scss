@@ -20,18 +20,17 @@
   // --------------------------------------------------------------------------- BLOCK
 
   @include contentColumnWidthCenter();
-  @media(max-width: $medium) {
+  @media (max-width: $medium) {
     width: 100%;
   }
 
   // --------------------------------------------------------------------------- ELEMENTS
 
   &_content {
-
   }
 
   &_inlineWrapper {
-    @include flex (flex, row, wrap, center, flex-start, $gutterBlock);
+    @include flex(flex, row, wrap, center, flex-start, $gutterBlock);
     margin-top: $gutterBlock;
 
     @media (max-width: $medium) {
@@ -44,17 +43,12 @@
   }
 
   &_adherentBlock {
-    @include flexCol (2, 1, $gutterBlock);
+    @include flexCol(2, 1, $gutterBlock);
   }
-
 
   // --------------------------------------------------------------------------- MODIFIERS
 
   // --------------------------------------------------------------------------- CHILDREN
 
   // --------------------------------------------------------------------------- PATCHES
-
 }
-
-
-

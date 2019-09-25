@@ -109,12 +109,12 @@
   }
 
   &_labelPrice {
-    margin-left: .5rem;
+    margin-left: 0.5rem;
   }
 
   &_note {
     @include lato-light();
-    font-size: .73rem;
+    font-size: 0.73rem;
     line-height: 1rem;
     margin-top: 1rem;
   }
@@ -144,14 +144,9 @@
     .#{$this}_note {
       color: $grey40Color;
     }
-
   }
 
   // --------------------------------------------------------------------------- CHILDREN
 
   // --------------------------------------------------------------------------- PATCHES
-
 }
-
-
-

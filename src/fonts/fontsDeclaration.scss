@@ -3,14 +3,17 @@
  * inline
  */
 
-@import "../helpers/helpers";
+@import '../helpers/helpers';
 
 // ----------------------------------------------------------------------------- FONT DECLARATION
 
 // this is relative path from common folder
-@include declareFontFace('./fonts/', "maisonneue/maisonneue-medium", "maisonneue-medium");
-@include declareFontFace('./fonts/', "lato/lato-regular", "lato-regular");
-@include declareFontFace('./fonts/', "lato/lato-light", "lato-light");
-@include declareFontFace('./fonts/', "lato/lato-bold", "lato-bold");
-@include declareFontFace('./fonts/', "sofia/sofia-regular", "sofia-regular");
-
+@include declareFontFace(
+  './fonts/',
+  'maisonneue/maisonneue-medium',
+  'maisonneue-medium'
+);
+@include declareFontFace('./fonts/', 'lato/lato-regular', 'lato-regular');
+@include declareFontFace('./fonts/', 'lato/lato-light', 'lato-light');
+@include declareFontFace('./fonts/', 'lato/lato-bold', 'lato-bold');
+@include declareFontFace('./fonts/', 'sofia/sofia-regular', 'sofia-regular');

@@ -5,67 +5,46 @@
 
 // ------------------------------------------------------------------------- IMPORTS
 
-import './AdherentBlock.scss'
-import {DOMView} from "../../helpers/solidify-lib/core/DOMView";
+import './AdherentBlock.scss';
+import {DOMView} from '../../helpers/solidify-lib/core/DOMView';
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class AdherentBlock extends DOMView
-{
+export class AdherentBlock extends DOMView {
+  // ------------------------------------------------------------------------- TYPE
 
-    // ------------------------------------------------------------------------- TYPE
+  // ------------------------------------------------------------------------- INIT
 
-    // ------------------------------------------------------------------------- INIT
+  /**
+   * Target our root if not already defined via constructor params
+   */
+  protected targetRoot() {}
 
+  /**
+   * prepare nodes
+   *
+   */
+  protected prepareNodes() {}
 
-    /**
-     * Target our root if not already defined via constructor params
+  /**
+   * prepare dependencies
+   *
+   */
+  protected prepareDependencies() {}
 
-     */
-    protected targetRoot ()
-    {
+  /**
+   * prepare events
+   *
+   */
+  protected prepareEvents() {}
 
-    }
+  /**
+   * after Init
+   *
+   */
+  protected afterInit() {}
 
-    /**
-     * prepare nodes
-     *
-     */
-    protected prepareNodes()
-    {
+  // ------------------------------------------------------------------------- HANDLERS
 
-    }
-
-    /**
-     * prepare dependencies
-     *
-     */
-    protected prepareDependencies()
-    {
-
-    }
-
-    /**
-     * prepare events
-     *
-     */
-    protected prepareEvents()
-    {
-
-    }
-
-    /**
-     * after Init
-     *
-     */
-    protected afterInit()
-    {
-
-    }
-
-    // ------------------------------------------------------------------------- HANDLERS
-
-
-    // ------------------------------------------------------------------------- END EXPORT CLASS
+  // ------------------------------------------------------------------------- END EXPORT CLASS
 }
-

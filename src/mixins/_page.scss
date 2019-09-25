@@ -1,11 +1,10 @@
-
 /**
   * @Filename: pageGrid
   * @Description: mixin for this project
 */
 
-@import "../atoms/properties";
-@import "../../node_modules/bourbon/core/bourbon";
+@import '../atoms/properties';
+@import '../../node_modules/bourbon/core/bourbon';
 
 // ----------------------------------------------------------------------------- MIXIN
 
@@ -13,34 +12,27 @@
  * container principal
  * permetant les marges blanches de chaque côté des pages
  */
-@mixin mainColumnWidthCenter()
-{
-    @include size(100%, auto);
+@mixin mainColumnWidthCenter() {
+  @include size(100%, auto);
 
-    // desktop
-    @media (min-width: $large)
-    {
-        @include size(100vw - ($mainBorder * 2), auto );
-        @include margin(null auto);
-    }
+  // desktop
+  @media (min-width: $large) {
+    @include size(100vw - ($mainBorder * 2), auto);
+    @include margin(null auto);
+  }
 }
-
 
 /**
  * la column de text et contenu qui ne dépassera jamais 960px
  */
-@mixin contentColumnWidthCenter()
-{
-    // laptop
-    width: ($columnWidth * 8);
-    max-width: 960px;
-    margin: auto;
+@mixin contentColumnWidthCenter() {
+  // laptop
+  width: ($columnWidth * 8);
+  max-width: 960px;
+  margin: auto;
 
-    // mobile
-    @media (max-width: $large)
-    {
-        width: ($columnWidth * 10);
-    }
-
+  // mobile
+  @media (max-width: $large) {
+    width: ($columnWidth * 10);
+  }
 }
-

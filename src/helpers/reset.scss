@@ -2,8 +2,7 @@
  * Hard reset
  */
 
-*
-{
+* {
   margin: 0;
   padding: 0;
 }
@@ -12,12 +11,12 @@
  * Default Box sizing
  */
 
-html
-{
+html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after
-{
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }

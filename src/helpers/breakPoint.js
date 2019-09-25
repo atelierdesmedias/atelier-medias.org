@@ -1,7 +1,7 @@
 /**
-  * @Filename: breakPoint.js
-  * @Description: detect window sizes & devices
-*/
+ * @Filename: breakPoint.js
+ * @Description: detect window sizes & devices
+ */
 
 // ----------------------------------------------------------------------------- IMPORTS
 
@@ -12,24 +12,16 @@
 
 // ------------------------------------------------------------------------- BREAKPOINT
 
+export function breakPoint(size) {
+  let bp = {
+    xsmall: 320,
+    small: 480,
+    medium: 768,
+    large: 1023,
+    xlarge: 1280,
+    xxlarge: 1440,
+    xxxlarge: 1800
+  };
 
-export function breakPoint( size )
-{
-
-    let bp = {
-
-        xsmall            : 320,
-        small             : 480,
-        medium            : 768,
-        large             : 1023,
-        xlarge            : 1280,
-        xxlarge           : 1440,
-        xxxlarge          : 1800
-
-    }
-
-    return window.innerWidth >= bp[size];
-
+  return window.innerWidth >= bp[size];
 }
-
-

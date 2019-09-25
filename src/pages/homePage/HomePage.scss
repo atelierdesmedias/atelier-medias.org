@@ -10,12 +10,11 @@
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.HomePage
-{
+.HomePage {
   // --------------------------------------------------------------------------- PROPERTIES
 
   // Call block element anywhere. Use it like this : .#{$this}_element
-  $this : HomePage;
+  $this: HomePage;
 
   // --------------------------------------------------------------------------- BLOCK
 
@@ -23,14 +22,12 @@
 
   // --------------------------------------------------------------------------- ELEMENTS
 
-  &_header
-  {
+  &_header {
     position: relative;
     margin: 0;
   }
 
-  &_bigCover
-  {
+  &_bigCover {
     z-index: 0;
     position: relative;
     @include mainColumnWidthCenter();
@@ -38,14 +35,12 @@
     // la hauteur est setée en js
 
     // mobile
-    @media (max-width: $large)
-    {
+    @media (max-width: $large) {
       @include margin(0 auto);
     }
   }
 
-  &_content
-  {
+  &_content {
     // contient toutes les sections de la HomePage
     position: relative;
     // HACK pour le vide créé par les décalage vers le top des éléments enfants
@@ -57,54 +52,42 @@
     @include mainColumnWidthCenter();
   }
 
-  &_coworkersPresentation
-  {
+  &_coworkersPresentation {
     padding: 5rem 0;
-    @media(max-width: $medium)
-    {
+    @media (max-width: $medium) {
       padding: 3rem 0;
     }
   }
 
-  &_coworkersPatchwork
-  {
+  &_coworkersPatchwork {
     //padding: 5rem 0;
   }
 
-  &_admPresentation
-  {
+  &_admPresentation {
     padding: 5rem 0 (10 + 10rem);
     background: $whiteColor;
   }
 
-  &_adherentSection
-  {
+  &_adherentSection {
     // sortie top du container du block enfant
     position: relative;
     top: -15rem;
     z-index: 1;
   }
 
-  &_featuresSection
-  {
+  &_featuresSection {
     top: -30rem;
     padding: 20rem 0 5rem;
     z-index: 0;
   }
 
-  &_interestSection
-  {
+  &_interestSection {
     top: -30rem;
   }
-
 
   // --------------------------------------------------------------------------- MODIFIERS
 
   // --------------------------------------------------------------------------- CHILDREN
 
   // --------------------------------------------------------------------------- PATCHES
-
 }
-
-
-

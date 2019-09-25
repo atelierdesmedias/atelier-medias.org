@@ -5,61 +5,47 @@
 
 // ------------------------------------------------------------------------- IMPORTS
 
-import './FeaturesSection.scss'
-import {FeatureBlock} from "../featureBlock/FeatureBlock";
-import {DOMView} from "../../helpers/solidify-lib/core/DOMView";
+import './FeaturesSection.scss';
+import {FeatureBlock} from '../featureBlock/FeatureBlock';
+import {DOMView} from '../../helpers/solidify-lib/core/DOMView';
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class FeaturesSection extends DOMView
-{
+export class FeaturesSection extends DOMView {
+  // ------------------------------------------------------------------------- TYPE
 
-    // ------------------------------------------------------------------------- TYPE
+  private _featureBlock: FeatureBlock;
 
-    private _featureBlock: FeatureBlock;
+  // ------------------------------------------------------------------------- INIT
 
-    // ------------------------------------------------------------------------- INIT
+  /**
+   * prepare nodes
+   *
+   */
+  protected prepareNodes() {}
 
-    /**
-     * prepare nodes
-     *
-     */
-    protected prepareNodes()
-    {
+  /**
+   * prepare dependencies
+   *
+   */
+  protected prepareDependencies() {
+    // importer le composant feature block (correspond à une icon + son texte associé)
+    this._featureBlock = new FeatureBlock(this.$root.find('.FeatureBlock'));
+  }
 
-    }
+  /**
+   * prepare events
+   *
+   */
+  protected prepareEvents() {}
 
-    /**
-     * prepare dependencies
-     *
-     */
-    protected prepareDependencies()
-    {
-        // importer le composant feature block (correspond à une icon + son texte associé)
-        this._featureBlock = new FeatureBlock( this.$root.find('.FeatureBlock') );
-    }
+  /**
+   * after Init
+   *
+   */
+  protected afterInit() {}
 
-    /**
-     * prepare events
-     *
-     */
-    protected prepareEvents()
-    {
+  // ------------------------------------------------------------------------- HANDLERS
 
-    }
-
-    /**
-     * after Init
-     *
-     */
-    protected afterInit()
-    {
-
-    }
-
-    // ------------------------------------------------------------------------- HANDLERS
-
-
-    // ------------------------------------------------------------------------- END EXPORT CLASS
+  // ------------------------------------------------------------------------- END EXPORT CLASS
 }
-
