@@ -8,19 +8,19 @@ process.env.PATH += (path.delimiter + path.join(__dirname, 'node_modules', '.bin
 module.exports = {
 
     // task dev
-    dev : () => require('./solid/task-webpack').dev(),
+    dev : () => require('./config/tasks/task-webpack').dev(),
 
     // task production
-    production : () => require('./solid/task-webpack').production(),
+    production : () => require('./config/tasks/task-webpack').production(),
 
     // Create environment
-    createEnv : () => require('./solid/task-properties').createEnv(),
+    createEnv : () => require('./config/tasks/task-properties').createEnv(),
 
     // Select environment
-    selectEnv : () => require('./solid/task-properties').selectEnv(),
+    selectEnv : () => require('./config/tasks/task-properties').selectEnv(),
 
     // Scaffold component
-    scaffold : () => require('./solid/task-scaffold').scaffold(),
+    scaffold : () => require('./config/tasks/task-scaffold').scaffold(),
 
 };
 require('make-runnable/custom')({ printOutputFrame: false });

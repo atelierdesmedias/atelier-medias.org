@@ -1,9 +1,8 @@
 /**
  * @name: Main DOM Class
- * @description: Main entry from "main" bundle
+ * @description: Main entry
  */
 
-// import main style configuration
 import './Main.scss'
 import {DOMView} from "./helpers/solidify-lib/core/DOMView";
 import Logs from "./helpers/solidify-lib/core/Logs";
@@ -12,8 +11,8 @@ import {AppView} from "./components/appView/AppView";
 import {HomePage} from "./pages/homePage/HomePage";
 import {EnvUtils} from "./helpers/solidify-lib/utils/EnvUtils"
 // Get current properties
-const envName = require(`../properties/.envName`);
-const currentProperties = require(`../properties/${envName}.properties.js`);
+// const envName = require(`../properties/.envName`);
+// const currentProperties = require(`../properties/${envName}.properties.js`);
 
 // ----------------------------------------------------------------------------- EXPORT CLASS
 
@@ -60,11 +59,11 @@ export class main extends DOMView
             // get current version application
             version: require('../package.json').version,
 
-            // get current url depend of properties
-            url: currentProperties.url,
-
-            // get current base url depend of properties
-            base: currentProperties.base,
+            // // get current url depend of properties
+            // url: currentProperties.url,
+            //
+            // // get current base url depend of properties
+            // base: currentProperties.base,
 
         });
     }

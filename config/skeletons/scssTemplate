@@ -1,23 +1,23 @@
 
 /**
-* this is "%%name%%" stylesheet
+* this is "%%capitalComponentName%%" stylesheet
 * follow workflow instructions
 */
 
 // -----------------------------------------------------------------------------  IMPORT
 
 // common styles & mixins
-@import '../../../_common/common';
+@import '../../common';
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.%%name%%
+.%%capitalComponentName%%
 {
 
 	// --------------------------------------------------------------------------- PROPERTIES
 
 	// Call block element anywhere, ex: #{$this}_element
-	$this: %%name%%;
+	$this: %%capitalComponentName%%;
 
 	// --------------------------------------------------------------------------- BLOCK
 

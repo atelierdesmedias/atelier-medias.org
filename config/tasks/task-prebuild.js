@@ -1,15 +1,15 @@
-/**
- * PUBLIC API
- */
 const path = require('path');
+const paths = require('../paths');
 const {Files} = require('@zouloux/files');
-const {TemplateHelper} = require('./helper-template');
-const globalConstants = require("../solid-constants.config");
+const {TemplateHelper} = require('../helpers/helper-template');
+//const globalConstants = require("../../solid-constants.config");
 const colors = require('colors');
-const envName = require(`../properties/.envName`);
-const currentProperties = require(`../properties/${envName}.properties.js`);
 const fileTabs = "\t\t\t";
 const fileTabRegex = new RegExp(`(\n${fileTabs})`, 'gmi');
+
+// current properties
+const envName = require(`../../properties/.envName`);
+const currentProperties = require(`../../properties/${envName}.properties.js`);
 
 // define message
 const compileMessage = ( pMessage, pDest ) => {
@@ -27,71 +27,6 @@ const compileMessage = ( pMessage, pDest ) => {
 module.exports = {
 
     /**
-     * PreBuild Bundle List
-     * This list is use by webpack entry compilation
-     */
-    preBuildBundleList : () =>
-    {
-        // All app and async bundles
-        const bundlesList = [];
-
-        // get app bundles path in src folder
-        const appBundlesPaths = Files.getFolders(`${globalConstants.srcPath}*`).files;
-
-        // for each bundle in src folder
-        appBundlesPaths.map( appBundlePath =>
-        {
-            // Skip "common" bundle
-            if ( path.basename( appBundlePath ) === globalConstants.commonBundleName ) return;
-
-            // extract bundle name from single bundle app path
-            appBundlePath = `${path.basename(appBundlePath)}`;
-
-            // push name in array
-            bundlesList.push(appBundlePath);
-
-        });
-
-        // retourner tous les bundles formatés
-        const bundlesObject = bundlesList.map((bundle, index) =>
-        {
-            // define file name
-            let file = Files.getFiles(`${globalConstants.srcPath}${bundle}/Main.tsx`).exists()
-                ? 'Main.tsx'
-                : 'Main.ts';
-
-            // definir un espace conditionné
-            let space = "";
-            if (index !== 0) space = "\n\n";
-
-            return (
-                // espace
-                space +
-                // bundle name comment
-                `   // ${bundle} \n` +
-                // object properties
-                `   "bundle-${bundle}": "${globalConstants.srcPath}${bundle}/${file}"`
-            )
-        });
-
-        Files.new(`${globalConstants.srcPath}${globalConstants.bundlesListFile}`).write(`
-            /**
-             * @name: bundles.ts
-             * @description: bundles list object export for webpack.entry file
-             * @WARNING : Do not edit this auto-generated file!
-             */
-             
-            module.exports = {
-                ${bundlesObject}  
-            };`
-        );
-
-        compileMessage('📒 Pre-build bundles list', globalConstants.srcPath);
-    },
-
-
-
-    /**
      * Prebuild php config
      * This file contains current environment properties
      *
@@ -99,10 +34,10 @@ module.exports = {
     preBuildPhpConfig : (pEnv) =>
     {
         // écrire le fichier avec un template renseigné de variables choisies
-        Files.new(`${globalConstants.phpConfigPath}config.php`).write(
+        Files.new(`${paths.phpConfigPath}config.php`).write(
             TemplateHelper
             (
-                Files.getFiles(`${globalConstants.skeletonsPath}phpConfigTemplate`).read(),
+                Files.getFiles(`${paths.skeletonsPath}phpConfigTemplate`).read(),
                 {
                     // current env (dev or production)
                     envName: pEnv,
@@ -117,7 +52,7 @@ module.exports = {
         );
 
         // message de sortie
-        compileMessage('📄 Pre-build PHP config file', globalConstants.phpConfigPath);
+        compileMessage('📄 Pre-build PHP config file', paths.phpConfigPath);
     },
 
     /**
@@ -138,10 +73,10 @@ module.exports = {
         ].join('\n');
 
         // écrire le nouveau fichier
-        Files.new(`${globalConstants.distPath}.env`).write( template );
+        Files.new(`${paths.dist}.env`).write( template );
 
         // message de sortie
-        compileMessage('📄 Pre-build dot ENV config file', globalConstants.distPath);
+        compileMessage('📄 Pre-build dot ENV config file', paths.dist);
     },
 
 
@@ -150,7 +85,6 @@ module.exports = {
      */
     preBuildAtoms : () =>
     {
-
         const atomsTemplate = (atoms) => (`
 			/**
 			 * WARNING
@@ -164,7 +98,7 @@ module.exports = {
         );
 
         // Get scss files
-        const atomsLessFiles = Files.getFiles(`${globalConstants.srcPath}${ globalConstants.commonBundleName }/${ globalConstants.atomsFolder }*.scss`);
+        const atomsLessFiles = Files.getFiles(`${paths.src}${ paths.atomsFolder }*.scss`);
 
         // Generated atoms list
         let atomList = [];
@@ -219,7 +153,7 @@ module.exports = {
 
 
         // le path
-        let pathFile = `${ globalConstants.srcPath }${ globalConstants.commonBundleName }/${ globalConstants.atomsFolder }${ globalConstants.atomsTypescriptFile }`;
+        let pathFile = `${ paths.src }${ paths.atomsFolder }${ paths.atomsTypescriptFile }`;
 
         // Write atoms typescript files
         Files.new(pathFile).write(
@@ -232,34 +166,8 @@ module.exports = {
             )
         );
 
-        compileMessage('🐼 Pre-build atoms file', `${ globalConstants.srcPath }${ globalConstants.commonBundleName }/${ globalConstants.atomsFolder }`);
+        compileMessage('🐼 Pre-build atoms file', `${ paths.src }${ paths.atomsFolder }`);
     },
-
-
-
-    /**
-     * Pre Build Yaml env properties
-     * Use it about grav CMS
-     */
-    preBuildYamlProperties : () =>
-    {
-        Files.new(`${globalConstants.gravUserConfigPath}env.yaml`).write(
-            `
-                # current environment variable
-                env: '${process.env.NODE_ENV}'
-                
-                # current envName URL
-                currentEnvUrl: '${currentProperties.url}'
-                
-                # current envName base
-                currentEnvBase: '${currentProperties.base}'    
-                `
-        );
-
-        compileMessage('🚩 Pre-build yaml env properties');
-    }
-
-
 
 
 

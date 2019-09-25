@@ -1,30 +1,28 @@
 /**
- * this is "AppView" TS export class
+ * this is "%%capitalComponentName%%" TS export class
  * follow workflow instructions
  */
 
-import {DOMView} from "../../../_common/core/DOMView";
-import './AppView.scss'
+import {DOMView} from "../../helpers/solidify-lib/core/DOMView"
+import './%%capitalComponentName%%.scss'
 
 // ----------------------------------------------------------------------------- START EXPORT CLASS
 
-export class AppView extends DOMView
+export class %%capitalComponentName%% extends DOMView
 {
 
     // ------------------------------------------------------------------------- INIT
 
     /**
      * Target our root if not already defined via constructor params
-     * (method overwriting DOMView and move to constructor via init)
      */
-    protected targetRoot ()
+    protected targetRoot()
     {
 
     }
 
     /**
      * prepare nodes
-     * (method overwriting DOMView and move to constructor via init)
      */
     protected prepareNodes()
     {
@@ -33,7 +31,6 @@ export class AppView extends DOMView
 
     /**
      * prepare dependencies
-     * (method overwriting DOMView and move to constructor via init)
      */
     protected prepareDependencies()
     {
@@ -41,8 +38,15 @@ export class AppView extends DOMView
     }
 
     /**
+     *  init components
+     */
+    protected initComponents()
+    {
+
+    }
+
+    /**
      * prepare events
-     * (method overwriting DOMView and move to constructor via init)
      */
     protected prepareEvents()
     {
@@ -51,7 +55,6 @@ export class AppView extends DOMView
 
     /**
      * after Init
-     * (method overwriting DOMView and move to constructor via init)
      */
     protected afterInit()
     {

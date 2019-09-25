@@ -3,8 +3,9 @@
 	"version": "2.0.0",
 	"description": "site atelier des medias",
 	"scripts": {
-		"dev": "cross-env NODE_ENV=development webpack-dev-server --config config/webpack/webpack.dev.js",
-		"build": "cross-env NODE_ENV=production webpack --config config/webpack/webpack.prod.js"
+		"dev": "node ./config/tasks/task-dev.js && cross-env NODE_ENV=development webpack-dev-server --config config/webpack/webpack.dev.js",
+		"build": "cross-env NODE_ENV=production webpack --config config/webpack/webpack.prod.js",
+		"scaffold": "node ./config/tasks/task-scaffold.js"
 	},
 	"keywords": [
 		"adm",

@@ -6,7 +6,7 @@
 .DS_Store
 
 # Ignore ide files
-.idea
+.idea/
 .cache/
 
 # Logs
@@ -34,11 +34,8 @@ dist/public/themes/wordplate/config.php
 # php config file expose node env variable
 dist/config.php
 
-# bundles list object
-src/bundles.ts
-
 # atoms.ts
-src/_common/atoms.ts
+src/atoms.ts
 
 # env properties selected
 properties/.envName.js

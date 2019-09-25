@@ -7,7 +7,7 @@ const path = require('path');
 const {Files} = require('@zouloux/files');
 const Inquirer = require('inquirer');
 const changeCase = require('change-case');
-const globalConstants = require("../solid-constants.config");
+const globalConstants = require("../../solid-constants.config");
 const colors = require('colors');
 
 /**

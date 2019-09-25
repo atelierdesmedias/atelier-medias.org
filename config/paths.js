@@ -17,7 +17,21 @@ module.exports = {
   assets: appRoot.resolve('dist/public/assets/'),
   assetsFolder: 'assets/',
 
+  // php config
+  phpConfigPath: appRoot.resolve('dist/public/themes/wordplate/'),
+
+  // skeletons
+  skeletonsPath: appRoot.resolve('config/skeletons/'),
+
+  // src atoms
+  atomsFolder: "atoms/",
+  atomsTypescriptFile: "atoms.ts",
+
   // stuff
   node_modules: appRoot.resolve('node_modules'),
+
+  // scaffolder
+  componentCompatibleFolders: [ 'components', 'pages' ],
+  appBundleTechnoToScaffold: ['DOM']
 
 };
