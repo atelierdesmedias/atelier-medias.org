@@ -2,7 +2,6 @@ const path = require('path');
 const paths = require('../paths');
 const {Files} = require('@zouloux/files');
 const {QuickTemplate} = require('../helpers/helper-template');
-//const globalConstants = require("../../solid-constants.config");
 const colors = require('colors');
 const fileTabs = "\t\t\t";
 const fileTabRegex = new RegExp(`(\n${fileTabs})`, 'gmi');
@@ -52,7 +51,7 @@ module.exports = {
         );
 
         // message de sortie
-        compileMessage('📄 Pre-build PHP config file', paths.phpConfigPath);
+        compileMessage('Pre-build PHP config file', paths.phpConfigPath);
     },
 
     /**
@@ -76,7 +75,7 @@ module.exports = {
         Files.new(`${paths.dist}.env`).write( template );
 
         // message de sortie
-        compileMessage('📄 Pre-build dot ENV config file', paths.dist);
+        compileMessage('Pre-build dot ENV config file', paths.dist);
     },
 
 
@@ -166,7 +165,7 @@ module.exports = {
             )
         );
 
-        compileMessage('🐼 Pre-build atoms file', `${ paths.src }${ paths.atomsFolder }`);
+        compileMessage('Pre-build atoms file', `${ paths.src }${ paths.atomsFolder }`);
     },
 
 
