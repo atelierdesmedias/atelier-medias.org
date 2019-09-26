@@ -2,7 +2,7 @@
 /**
  * @name: config.php
  * @description: expose node JS config variable in PHP
- * WARNING : Do not edit this auto-generated file!
+ * WARNING: Do not edit this auto-generated file!
 */
 
 // current environment variable
@@ -14,5 +14,6 @@ $CURRENT_ENV_URL = "%%currentEnvURL%%";
 // current envName base
 $CURRENT_ENV_BASE = "%%currentEnvBase%%";
 
+// current version
 $VERSION = "%%version%%";
 
