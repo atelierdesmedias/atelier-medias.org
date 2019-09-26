@@ -424,6 +424,7 @@ class XWiki_Adm
             $data = get_post_custom();
 
             $list[] = [
+                "id" => $post->id,
                 "first_name" => $data['_first_name'][0],
                 "last_name" => $data['_last_name'][0],
                 "activity" => $data['_metier'][0],
