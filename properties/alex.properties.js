@@ -31,12 +31,15 @@ module.exports = {
 
             // Cibler le chemin complet vers point d'entrée wordpress (dist/public)
             // Pas de slash à la fin
-            WP_URL: "http://localhost/dist/public",
+            WP_URL: "http://adm.docker",
 
             // Meme URL que WP url avec "/wordpress" à la fin
-            WP_SITEURL: "http://localhost/dist/public/wordpress",
+            WP_SITEURL: "http://adm.docker/wordpress",
 
-            // Le nom de la base de données
-            DB_NAME: "admwp",
+            // Base de données
+            DB_HOST: "mariadb",
+            DB_USER: "adm",
+            DB_PASSWORD: "admR0ckz",
+            DB_NAME: "adm",
         })
 };
