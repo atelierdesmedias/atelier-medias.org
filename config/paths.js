@@ -10,6 +10,7 @@ module.exports = {
   dist: appRoot.resolve('dist/'),
   distFolder: 'dist/',
 
+  // public
   public: appRoot.resolve('dist/public/'),
   publicFolder: 'public/',
 
@@ -34,10 +35,12 @@ module.exports = {
   componentCompatibleFolders: [ 'components', 'pages' ],
   appBundleTechnoToScaffold: ['DOM'],
 
-
+  // properties
   propertiesFolderPath: appRoot.resolve('properties/'),
   envNamePath: appRoot.resolve('properties/.envName.js'),
   propertiesPath: 'properties/',
 
+  //
+  twigTemplatePath: appRoot.resolve('dist/public/themes/wordplate/templates/')
 
 };
