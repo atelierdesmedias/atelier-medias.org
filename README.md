@@ -15,32 +15,9 @@ Check [docs](docs/) folder.
 
 ## Design
 Check [design online](https://projects.invisionapp.com/share/FMGJ96E57TB#/screens/287421915_Desktop_HD_-_Home)
-     
-## Admin back-office on admwp.sql
-
-- user: ADM
-- pass: root
-
-## Staging
-- url: [staging.atelier-medias.org](http://staging.atelier-medias.org)
-- branch: `staging`
-
-Use deployer script to push master on staging: 
-```shell
-$ ./push-master-to-staging.sh
-```
-
-## Production  
-- url: [atelier-medias.org](http://atelier-medias.org) 
-- branch: `production`
-
-Use deployer script to push master on production: 
-```shell
-$ ./push-master-to-production.sh
-```
              
 ## Credits
-Inspired Framework of [fuse-base](https://github.com/solid-js/fuse-base).  
+Inspired Framework from [fuse-base](https://github.com/solid-js/fuse-base).  
 Project dev by ADM developer team.
 
 ## Licence

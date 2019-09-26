@@ -32,6 +32,12 @@ module.exports = {
 
   // scaffolder
   componentCompatibleFolders: [ 'components', 'pages' ],
-  appBundleTechnoToScaffold: ['DOM']
+  appBundleTechnoToScaffold: ['DOM'],
+
+
+  propertiesFolderPath: appRoot.resolve('properties/'),
+  envNamePath: appRoot.resolve('properties/.envName.js'),
+  propertiesPath: 'properties/',
+
 
 };

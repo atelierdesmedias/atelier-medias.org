@@ -7,7 +7,7 @@ const path = require('path');
 const {Files} = require('@zouloux/files');
 const Inquirer = require('inquirer');
 const changeCase = require('change-case');
-const globalConstants = require("../../solid-constants.config");
+const paths = require("../paths");
 const colors = require('colors');
 
 /**
@@ -18,7 +18,7 @@ const colors = require('colors');
 const _selectEnv = (pEnvName) =>
 {
     // ecrire le nouveau env name dans le fichier
-    Files.new( globalConstants.envNamePath ).write(`module.exports = '${pEnvName}';`);
+    Files.new( paths.envNamePath ).write(`module.exports = '${pEnvName}';`);
 
     console.log(`Env ${ pEnvName } is now selected.`.green);
 };
@@ -29,7 +29,7 @@ const _selectEnv = (pEnvName) =>
 const _getConfigs = () =>
 {
     // Browse properties.js files
-    return Files.getFiles(`${ globalConstants.propertiesFolderPath }/*.properties.js`).all(
+    return Files.getFiles(`${ paths.propertiesFolderPath }/*.properties.js`).all(
 
         configFile =>
         {
@@ -51,7 +51,7 @@ const _getConfigs = () =>
 const _getSelectedEnv = () =>
 {
     // Get selected env file
-    const currentEnv = Files.getFiles( globalConstants.envNamePath );
+    const currentEnv = Files.getFiles( paths.envNamePath );
 
     return (
         // No env selected
@@ -74,8 +74,8 @@ const _showError = ( pReason, reject ) =>
     {
         console.log('');
         console.log(`No env selected.`.red.bold);
-        console.log(`  → Please create your properties file into ${ solidConstants.propertiesPath.bold } and feed properties from ${'default.properties.js'.bold} file.`.red);
-        console.log(`  → Then select your env with ${'node solid selectEnv'.bold}`.red)
+        console.log(`  → Please create your properties file into ${ paths.propertiesPath.bold } and feed properties from ${'default.properties.js'.bold} file.`.red);
+        console.log(`  → Then select your env with ${'npm run selectEnv'.bold}`.red)
         console.log('');
     }
 
@@ -85,7 +85,7 @@ const _showError = ( pReason, reject ) =>
         console.log('');
         console.log(`Bad env`.red.bold);
         console.log(`  →  This env is not found.`.red);
-        console.log(`  →  Please check that its corresponding ${'.properties.js'.bold} file exists inside ${ solidConstants.propertiesPath.bold } directory`.red);
+        console.log(`  →  Please check that its corresponding ${'.properties.js'.bold} file exists inside ${ paths.propertiesPath.bold } directory`.red);
         console.log('');
     }
 
@@ -136,7 +136,7 @@ module.exports = {
             let lowerName = changeCase.lowerCase(name);
 
             // Scaffold properties template
-            Files.new(`${globalConstants.propertiesFolderPath}${lowerName}.properties.js`).write(`
+            Files.new(`${paths.propertiesFolderPath}${lowerName}.properties.js`).write(`
             /**
              * Set ${lowerName} properties
             */
@@ -178,7 +178,7 @@ module.exports = {
             );
 
             // Scaffold properties variable template
-            Files.new( globalConstants.envNamePath ).write(`module.exports = '${lowerName}';`);
+            Files.new( paths.envNamePath ).write(`module.exports = '${lowerName}';`);
 
             console.log('');
             console.log(`.envName is `+`${lowerName}`.yellow + ` 👍`);

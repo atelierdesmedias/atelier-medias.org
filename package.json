@@ -7,7 +7,10 @@
     "dev": "./scripts/dev.sh",
     "build": "./scripts/build.sh",
     "prettier": "./scripts/prettier.sh",
-    "scaffold": "node ./config/tasks/task-scaffold.js"
+    "reset": "./scripts/reset.sh",
+    "scaffold": "node ./config/tasks/task-scaffold.js",
+    "createEnv": "node ./config/tasks/task-create-env.js",
+    "selectEnv": "node ./config/tasks/task-select-env.js"
   },
   "keywords": [
     "adm",
