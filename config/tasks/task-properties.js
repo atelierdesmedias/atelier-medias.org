@@ -200,10 +200,10 @@ module.exports = {
 
         // Check if we have a env name as argument
         // node ... selectEnv myEnvName
-        if ( 3 in process.argv )
+        if ( 2 in process.argv )
         {
             // Get selected env name from arguments
-            const selectedEnvName = process.argv[3];
+            const selectedEnvName = process.argv[2];
 
             // Check if this env exists
             if ( configs.indexOf( selectedEnvName ) === -1 )
@@ -212,6 +212,7 @@ module.exports = {
             }
             // Select env
             _selectEnv( selectedEnvName );
+
 
             // fix: Make runnable return undefine if Promise is resolve
             //  without argument
