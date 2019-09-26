@@ -104,13 +104,7 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {loader: 'babel-loader'},
-          {
-            loader: 'awesome-typescript-loader',
-            options: {
-              // disable type checker - we will use it in fork plugin
-              //transpileOnly: true,
-            },
-          },
+          {loader: 'awesome-typescript-loader'},
         ],
       },
 
