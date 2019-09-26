@@ -27,9 +27,9 @@ module.exports = merge(common, {
 
   plugins: [
 
-    new FriendlyErrorsPlugin({
-      clearConsole: true
-    })
+    // new FriendlyErrorsPlugin({
+    //   clearConsole: true
+    // })
   ],
 
   /**
