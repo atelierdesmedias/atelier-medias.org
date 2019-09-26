@@ -14,3 +14,5 @@ $CURRENT_ENV_URL = "%%currentEnvURL%%";
 // current envName base
 $CURRENT_ENV_BASE = "%%currentEnvBase%%";
 
+$VERSION = "%%version%%";
+

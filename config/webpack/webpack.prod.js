@@ -1,20 +1,18 @@
-const paths = require('../paths')
-const merge = require('webpack-merge')
-const common = require('./webpack.common.js')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const TerserJSPlugin = require('terser-webpack-plugin')
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+const paths = require('../paths');
+const merge = require('webpack-merge');
+const common = require('./webpack.common.js');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'production',
 
-
-
   output: {
     path: paths.assets,
     filename: '[name].js',
-    publicPath: "",
+    publicPath: ''
   },
   devtool: 'source-map',
   plugins: [
@@ -28,7 +26,7 @@ module.exports = merge(common, {
      */
     new MiniCssExtractPlugin({
       filename: '[name].css',
-      chunkFilename: '[id].css',
+      chunkFilename: '[id].css'
     }),
 
     /**
@@ -38,11 +36,11 @@ module.exports = merge(common, {
      */
     new CopyWebpackPlugin([
       {
-        from: paths.static,
+        from: paths.assetsFolder,
         to: 'assets',
-        ignore: ['*.DS_Store'],
-      },
-    ]),
+        ignore: ['*.DS_Store']
+      }
+    ])
   ],
   module: {
     rules: [
@@ -52,15 +50,15 @@ module.exports = merge(common, {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: '../../',
-            },
+              publicPath: '../../'
+            }
           },
           'css-loader',
           'postcss-loader',
-          'sass-loader',
-        ],
-      },
-    ],
+          'sass-loader'
+        ]
+      }
+    ]
   },
   /**
    * Optimization
@@ -68,11 +66,11 @@ module.exports = merge(common, {
    * Production minimizing of JavaSvript and CSS assets.
    */
   optimization: {
-    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})]
   },
 
   stats: {
     all: false,
     assets: true
-  },
+  }
 });

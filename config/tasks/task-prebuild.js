@@ -15,7 +15,7 @@ const compileMessage = ( pMessage, pDest ) => {
     console.log([
         ``,
         `${pMessage}`.cyan,
-        `   → folder path: ${pDest}`.grey
+        `→ folder path: ${pDest}`.grey
         ].join('\n')
     );
 };
@@ -46,6 +46,9 @@ module.exports = {
 
                     // current properties base
                     currentEnvBase: currentProperties.base,
+
+                    // current version
+                    version: require("../../package.json").version,
                 }
             )
         );
