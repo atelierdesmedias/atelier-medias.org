@@ -17,7 +17,7 @@ $ ./scripts/push-master-to-staging.sh
 - url: [atelier-medias.org](http://atelier-medias.org) 
 - branch: `production`
 
-Use deployer script to push master on production: 
+Use deployer script to push staging on production: 
 ```shell
-$ ./scripts/push-master-to-production.sh
+$ ./scripts/push-staging-to-production.sh
 ```
