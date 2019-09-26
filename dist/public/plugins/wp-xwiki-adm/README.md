@@ -10,10 +10,15 @@ Installation
 
 Il suffit de déposer le dossier dans le repertoire ```wp-content/plugins``` de l'installation WordPress.
 
-Mode automatique
+Mode automatique intégré
 ----------------
 
-Le déclenchement de la synchronisation peut se faire automatiquement via cron. Il faut que le script soit exécuté avec un utilisateur qui a le droit d'écrire dans le dossier upload du l'installation WordPress (par exemple l'utilisateur qui fait tourner le service apache).
+Le déclenchement de la synchronisation s'exécute automatiquement via la fonctionnalité interne de cron de Wordpress.
+
+Mode automatique alternatif
+----------------
+
+Si nécessaire, la synchronisation peut également s'exécuter automatiquement via le cron système. Il faut que le script soit exécuté avec un utilisateur qui a le droit d'écrire dans le dossier upload du l'installation WordPress (par exemple l'utilisateur qui fait tourner le service apache).
 
 Exemple d'entrée dans /etc/crontab
 
@@ -25,7 +30,7 @@ Limitations
 
 * La première synchronisation peut dépasser le timeout par défault de la plupart des installations PHP (30 secondes).
 Pour y remédier, soit relancer la synchro - elle sera reprise là ou elle s'est arrêtée, soit augmenter le timeout dans les settings.
-* Il n'y a pas de fichiers de mapping en tre XWiki et Wordpress.
+* Il n'y a pas de fichiers de mapping entre XWiki et Wordpress.
 Tous les champs de XWiki sont synchronisés.
 Les clés sont simplement préfixées par un underscore dans Wordpress.
 

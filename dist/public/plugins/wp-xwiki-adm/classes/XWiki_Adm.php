@@ -76,7 +76,6 @@ class XWiki_Adm
             return true;
         }
         catch (\Guzzle\Http\Exception\ClientErrorResponseException $e) {
-            var_dump($e->getMessage());
             return false;
         }
     }
@@ -103,6 +102,13 @@ class XWiki_Adm
      */
     public static function synchronize_all()
     {
+        // check if endpoint and credentials are setup
+        if (empty(get_option('xwiki_adm_endpoint'))
+            || empty(get_option('xwiki_adm_user'))
+            || empty(get_option('xwiki_adm_pass'))) {
+            return false;
+        }
+
         $response = XWiki_Adm::get_coworkers();
         $json = $response->json();
         $coworkers = $json['coworkers'];
