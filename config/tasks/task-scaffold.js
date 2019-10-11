@@ -117,7 +117,32 @@ const componentScaffolder = () =>
             )
         );
 
+      // Twig directory path to put components
+      const twigDirPath = `${paths.twigTemplatePath}${subFolder}/`;
+      // Define twig Template
+      const twigTemplate = [
+        `{# ${upperComponentName} Component #}`,
+        `<div class="${upperComponentName}">`,
+        `   ${upperComponentName}`,
+        `</div>`
+      ].join('\n');
+
+      // Scaffold Twig component File
+      Files.new(`${twigDirPath}${upperComponentName}.twig`).write(
+          twigTemplate
+      );
+
+      console.log([
+        `${upperComponentName}.scss`.yellow.bold,
+        `${upperComponentName}.ts`.yellow.bold,
+        `→ folder path: ` + `${componentPath}`.grey,
+        ``,
+        `${upperComponentName}.twig`.yellow.bold,
+        `→ folder path: ` + `${twigDirPath}`.grey,
+        ``,
+      ].join('\n'));
         // Done
+
         showSuccess('Component created!');
         resolve();
     });

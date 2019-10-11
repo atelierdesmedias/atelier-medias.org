@@ -7,15 +7,6 @@ declare(strict_types=1);
 // path to coworkers yml file
 define('COWORKERS_YAML', __DIR__ . '/data/coworkers.yml');
 
-// add custom settings in admin
-include(__DIR__ . '/includes/custom/settings.php');
-
-// load custom sync function
-include(__DIR__ . '/includes/custom/sync.php');
-
-// schedule custom cron jobs
-include(__DIR__ . '/includes/custom/cron.php');
-
 // import yaml
 use Symfony\Component\Yaml\Yaml;
 
@@ -74,20 +65,8 @@ class StarterSite extends \Timber\Site
         // site context
         $context['site'] = $this;
 
-        // coworkers context
-        $context['coworkers'] = [];
-
-        // si le fichier yaml exist
-        if (file_exists(COWORKERS_YAML)) {
-            // parser le yaml
-            $coworkers = Yaml::parseFile(COWORKERS_YAML);
-
-            // si c'est bien un tableau
-            if (is_array($coworkers)) {
-                // injecter les datas dans context
-                $context['coworkers'] = $coworkers;
-            }
-        }
+        // coworkers context from the plugin
+        $context['coworkers'] = XWiki_Adm::list_coworkers();
 
         // retourner le context
         return $context;

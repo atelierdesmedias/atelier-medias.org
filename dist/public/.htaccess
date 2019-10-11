@@ -1,10 +1,11 @@
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /adm/adm-v2/dist/public/
+RewriteBase /
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /adm/adm-v2/dist/public/index.php [L]
+RewriteRule . /index.php [L]
 </IfModule>
+
 # END WordPress
