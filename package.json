@@ -4,7 +4,7 @@
   "description": "atelier-medias.org coworking website",
   "repository": "https://github.com/atelierdesmedias/atelier-medias.org",
   "scripts": {
-    "dev": "./scripts/dev.sh",
+    "dev": "bash ./scripts/dev.sh",
     "build": "./scripts/build.sh",
     "prettier": "./scripts/prettier.sh",
     "reset": "./scripts/reset.sh",
