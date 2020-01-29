@@ -99,6 +99,7 @@ class XWiki_Adm
      * Synchronizes all coworker profiles.
      *
      * @return mixed
+     * @throws Exception
      */
     public static function synchronize_all()
     {
@@ -204,7 +205,7 @@ class XWiki_Adm
     public static function synchronize_coworker($coworker)
     {
         $post = $coworker['_post'];
-        
+
         foreach (array_keys($coworker) as $key) {
 
             // Verify if key is not blacklisted (starts with a underscore), in which case, ignore this key
@@ -450,4 +451,4 @@ class XWiki_Adm
 
         return $list;
     }
-} 
+}
