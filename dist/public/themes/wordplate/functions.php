@@ -65,8 +65,12 @@ class StarterSite extends \Timber\Site
         // site context
         $context['site'] = $this;
 
+        // FIXME import XWIKI doesnt work
+        //// add XWiki import
+        //require __DIR__ . '/../../plugins/wp-xwiki-adm/classes/XWiki_Adm.php';
+
         // coworkers context from the plugin
-        $context['coworkers'] = XWiki_Adm::list_coworkers();
+        //$context['coworkers'] = XWiki_Adm::list_coworkers();
 
         // retourner le context
         return $context;
@@ -105,7 +109,7 @@ new StarterSite();
 function load_scripts()
 {
     // recupérer les variables d'environement auto générées
-    require_once(__DIR__ . '/config.php');
+    require_once __DIR__ . '/config.php';
 
     // si on est en dev
     if ($ENV !== 'dev') {

@@ -1,12 +1,10 @@
-const paths = require('../paths')
-const webpack = require('webpack')
-const merge = require('webpack-merge')
-const common = require('./webpack.common.js')
+const paths = require('../paths');
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const common = require('./webpack.common.js');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 
-
 module.exports = merge(common, {
-
   output: {
     publicPath: 'http://localhost:3000/' + paths.assetsFolder
   },
@@ -26,7 +24,6 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
 
   plugins: [
-
     // new FriendlyErrorsPlugin({
     //   clearConsole: true
     // })
@@ -43,6 +40,21 @@ module.exports = merge(common, {
     compress: true,
     hot: true,
     port: 3000,
+
+    // Write file on each compile
+    writeToDisk: true,
+
+    // // specify to enable root proxying
+    // index: '',
+    //
+    // proxy: {
+    //   '/': {
+    //     // target something like http://localhost/project/dist/path/to/index/file
+    //     target: `http://localhost/atelier-des-medias/atelier-medias.org/trunk/dist/`,
+    //     changeOrigin: true,
+    //     secure: false
+    //   }
+   // },
 
     // display error overlay on screen
     overlay: true,
@@ -67,14 +79,14 @@ module.exports = merge(common, {
     // friendly webpack error
     // https://github.com/geowarin/friendly-errors-webpack-plugin
     // pass to true if you don't want to print compile file in the console
-     quiet: false,
+    quiet: false,
 
     headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET",
-      "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization",
-      "Access-Control-Allow-Credentials": "true"
-    },
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET',
+      'Access-Control-Allow-Headers':
+        'X-Requested-With, content-type, Authorization',
+      'Access-Control-Allow-Credentials': 'true'
+    }
   }
-
 });
