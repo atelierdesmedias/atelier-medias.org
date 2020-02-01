@@ -48,6 +48,15 @@ form:
                       show_all: false
                       show_modular: false
                       show_root: false
+                      options:
+                        _null: "External link"
+                        mail: "E-Mail link"
+
+                    # External link if selected
+                    .link :
+                      type: text
+                      label: "External link (if not an internal page)"
+                      placeholder : "http:// ..."
 
                     # Enable switch
                     .enabled :
@@ -61,7 +70,6 @@ form:
                         0: PLUGIN_ADMIN.NO
                       validate:
                         type: bool
-
 
             # ------------------------------------------------------------------ FOOTER MENU
 

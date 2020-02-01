@@ -1,15 +1,23 @@
-{% if menu %}
-    <nav class="Menu {{ classElement }}">
-        <ul class="Menu_items">
-            {% for item in menu.items %}
-                <li class="Menu_item {{ item.classes|join(' ') }}">
-                    <a class="Menu_link" href="{{ item.link }}">
-                        <div class="Menu_innerLink">
-                            {{ item.title }}
-                        </div>
-                    </a>
+{# target menus setting page #}
+{% set menu = page.find('/_global/menus') %}
+
+<nav class="Menu {{ classElement }}">
+    <ul class="Menu_items">
+        {% if menu.header.custom.main.entries %}
+            {% for item in menu.header.custom.main.entries %}
+                <li class="Menu_item">
+                    {% if item.link %}
+                        <a class="Menu_link" href="{{ item.link }}" target="_blank">
+                            {% if item.name %}
+                                <div class="Menu_innerLink">
+                                    {{ item.name }}
+                                </div>
+                            {% endif %}
+                        </a>
+                    {% endif %}
                 </li>
             {% endfor %}
-        </ul>
-    </nav>
-{% endif %}
+        {% endif %}
+    </ul>
+</nav>
+
