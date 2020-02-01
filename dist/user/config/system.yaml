@@ -99,18 +99,18 @@ twig:
   umask_fix: false
 assets:
   css_pipeline: false
-  css_pipeline_include_externals: true
-  css_pipeline_before_excludes: true
+  css_pipeline_include_externals: false
+  css_pipeline_before_excludes: false
   css_minify: false
   css_minify_windows: false
   css_rewrite: false
   js_pipeline: false
-  js_pipeline_include_externals: true
-  js_pipeline_before_excludes: true
+  js_pipeline_include_externals: false
+  js_pipeline_before_excludes: false
   js_minify: false
   enable_asset_timestamp: false
   collections:
-    jquery: 'system://assets/jquery/jquery-2.x.min.js'
+    jquery: ''
 errors:
   display: 1
   log: true
