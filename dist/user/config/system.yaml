@@ -110,7 +110,7 @@ assets:
   js_minify: false
   enable_asset_timestamp: false
   collections:
-    jquery: ''
+    jquery: 'system://assets/jquery/jquery-2.x.min.js'
 errors:
   display: 1
   log: true
