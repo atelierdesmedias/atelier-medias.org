@@ -5,10 +5,6 @@ const common = require('./webpack.common.js');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 
 module.exports = merge(common, {
-  output: {
-    publicPath: 'http://localhost:3000/' + paths.assetsFolder
-  },
-
   /**
    * Mode
    *
@@ -24,9 +20,9 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
 
   plugins: [
-    // new FriendlyErrorsPlugin({
-    //   clearConsole: true
-    // })
+    new FriendlyErrorsPlugin({
+      clearConsole: true
+    })
   ],
 
   /**
@@ -54,7 +50,7 @@ module.exports = merge(common, {
     //     changeOrigin: true,
     //     secure: false
     //   }
-   // },
+    // },
 
     // display error overlay on screen
     overlay: true,

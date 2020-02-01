@@ -1,0 +1,219 @@
+###
+# This blueprint represents a page structure base.
+# Use only by extending from another blueprint which defines the structure.
+# Extends only for pages.
+###
+
+title: "Default - Page"
+extends@:
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+
+    tabs:
+      fields:
+
+        medias :
+          type: tab
+          title: Medias
+          ordering@: 0
+          fields :
+
+            # Add page media to content
+            header.media:
+              type: pagemedia
+              label: "Téléchargez ici les médias avant de les sélectionner dans les modules du contenu"
+              avoid_overwriting: true
+
+
+        content :
+          ordering@: medias
+          fields :
+
+            # Add page dictionary form
+            #import@: part-dictionary
+            display.dictionary :
+              type: display
+              markdown: true
+              label: "Info : Template translations are in __[/_global/dictionary](backstage/pages/_global/dictionary)__."
+
+            # Remove publishing options
+#            header.visible:
+#              type: toggle
+#              label: PLUGIN_ADMIN.PUBLISHED
+#              help: PLUGIN_ADMIN.PUBLISHED_HELP
+#              highlight: 1
+#              default: 1
+#              options:
+#                1: Oui
+#                0: Non
+#              validate:
+#                type: bool
+
+            header.title:
+              ordering@: header.published
+              type: text
+              style: horizontal
+              label: PLUGIN_ADMIN.TITLE
+
+            # Hide file manager in content tab
+            uploads :
+              type : ignore
+            header.media_order :
+              type : ignore
+
+        metas :
+          type: tab
+          title: Metas
+          ordering@: 2
+          fields :
+
+            # Add meta for SEO and social networks
+            meta :
+              type: section
+              underline: true
+              title: "Meta"
+              ordering@: 1
+              fields:
+
+                header.custom.metaTitle :
+                  type : text
+                  toggleable: true
+                  label: "Meta Title"
+                  help: "Le titre qui apparaitra au partage"
+
+                header.custom.metaDescription :
+                  type : text
+                  toggleable: true
+                  label: "Meta Description"
+                  help: "La description qui apparaitra au partage"
+
+                header.custom.metaImage:
+                  type: filepicker
+                  multiple: false
+                  preview_images: true
+                  destination: 'self@'
+                  label: "Meta Image"
+                  help : "Image qui apparaitra au partage"
+
+
+        # Custom meta for social networks
+        options :
+          ordering@: 3
+          fields :
+
+            # Remove meta override from publishing
+            publishing :
+              fields:
+                header.published:
+                  type: ignore
+
+                header.metadata:
+                  type: hidden
+
+            taxonomies:
+              type: hidden
+              fields:
+                header.taxonomy:
+                  type: hidden
+
+            ##
+            # Solidify configuration
+            # Will configure Solidify application loading and launching behavior.
+            # Set value as "default" inside your blueprint.
+            ##
+            solidify :
+              type: section
+              ordering@: 0
+              title : "Solidify"
+              underline: true
+              fields :
+
+                # Inject this page data into app-data
+                header.solidify.injectPageData:
+                  type: toggle
+                  label: "Inject page data into app-data"
+                  help: "This will decrease the first time load but will require a request to gather data. This has no action if theme parameter injectAllPagesData is enabled."
+                  default: 0
+                  options:
+                    1: Yes
+                    0: No
+
+                # Solidify page to trigger
+                header.solidify.pageName :
+                  toggleable: false
+                  type : text
+                  label : "Solidify page name"
+                  help : "Only needed for specific cases when routing can't trigger the correct solidify page."
+
+
+        # Clean useless fields in advanced tab
+        advanced:
+
+          # Stick tab to the right
+          ordering@: 100
+          fields:
+
+            columns:
+              fields:
+
+                # Remove body classes field
+                column1:
+                  fields:
+
+                    header.body_classes:
+                      type: ignore
+
+                # Set folder ordering enabled by default
+                column2:
+                  fields:
+
+                    ordering:
+                      highlight: 1
+                      default: 1
+
+            # Remove some override fields
+            overrides:
+              fields:
+
+                # Kept fields
+                #header.slug:
+                #header.redirect:
+                #header.append_url_extension:
+                #header.child_type:
+                #header.cache_enable:
+
+                # Remove other useless fields
+                header.dateformat:
+                  type: ignore
+                header.menu:
+                  type: ignore
+                header.process:
+                  type: ignore
+                header.twig_first:
+                  type: ignore
+                header.never_cache_twig:
+                  type: ignore
+                header.debugger:
+                  type: ignore
+                header.template:
+                  type: ignore
+                header.visible:
+                  type: ignore
+
+            # Remove all admin override fields
+            admin_only:
+              type: ignore
+
+            # Adding page media at the end of advanced tab
+            uploads :
+              type: section
+              title : "Media"
+              underline: true
+              fields :
+
+                header.media_order:
+                  type: pagemedia
+                  label: PLUGIN_ADMIN.PAGE_MEDIA

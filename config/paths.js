@@ -1,7 +1,6 @@
 const appRoot = require('app-root-path');
 
 module.exports = {
-
   // src
   src: appRoot.resolve('src/'),
   srcFolder: 'src/',
@@ -18,6 +17,13 @@ module.exports = {
   assets: appRoot.resolve('dist/public/assets/'),
   assetsFolder: 'assets/',
 
+  // assets
+  static: appRoot.resolve('dist/static/'),
+  staticFolder: 'static/',
+
+  // assets
+  gravAssets: appRoot.resolve('dist/user/themes/grav-solid/assets/'),
+
   // php config
   phpConfigPath: appRoot.resolve('dist/public/themes/wordplate/'),
 
@@ -25,14 +31,14 @@ module.exports = {
   skeletonsPath: appRoot.resolve('config/skeletons/'),
 
   // src atoms
-  atomsFolder: "atoms/",
-  atomsTypescriptFile: "atoms.ts",
+  atomsFolder: 'atoms/',
+  atomsTypescriptFile: 'atoms.ts',
 
   // stuff
   node_modules: appRoot.resolve('node_modules'),
 
   // scaffolder
-  componentCompatibleFolders: [ 'components', 'pages' ],
+  componentCompatibleFolders: ['components', 'pages'],
   appBundleTechnoToScaffold: ['DOM'],
 
   // properties
@@ -41,6 +47,6 @@ module.exports = {
   propertiesPath: 'properties/',
 
   //
-  twigTemplatePath: appRoot.resolve('dist/public/themes/wordplate/templates/')
-
+  //twigTemplatePath: appRoot.resolve('dist/public/themes/wordplate/templates/')
+  twigTemplatePath: appRoot.resolve('dist/user/themes/quark/templates/')
 };

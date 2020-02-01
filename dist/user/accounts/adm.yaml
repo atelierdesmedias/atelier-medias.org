@@ -1,0 +1,11 @@
+state: enabled
+email: groupe-informatique@atelier-medias.org
+fullname: Adm
+title: Administrator
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$xdy9aZsjpMK5aQMm2J2Nh.XNlT92xpUxCeAtrPISMnEKcE/awyNAO

@@ -1,0 +1,126 @@
+
+/* TODO : Trad en anglais */
+/* TODO : Ajouter peut-être certains switch dans l'admin mais pas vital */
+
+/* Virer le logo grav */
+#admin-logo
+{
+	display: none;
+}
+
+
+/* Virer le footer github */
+#footer
+{
+	display: none;
+}
+
+
+/* Patcher la couleur qui dépasse en bas de chaque page */
+.admin-block
+{
+	background-color : #eee !important;
+}
+
+
+/* Un peu de marge en bas */
+.form-tab
+{
+	padding-bottom: 20px;
+}
+
+
+/* Virer le bandeau github issue en bas de chaque page */
+.admin-block + .notice.alert .fa-github,
+.admin-block + .notice.alert .fa-github + a
+{
+	display: none;
+}
+.admin-block + .notice.alert
+{
+	background-color : #eee !important;
+	border-bottom-color: rgba(0, 0, 0, .1);
+}
+
+/* Fixer la taille des icones de la side-bar au roll over */
+#admin-menu li a:hover i
+{
+	font-size: inherit !important;
+	margin-right: 10px;
+}
+
+
+/* Décaller les boutons des listes */
+.collection-actions
+{
+	margin-top: 30px;
+	padding-bottom: 15px;
+}
+
+
+/* Virer le login au login */
+#admin-login h1
+{
+	display: none;
+}
+
+
+/* Animer la sidebar au roll-over */
+#admin-sidebar
+{
+	transition : width .2s;
+	overflow: hidden;
+}
+#admin-user-details,
+#admin-sidebar .admin-menu-wrapper
+{
+	width: 240px;
+}
+
+
+/* Masquer la quicktray */
+#admin-nav-quick-tray
+{
+	display: none;
+}
+
+/* Patch du z-index sur la langue de starkcontrast */
+#admin-topbar #admin-lang-toggle
+{
+	z-index: inherit;
+}
+
+/* Patcher le rendu des inputs */
+input[type=text]::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+	color:    #999;
+}
+input[type=text]:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color:    #999;
+	opacity:  1;
+}
+input[type=text]::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color:    #999;
+	opacity:  1;
+}
+input[type=text]:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color:    #999;
+}
+input[type=text]:-ms-input-placeholder { /* Microsoft Edge */
+	color:    #999;
+}
+
+
+/* Masquer le switch normal/expert sur l'édition de pages */
+#admin-mode-toggle
+{
+	display: none !important;
+}
+
+
+/* Supprimer les flou sur les modales pour éviter les lags */
+.remodal-bg.remodal-is-opening,
+.remodal-bg.remodal-is-opened
+{
+	filter: none !important;
+	-webkit-filter: none !important;
+}

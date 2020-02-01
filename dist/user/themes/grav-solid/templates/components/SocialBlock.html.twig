@@ -1,0 +1,30 @@
+<div class="SocialBlock {{ classElement }}">
+    <ul class="SocialBlock_items">
+        {# fb  TODO Link w/ back #}
+        {% if contact.meta('contact').twitter %}
+        <li class="SocialBlock_item">
+            <a class="SocialBlock_link"
+               href="{# TODO ------------ #}" target="_blank">
+                <div class="SocialBlock_innerLink SocialBlock_innerLink-facebook">
+                    <i class="SocialBlock_icon SocialBlock_icon-facebook">
+                        <img src="{{ url('theme://images/icon-facebook.svg') }}" alt="facebook icon">
+                    </i>
+                </div>
+            </a>
+        </li>
+        {% endif %}
+        {# twitter  TODO Link w/ back #}
+        {% if contact.meta('contact').twitter %}
+        <li class="SocialBlock_item">
+            <a class="SocialBlock_link"
+               href="{{ contact.meta('contact').twitter }}" target="_blank">
+                <div class="SocialBlock_innerLink SocialBlock_innerLink-twitter">
+                    <i class="SocialBlock_icon SocialBlock_icon-twitter">
+                        <img src="{{ url('theme://images/icon-twitter.svg') }}" alt="twitter icon">
+                    </i>
+                </div>
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+</div>

@@ -1,0 +1,30 @@
+<div class="MainNav {{ classElement }}">
+    <div class="MainNav_content">
+        <div class="MainNav_innerContent MainNav_innerContent-logo">
+            {# logo #}
+            <div class="MainNav_logo">
+                <img src="{{ url('theme://images/logo-adm-noir.svg') }}"
+                     alt="adm logo">
+            </div>
+        </div>
+        <div class="MainNav_innerContent">
+            {# include "menu" component #}
+            {% include "components/Menu.html.twig"
+                with { 'classElement': 'MainNav_menu' } %}
+
+            {#             include "socialBlock" component#}
+            {% include "components/SocialBlock.html.twig"
+                with { 'classElement': 'MainNav_socialBlock' } %}
+
+            {#
+            include "languageBlock" component
+            Desactivé pour la première publication V1
+            #}
+
+{#            {% include "components/LanguageBlock.html.twig"#}
+{#                with { 'classElement': 'MainNav_languageBlock' } %}#}
+
+        </div>
+
+    </div>
+</div>

@@ -1,8 +1,6 @@
 const paths = require('../paths');
 const webpack = require('webpack');
-  const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WebpackBar = require('webpackbar');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
   /**
@@ -11,7 +9,7 @@ module.exports = {
    * The first place Webpack looks to start building the bundle.
    */
   entry: {
-    main: paths.src + 'Main.ts',
+    main: paths.src + 'Main.ts'
   },
 
   /**
@@ -20,8 +18,8 @@ module.exports = {
    * Where Webpack outputs the assets and bundles.
    */
   output: {
-    path: paths.assets,
-    filename: '[name].js',
+    path: paths.gravAssets,
+    filename: '[name].bundle.js'
   },
 
   /**
@@ -33,10 +31,7 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', 'scss', 'css'],
     alias: {},
 
-    modules: [
-      paths.node_modules,
-      paths.src,
-    ],
+    modules: [paths.node_modules, paths.src]
   },
 
   /**
@@ -68,7 +63,7 @@ module.exports = {
      * Import lib
      */
     new webpack.ProvidePlugin({
-      $: 'zepto-webpack',
+      $: 'zepto-webpack'
     }),
 
     /**
@@ -76,8 +71,8 @@ module.exports = {
      */
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-      'process.env.DEBUG': JSON.stringify(process.env.DEBUG),
-    }),
+      'process.env.DEBUG': JSON.stringify(process.env.DEBUG)
+    })
 
     /**
      * Progress bar plugin
@@ -102,10 +97,7 @@ module.exports = {
       {
         test: /\.(js|jsx|ts|tsx|mjs)$/,
         exclude: /node_modules/,
-        use: [
-          {loader: 'babel-loader'},
-          {loader: 'awesome-typescript-loader'},
-        ],
+        use: [{loader: 'babel-loader'}, {loader: 'awesome-typescript-loader'}]
       },
 
       /**
@@ -119,8 +111,8 @@ module.exports = {
           'style-loader',
           {loader: 'css-loader', options: {sourceMap: true, importLoaders: 1}},
           {loader: 'postcss-loader', options: {sourceMap: true}},
-          {loader: 'sass-loader', options: {sourceMap: true}},
-        ],
+          {loader: 'sass-loader', options: {sourceMap: true}}
+        ]
       },
 
       /**
@@ -133,8 +125,8 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[path][name].[ext]',
-          context: 'src', // prevent display of src/ in filename
-        },
+          context: 'src' // prevent display of src/ in filename
+        }
       },
 
       /**
@@ -148,9 +140,9 @@ module.exports = {
         options: {
           limit: 8192,
           name: '[path][name].[ext]',
-          context: 'src', // prevent display of src/ in filename
-        },
-      },
-    ],
-  },
+          context: 'src' // prevent display of src/ in filename
+        }
+      }
+    ]
+  }
 };

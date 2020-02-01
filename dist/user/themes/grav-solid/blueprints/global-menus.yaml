@@ -1,0 +1,123 @@
+##
+# Blueprint to manage all menus of this website.
+# No need to extends it, directly update this blueprint.
+##
+
+title: "Global - Menus"
+extends@: "default-global"
+
+form:
+  fields:
+
+    tabs:
+      fields :
+
+        content :
+          fields :
+
+
+            # ------------------------------------------------------------------ MAIN MENU
+
+            fieldset.main :
+              type: fieldset
+              title: "Main menu entries"
+              icon: "tasks"
+              text : "Main menu"
+              collapsed: true
+              collapsible: true
+              fields:
+
+                # Menu entries
+                header.custom.main.entries :
+                  type : list
+                  style : vertical
+                  collapsed: true
+                  fields :
+
+                    # Entry name
+                    .name:
+                      type: text
+                      label: "Name"
+
+                    # Targeted page
+                    .page:
+                      type: pages
+                      size: medium
+                      classes: fancy
+                      label: "Page"
+                      show_all: false
+                      show_modular: false
+                      show_root: false
+
+                    # Enable switch
+                    .enabled :
+                      type: toggle
+                      label: "Enabled"
+                      highlight: 1
+                      default: 1
+                      size: medium
+                      options:
+                        1: PLUGIN_ADMIN.YES
+                        0: PLUGIN_ADMIN.NO
+                      validate:
+                        type: bool
+
+
+            # ------------------------------------------------------------------ FOOTER MENU
+
+            fieldset.footer :
+              type: fieldset
+              title: "Footer entries"
+              icon: "window-minimize"
+              text : "Footer menu"
+              collapsed: true
+              collapsible: true
+              fields:
+
+                # Menu entries
+                header.custom.footer.entries :
+                  type : list
+                  style : vertical
+                  collapsed: true
+                  fields :
+
+                    # Entry name
+                    .name:
+                      type: text
+                      label: "Name"
+
+                    # Targeted page
+                    .page:
+                      type: text
+                      size: medium
+                      classes: fancy
+                      label: "Page"
+                      show_all: false
+                      show_modular: false
+                      show_root: false
+                      options :
+                        _null : "External link"
+                        mail : "E-Mail link"
+
+                    # External link if selected
+                    .link :
+                      type: text
+                      label: "External link (if not an internal page)"
+                      placeholder : "http:// ..."
+
+                    # Enable switch
+                    .enabled :
+                      type: toggle
+                      label: "Enabled"
+                      highlight: 1
+                      default: 1
+                      size: medium
+                      options:
+                        1: PLUGIN_ADMIN.YES
+                        0: PLUGIN_ADMIN.NO
+                      validate:
+                        type: bool
+
+
+            # ------------------------------------------------------------------
+            # Add as many menus as you need

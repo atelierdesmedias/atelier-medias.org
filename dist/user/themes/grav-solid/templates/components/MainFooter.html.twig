@@ -1,0 +1,116 @@
+{#
+ * @title: "mainFooter" TWIG View component
+ * @description:
+#}
+
+<footer class="MainFooter {{ classElement }}">
+    <div class="MainFooter_wrapper">
+        <div class="MainFooter_wrapperOuter">
+            <div class="MainFooter_wrapperInner">
+                <div class="MainFooter_rowSection">
+                    {# contact section #}
+                    <section class="MainFooter_section">
+
+                        <ul class="MainFooter_items">
+                            <li class="MainFooter_item">
+                                <header class="MainFooter_header">
+                                    <h1 class="MainFooter_title">
+                                        {{ dico.site.name }}
+                                    </h1>
+                                </header>
+                                <section class="MainFooter_content">
+                                    <a class="MainFooter_link"
+                                       href="{{ mapLink }}">
+                                        <address class="MainFooter_address">
+                                            {{ contact.meta('address').street }}
+                                            <br>
+                                            {{ contact.meta('address').cp }}
+                                            , {{ contact.meta('address').city }}
+                                        </address>
+                                    </a>
+                                </section>
+                            </li>
+                            <li class="MainFooter_item">
+                                <header class="MainFooter_header">
+                                    <h1 class="MainFooter_title">
+                                        {{ dico.generics.contact }}
+                                    </h1>
+                                </header>
+                                <section class="MainFooter_content">
+                                    <ul class="MainFooter_subItems">
+                                        <li class="MainFooter_subItem">
+                                            <a class="MainFooter_link MainFooter_link-tel"
+                                               href="tel:{{ contact.meta('contact').tel }}">{{ dico.site.tel }}</a>
+                                        </li>
+                                        <li class="MainFooter_subItem">
+                                            <a class="MainFooter_link MainFooter_link-mail"
+                                               href="mailto:{{ contact.meta('contact').mail }}">{{ contact.meta('contact').mail }}</a>
+                                        </li>
+                                    </ul>
+                                </section>
+                            </li>
+                            <li class="MainFooter_item">
+                                <header class="MainFooter_header">
+                                    <h1 class="MainFooter_title">
+                                        {{ dico.generics.credits }}
+                                    </h1>
+                                </header>
+                                <section class="MainFooter_content">
+                                    <ul class="MainFooter_subItems">
+                                        <li class="MainFooter_subItem">
+                                            <a class="MainFooter_link"
+                                               href="{{ "TODO links" }}">
+                                                {{ dico.generics.mentions }}
+                                            </a>
+                                        <li class="MainFooter_subItem">
+                                            <a class="MainFooter_link"
+                                               href="{{ "TODO links" }}">
+                                                {{ dico.generics.press }}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </section>
+                            </li>
+                            <li class="MainFooter_item">
+                                <header class="MainFooter_header">
+                                    <h1 class="MainFooter_title">
+                                        {{ dico.generics.newsletter }}
+                                    </h1>
+                                </header>
+                                <section class="MainFooter_content">
+                                    {% include "templates/components/SuscribeNewsletter.twig"
+                                        with {
+                                        classElement: "MainFooter_suscribeNewsletter"
+                                    } %}
+                                </section>
+                            </li>
+                            {# Les mentions #}
+                            <li class="MainFooter_item">
+                                <header class="MainFooter_header">
+                                    <h1 class="MainFooter_title">
+                                        {{ dico.generics.about }}
+                                    </h1>
+                                </header>
+                                <section
+                                        class="MainFooter_content MainFooter_content-grey">
+                                    {{ contact.about }}
+                                </section>
+                            </li>
+                            <li class="MainFooter_item">
+                                <section
+                                        class="MainFooter_content MainFooter_content-grey">
+                                    <div class="MainFooter_logo MainFooter_logo-macif">
+                                        {% include "./images/logo-macif.svg" %}
+                                    </div>
+                                    <div class="MainFooter_logo MainFooter_logo-coworking">
+                                        {% include "./images/logo-coworking-grand-lyon.svg" %}
+                                    </div>
+                                </section>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

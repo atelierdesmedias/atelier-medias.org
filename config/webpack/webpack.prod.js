@@ -10,7 +10,7 @@ module.exports = merge(common, {
   mode: 'production',
 
   output: {
-    path: paths.assets,
+    path: paths.gravAssets,
     filename: '[name].js',
     publicPath: ''
   },

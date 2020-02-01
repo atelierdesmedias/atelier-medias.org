@@ -1,0 +1,37 @@
+title: "Page - Home"
+extends@: "default-page"
+
+form:
+  fields:
+    tabs:
+      fields:
+
+        content:
+          fields:
+            # Ne pas montrer le text dico par defaut
+            display.dictionary:
+              unset@: true
+            # Ne pas montrer l'editeur par defaut
+            content:
+              unset@: true
+
+        options:
+          fields:
+
+            # Remove publishing options
+            publishing:
+              type: ignore
+
+            # Remove taxonomies
+            taxonomies:
+              type: ignore
+
+            # Set default solidify settings
+            solidify:
+              fields:
+                header.solidify.injectPageData:
+                  default: 1
+                  highlight: 1
+                header.solidify.pageName:
+                  toggleable: false
+                  default: "HomePage"
