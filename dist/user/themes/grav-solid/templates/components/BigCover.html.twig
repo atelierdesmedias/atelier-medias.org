@@ -4,8 +4,11 @@
         <img src="{{ url('theme://images/logo-adm-blanc.svg') }}" alt="logo adm blanc">
     </div>
     {# video #}
+    {% set video = page.header.custom.headerVideo %}
+
+    {% for key,value in video %}
     <video class="BigCover_video"
-           src="{{ url('theme://videos/clip.mp4') }}"
+           src="{{ key }}"
            autoplay="true"
            muted="true"
            loop="true"
@@ -13,7 +16,8 @@
            type="video/mp4"
     >
     </video>
-    {# importer le composant eventBanner #}
+    {% endfor %}
+    {# eventBanner #}
 {#    {%#}
 {#        include "templates/components/EventBanner.twig"#}
 {#        with { 'classElement': 'BigCover_eventBanner' }#}
