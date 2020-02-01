@@ -80,6 +80,20 @@
       }
     }
 
+    &-instagram {
+      top: 1.5px;
+      @media (max-width: $large) {
+        top: 6px;
+      }
+
+      & svg {
+        @include size(16.5px);
+        @media (max-width: $large) {
+          @include size(26px);
+        }
+      }
+    }
+
     &-twitter {
       top: 1.5px;
       @media (max-width: $large) {

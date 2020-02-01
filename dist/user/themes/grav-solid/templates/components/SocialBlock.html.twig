@@ -1,30 +1,24 @@
+{% set dictionary = page.find('/_global/dictionary') %}
+{% set networks = dictionary.header.custom.networks %}
+
 <div class="SocialBlock {{ classElement }}">
     <ul class="SocialBlock_items">
-        {# fb  TODO Link w/ back #}
-        {% if contact.meta('contact').twitter %}
+
+        {% for item in networks %}
         <li class="SocialBlock_item">
-            <a class="SocialBlock_link"
-               href="{# TODO ------------ #}" target="_blank">
-                <div class="SocialBlock_innerLink SocialBlock_innerLink-facebook">
-                    <i class="SocialBlock_icon SocialBlock_icon-facebook">
-                        <img src="{{ url('theme://images/icon-facebook.svg') }}" alt="facebook icon">
-                    </i>
-                </div>
-            </a>
+            {% if item.url %}
+                <a class="SocialBlock_link" href="{{ item.url }}"
+                   target="_blank">
+                    <div class="{{ "SocialBlock_innerLink SocialBlock_innerLink-#{item.type}" }}">
+                        {% if url('theme://images/icon-'~item.type~'.svg') %}
+                            <i class="{{ "SocialBlock_icon SocialBlock_icon-#{item.type}" }}">
+                                {{ getfilecontents('theme://images/icon-'~item.type~'.svg') }}
+                            </i>
+                        {% endif %}
+                    </div>
+                </a>
+            {% endif %}
         </li>
-        {% endif %}
-        {# twitter  TODO Link w/ back #}
-        {% if contact.meta('contact').twitter %}
-        <li class="SocialBlock_item">
-            <a class="SocialBlock_link"
-               href="{{ contact.meta('contact').twitter }}" target="_blank">
-                <div class="SocialBlock_innerLink SocialBlock_innerLink-twitter">
-                    <i class="SocialBlock_icon SocialBlock_icon-twitter">
-                        <img src="{{ url('theme://images/icon-twitter.svg') }}" alt="twitter icon">
-                    </i>
-                </div>
-            </a>
-        </li>
-        {% endif %}
+    {% endfor %}
     </ul>
 </div>
