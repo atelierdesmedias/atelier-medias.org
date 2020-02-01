@@ -36,21 +36,20 @@ module.exports = merge(common, {
     compress: true,
     hot: true,
     port: 3000,
-
     // Write file on each compile
     writeToDisk: true,
+    // specify to enable root proxying
 
-    // // specify to enable root proxying
     // index: '',
-    //
     // proxy: {
     //   '/': {
     //     // target something like http://localhost/project/dist/path/to/index/file
-    //     target: `http://localhost/atelier-des-medias/atelier-medias.org/trunk/dist/`,
+    //     target: `http://localhost/atelier-des-medias/atelier-medias.org/trunk-grav/dist/`,
     //     changeOrigin: true,
     //     secure: false
     //   }
     // },
+    //
 
     // display error overlay on screen
     overlay: true,

@@ -8,13 +8,13 @@
                 with { 'classElement': 'HomePage_bigCover' }
             %}
         </header>
-{#        <section class="HomePage_content" role="main">#}
+        <section class="HomePage_content" role="main">
+            {%
+                include "components/CoworkersPresentation.html.twig"
+                with { 'classElement': 'HomePage_coworkersPresentation' }
+            %}
 {#            {%#}
-{#                include "templates/components/CoworkersPresentation.twig"#}
-{#                with { 'classElement': 'HomePage_coworkersPresentation' }#}
-{#            %}#}
-{#            {%#}
-{#                include "templates/components/CoworkersPatchwork.twig"#}
+{#                include "components/CoworkersPatchwork.html.twig"#}
 {#                with {#}
 {#                classElement: 'HomePage_coworkersPatchwork',#}
 {#                pCoworkers: coworkers#}
@@ -23,28 +23,28 @@
 
 {#            #}{# importer "AdmPresentation" component #}
 {#            {%#}
-{#                include "templates/components/AdmPresentation.twig"#}
+{#                include "components/AdmPresentation.html.twig"#}
 {#                with { 'classElement': 'HomePage_admPresentation' }#}
 {#            %}#}
 
 {#            #}{# importer "adherentSection" component #}
 {#            {%#}
-{#                include "templates/components/AdherentSection.twig"#}
+{#                include "components/AdherentSection.html.twig"#}
 {#                with { 'classElement': 'HomePage_adherentSection' }#}
 {#            %}#}
 
 {#            #}{# importer "featuresSection" component #}
 {#            {%#}
-{#                include "templates/components/FeaturesSection.twig"#}
+{#                include "components/FeaturesSection.html.twig"#}
 {#                with { 'classElement': 'HomePage_featuresSection' }#}
 {#            %}#}
 
 {#            #}{# importer "interestSection" component #}
 {#            {%#}
-{#                include "templates/components/InterestSection.twig"#}
+{#                include "components/InterestSection.html.twig"#}
 {#                with { 'classElement': 'HomePage_interestSection' }#}
 {#            %}#}
-{#        </section>#}
+        </section>
     </div>
 
 {% endblock %}

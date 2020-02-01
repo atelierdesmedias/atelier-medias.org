@@ -1,6 +1,8 @@
 ---
 title: Home
-
+solidify:
+    injectPageData: '1'
+    pageName: HomePage
 ---
 
 # Say Hello, this is home

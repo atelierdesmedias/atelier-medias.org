@@ -1,0 +1,16 @@
+<div class="CoworkersPresentation {{ classElement }}">
+    <section class="CoworkersPresentation_wrapper">
+        <div class="CoworkersPresentation_content">
+            {% if post.meta('coworkers_presentation').title %}
+            <h1 class="CoworkersPresentation_title">
+                {{ post.meta('coworkers_presentation').title }}
+            </h1>
+            {% endif %}
+            {% if post.meta('coworkers_presentation').text %}
+            <div class="CoworkersPresentation_text">
+                {{ post.meta('coworkers_presentation').text }}
+            </div>
+            {% endif %}
+        </div>
+    </section>
+</div>
