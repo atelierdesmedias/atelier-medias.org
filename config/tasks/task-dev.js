@@ -3,9 +3,9 @@
 const dev = () => {
 
   // PreBuild config
-  //require('./task-prebuild').preBuildPhpConfig("dev");
+  // require('./task-prebuild').preBuildPhpConfig("dev");
   // Prebuild dot env
-  require('./task-prebuild').preBuildDotEnvConfig();
+  // require('./task-prebuild').preBuildDotEnvConfig();
   // Prebuild Atoms
   require('./task-prebuild').preBuildAtoms();
 };
