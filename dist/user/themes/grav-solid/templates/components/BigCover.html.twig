@@ -1,0 +1,22 @@
+<div class="BigCover {{ classElement }}">
+    {# logo ADM #}
+    <div class="BigCover_logo">
+        <img src="{{ url('theme://images/logo-adm-blanc.svg') }}" alt="logo adm blanc">
+    </div>
+    {# video #}
+    <video class="BigCover_video"
+           src="{{ url('theme://videos/clip.mp4') }}"
+           autoplay="true"
+           muted="true"
+           loop="true"
+           playsinline="true"
+           type="video/mp4"
+    >
+    </video>
+    {# importer le composant eventBanner #}
+{#    {%#}
+{#        include "templates/components/EventBanner.twig"#}
+{#        with { 'classElement': 'BigCover_eventBanner' }#}
+{#    %}#}
+
+</div>

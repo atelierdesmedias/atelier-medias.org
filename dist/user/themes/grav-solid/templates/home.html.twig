@@ -1,0 +1,50 @@
+{% extends 'partials/layout.html.twig' %}
+{% block content %}
+
+    <div class="HomePage">
+        <header class="HomePage_header">
+            {%
+                include "components/BigCover.html.twig"
+                with { 'classElement': 'HomePage_bigCover' }
+            %}
+        </header>
+{#        <section class="HomePage_content" role="main">#}
+{#            {%#}
+{#                include "templates/components/CoworkersPresentation.twig"#}
+{#                with { 'classElement': 'HomePage_coworkersPresentation' }#}
+{#            %}#}
+{#            {%#}
+{#                include "templates/components/CoworkersPatchwork.twig"#}
+{#                with {#}
+{#                classElement: 'HomePage_coworkersPatchwork',#}
+{#                pCoworkers: coworkers#}
+{#            }#}
+{#            %}#}
+
+{#            #}{# importer "AdmPresentation" component #}
+{#            {%#}
+{#                include "templates/components/AdmPresentation.twig"#}
+{#                with { 'classElement': 'HomePage_admPresentation' }#}
+{#            %}#}
+
+{#            #}{# importer "adherentSection" component #}
+{#            {%#}
+{#                include "templates/components/AdherentSection.twig"#}
+{#                with { 'classElement': 'HomePage_adherentSection' }#}
+{#            %}#}
+
+{#            #}{# importer "featuresSection" component #}
+{#            {%#}
+{#                include "templates/components/FeaturesSection.twig"#}
+{#                with { 'classElement': 'HomePage_featuresSection' }#}
+{#            %}#}
+
+{#            #}{# importer "interestSection" component #}
+{#            {%#}
+{#                include "templates/components/InterestSection.twig"#}
+{#                with { 'classElement': 'HomePage_interestSection' }#}
+{#            %}#}
+{#        </section>#}
+    </div>
+
+{% endblock %}

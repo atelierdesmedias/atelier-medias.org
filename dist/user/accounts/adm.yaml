@@ -4,8 +4,25 @@ fullname: Adm
 title: Administrator
 access:
   admin:
-    login: true
-    super: true
+    super: 'true'
+    login: 'true'
+    cache: 'true'
+    configuration: 'true'
+    configuration_system: 'true'
+    configuration_site: 'true'
+    configuration_media: 'true'
+    configuration_info: 'true'
+    settings: 'true'
+    pages: 'true'
+    maintenance: 'true'
+    statistics: 'true'
+    plugins: 'true'
+    themes: 'true'
+    tools: 'true'
+    users: 'true'
   site:
-    login: true
+    login: 'true'
 hashed_password: $2y$10$xdy9aZsjpMK5aQMm2J2Nh.XNlT92xpUxCeAtrPISMnEKcE/awyNAO
+language: en
+twofa_enabled: false
+twofa_secret: YSJNN6T3U7RTNCPRKYIEFOYYFMXQX3XV
