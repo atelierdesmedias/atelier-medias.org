@@ -1,6 +1,9 @@
-const paths = require('../paths');
+const path = require('path');
 const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const config = require('../global.config');
+const paths = require('../global.paths');
 
 module.exports = {
   /**
@@ -18,13 +21,13 @@ module.exports = {
    * Where Webpack outputs the assets and bundles.
    */
   output: {
-    path: paths.gravAssets,
-    filename: '[name].bundle.js'
+    path: config.outputPath,
+    filename: '[name].bundle.js',
+    publicPath: '/'
   },
 
   /**
    * Resolve
-   *
    *
    */
   resolve: {
@@ -48,22 +51,19 @@ module.exports = {
     new CleanWebpackPlugin(),
 
     /**
-     * HtmlWebpackPlugin
-     *
-     * Generates an HTML file from a template.
-     */
-    // new HtmlWebpackPlugin({
-    //   title: 'Webpack Boilerplate',
-    //   favicon: paths.src + '/images/favicon.png',
-    //   template: paths.src + '/template.html', // template file
-    //   filename: 'index.html', // output file
-    // }),
-
-    /**
      * Import lib
      */
     new webpack.ProvidePlugin({
       $: 'zepto-webpack'
+    }),
+
+    /**
+     * Dotenv Wepback
+     * @doc https://github.com/mrsteele/dotenv-webpack
+     */
+    new Dotenv({
+      path: paths.env,
+      systemvars: true
     }),
 
     /**
@@ -73,13 +73,6 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
       'process.env.DEBUG': JSON.stringify(process.env.DEBUG)
     })
-
-    /**
-     * Progress bar plugin
-     *
-     * Show progress bar durring compilation
-     */
-    //new WebpackBar(),
   ],
 
   /**
@@ -125,7 +118,8 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[path][name].[ext]',
-          context: 'src' // prevent display of src/ in filename
+          // prevent display of src/ in filename
+          context: 'src'
         }
       },
 
@@ -140,7 +134,8 @@ module.exports = {
         options: {
           limit: 8192,
           name: '[path][name].[ext]',
-          context: 'src' // prevent display of src/ in filename
+          // prevent display of src/ in filename
+          context: 'src'
         }
       }
     ]

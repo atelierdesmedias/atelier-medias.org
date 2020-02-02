@@ -24,6 +24,12 @@ module.exports = {
   // assets
   gravAssets: appRoot.resolve('dist/user/themes/grav-solid/assets/'),
 
+  // .env example file
+  envExample: appRoot.resolve(".env.example"),
+
+  // .env file
+  env: appRoot.resolve(".env"),
+
   // php config
   phpConfigPath: appRoot.resolve('dist/public/themes/wordplate/'),
 

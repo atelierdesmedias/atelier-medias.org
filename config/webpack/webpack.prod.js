@@ -1,16 +1,17 @@
-const paths = require('../paths');
+const paths = require('../global.paths');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const config = require('../global.config');
 
 module.exports = merge(common, {
   mode: 'production',
 
   output: {
-    path: paths.gravAssets,
+    path: config.outputPath,
     filename: '[name].js',
     publicPath: ''
   },
@@ -36,13 +37,17 @@ module.exports = merge(common, {
      */
     new CopyWebpackPlugin([
       {
-        from: paths.assetsFolder,
-        to: 'assets',
+        from: config.outputPath,
+        to: '/',
         ignore: ['*.DS_Store']
       }
     ])
   ],
   module: {
+
+    /**
+     * Extract css in one file
+     */
     rules: [
       {
         test: /\.(scss|css)$/,
@@ -50,7 +55,7 @@ module.exports = merge(common, {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: '../../'
+              publicPath: '/'
             }
           },
           'css-loader',

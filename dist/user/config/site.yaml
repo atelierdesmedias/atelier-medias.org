@@ -1,13 +1,13 @@
 title: Grav
 default_lang: fr
 author:
-  name: 'Joe Bloggs'
-  email: joe@example.com
+  name: 'Willy Brauner'
+  email: mail@willybrauner.com
 taxonomies:
   - category
   - tag
 metadata:
-  description: 'Grav is an easy to use, yet powerful, open source flat-file CMS'
+  description: 'Atelier des médias website'
 summary:
   enabled: true
   format: short

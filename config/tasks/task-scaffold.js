@@ -1,6 +1,6 @@
 const Inquirer = require('inquirer');
 const path = require('path');
-const paths = require('../paths');
+const paths = require('../global.paths');
 const {Files} = require('@zouloux/files');
 const changeCase = require('change-case');
 const {QuickTemplate} = require('../helpers/helper-template');

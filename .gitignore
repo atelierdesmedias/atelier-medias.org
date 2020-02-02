@@ -21,6 +21,7 @@ node_modules/
 src/atoms/atoms.ts
 # env properties selected
 properties/.envName.js
+.env
 
 # ------------------------------------------------------------------------------ DIST
 

@@ -24,16 +24,18 @@ form:
               accept:
                 - video/*
 
-#            fieldset.header:
-#              type: fieldset
-#              title: Company
-#              collapsed: false
-#              collapsible: true
-#              fields:
-#
-#                header.custom.company.address:
-#                  type: textarea
-#                  label: Address
+            fieldset.header.presentation:
+              type: fieldset
+              title: Presentation
+              collapsed: false
+              collapsible: true
+              fields:
+                header.custom.presentation.title:
+                  type: text
+                  label: Title
+                header.custom.presentation.text:
+                  type: editor
+                  label: Text
 
 
         options:

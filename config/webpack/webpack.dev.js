@@ -1,8 +1,9 @@
-const paths = require('../paths');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
+const paths = require('../global.paths');
+const config = require('../global.config');
 
 module.exports = merge(common, {
   /**
@@ -35,21 +36,24 @@ module.exports = merge(common, {
     open: false,
     compress: true,
     hot: true,
-    port: 3000,
+    port: 1234,
     // Write file on each compile
     writeToDisk: true,
-    // specify to enable root proxying
 
-    // index: '',
-    // proxy: {
-    //   '/': {
-    //     // target something like http://localhost/project/dist/path/to/index/file
-    //     target: `http://localhost/atelier-des-medias/atelier-medias.org/trunk-grav/dist/`,
-    //     changeOrigin: true,
-    //     secure: false
-    //   }
-    // },
-    //
+    index: '',
+    // if use proxy option is enable
+    ...(config.useProxy
+      ? {
+          proxy: {
+            '/': {
+              // target something like http://localhost/project/dist/path/to/index/file
+              target: `${process.env.APP_URL}${process.env.BASE_URL}`,
+              changeOrigin: true,
+              secure: false
+            }
+          }
+        }
+      : {}),
 
     // display error overlay on screen
     overlay: true,

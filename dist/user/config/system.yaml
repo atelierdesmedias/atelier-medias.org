@@ -133,7 +133,7 @@ images:
 media:
   enable_media_timestamp: false
   auto_metadata_exif: false
-  upload_limit: 2097152
+  upload_limit: 104857600
 session:
   enabled: true
   initialize: true
