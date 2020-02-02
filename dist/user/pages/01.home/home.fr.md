@@ -63,6 +63,7 @@ custom:
     interest:
         text: "Vous voulez rejoindre notre espace de coworking ?  \r\nPour vous présenter les lieux de l'association et pour apprendre à vous connaître,  \r\nnous vous invitons à déjeuner avec nous un mardi midi !  "
         buttonLabel: 'ça m''intéresse !'
+    metaTitle: 'Atelier des médias - coworking grand Lyon'
     headerVideo:
         user/pages/01.home/clip.mp4:
             name: clip.mp4

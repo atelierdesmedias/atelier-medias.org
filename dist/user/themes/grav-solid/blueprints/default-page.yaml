@@ -119,34 +119,34 @@ form:
                 header.taxonomy:
                   type: hidden
 
-            ##
-            # Solidify configuration
-            # Will configure Solidify application loading and launching behavior.
-            # Set value as "default" inside your blueprint.
-            ##
-            solidify :
-              type: section
-              ordering@: 0
-              title : "Solidify"
-              underline: true
-              fields :
-
-                # Inject this page data into app-data
-                header.solidify.injectPageData:
-                  type: toggle
-                  label: "Inject page data into app-data"
-                  help: "This will decrease the first time load but will require a request to gather data. This has no action if theme parameter injectAllPagesData is enabled."
-                  default: 0
-                  options:
-                    1: Yes
-                    0: No
-
-                # Solidify page to trigger
-                header.solidify.pageName :
-                  toggleable: false
-                  type : text
-                  label : "Solidify page name"
-                  help : "Only needed for specific cases when routing can't trigger the correct solidify page."
+#            ##
+#            # Solidify configuration
+#            # Will configure Solidify application loading and launching behavior.
+#            # Set value as "default" inside your blueprint.
+#            ##
+#            solidify :
+#              type: section
+#              ordering@: 0
+#              title : "Solidify"
+#              underline: true
+#              fields :
+#
+#                # Inject this page data into app-data
+#                header.solidify.injectPageData:
+#                  type: toggle
+#                  label: "Inject page data into app-data"
+#                  help: "This will decrease the first time load but will require a request to gather data. This has no action if theme parameter injectAllPagesData is enabled."
+#                  default: 0
+#                  options:
+#                    1: Yes
+#                    0: No
+#
+#                # Solidify page to trigger
+#                header.solidify.pageName :
+#                  toggleable: false
+#                  type : text
+#                  label : "Solidify page name"
+#                  help : "Only needed for specific cases when routing can't trigger the correct solidify page."
 
 
         # Clean useless fields in advanced tab

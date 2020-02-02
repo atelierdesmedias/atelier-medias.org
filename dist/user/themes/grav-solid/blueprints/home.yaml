@@ -181,12 +181,12 @@ form:
             taxonomies:
               type: ignore
 
-            # Set default solidify settings
-            solidify:
-              fields:
-                header.solidify.injectPageData:
-                  default: 1
-                  highlight: 1
-                header.solidify.pageName:
-                  toggleable: false
-                  default: 'HomePage'
+#            # Set default solidify settings
+#            solidify:
+#              fields:
+#                header.solidify.injectPageData:
+#                  default: 1
+#                  highlight: 1
+#                header.solidify.pageName:
+#                  toggleable: false
+#                  default: 'HomePage'
