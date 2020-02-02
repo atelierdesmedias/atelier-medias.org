@@ -1,0 +1,101 @@
+// Load Third Party Libraries
+@import "base/configuration/template/base";
+@import "base/template/modules/bourbon_essentials";
+@import "base/template/modules/buttons";
+
+// Theme: Monochrome
+$theme-navy-blue: #18121E; // Navy Blue
+$theme-gunmetal: #233237; // Gunmetal
+$theme-rusty-red: #984B43; // Rusty Red
+$theme-warm-yellow: #EAC67A; // Warm Yellow
+$theme-text: #333333; // Jet-Black
+$theme-text-alt: #ffffff; // White
+$theme-paper: #F4F4F4; // Paper
+
+// Logo
+$logo-bg:                       $theme-gunmetal !default;
+$logo-link:                     $theme-text-alt !default;
+
+// Nav
+$nav-bg:                        $theme-gunmetal !default;
+$nav-text:                      $theme-text-alt !default;
+$nav-link:                      $theme-text-alt !default;
+$nav-selected-bg:               darken($theme-gunmetal, 4%) !default;
+$nav-selected-link:             $theme-text-alt !default;
+$nav-hover-bg:                  $theme-gunmetal !default;
+$nav-hover-link:                $theme-text-alt !default;
+
+// Toolbar
+$toolbar-bg:                    $theme-gunmetal !default;
+$toolbar-text:                  $theme-text-alt !default;
+
+// Page
+$page-bg:                       $theme-paper !default;
+$page-text:                     $theme-text !default;
+$page-link:                     $theme-navy-blue !default;
+
+// Content
+$content-bg:                    $theme-text-alt !default;
+$content-text:                  $theme-text !default;
+$content-link:                  lighten($theme-text, 8%) !default;
+$content-link2:                 lighten($theme-text, 8%) !default;
+$content-header:                $theme-text !default;
+$content-tabs-bg:               $theme-gunmetal !default;
+$content-tabs-text:             $theme-text-alt !default;
+
+// Buttons
+$button-bg:                     desaturate(darken($theme-warm-yellow, 8%), 25%) !default;
+$button-text:                   $theme-text-alt !default;
+
+// Notice
+$notice-bg:                     lighten($theme-gunmetal, 15%) !default;
+$notice-text:                   $theme-text-alt !default;
+
+// Updates
+$update-bg:                     lighten($theme-text, 16%) !default;
+$update-text:                   $theme-text-alt !default;
+
+// Critical
+$critical-bg:                   adjust-color(lighten($theme-text, 15%), $red: 50) !default;
+$critical-text:                 $theme-text-alt !default;
+
+// Calculated values
+$primary-accent:                primary !default;
+$secondary-accent:              secondary !default;
+$tertiary-accent:               tertiary !default;
+
+// Initial values
+$primary-accent-bg:             $theme-gunmetal;
+$primary-accent-fg:             $theme-text-alt;
+$secondary-accent-bg:           $theme-warm-yellow;
+$secondary-accent-fg:           $theme-gunmetal;
+$tertiary-accent-bg:            $theme-rusty-red;
+$tertiary-accent-fg:            $theme-gunmetal;
+
+// Popularity-dashboard text color
+.ct-label {
+    fill: $theme-text-alt;
+    color: $theme-text-alt;
+}
+.ct-series-a .ct-bar, 
+.ct-series-a .ct-line, 
+.ct-series-a .ct-point, 
+.ct-series-a .ct-slice-donut {
+    stroke: green;
+}
+
+// 'Manage Pages'-specific overrides
+.pages-list .page-icon {
+    color: $theme-rusty-red;
+}
+.pages-list .page-icon.not-routable {
+    color: $theme-warm-yellow;
+}
+.pages-list .page-icon.not-visible {
+    color: darken($theme-paper, 15%);
+}
+.pages-list .page-icon.modular {
+    color: $theme-gunmetal;
+}
+
+@import "base/preset.scss";

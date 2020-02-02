@@ -22,7 +22,7 @@ module.exports = {
   staticFolder: 'static/',
 
   // assets
-  gravAssets: appRoot.resolve('dist/user/themes/grav-solid/assets/'),
+  gravAssets: appRoot.resolve('dist/user/themes/adm/assets/'),
 
   // .env example file
   envExample: appRoot.resolve(".env.example"),

@@ -1,0 +1,101 @@
+// Load Third Party Libraries
+@import "base/configuration/template/base";
+@import "base/template/modules/bourbon_essentials";
+@import "base/template/modules/buttons";
+
+// Theme: Monochrome
+$theme-ice: #99D3DF; // Ice
+$theme-fresh-water: #88B8D6; // Fresh Water
+$theme-linen: #E9E9E9; // Linen
+$theme-plaster: #CDCDCD; // Plaster
+$theme-onyx: #49494b; // Onyx
+$theme-text: #333333; // Jet-Black
+$theme-text-alt: #ffffff; // White
+
+// Logo
+$logo-bg:                       $theme-fresh-water !default;
+$logo-link:                     $theme-text-alt !default;
+
+// Nav
+$nav-bg:                        $theme-fresh-water !default;
+$nav-text:                      $theme-text-alt !default;
+$nav-link:                      $theme-text-alt !default;
+$nav-selected-bg:               darken($theme-fresh-water, 7%) !default;
+$nav-selected-link:             $theme-text-alt !default;
+$nav-hover-bg:                  darken($theme-fresh-water, 7%) !default;
+$nav-hover-link:                $theme-text-alt !default;
+
+// Toolbar
+$toolbar-bg:                    $theme-ice !default;
+$toolbar-text:                  $theme-text-alt !default;
+
+// Page
+$page-bg:                       $theme-plaster !default;
+$page-text:                     $theme-onyx !default;
+$page-link:                     $theme-text !default;
+
+// Content
+$content-bg:                    $theme-text-alt !default;
+$content-text:                  $theme-text !default;
+$content-link:                  lighten($theme-text, 8%) !default;
+$content-link2:                 lighten($theme-text, 8%) !default;
+$content-header:                $theme-text !default;
+$content-tabs-bg:               $theme-onyx !default;
+$content-tabs-text:             $theme-text-alt !default;
+
+// Buttons
+$button-bg:                     $theme-onyx !default;
+$button-text:                   $theme-text-alt !default;
+
+// Notice
+$notice-bg:                     lighten($theme-onyx, 15%) !default;
+$notice-text:                   $theme-text-alt !default;
+
+// Updates
+$update-bg:                     lighten($theme-text, 16%) !default;
+$update-text:                   $theme-text-alt !default;
+
+// Critical
+$critical-bg:                   adjust-color(lighten($theme-text, 15%), $red: 50) !default;
+$critical-text:                 $theme-text-alt !default;
+
+// Calculated values
+$primary-accent:                primary !default;
+$secondary-accent:              secondary !default;
+$tertiary-accent:               tertiary !default;
+
+// Initial values
+$primary-accent-bg:             $theme-ice;
+$primary-accent-fg:             $theme-text-alt;
+$secondary-accent-bg:           $theme-linen;
+$secondary-accent-fg:           $theme-text;
+$tertiary-accent-bg:            $theme-plaster;
+$tertiary-accent-fg:            $theme-text;
+
+// Popularity-dashboard text color
+.ct-label {
+    fill: $theme-text;
+    color: $theme-text;
+}
+.ct-series-a .ct-bar, 
+.ct-series-a .ct-line, 
+.ct-series-a .ct-point, 
+.ct-series-a .ct-slice-donut {
+    stroke: green;
+}
+
+// 'Manage Pages'-specific overrides
+.pages-list .page-icon {
+    color: saturate($theme-ice, 25%);
+}
+.pages-list .page-icon.not-routable {
+    color: darken(saturate($theme-fresh-water, 25%), 15%);
+}
+.pages-list .page-icon.not-visible {
+    color: darken($theme-linen, 25%);
+}
+.pages-list .page-icon.modular {
+    color: darken(desaturate($theme-fresh-water, 15), 25%);
+}
+
+@import "base/preset.scss";

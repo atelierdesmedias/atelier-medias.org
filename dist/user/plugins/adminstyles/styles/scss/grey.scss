@@ -1,0 +1,94 @@
+// Load Third Party Libraries
+@import "base/configuration/template/base";
+@import "base/template/modules/bourbon_essentials";
+@import "base/template/modules/buttons";
+
+// Theme: Monochrome
+$theme-snow: #f9f9f9; // Snow
+$theme-timberwolf: #D8D8D8; // Timberwolf
+$theme-light-gray: #D1D1D1; // Light Gray
+$theme-quick-silver: #A5A5A5; // Quick Silver
+$theme-old-silver: #848484; // Old Silver
+$theme-text: #080000; // Near-Black
+$theme-text-alt: #ffffff; // White
+
+// Logo
+$logo-bg:                       $theme-old-silver !default;
+$logo-link:                     $theme-text-alt !default;
+
+// Nav
+$nav-bg:                        $theme-old-silver !default;
+$nav-text:                      $theme-timberwolf !default;
+$nav-link:                      $theme-timberwolf !default;
+$nav-selected-bg:               darken($theme-old-silver, 13%) !default;
+$nav-selected-link:             $theme-text-alt !default;
+$nav-hover-bg:                  darken($theme-old-silver, 13%) !default;
+$nav-hover-link:                darken($theme-text-alt, 6.5%) !default;
+
+// Toolbar
+$toolbar-bg:                    $theme-quick-silver !default;
+$toolbar-text:                  $theme-text-alt !default;
+
+// Page
+$page-bg:                       $theme-snow !default;
+$page-text:                     $theme-old-silver !default;
+$page-link:                     $theme-text !default;
+
+// Content
+$content-bg:                    $theme-text-alt !default;
+$content-text:                  $theme-old-silver !default;
+$content-link:                  $theme-old-silver !default;
+$content-link2:                 $theme-old-silver !default;
+$content-header:                $theme-old-silver !default;
+$content-tabs-bg:               $theme-old-silver !default;
+$content-tabs-text:             $theme-snow !default;
+
+// Buttons
+$button-bg:                     $theme-old-silver !default;
+$button-text:                   $theme-text-alt !default;
+
+// Notice
+$notice-bg:                     $theme-light-gray !default;
+$notice-text:                   $theme-text-alt !default;
+
+// Updates
+$update-bg:                     $theme-quick-silver !default;
+$update-text:                   $theme-snow !default;
+
+// Critical
+$critical-bg:                   adjust-color(darken($theme-old-silver, 15%), $red: 50) !default;
+$critical-text:                 $theme-text-alt !default;
+
+// Calculated values
+$primary-accent:                primary !default;
+$secondary-accent:              secondary !default;
+$tertiary-accent:               tertiary !default;
+
+// Initial values
+$primary-accent-bg:             $theme-snow;
+$primary-accent-fg:             $theme-text-alt;
+$secondary-accent-bg:           $theme-timberwolf;
+$secondary-accent-fg:           $theme-text-alt;
+$tertiary-accent-bg:            $theme-light-gray;
+$tertiary-accent-fg:            $theme-text-alt;
+
+// Popularity-dashboard text color
+.ct-label {
+    fill: $theme-text;
+    color: $theme-text;
+}
+// 'Manage Pages'-specific overrides
+.pages-list .page-icon {
+    color: saturate(#c0b283, 15%); // saturate($theme-light-gray, 50%);
+}
+.pages-list .page-icon.not-routable {
+    color: darken(#dcd0c0, 25%); // saturate($theme-timberwolf, 50%);
+}
+.pages-list .page-icon.not-visible {
+    color: darken(#f4f4f4, 15%); // saturate($theme-snow, 50%);
+}
+.pages-list .page-icon.modular {
+    color: saturate(#373737, 15%); // saturate($theme-quick-silver, 50%);
+}
+
+@import "base/preset.scss";

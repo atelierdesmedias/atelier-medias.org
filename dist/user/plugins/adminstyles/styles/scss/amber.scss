@@ -1,0 +1,101 @@
+// Load Third Party Libraries
+@import "base/configuration/template/base";
+@import "base/template/modules/bourbon_essentials";
+@import "base/template/modules/buttons";
+
+// Theme: Monochrome
+$theme-ochre: #C06014; // Ochre
+$theme-pastel-beach: #EDDBCD; // Pastel Beach
+$theme-jet: #333333; // Jet
+$theme-cool-grey: #CDCDCD; // Cool Grey
+$theme-snow: #FBFBFB; // Snow
+$theme-text: #000000; // Black
+$theme-text-alt: #ffffff; // White
+
+// Logo
+$logo-bg:                       $theme-text-alt !default;
+$logo-link:                     $theme-text !default;
+
+// Nav
+$nav-bg:                        $theme-pastel-beach !default;
+$nav-text:                      $theme-text !default;
+$nav-link:                      $theme-text !default;
+$nav-selected-bg:               darken($theme-pastel-beach, 7%) !default;
+$nav-selected-link:             $theme-text !default;
+$nav-hover-bg:                  darken($theme-pastel-beach, 7%) !default;
+$nav-hover-link:                $theme-text !default;
+
+// Toolbar
+$toolbar-bg:                    $theme-text-alt !default;
+$toolbar-text:                  $theme-text !default;
+
+// Page
+$page-bg:                       $theme-snow !default;
+$page-text:                     $theme-jet !default;
+$page-link:                     $theme-text !default;
+
+// Content
+$content-bg:                    $theme-text-alt !default;
+$content-text:                  $theme-text !default;
+$content-link:                  lighten($theme-text, 8%) !default;
+$content-link2:                 lighten($theme-text, 8%) !default;
+$content-header:                $theme-text !default;
+$content-tabs-bg:               darken($theme-snow, 8%) !default;
+$content-tabs-text:             $theme-text !default;
+
+// Buttons
+$button-bg:                     $theme-ochre !default;
+$button-text:                   $theme-text-alt !default;
+
+// Notice
+$notice-bg:                     $theme-jet !default;
+$notice-text:                   $theme-text-alt !default;
+
+// Updates
+$update-bg:                     lighten($theme-text, 16%) !default;
+$update-text:                   $theme-text-alt !default;
+
+// Critical
+$critical-bg:                   adjust-color(lighten($theme-text, 15%), $red: 50) !default;
+$critical-text:                 $theme-text-alt !default;
+
+// Calculated values
+$primary-accent:                primary !default;
+$secondary-accent:              secondary !default;
+$tertiary-accent:               tertiary !default;
+
+// Initial values
+$primary-accent-bg:             $theme-ochre;
+$primary-accent-fg:             $theme-text-alt;
+$secondary-accent-bg:           $theme-jet;
+$secondary-accent-fg:           $theme-text;
+$tertiary-accent-bg:            $theme-cool-grey;
+$tertiary-accent-fg:            $theme-text;
+
+// Popularity-dashboard text color
+.ct-label {
+    fill: $theme-text;
+    color: $theme-text;
+}
+.ct-series-a .ct-bar, 
+.ct-series-a .ct-line, 
+.ct-series-a .ct-point, 
+.ct-series-a .ct-slice-donut {
+    stroke: green;
+}
+
+// 'Manage Pages'-specific overrides
+.pages-list .page-icon {
+    color: saturate($theme-ochre, 25%);
+}
+.pages-list .page-icon.not-routable {
+    color: darken(saturate($theme-pastel-beach, 25%), 15%);
+}
+.pages-list .page-icon.not-visible {
+    color: darken($theme-jet, 25%);
+}
+.pages-list .page-icon.modular {
+    color: darken(desaturate($theme-pastel-beach, 15), 25%);
+}
+
+@import "base/preset.scss";

@@ -1,0 +1,98 @@
+// Load Third Party Libraries
+@import "base/configuration/template/base";
+@import "base/template/modules/bourbon_essentials";
+@import "base/template/modules/buttons";
+
+// Theme: Monochrome
+$theme-platinum: #ede9e3; // Platinum
+$theme-silver-chalice: #b5aca2; // Silver Chalice
+$theme-shadow: #84786a; // Shadow
+$theme-dark-puce: #4f473f; // Dark Puce
+$theme-registration-black: #080101; // Registration Black
+$theme-text: #000000; // Black
+$theme-text-alt: #ffffff; // White
+
+// Logo
+$logo-bg:                       $theme-dark-puce !default;
+$logo-link:                     $theme-text-alt !default;
+
+// Nav
+$nav-bg:                        $theme-dark-puce !default;
+$nav-text:                      $theme-silver-chalice !default;
+$nav-link:                      $theme-silver-chalice !default;
+$nav-selected-bg:               $theme-shadow !default;
+$nav-selected-link:             $theme-text-alt !default;
+$nav-hover-bg:                  lighten($theme-shadow, 8%) !default;
+$nav-hover-link:                darken($theme-text-alt, 8%) !default;
+
+// Toolbar
+$toolbar-bg:                    $theme-shadow !default;
+$toolbar-text:                  $theme-text-alt !default;
+
+// Page
+$page-bg:                       $theme-platinum !default;
+$page-text:                     $theme-registration-black !default;
+$page-link:                     $theme-text !default;
+
+// Content
+$content-bg:                    $theme-text-alt !default;
+$content-text:                  $theme-registration-black !default;
+$content-link:                  $theme-registration-black !default;
+$content-link2:                 $theme-registration-black !default;
+$content-header:                $theme-registration-black !default;
+$content-tabs-bg:               $theme-silver-chalice !default;
+$content-tabs-text:             $theme-registration-black !default;
+
+// Buttons
+$button-bg:                     darken($theme-platinum, 25%) !default;
+$button-text:                   $theme-text-alt !default;
+
+// Notice
+$notice-bg:                     $theme-shadow !default;
+$notice-text:                   $theme-text-alt !default;
+
+// Updates
+$update-bg:                     $theme-dark-puce !default;
+$update-text:                   $theme-platinum !default;
+
+// Critical
+$critical-bg:                   adjust-color($theme-dark-puce, $red: 50) !default;
+$critical-text:                 $theme-text-alt !default;
+
+// Calculated values
+$primary-accent:                primary !default;
+$secondary-accent:              secondary !default;
+$tertiary-accent:               tertiary !default;
+
+// Initial values
+$primary-accent-bg:             $theme-platinum;
+$primary-accent-fg:             $theme-text-alt;
+$secondary-accent-bg:           $theme-silver-chalice;
+$secondary-accent-fg:           $theme-text-alt;
+$tertiary-accent-bg:            $theme-shadow;
+$tertiary-accent-fg:            $theme-text-alt;
+
+// Popularity-dashboard text color
+.ct-label {
+    fill: darken($theme-silver-chalice, 8%);
+    color: darken($theme-silver-chalice, 8%);
+}
+// 'Manage Pages'-specific overrides
+/* $theme-platinum: #ede9e3; // Platinum
+$theme-silver-chalice: #b5aca2; // Silver Chalice
+$theme-shadow: #84786a; // Shadow
+$theme-dark-puce: #4f473f; // Dark Puce */
+.pages-list .page-icon {
+    color: saturate($theme-shadow, 50%);
+}
+.pages-list .page-icon.not-routable {
+    color: saturate($theme-silver-chalice, 50%);
+}
+.pages-list .page-icon.not-visible {
+    color: darken(desaturate($theme-platinum, 50%), 25);
+}
+.pages-list .page-icon.modular {
+    color: saturate($theme-dark-puce, 50%);
+}
+
+@import "base/preset.scss";
