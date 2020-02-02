@@ -25,11 +25,21 @@ properties/.envName.js
 
 # ------------------------------------------------------------------------------ DIST
 
-dist/cache
-dist/logs
-dist/tmp/*
-dist/vendor
 dist/user/themes/adm/assets
+
+dist/vendor/*
+dist/backup/*
+!dist/backup/.gitkeep
+dist/cache/*
+!dist/cache/.gitkeep
+dist/logs/*
+!dist/logs/.gitkeep
+dist/tmp/*
+!dist/tmp/.gitkeep
+dist/images/*
+!dist/images/.gitkeep
+dist/user/plugins/**/vendor/*
+#dist/user/config/security.yaml
 
 # ------------------------------------------------------------------------------ OLD DIST
 
