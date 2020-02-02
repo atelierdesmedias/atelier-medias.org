@@ -1,11 +1,10 @@
-title: "Page - Home"
-extends@: "default-page"
+title: 'Page - Home'
+extends@: 'default-page'
 
 form:
   fields:
     tabs:
       fields:
-
         content:
           fields:
             # Ne pas montrer le text dico par defaut
@@ -19,7 +18,7 @@ form:
               type: file
               multiple: false
               destination: 'self@'
-              label: "Header video"
+              label: 'Header video'
               accept:
                 - video/*
 
@@ -37,7 +36,6 @@ form:
                   type: editor
                   label: Text
 
-
             # Adm presentation
             fieldset.header.admPresentation:
               type: fieldset
@@ -52,7 +50,6 @@ form:
                   type: editor
                   label: Text
 
-
             # Adherent
             fieldset.header.adherentBlock:
               type: fieldset
@@ -60,7 +57,6 @@ form:
               collapsed: false
               collapsible: true
               fields:
-
                 fieldset.header.adherent:
                   type: fieldset
                   title: Adherent
@@ -77,11 +73,11 @@ form:
                       type: editor
                       label: Text
                     header.custom.adherent.price:
-                        type: number
-                        label: Price
+                      type: number
+                      label: Price
                     header.custom.adherent.labelPrice:
-                        type: text
-                        label: Price label
+                      type: text
+                      label: Price label
                     header.custom.fixe.note:
                       type: text
                       label: Note
@@ -102,14 +98,14 @@ form:
                       type: editor
                       label: Text
                     header.custom.fixe.price:
-                        type: number
-                        label: Price
+                      type: number
+                      label: Price
                     header.custom.fixe.labelPrice:
-                        type: text
-                        label: Price label
+                      type: text
+                      label: Price label
                     header.custom.fixe.note:
-                        type: text
-                        label: Note
+                      type: text
+                      label: Note
 
                 fieldset.header.nomade:
                   type: fieldset
@@ -127,11 +123,11 @@ form:
                       type: editor
                       label: Text
                     header.custom.nomade.price:
-                        type: number
-                        label: Price
+                      type: number
+                      label: Price
                     header.custom.nomade.labelPrice:
-                        type: text
-                        label: Price label
+                      type: text
+                      label: Price label
                     header.custom.fixe.note:
                       type: text
                       label: Note
@@ -153,7 +149,7 @@ form:
                       multiple: false
                       preview_images: true
                       destination: 'theme@:/images'
-                      label: "SVG Icon"
+                      label: 'SVG Icon'
                     .textLine1:
                       type: text
                       label: text line 1
@@ -161,9 +157,22 @@ form:
                       type: text
                       label: text line 2
 
+            # Interest
+            fieldset.header.interest:
+              type: fieldset
+              title: Interest
+              collapsed: false
+              collapsible: true
+              fields:
+                header.custom.interest.text:
+                  type: editor
+                  label: Text
+                header.custom.interest.buttonLabel:
+                  type: text
+                  label: buttonLabel
+
         options:
           fields:
-
             # Remove publishing options
             publishing:
               type: ignore
@@ -180,4 +189,4 @@ form:
                   highlight: 1
                 header.solidify.pageName:
                   toggleable: false
-                  default: "HomePage"
+                  default: 'HomePage'

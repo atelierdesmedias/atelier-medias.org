@@ -54,11 +54,14 @@
                 'data': page.header.custom.features
             } %}
 
-            {#            #}{# importer "interestSection" component #}
-            {#            {%#}
-            {#                include "components/InterestSection.html.twig"#}
-            {#                with { 'classElement': 'HomePage_interestSection' }#}
-            {#            %}#}
+            {# interestSection #}
+            {% include "components/InterestSection.html.twig"
+                with {
+                'classElement': 'HomePage_interestSection',
+                'data': page.header.custom.interest,
+                'mail': page.find('/_global/dictionary').header.custom.company.inscriptionEmail
+            } %}
+
         </section>
     </div>
 

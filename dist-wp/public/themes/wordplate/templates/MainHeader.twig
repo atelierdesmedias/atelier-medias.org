@@ -6,20 +6,14 @@
 <header class="MainHeader {{ classElement }}">
 
     {# include de la main Nav (block de navigation) #}
-    {%
-        include "./templates/components/MainNav.twig"
-        with { 'classElement': 'MainHeader_mainNav' }
-    %}
+    {% include "./templates/components/MainNav.twig"
+        with { 'classElement': 'MainHeader_mainNav' } %}
 
-     {#include du bouton menu mobile#}
-    {%
-        include "./templates/components/HamburgerButton.twig"
-        with { 'classElement': 'MainHeader_hamburgerButton' }
-    %}
+    {#include du bouton menu mobile#}
+    {% include "./templates/components/HamburgerButton.twig"
+        with { 'classElement': 'MainHeader_hamburgerButton' } %}
 
     {# importer le composant arrow Down #}
-    {%
-        include "templates/molecules/ArrowDown.twig"
-        with { 'classElement': 'MainHeader_arrowDown' }
-    %}
+    {% include "templates/molecules/ArrowDown.twig"
+        with { 'classElement': 'MainHeader_arrowDown' } %}
 </header>

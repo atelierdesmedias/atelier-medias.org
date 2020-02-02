@@ -1,0 +1,21 @@
+<div class="InterestSection {{ classElement }}">
+    <div class="InterestSection_wrapper">
+        <div class="InterestSection_content">
+            {% if data.text %}
+            <div class="InterestSection_description">
+                {% markdown %}{{ data.text }}{% endmarkdown %}
+            </div>
+            {% endif %}
+            {% if mail %}
+            <a class="InterestSection_link" href="mailto:{{ mail }}" target="_blank">
+            {% endif %}
+                {% if data.buttonLabel %}
+                 <button class="InterestSection_button">{{ data.buttonLabel }}</button>
+                {% endif %}
+            {% if mail %}
+            </a>
+            {% endif %}
+
+        </div>
+    </div>
+</div>

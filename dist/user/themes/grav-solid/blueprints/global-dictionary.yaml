@@ -16,7 +16,7 @@ form:
           fields :
 
             # ------------------------------------------------------------------ GLOBAL DICTIONARY
-            
+
             fieldset.company :
               type: fieldset
               title: Company
@@ -41,6 +41,18 @@ form:
                   validate:
                     type: email
 
+                header.custom.company.inscriptionEmail :
+                  type : text
+                  label: Inscription email
+                  validate:
+                    type: email
+
+                header.custom.company.groupeInfoEmail :
+                  type : text
+                  label: Group info email
+                  validate:
+                    type: email
+
             fieldset.networks :
               type: fieldset
               title: Networks
@@ -58,7 +70,7 @@ form:
                       type: select
                       label: Type
                       placeholder: Choose...
-                      options: 
+                      options:
                         facebook: Facebook
                         instagram: Instagram
                         linkedin: LinkedIn
