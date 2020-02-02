@@ -1,49 +1,61 @@
+
+{# TODO sync with coworkers from XWIKI, need a Yaml or a json ? #}
+    {# TODO if it's json, we can request it from js templating and build Preact component #}
+    {% set coworkers = [
+        {
+            profile_picture : "",
+            first_name : "Alex",
+            last_name : "B.",
+            activity : "Developpeur",
+        },
+    ] %}
+
+
 {% extends 'partials/layout.html.twig' %}
 {% block content %}
 
     <div class="HomePage">
         <header class="HomePage_header">
-            {%
-                include "components/BigCover.html.twig"
-                with { 'classElement': 'HomePage_bigCover' }
-            %}
+            {% include "components/BigCover.html.twig"
+                with { 'classElement': 'HomePage_bigCover' } %}
         </header>
         <section class="HomePage_content" role="main">
-            {%
-                include "components/CoworkersPresentation.html.twig"
-                with { 'classElement': 'HomePage_coworkersPresentation' }
-            %}
-{#            {%#}
-{#                include "components/CoworkersPatchwork.html.twig"#}
+
+            {# Presentation #}
+            {% include "components/CoworkersPresentation.html.twig"
+                with { 'classElement': 'HomePage_coworkersPresentation' } %}
+
+
+            {# Patchwork #}
+{#            {% include "components/CoworkersPatchwork.html.twig"#}
 {#                with {#}
 {#                classElement: 'HomePage_coworkersPatchwork',#}
 {#                pCoworkers: coworkers#}
-{#            }#}
-{#            %}#}
+{#            } %}#}
 
-{#            #}{# importer "AdmPresentation" component #}
-{#            {%#}
-{#                include "components/AdmPresentation.html.twig"#}
-{#                with { 'classElement': 'HomePage_admPresentation' }#}
-{#            %}#}
+            {#            #}{# importer "AdmPresentation" component #}
+            {#            {%#}
+            {#                include "components/AdmPresentation.html.twig"#}
+            {#                with { 'classElement': 'HomePage_admPresentation' }#}
+            {#            %}#}
 
-{#            #}{# importer "adherentSection" component #}
-{#            {%#}
-{#                include "components/AdherentSection.html.twig"#}
-{#                with { 'classElement': 'HomePage_adherentSection' }#}
-{#            %}#}
+            {#            #}{# importer "adherentSection" component #}
+            {#            {%#}
+            {#                include "components/AdherentSection.html.twig"#}
+            {#                with { 'classElement': 'HomePage_adherentSection' }#}
+            {#            %}#}
 
-{#            #}{# importer "featuresSection" component #}
-{#            {%#}
-{#                include "components/FeaturesSection.html.twig"#}
-{#                with { 'classElement': 'HomePage_featuresSection' }#}
-{#            %}#}
+            {#            #}{# importer "featuresSection" component #}
+            {#            {%#}
+            {#                include "components/FeaturesSection.html.twig"#}
+            {#                with { 'classElement': 'HomePage_featuresSection' }#}
+            {#            %}#}
 
-{#            #}{# importer "interestSection" component #}
-{#            {%#}
-{#                include "components/InterestSection.html.twig"#}
-{#                with { 'classElement': 'HomePage_interestSection' }#}
-{#            %}#}
+            {#            #}{# importer "interestSection" component #}
+            {#            {%#}
+            {#                include "components/InterestSection.html.twig"#}
+            {#                with { 'classElement': 'HomePage_interestSection' }#}
+            {#            %}#}
         </section>
     </div>
 

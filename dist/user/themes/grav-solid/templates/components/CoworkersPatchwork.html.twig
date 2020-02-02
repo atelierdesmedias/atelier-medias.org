@@ -1,0 +1,42 @@
+<div class="CoworkersPatchwork {{ classElement }}">
+
+    {# activityFilterBar #}
+    {# // TODO : sync w/ back #}
+    {% include "components/ActivityFilterBar.html.twig"
+        with {
+        classElement: 'CoworkersPatchwork_activityFilterBar',
+        activities: [
+            'édition',
+            'graphisme & illustration',
+            'journalisme & rédaction',
+            'photo & video',
+            'traduction',
+            'web & UX',
+            'autre'
+        ]
+    } %}
+
+    <div class="CoworkersPatchwork_content">
+        <ul class="CoworkersPatchwork_items">
+            {% for coworker in pCoworkers %}
+                <li class="CoworkersPatchwork_item">
+                    <div class="CoworkersPatchwork_image"
+                         style="background-image: url( {{ coworker.profile_picture }}) ">
+                        <div class="CoworkersPatchwork_description">
+                            <div class="CoworkersPatchwork_descriptionContent">
+                                <div class="CoworkersPatchwork_name">
+                                    <span>{{ coworker.first_name }} </span>
+                                    <br/>
+                                    <span>{{ coworker.last_name }}</span>
+                                </div>
+                                <div class="CoworkersPatchwork_activity">{{ coworker.activity }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+</div>

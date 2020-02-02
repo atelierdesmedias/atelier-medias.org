@@ -1,0 +1,18 @@
+<div class="ActivityFilterBar {{ classElement }}">
+    <ul class="ActivityFilterBar_items">
+        {% for item in activities %}
+            <li class="ActivityFilterBar_item">
+                <a class="ActivityFilterBar_link" href="">
+                    {{ item }}
+                </a>
+            </li>
+        {% endfor %}
+
+        {# la loupe cliquable pour lancer une recherche ? #}
+        {#<li class="ActivityFilterBar_item">#}
+        {#<a class="ActivityFilterBar_link">#}
+        {#{% include "src/common/images/icon-loupe.svg" %}#}
+        {#</a>#}
+        {#</li>#}
+    </ul>
+</div>
