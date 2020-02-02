@@ -1,8 +1,0 @@
-languages
-mu-plugins
-plugins/*
-!plugins/wp-xwiki-adm
-upgrade
-uploads
-wordpress
-themes/wordplate/data/coworkers.yml
