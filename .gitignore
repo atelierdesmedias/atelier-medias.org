@@ -1,5 +1,3 @@
-# gitignore file
-
 # Mac
 .DS_Store
 
@@ -19,14 +17,16 @@ node_modules/
 
 # atoms.ts
 src/atoms/atoms.ts
-# env properties selected
-properties/.envName.js
+
+# env properties
 .env
 
 # ------------------------------------------------------------------------------ DIST
 
+# compiled asset from webpack
 dist/user/themes/adm/assets
 
+# grav cms
 dist/vendor/*
 dist/backup/*
 !dist/backup/.gitkeep
@@ -41,16 +41,4 @@ dist/images/*
 dist/user/plugins/**/vendor/*
 #dist/user/config/security.yaml
 
-# ------------------------------------------------------------------------------ OLD DIST
-
-# ignore vendor folder create by composer
-dist-wp/app/vendor/*
-# ignore webpack compile assets folder
-dist-wp/public/assets/
-# auto generated dot env
-dist-wp/.env
-# auto generated config php
-dist-wp/public/themes/wordplate/config.php
-# php config file expose node env variable
-dist-wp/config.php
 
