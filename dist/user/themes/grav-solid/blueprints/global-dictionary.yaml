@@ -29,6 +29,10 @@ form:
                   type : textarea
                   label: Address
 
+                header.custom.company.addressLink:
+                  type: link
+                  label: Adress google map link
+
                 header.custom.company.phone :
                   type : text
                   label: Phone
@@ -52,6 +56,11 @@ form:
                   label: Group info email
                   validate:
                     type: email
+
+
+                header.custom.company.about:
+                  type: textarea
+                  label: About footer
 
             fieldset.networks :
               type: fieldset

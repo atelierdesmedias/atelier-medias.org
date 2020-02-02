@@ -1,0 +1,18 @@
+{% set dico = page.find('/_global/dictionary').header.custom %}
+
+<div class="SuscribeNewsletter {{ classElement }}">
+    <div class="SuscribeNewsletter_wrapper">
+        {# Champs mail #}
+        <input
+                class="SuscribeNewsletter_input"
+                type="text"
+                title="{{ dico.global.writeYourMail }}"
+                name="{{ dico.global.writeYourMail }}"
+                placeholder="{{ dico.global.writeYourMail }}"
+        />
+        {# Button de validation #}
+        <button class="SuscribeNewsletter_button">
+            {{ dico.global.validate }}
+        </button>
+    </div>
+</div>

@@ -41,7 +41,7 @@
   }
 
   &_arrowDown {
-    z-index: 10;
+    z-index: 1;
     @include absoluteCenter(x);
     bottom: -3.5em;
     @media (max-width: $large) {

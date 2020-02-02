@@ -1,109 +1,127 @@
-{#
- * @title: "mainFooter" TWIG View component
- * @description:
-#}
+{% set dico = page.find('/_global/dictionary').header.custom %}
 
 <footer class="MainFooter {{ classElement }}">
     <div class="MainFooter_wrapper">
         <div class="MainFooter_wrapperOuter">
             <div class="MainFooter_wrapperInner">
                 <div class="MainFooter_rowSection">
-                    {# contact section #}
                     <section class="MainFooter_section">
-
                         <ul class="MainFooter_items">
                             <li class="MainFooter_item">
                                 <header class="MainFooter_header">
-                                    <h1 class="MainFooter_title">
-                                        {{ dico.site.name }}
-                                    </h1>
+                                    {% if dico.global.siteName %}
+                                        <h1 class="MainFooter_title">
+                                            {{ dico.global.siteName }}
+                                        </h1>
+                                    {% endif %}
                                 </header>
                                 <section class="MainFooter_content">
+                                    {% if dico.company.addressLink %}
                                     <a class="MainFooter_link"
-                                       href="{{ mapLink }}">
+                                       href="{{ dico.company.addressLink }}"
+                                       target="_blank">
+                                        {% endif %}
                                         <address class="MainFooter_address">
-                                            {{ contact.meta('address').street }}
-                                            <br>
-                                            {{ contact.meta('address').cp }}
-                                            , {{ contact.meta('address').city }}
+                                            {% markdown %}{{ dico.company.address }}{% endmarkdown %}
                                         </address>
+                                        {% if dico.company.addressLink %}
                                     </a>
+                                    {% endif %}
                                 </section>
                             </li>
                             <li class="MainFooter_item">
                                 <header class="MainFooter_header">
-                                    <h1 class="MainFooter_title">
-                                        {{ dico.generics.contact }}
-                                    </h1>
+                                    {% if dico.global.contact %}
+                                        <h1 class="MainFooter_title">
+                                            {{ dico.global.contact }}
+                                        </h1>
+                                    {% endif %}
+
                                 </header>
                                 <section class="MainFooter_content">
                                     <ul class="MainFooter_subItems">
-                                        <li class="MainFooter_subItem">
-                                            <a class="MainFooter_link MainFooter_link-tel"
-                                               href="tel:{{ contact.meta('contact').tel }}">{{ dico.site.tel }}</a>
-                                        </li>
-                                        <li class="MainFooter_subItem">
-                                            <a class="MainFooter_link MainFooter_link-mail"
-                                               href="mailto:{{ contact.meta('contact').mail }}">{{ contact.meta('contact').mail }}</a>
-                                        </li>
+                                        {% if dico.company.phone %}
+                                            <li class="MainFooter_subItem">
+                                                <a class="MainFooter_link MainFooter_link-tel"
+                                                   href="tel:{{ dico.company.phone }}">{{ dico.company.phone }}</a>
+                                            </li>
+                                        {% endif %}
+                                        {% if dico.company.phone %}
+                                            <li class="MainFooter_subItem">
+                                                <a class="MainFooter_link MainFooter_link-mail"
+                                                   href="mailto:{{ dico.company.email }}">{{ dico.company.email }}</a>
+                                            </li>
+                                        {% endif %}
                                     </ul>
                                 </section>
                             </li>
                             <li class="MainFooter_item">
                                 <header class="MainFooter_header">
-                                    <h1 class="MainFooter_title">
-                                        {{ dico.generics.credits }}
-                                    </h1>
+                                    {% if dico.global.credits %}
+                                        <h1 class="MainFooter_title">
+                                            {{ dico.global.credits }}
+                                        </h1>
+                                    {% endif %}
                                 </header>
                                 <section class="MainFooter_content">
                                     <ul class="MainFooter_subItems">
-                                        <li class="MainFooter_subItem">
-                                            <a class="MainFooter_link"
-                                               href="{{ "TODO links" }}">
-                                                {{ dico.generics.mentions }}
-                                            </a>
-                                        <li class="MainFooter_subItem">
-                                            <a class="MainFooter_link"
-                                               href="{{ "TODO links" }}">
-                                                {{ dico.generics.press }}
-                                            </a>
-                                        </li>
+                                        {% if dico.global.legalsMentions %}
+                                            <li class="MainFooter_subItem">
+                                                <a class="MainFooter_link"
+                                                   href="{{ "TODO links" }}">
+                                                    {{ dico.global.legalsMentions }}
+                                                </a>
+                                            </li>
+                                        {% endif %}
+                                        {% if dico.global.press %}
+                                            <li class="MainFooter_subItem">
+                                                <a class="MainFooter_link"
+                                                   href="{{ "TODO links" }}">
+                                                    {{ dico.global.press }}
+                                                </a>
+                                            </li>
+                                        {% endif %}
                                     </ul>
                                 </section>
                             </li>
                             <li class="MainFooter_item">
                                 <header class="MainFooter_header">
-                                    <h1 class="MainFooter_title">
-                                        {{ dico.generics.newsletter }}
-                                    </h1>
+                                    {% if dico.global.newsletter %}
+                                        <h1 class="MainFooter_title">
+                                            {{ dico.global.newsletter }}
+                                        </h1>
+                                    {% endif %}
                                 </header>
                                 <section class="MainFooter_content">
-                                    {% include "templates/components/SuscribeNewsletter.twig"
+                                    {% include "components/SuscribeNewsletter.html.twig"
                                         with {
                                         classElement: "MainFooter_suscribeNewsletter"
                                     } %}
                                 </section>
                             </li>
-                            {# Les mentions #}
                             <li class="MainFooter_item">
                                 <header class="MainFooter_header">
-                                    <h1 class="MainFooter_title">
-                                        {{ dico.generics.about }}
-                                    </h1>
+                                    {% if dico.global.about %}
+                                        <h1 class="MainFooter_title">
+                                            {{ dico.global.about }}
+                                        </h1>
+                                    {% endif %}
                                 </header>
-                                <section
-                                        class="MainFooter_content MainFooter_content-grey">
-                                    {{ contact.about }}
-                                </section>
+                                {% if dico.company.about %}
+                                    <section
+                                            class="MainFooter_content MainFooter_content-grey">
+                                        {{ dico.company.about }}
+                                    </section>
+                                {% endif %}
                             </li>
                             <li class="MainFooter_item">
                                 <section
                                         class="MainFooter_content MainFooter_content-grey">
                                     <div class="MainFooter_logo MainFooter_logo-macif">
-                                        {% include "./images/logo-macif.svg" %}
+                                            {{ getfilecontents('theme://images/logo-macif.svg') }}
                                     </div>
                                     <div class="MainFooter_logo MainFooter_logo-coworking">
-                                        {% include "./images/logo-coworking-grand-lyon.svg" %}
+                                        {{ getfilecontents('theme://images/logo-coworking-grand-lyon.svg') }}
                                     </div>
                                 </section>
                             </li>
