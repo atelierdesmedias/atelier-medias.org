@@ -6,7 +6,6 @@
 .cache/
 
 # Logs
-logs
 *.log
 
 # Dependency directory
