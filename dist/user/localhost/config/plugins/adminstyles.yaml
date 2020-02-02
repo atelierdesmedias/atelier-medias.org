@@ -18,5 +18,15 @@ styles:
   - arctic
   - amber
   - antique
-current: navy_sunrise
+current: hoth
 type: radioimage
+custom_styles:
+  -
+    name: 'Custom will'
+    main: '#000000'
+    secondary: '#ffffff'
+    main_alt: '#ffffff'
+    secondary_alt: '#ffffff'
+    text: '#ffffff'
+    text_alt: '#ffffff'
+    background: '#ffffff'
