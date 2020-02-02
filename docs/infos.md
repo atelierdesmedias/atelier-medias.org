@@ -1,9 +1,3 @@
-     
-## Admin back-office on admwp.sql
-
-- user: ADM
-- pass: root
-
 ## Staging
 - url: [staging.atelier-medias.org](http://staging.atelier-medias.org)
 - branch: `staging`
