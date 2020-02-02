@@ -29,7 +29,7 @@ dist/cache
 dist/logs
 dist/tmp/*
 dist/vendor
-dist/user/themes/grav-solid/assets
+dist/user/themes/adm/assets
 
 # ------------------------------------------------------------------------------ OLD DIST
 

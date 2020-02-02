@@ -1,12 +1,11 @@
-name: Grav Solid
-version: 0.3.0
-description: Grav Solid theme
+name: ADM Grav
+version: 0.1.0
+description: ADM Grav theme
 icon: rocket
 author:
-  name: Alexis Bouhet
-  email: info@zouloux.com
-  url: http://zouloux.com
-homepage: https://github.com/solid-js/grav-solid-theme
+  name: Willy Brauner
+  email: mail@willybrauner.com
+  url: http://willybrauner.com
 
 license: MIT
 
