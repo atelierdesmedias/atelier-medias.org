@@ -4,7 +4,7 @@ cache:
 
 language: php
 php:
-  - 7.1
+  - 7.2
 
 branches:
   only:
@@ -42,14 +42,10 @@ install:
   - npm ci
 
 # selectionner l'environnement de dev en fonction de la branch
-# TODO modifier tester la selection d'environment
-before_script:
-  - if [ "$TRAVIS_BRANCH" == "staging" ]; then npm run selectEnv staging; fi
-  - if [ "$TRAVIS_BRANCH" == "production" ]; then npm run selectEnv production; fi
 
 script:
   # builder les sources
-  - npm run production
+  - if [ "$TRAVIS_BRANCH" == "staging" ]; then npm run build:staging; fi
   # transférer les sources sur le serveur
   - if [ "$TRAVIS_BRANCH" == "staging" ]; then rsync --checksum -i -r -a -e ssh --omit-dir-times --quiet --delete dist/public/ $SSH_USER@$DEPLOY_HOST:${DEPLOY_STAGING_FOLDER}; fi
   # TODO: decommenter pour la mise en prod
