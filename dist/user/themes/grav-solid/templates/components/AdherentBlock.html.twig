@@ -1,0 +1,31 @@
+<div class="AdherentBlock AdherentBlock-{{ blockModifier }} {{ classElement }}">
+    <div class="AdherentBlock_wrapper">
+        <header class="AdherentBlock_header">
+            <h1 class="AdherentBlock_title">
+                {% if title.verb %}
+                <div class="AdherentBlock_verb">{{ title.verb }}</div>
+                {% endif %}
+                {% if title.calificatif %}
+                <div class="AdherentBlock_calificatif">{{ title.calificatif }}</div>
+                {% endif %}
+            </h1>
+        </header>
+        <section class="AdherentBlock_content">
+            {% if text %}
+                <div class="AdherentBlock_text">{% markdown %}{{ text }}{% endmarkdown %}</div>
+            {% endif %}
+            <div class="AdherentBlock_priceBlock">
+                {% if price %}
+                <div class="AdherentBlock_price">{{ price }} €</div>
+                {% endif %}
+                {% if labelPrice %}
+                <div class="AdherentBlock_labelPrice">{{ labelPrice }}</div>
+                {% endif %}
+            </div>
+            {% if note %}
+                <div class="AdherentBlock_note">{{ note }}</div>
+            {% endif %}
+        </section>
+    </div>
+
+</div>

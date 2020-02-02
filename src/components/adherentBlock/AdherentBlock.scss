@@ -78,12 +78,8 @@
     }
   }
 
-  &_description {
-    @include lato-bold();
-    margin-top: 2rem;
-  }
-
   &_text {
+    margin-top: 2rem;
     ul {
       margin-top: 2rem;
       padding-left: 20px;

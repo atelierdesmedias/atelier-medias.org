@@ -15,7 +15,6 @@ form:
             content:
               unset@: true
 
-
             header.custom.headerVideo:
               type: file
               multiple: false
@@ -24,18 +23,115 @@ form:
               accept:
                 - video/*
 
-            fieldset.header.presentation:
+            fieldset.header.coworkersPresentation:
               type: fieldset
-              title: Presentation
+              title: Coworkers presentation
               collapsed: false
               collapsible: true
               fields:
-                header.custom.presentation.title:
+                header.custom.coworkersPresentation.title:
                   type: text
                   label: Title
-                header.custom.presentation.text:
+                header.custom.coworkersPresentation.text:
                   type: editor
                   label: Text
+
+
+            fieldset.header.admPresentation:
+              type: fieldset
+              title: ADM presentation
+              collapsed: false
+              collapsible: true
+              fields:
+                header.custom.admPresentation.title:
+                  type: text
+                  label: Title
+                header.custom.admPresentation.text:
+                  type: editor
+                  label: Text
+
+
+            fieldset.header.adherentBlock:
+              type: fieldset
+              title: Adherent blocks
+              collapsed: false
+              collapsible: true
+              fields:
+
+                fieldset.header.adherent:
+                  type: fieldset
+                  title: Adherent
+                  collapsed: false
+                  collapsible: true
+                  fields:
+                    header.custom.adherent.verb:
+                      type: text
+                      label: Verb
+                    header.custom.adherent.calificatif:
+                      type: text
+                      label: Calificatif
+                    header.custom.adherent.text:
+                      type: editor
+                      label: Text
+                    header.custom.adherent.price:
+                        type: number
+                        label: Price
+                    header.custom.adherent.labelPrice:
+                        type: text
+                        label: Price label
+                    header.custom.fixe.note:
+                      type: text
+                      label: Note
+
+                fieldset.header.fixe:
+                  type: fieldset
+                  title: Fixe
+                  collapsed: false
+                  collapsible: true
+                  fields:
+                    header.custom.fixe.verb:
+                      type: text
+                      label: Verb
+                    header.custom.fixe.calificatif:
+                      type: text
+                      label: Calificatif
+                    header.custom.fixe.text:
+                      type: editor
+                      label: Text
+                    header.custom.fixe.price:
+                        type: number
+                        label: Price
+                    header.custom.fixe.labelPrice:
+                        type: text
+                        label: Price label
+                    header.custom.fixe.note:
+                        type: text
+                        label: Note
+
+                fieldset.header.nomade:
+                  type: fieldset
+                  title: Nomade
+                  collapsed: false
+                  collapsible: true
+                  fields:
+                    header.custom.nomade.verb:
+                      type: text
+                      label: Verb
+                    header.custom.nomade.calificatif:
+                      type: text
+                      label: Calificatif
+                    header.custom.nomade.text:
+                      type: editor
+                      label: Text
+                    header.custom.nomade.price:
+                        type: number
+                        label: Price
+                    header.custom.nomade.labelPrice:
+                        type: text
+                        label: Price label
+                    header.custom.fixe.note:
+                      type: text
+                      label: Note
 
 
         options:

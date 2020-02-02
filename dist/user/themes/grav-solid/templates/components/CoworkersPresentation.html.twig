@@ -1,16 +1,14 @@
-{% set presentation = page.header.custom.presentation %}
-
 <div class="CoworkersPresentation {{ classElement }}">
     <section class="CoworkersPresentation_wrapper">
         <div class="CoworkersPresentation_content">
-            {% if presentation.title %}
+            {% if data.title %}
             <h1 class="CoworkersPresentation_title">
-                {{ presentation.title }}
+                {{ data.title }}
             </h1>
             {% endif %}
-            {% if presentation.text %}
+            {% if data.text %}
                 <div class="CoworkersPresentation_text">
-                    {{ presentation.text }}
+                    {{ data.text }}
                 </div>
             {% endif %}
         </div>

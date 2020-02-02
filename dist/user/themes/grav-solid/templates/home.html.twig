@@ -1,56 +1,54 @@
-
-{# TODO sync with coworkers from XWIKI, need a Yaml or a json ? #}
-    {# TODO if it's json, we can request it from js templating and build Preact component #}
-    {% set coworkers = [
-        {
-            profile_picture : "",
-            first_name : "Alex",
-            last_name : "B.",
-            activity : "Developpeur",
-        },
-    ] %}
-
-{% set presentation = page.header.custom.presentation %}
-
 {% extends 'partials/layout.html.twig' %}
 {% block content %}
 
     <div class="HomePage">
         <header class="HomePage_header">
+
+            {# Big Cover #}
             {% include "components/BigCover.html.twig"
-                with { 'classElement': 'HomePage_bigCover' } %}
+                with {
+                'classElement': 'HomePage_bigCover',
+                'video': page.header.custom.headerVideo
+            } %}
+
+            {# TODO add arrow down here #}
         </header>
         <section class="HomePage_content" role="main">
 
-            {# Presentation #}
+            {# Coworkers Presentation #}
             {% include "components/CoworkersPresentation.html.twig"
-                with { 'classElement': 'HomePage_coworkersPresentation' } %}
-
+                with {
+                'classElement': 'HomePage_coworkersPresentation',
+                'data': page.header.custom.admPresentation
+            } %}
 
             {# Patchwork #}
-{#            {% include "components/CoworkersPatchwork.html.twig"#}
-{#                with {#}
-{#                classElement: 'HomePage_coworkersPatchwork',#}
-{#                pCoworkers: coworkers#}
-{#            } %}#}
+            {% include "components/CoworkersPatchwork.html.twig"
+                with { classElement: 'HomePage_coworkersPatchwork' } %}
 
-            {#            #}{# importer "AdmPresentation" component #}
-            {#            {%#}
-            {#                include "components/AdmPresentation.html.twig"#}
-            {#                with { 'classElement': 'HomePage_admPresentation' }#}
-            {#            %}#}
+            {# Adm presentation #}
+            {% include "components/AdmPresentation.html.twig"
+                with {
+                'classElement': 'HomePage_admPresentation',
+                'data': page.header.custom.admPresentation
+            } %}
 
-            {#            #}{# importer "adherentSection" component #}
-            {#            {%#}
-            {#                include "components/AdherentSection.html.twig"#}
-            {#                with { 'classElement': 'HomePage_adherentSection' }#}
-            {#            %}#}
+            {# adherent section (display adherent blocks) #}
+            {% include "components/AdherentSection.html.twig"
+                with {
+                'classElement': 'HomePage_adherentSection',
+                'data': {
+                    'adherent': page.header.custom.adherent,
+                    'fixe': page.header.custom.fixe,
+                    'nomade': page.header.custom.nomade
+                }
+            } %}
 
-            {#            #}{# importer "featuresSection" component #}
-            {#            {%#}
-            {#                include "components/FeaturesSection.html.twig"#}
-            {#                with { 'classElement': 'HomePage_featuresSection' }#}
-            {#            %}#}
+            {# featuresSection #}
+            {%
+                include "components/FeaturesSection.html.twig"
+                with { 'classElement': 'HomePage_featuresSection' }
+            %}
 
             {#            #}{# importer "interestSection" component #}
             {#            {%#}
