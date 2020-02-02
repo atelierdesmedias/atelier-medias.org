@@ -40,6 +40,15 @@
     }
   }
 
+  &_arrowDown {
+    z-index: 10;
+    @include absoluteCenter(x);
+    bottom: -3.5em;
+    @media (max-width: $large) {
+    bottom: 1em;
+    }
+  }
+
   &_content {
     // contient toutes les sections de la HomePage
     position: relative;

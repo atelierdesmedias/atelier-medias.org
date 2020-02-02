@@ -11,7 +11,10 @@
                 'video': page.header.custom.headerVideo
             } %}
 
-            {# TODO add arrow down here #}
+            {# arrow Down #}
+            {% include "components/ArrowDown.html.twig"
+                with { 'classElement': 'HomePage_arrowDown' } %}
+
         </header>
         <section class="HomePage_content" role="main">
 
@@ -45,10 +48,11 @@
             } %}
 
             {# featuresSection #}
-            {%
-                include "components/FeaturesSection.html.twig"
-                with { 'classElement': 'HomePage_featuresSection' }
-            %}
+            {% include "components/FeaturesSection.html.twig"
+                with {
+                'classElement': 'HomePage_featuresSection',
+                'data': page.header.custom.features
+            } %}
 
             {#            #}{# importer "interestSection" component #}
             {#            {%#}

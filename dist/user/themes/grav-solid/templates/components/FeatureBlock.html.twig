@@ -1,0 +1,21 @@
+<div class="FeatureBlock {{ classElement }}">
+    <div class="FeatureBlock_content">
+        {% if icon %}
+        <div class="FeatureBlock_icon">
+            {{ media[icon] }}
+        </div>
+        {% endif %}
+        <div class="FeatureBlock_description">
+            {% if textLine1 %}
+                <div class="FeatureBlock_text">
+                    {{ textLine1 }}
+                </div>
+            {% endif %}
+            {% if textLine2 %}
+                <div class="FeatureBlock_text">
+                    {{ textLine2 }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

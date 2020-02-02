@@ -8,21 +8,18 @@
             </div>
         </div>
         <div class="MainNav_innerContent">
-            {# include "menu" component #}
+            {# menu #}
             {% include "components/Menu.html.twig"
                 with { 'classElement': 'MainNav_menu' } %}
-
-            {# include "socialBlock" component #}
+            {# social block #}
             {% include "components/SocialBlock.html.twig"
                 with { 'classElement': 'MainNav_socialBlock' } %}
-
-            {#
-            include "languageBlock" component
-            Desactivé pour la première publication V1
-            #}
-
-{#            {% include "components/LanguageBlock.html.twig"#}
-{#                with { 'classElement': 'MainNav_languageBlock' } %}#}
+            {# languageBlock #}
+            {% include "components/LanguageBlock.html.twig"
+                with {
+                'classElement': 'MainNav_languageBlock',
+                'active': false
+            } %}
 
         </div>
 

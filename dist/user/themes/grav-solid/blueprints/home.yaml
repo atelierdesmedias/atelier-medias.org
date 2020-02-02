@@ -23,6 +23,7 @@ form:
               accept:
                 - video/*
 
+            # Coworkers presentation
             fieldset.header.coworkersPresentation:
               type: fieldset
               title: Coworkers presentation
@@ -37,6 +38,7 @@ form:
                   label: Text
 
 
+            # Adm presentation
             fieldset.header.admPresentation:
               type: fieldset
               title: ADM presentation
@@ -51,6 +53,7 @@ form:
                   label: Text
 
 
+            # Adherent
             fieldset.header.adherentBlock:
               type: fieldset
               title: Adherent blocks
@@ -133,6 +136,30 @@ form:
                       type: text
                       label: Note
 
+            # Features
+            fieldset.header.features:
+              type: fieldset
+              title: Features
+              collapsed: false
+              collapsible: true
+              fields:
+                header.custom.features:
+                  type: list
+                  label: Features
+                  style: vertical
+                  fields:
+                    .icon:
+                      type: filepicker
+                      multiple: false
+                      preview_images: true
+                      destination: 'theme@:/images'
+                      label: "SVG Icon"
+                    .textLine1:
+                      type: text
+                      label: text line 1
+                    .textLine2:
+                      type: text
+                      label: text line 2
 
         options:
           fields:

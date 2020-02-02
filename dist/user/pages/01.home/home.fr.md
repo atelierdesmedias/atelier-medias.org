@@ -1,4 +1,5 @@
 ---
+media: 'clip.mp4,icon-dimenssions.svg,icon-flechettes.svg,icon-imprimante.svg,icon-incentive.svg,icon-loupe.svg,icon-open-space.svg,icon-phone.svg,icon-salle-reunion.svg,icon-the.svg'
 title: Home
 custom:
     coworkersPresentation:
@@ -26,6 +27,39 @@ custom:
         text: "- Un bureau sans place attitrée\r\n- Un casier personnel\r\n- Un badge d'accès 24h/24 et 7j/7\r\n- Règlement mensuel par prélèvement automatique\r\n- 2 mois de préavis"
         price: 96
         labelPrice: TTC/mois
+    features:
+        -
+            icon: icon-open-space.svg
+            textLine1: '30 posts de travail'
+            textLine2: '5 open spaces'
+        -
+            icon: icon-dimenssions.svg
+            textLine1: 'plus de'
+            textLine2: 200m2
+        -
+            icon: icon-salle-reunion.svg
+            textLine1: 'une salle de'
+            textLine2: réunion
+        -
+            icon: icon-flechettes.svg
+            textLine1: 'jeu de'
+            textLine2: fléchettes
+        -
+            icon: icon-imprimante.svg
+            textLine1: scanner
+            textLine2: imprimante
+        -
+            icon: icon-phone.svg
+            textLine1: 'une salle de'
+            textLine2: téléphone
+        -
+            icon: icon-the.svg
+            textLine1: 'une cuisine avec'
+            textLine2: 'thé & café'
+        -
+            icon: icon-incentive.svg
+            textLine1: 'une salle'
+            textLine2: événements
     headerVideo:
         user/pages/01.home/clip.mp4:
             name: clip.mp4

@@ -1,3 +1,4 @@
+{% if active %}
 <div class="LanguageBlock {{ classElement }}">
     <ul class="LanguageBlock_items">
         {%  if dico.components.LanguageBlock.FR  %}
@@ -20,3 +21,4 @@
         {% endif %}
     </ul>
 </div>
+{% endif %}
