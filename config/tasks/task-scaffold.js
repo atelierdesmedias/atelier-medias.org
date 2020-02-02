@@ -121,14 +121,13 @@ const componentScaffolder = () =>
       const twigDirPath = `${paths.twigTemplatePath}${subFolder}/`;
       // Define twig Template
       const twigTemplate = [
-        `{# ${upperComponentName} Component #}`,
-        `<div class="${upperComponentName}">`,
+        `<div class="${upperComponentName} {{ classElement }}">`,
         `   ${upperComponentName}`,
         `</div>`
       ].join('\n');
 
       // Scaffold Twig component File
-      Files.new(`${twigDirPath}${upperComponentName}.twig`).write(
+      Files.new(`${twigDirPath}${upperComponentName}.html.twig`).write(
           twigTemplate
       );
 

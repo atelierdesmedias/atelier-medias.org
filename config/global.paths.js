@@ -30,9 +30,6 @@ module.exports = {
   // .env file
   env: appRoot.resolve(".env"),
 
-  // php config
-  phpConfigPath: appRoot.resolve('dist/public/themes/wordplate/'),
-
   // skeletons
   skeletonsPath: appRoot.resolve('config/skeletons/'),
 
@@ -46,13 +43,5 @@ module.exports = {
   // scaffolder
   componentCompatibleFolders: ['components', 'pages'],
   appBundleTechnoToScaffold: ['DOM'],
-
-  // properties
-  propertiesFolderPath: appRoot.resolve('properties/'),
-  envNamePath: appRoot.resolve('properties/.envName.js'),
-  propertiesPath: 'properties/',
-
-  //
-  //twigTemplatePath: appRoot.resolve('dist/public/themes/wordplate/templates/')
-  twigTemplatePath: appRoot.resolve('dist/user/themes/quark/templates/')
+  twigTemplatePath: appRoot.resolve('dist/user/themes/adm/templates/')
 };
