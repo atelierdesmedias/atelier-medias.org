@@ -41,8 +41,6 @@ install:
   # installer des dépendances front
   - npm ci
 
-# selectionner l'environnement de dev en fonction de la branch
-
 script:
   # builder les sources
   - if [ "$TRAVIS_BRANCH" == "staging" ]; then npm run build:staging; fi
