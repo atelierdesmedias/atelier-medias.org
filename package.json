@@ -4,13 +4,14 @@
   "description": "atelier-medias.org coworking website",
   "repository": "https://github.com/atelierdesmedias/atelier-medias.org",
   "scripts": {
-    "dev": "bash ./scripts/dev.sh",
-    "build": "./scripts/build.sh",
+    "dev": "./scripts/dev.sh",
+    "build:staging": "./scripts/build.sh staging",
     "prettier": "./scripts/prettier.sh",
     "reset": "./scripts/reset.sh",
     "scaffold": "node ./config/tasks/task-scaffold.js",
     "createEnv": "node ./config/tasks/task-create-env.js",
-    "selectEnv": "node ./config/tasks/task-select-env.js"
+    "selectEnv": "node ./config/tasks/task-select-env.js",
+    "postinstall": "cp -n .env.example .env || true"
   },
   "keywords": [
     "adm",
@@ -45,6 +46,10 @@
     "cross-env": "^7.0.0",
     "css-loader": "^3.4.2",
     "cssnano": "^4.1.10",
+    "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
+    "dotenv-webpack": "^1.7.0",
+    "env-cmd": "^10.0.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^5.0.2",
     "friendly-errors-webpack-plugin": "^1.7.0",

@@ -15,6 +15,7 @@ import {AdherentSection} from '../../components/adherentSection/AdherentSection'
 import {FeaturesSection} from '../../components/featuresSection/featuresSection';
 import {InterestSection} from '../../components/interestSection/InterestSection';
 import {breakPoint} from '../../helpers/breakPoint';
+import {ArrowDown} from "../../molecules/arrowDown/ArrowDown"
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
@@ -22,6 +23,7 @@ export class HomePage extends DOMView {
   // ------------------------------------------------------------------------- TYPE
 
   private _bigCover: BigCover;
+  private _arrowDown: ArrowDown;
 
   private _coworkersPresentation: CoworkersPresentation;
   private _coworkersPatchworkSection: CoworkersPatchwork;
@@ -81,6 +83,10 @@ export class HomePage extends DOMView {
     this._interestSection = new InterestSection(
       this.$root.find('.InterestSection')
     );
+
+    // Importer la molécule Arrow Down
+    this._arrowDown = new ArrowDown(this.$root.find('.ArrowDown'));
+
   }
 
   /**

@@ -1,0 +1,18 @@
+
+
+<div class="FeaturesSection {{ classElement }}">
+    <div class="FeaturesSection_wrapper">
+        <section class="FeaturesSection_content">
+            {% for feature in data %}
+                {# importer "feature block component #}
+                {% include "components/FeatureBlock.html.twig"
+                    with {
+                    classElement: 'FeaturesSection_featureBlock',
+                    icon: feature.icon,
+                    textLine1: feature.textLine1,
+                    textLine2: feature.textLine2
+                } %}
+            {% endfor %}
+        </section>
+    </div>
+</div>

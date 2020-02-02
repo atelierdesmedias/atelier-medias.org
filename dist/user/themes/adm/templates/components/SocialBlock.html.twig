@@ -1,0 +1,24 @@
+{% set dictionary = page.find('/_global/dictionary') %}
+{% set networks = dictionary.header.custom.networks %}
+
+<div class="SocialBlock {{ classElement }}">
+    <ul class="SocialBlock_items">
+
+        {% for item in networks %}
+        <li class="SocialBlock_item">
+            {% if item.url %}
+                <a class="SocialBlock_link" href="{{ item.url }}"
+                   target="_blank">
+                    <div class="{{ "SocialBlock_innerLink SocialBlock_innerLink-#{item.type}" }}">
+                        {% if url('theme://images/icon-'~item.type~'.svg') %}
+                            <i class="{{ "SocialBlock_icon SocialBlock_icon-#{item.type}" }}">
+                                {{ getfilecontents('theme://images/icon-'~item.type~'.svg') }}
+                            </i>
+                        {% endif %}
+                    </div>
+                </a>
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+</div>

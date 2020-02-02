@@ -1,0 +1,36 @@
+##
+# Blueprint to manage specific configuration of the website.
+# No need to extends it, directly update this blueprint.
+##
+
+title: "Global - Config"
+extends@: "default-global"
+
+form:
+  fields:
+
+    tabs:
+      fields :
+
+        content :
+          fields :
+
+            # ------------------------------------------------------------------ KEYS
+
+            fieldset.keys :
+              type: fieldset
+              title: "Keys"
+              icon: "key"
+              text : "API Keys and IDs configuration"
+              collapsed: false
+              collapsible: true
+              fields:
+
+                header.custom.keys.analytics :
+                  type : text
+                  label: "Google Analytics key"
+                  placeholder: "GA-XXXXXXXX"
+
+
+            # ------------------------------------------------------------------
+            # Add as many config as you need

@@ -1,0 +1,9 @@
+<header class="MainHeader {{ classElement }}">
+    {# main Nav #}
+    {% include "components/MainNav.html.twig"
+        with { 'classElement': 'MainHeader_mainNav' } %}
+
+    {# bouton menu mobile #}
+    {% include "components/HamburgerButton.html.twig"
+        with { 'classElement': 'MainHeader_hamburgerButton' } %}
+</header>

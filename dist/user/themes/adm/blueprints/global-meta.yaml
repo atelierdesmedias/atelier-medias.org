@@ -1,0 +1,72 @@
+##
+# Blueprint to manage default meta of the website.
+# No need to extends it, directly update this blueprint.
+##
+
+title: "Global - Meta"
+extends@: "default-global"
+
+form:
+  fields:
+
+    tabs:
+      fields :
+
+        content :
+          fields :
+
+            # ------------------------------------------------------------------ KEYS
+
+            fieldset.meta :
+              type: fieldset
+              title: "Global meta"
+              icon: "share-alt"
+              text : "Global and default metadata. Can be overridden in each page."
+              collapsed: false
+              collapsible: true
+              fields:
+
+                header.custom.description :
+                  type : text
+                  toggleable: true
+                  label: "Meta description"
+                  help: "Description meta tag by default."
+
+                header.custom.shareTitle :
+                  type : text
+                  toggleable: true
+                  label: "Share title"
+                  help: "og:title tag for facebook and twitter:title tag for twitter. If not set, will use page title."
+
+                header.custom.shareDescription :
+                  type : text
+                  toggleable: true
+                  label: "Share description"
+                  help: "og:description tag for facebook and twitter:description tag for twitter. If not set, will use meta description."
+
+                header.custom.shareImage:
+                  type: file
+                  toggleable: true
+                  multiple: false
+                  destination: 'self@'
+                  label: "Share image"
+                  help : "og:image tag for facebook and twitter:image tag for twitter.  Will be resized to match twitter and facebook requirements"
+                  accept:
+                    - image/*
+
+                header.custom.facebookSite :
+                  type : text
+                  toggleable: true
+                  label: "Facebook site name"
+                  help: "og:site_name tag for facebook. Can be a simple sentence. Will use site title if not set."
+                  placeholder : "Site name ..."
+
+                header.custom.twitterSite :
+                  type : text
+                  toggleable: true
+                  label: "Twitter site name"
+                  help: "twitter:site tag for twitter. Represents website associated twitter username, starting with an @"
+                  placeholder : "@..."
+
+            # ------------------------------------------------------------------
+            # Add as many config as you need

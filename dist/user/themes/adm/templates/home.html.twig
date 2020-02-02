@@ -1,0 +1,68 @@
+{% extends 'partials/layout.html.twig' %}
+{% block content %}
+
+    <div class="HomePage">
+        <header class="HomePage_header">
+
+            {# Big Cover #}
+            {% include "components/BigCover.html.twig"
+                with {
+                'classElement': 'HomePage_bigCover',
+                'video': page.header.custom.headerVideo
+            } %}
+
+            {# arrow Down #}
+            {% include "components/ArrowDown.html.twig"
+                with { 'classElement': 'HomePage_arrowDown' } %}
+
+        </header>
+        <section class="HomePage_content" role="main">
+
+            {# Coworkers Presentation #}
+            {% include "components/CoworkersPresentation.html.twig"
+                with {
+                'classElement': 'HomePage_coworkersPresentation',
+                'data': page.header.custom.admPresentation
+            } %}
+
+            {# Patchwork #}
+            {% include "components/CoworkersPatchwork.html.twig"
+                with { classElement: 'HomePage_coworkersPatchwork' } %}
+
+            {# Adm presentation #}
+            {% include "components/AdmPresentation.html.twig"
+                with {
+                'classElement': 'HomePage_admPresentation',
+                'data': page.header.custom.admPresentation
+            } %}
+
+            {# adherent section (display adherent blocks) #}
+            {% include "components/AdherentSection.html.twig"
+                with {
+                'classElement': 'HomePage_adherentSection',
+                'data': {
+                    'adherent': page.header.custom.adherent,
+                    'fixe': page.header.custom.fixe,
+                    'nomade': page.header.custom.nomade
+                }
+            } %}
+
+            {# featuresSection #}
+            {% include "components/FeaturesSection.html.twig"
+                with {
+                'classElement': 'HomePage_featuresSection',
+                'data': page.header.custom.features
+            } %}
+
+            {# interestSection #}
+            {% include "components/InterestSection.html.twig"
+                with {
+                'classElement': 'HomePage_interestSection',
+                'data': page.header.custom.interest,
+                'mail': page.find('/_global/dictionary').header.custom.company.inscriptionEmail
+            } %}
+
+        </section>
+    </div>
+
+{% endblock %}

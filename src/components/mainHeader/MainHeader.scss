@@ -41,11 +41,6 @@
     }
   }
 
-  &_arrowDown {
-    @include absoluteCenter(x);
-    bottom: 1.5em;
-    z-index: 1;
-  }
 
   // --------------------------------------------------------------------------- MODIFIERS
 

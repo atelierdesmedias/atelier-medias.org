@@ -1,8 +1,9 @@
-const paths = require('../paths');
+const path = require('path');
 const webpack = require('webpack');
-  const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WebpackBar = require('webpackbar');
+const Dotenv = require('dotenv-webpack');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const config = require('../global.config');
+const paths = require('../global.paths');
 
 module.exports = {
   /**
@@ -11,7 +12,7 @@ module.exports = {
    * The first place Webpack looks to start building the bundle.
    */
   entry: {
-    main: paths.src + 'Main.ts',
+    main: paths.src + 'Main.ts'
   },
 
   /**
@@ -20,23 +21,20 @@ module.exports = {
    * Where Webpack outputs the assets and bundles.
    */
   output: {
-    path: paths.assets,
-    filename: '[name].js',
+    path: config.outputPath,
+    filename: '[name].bundle.js',
+    publicPath: '/'
   },
 
   /**
    * Resolve
-   *
    *
    */
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', 'scss', 'css'],
     alias: {},
 
-    modules: [
-      paths.node_modules,
-      paths.src,
-    ],
+    modules: [paths.node_modules, paths.src]
   },
 
   /**
@@ -53,22 +51,19 @@ module.exports = {
     new CleanWebpackPlugin(),
 
     /**
-     * HtmlWebpackPlugin
-     *
-     * Generates an HTML file from a template.
-     */
-    // new HtmlWebpackPlugin({
-    //   title: 'Webpack Boilerplate',
-    //   favicon: paths.src + '/images/favicon.png',
-    //   template: paths.src + '/template.html', // template file
-    //   filename: 'index.html', // output file
-    // }),
-
-    /**
      * Import lib
      */
     new webpack.ProvidePlugin({
-      $: 'zepto-webpack',
+      $: 'zepto-webpack'
+    }),
+
+    /**
+     * Dotenv Wepback
+     * @doc https://github.com/mrsteele/dotenv-webpack
+     */
+    new Dotenv({
+      path: paths.env,
+      systemvars: true
     }),
 
     /**
@@ -76,15 +71,8 @@ module.exports = {
      */
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-      'process.env.DEBUG': JSON.stringify(process.env.DEBUG),
-    }),
-
-    /**
-     * Progress bar plugin
-     *
-     * Show progress bar durring compilation
-     */
-    //new WebpackBar(),
+      'process.env.DEBUG': JSON.stringify(process.env.DEBUG)
+    })
   ],
 
   /**
@@ -102,10 +90,7 @@ module.exports = {
       {
         test: /\.(js|jsx|ts|tsx|mjs)$/,
         exclude: /node_modules/,
-        use: [
-          {loader: 'babel-loader'},
-          {loader: 'awesome-typescript-loader'},
-        ],
+        use: [{loader: 'babel-loader'}, {loader: 'awesome-typescript-loader'}]
       },
 
       /**
@@ -119,8 +104,8 @@ module.exports = {
           'style-loader',
           {loader: 'css-loader', options: {sourceMap: true, importLoaders: 1}},
           {loader: 'postcss-loader', options: {sourceMap: true}},
-          {loader: 'sass-loader', options: {sourceMap: true}},
-        ],
+          {loader: 'sass-loader', options: {sourceMap: true}}
+        ]
       },
 
       /**
@@ -133,8 +118,9 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[path][name].[ext]',
-          context: 'src', // prevent display of src/ in filename
-        },
+          // prevent display of src/ in filename
+          context: 'src'
+        }
       },
 
       /**
@@ -148,9 +134,10 @@ module.exports = {
         options: {
           limit: 8192,
           name: '[path][name].[ext]',
-          context: 'src', // prevent display of src/ in filename
-        },
-      },
-    ],
-  },
+          // prevent display of src/ in filename
+          context: 'src'
+        }
+      }
+    ]
+  }
 };

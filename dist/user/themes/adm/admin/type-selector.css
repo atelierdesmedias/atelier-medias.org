@@ -1,0 +1,39 @@
+
+
+.TypeSelectorParent > li > .form-fieldset
+{
+	/* No display: none, because it's causing any editor as child, to need a click to show content */
+	visibility: hidden;
+	height: 0;
+}
+
+/*.FancyTypeContainer*/
+
+.TypeSelector input:checked + label
+{
+	position : relative;
+}
+.TypeSelector
+{
+	overflow: visible;
+}
+.TypeSelector input:checked + label:after
+{
+	display: block;
+	content : "";
+	position: absolute;
+	left: 50%;
+	width: 1px;
+	top: 100%;
+	height: 17px;
+	border-left: 2px solid rgba(0, 0, 0, .1);
+}
+
+.TypeSelectorParent .form-fieldset > .form-label
+{
+	display: none;
+}
+.TypeSelectorParent .form-fieldset
+{
+	border: 1px dashed rgba(0, 0, 0, .1);
+}

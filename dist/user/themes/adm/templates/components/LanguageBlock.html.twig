@@ -1,0 +1,24 @@
+{% if active %}
+<div class="LanguageBlock {{ classElement }}">
+    <ul class="LanguageBlock_items">
+        {%  if dico.components.LanguageBlock.FR  %}
+        <li class="LanguageBlock_item">
+            <a class="LanguageBlock_link LanguageBlock_link-active" href="">
+                <div class="LanguageBlock_innerLink">
+                    {{ dico.components.LanguageBlock.FR }}
+                </div>
+            </a>
+        </li>
+        {% endif %}
+        {%  if dico.components.LanguageBlock.EN  %}
+        <li class="LanguageBlock_item">
+            <a class="LanguageBlock_link" href="">
+                <div class="LanguageBlock_innerLink">
+                    {{ dico.components.LanguageBlock.EN }}
+                </div>
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+</div>
+{% endif %}

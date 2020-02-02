@@ -1,0 +1,17 @@
+title: Grav
+default_lang: fr
+author:
+  name: 'Willy Brauner'
+  email: mail@willybrauner.com
+taxonomies:
+  - category
+  - tag
+metadata:
+  description: 'Atelier des médias website'
+summary:
+  enabled: true
+  format: short
+  size: 300
+  delimiter: '==='
+blog:
+  route: /blog

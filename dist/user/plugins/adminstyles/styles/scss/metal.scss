@@ -1,0 +1,31 @@
+// Load Third Party Libraries
+@import "base/configuration/template/base";
+@import "base/template/modules/bourbon_essentials";
+@import "base/template/modules/buttons";
+
+// Theme
+$theme-main: #bd8c7d;
+$theme-secondary: #d1bfa7;
+$theme-main-alt: #8e8e90;
+$theme-secondary-alt: #49494b;
+$theme-text: #000000;
+$theme-text-alt: #ffffff;
+$theme-background: #e8e8e6;
+@import "../variables.scss";
+
+// 'Manage Pages'-specific overrides
+.pages-list .page-icon {
+    color: saturate($theme-main, 25%);
+}
+.pages-list .page-icon.not-routable {
+    color: saturate($theme-secondary, 25%);
+}
+.pages-list .page-icon.not-visible {
+    color: lighten($theme-main-alt, 15%);
+}
+.pages-list .page-icon.modular {
+    color: adjust-hue(saturate($theme-main, 25%), 180deg);
+}
+
+@import "base/preset.scss";
+@import "../overrides.scss";

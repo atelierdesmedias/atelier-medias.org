@@ -1,0 +1,15 @@
+form:
+  fieldset.global :
+    type: fieldset
+    title: "Dictionary"
+    icon: comments
+    collapsed: false
+    collapsible: true
+    fields:
+
+      # Regular key / value translations
+      header.custom.dictionary :
+        type : array
+        label : "Key / value pairs.<br>Keys can have dot syntax."
+        placeholder_key: "key.with.dots"
+        placeholder_value: "Value"

@@ -1,7 +1,5 @@
 # gitignore file
 
-# ------------------------------------------------------------------------------ POOPS
-
 # Mac
 .DS_Store
 
@@ -17,26 +15,32 @@ logs
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules/
 
-# ------------------------------------------------------------------------------ BUILD
-
-# ignore vendor folder create by composer
-dist/app/vendor/*
-
-# ignore webpack compile assets folder
-dist/public/assets/
-
-# auto generated dot env
-dist/.env
-
-# auto generated config php
-dist/public/themes/wordplate/config.php
-
-# php config file expose node env variable
-dist/config.php
+# ------------------------------------------------------------------------------ SRC
 
 # atoms.ts
 src/atoms/atoms.ts
-
 # env properties selected
 properties/.envName.js
+.env
+
+# ------------------------------------------------------------------------------ DIST
+
+dist/cache
+dist/logs
+dist/tmp/*
+dist/vendor
+dist/user/themes/adm/assets
+
+# ------------------------------------------------------------------------------ OLD DIST
+
+# ignore vendor folder create by composer
+dist-wp/app/vendor/*
+# ignore webpack compile assets folder
+dist-wp/public/assets/
+# auto generated dot env
+dist-wp/.env
+# auto generated config php
+dist-wp/public/themes/wordplate/config.php
+# php config file expose node env variable
+dist-wp/config.php
 

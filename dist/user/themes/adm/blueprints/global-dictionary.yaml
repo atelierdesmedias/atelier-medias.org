@@ -1,0 +1,135 @@
+##
+# Blueprint to manage dictionary and translations across all the application.
+# No need to extends it, directly update this blueprint.
+##
+
+title: "Global - Dictionary"
+extends@: "default-global"
+
+form:
+  fields:
+
+    tabs:
+      fields :
+
+        content :
+          fields :
+
+            # ------------------------------------------------------------------ GLOBAL DICTIONARY
+
+            fieldset.company :
+              type: fieldset
+              title: Company
+              icon: building
+              collapsed: false
+              collapsible: true
+              fields:
+
+                header.custom.company.address :
+                  type : textarea
+                  label: Address
+
+                header.custom.company.addressLink:
+                  type: link
+                  label: Adress google map link
+
+                header.custom.company.phone :
+                  type : text
+                  label: Phone
+                  validate:
+                    type: phone
+
+                header.custom.company.email :
+                  type : text
+                  label: Contact email
+                  validate:
+                    type: email
+
+                header.custom.company.inscriptionEmail :
+                  type : text
+                  label: Inscription email
+                  validate:
+                    type: email
+
+                header.custom.company.groupeInfoEmail :
+                  type : text
+                  label: Group info email
+                  validate:
+                    type: email
+
+
+                header.custom.company.about:
+                  type: textarea
+                  label: About footer
+
+            fieldset.networks :
+              type: fieldset
+              title: Networks
+              icon: share-alt
+              collapsed: false
+              collapsible: true
+              fields:
+
+                header.custom.networks :
+                  type : list
+                  label: Networks List
+                  style: vertical
+                  fields:
+                    .type:
+                      type: select
+                      label: Type
+                      placeholder: Choose...
+                      options:
+                        facebook: Facebook
+                        instagram: Instagram
+                        linkedin: LinkedIn
+                        twitter: Twitter
+                        vimeo: Vimeo
+                        youtube: Youtube
+                    .url:
+                      type: text
+                      label: URL
+
+            # ------------------------------------------------------------------ GLOBAL DICTIONARY
+
+            fieldset.global :
+              type: fieldset
+              title: "Global dictionary"
+              icon: comments
+              collapsed: false
+              collapsible: true
+              fields:
+
+                # Regular key / value translations
+                header.custom.global :
+                  type : array
+                  label : "Key / value pairs."
+                  placeholder_key: "key.with.dots"
+                  placeholder_value: "Value"
+
+
+            # ------------------------------------------------------------------ PAGES DICTIONARY
+
+            fieldset.pages :
+              type: fieldset
+              title: "Pages dictionaries"
+              text: "Add a set of translations which will be available in every pages of the same template."
+              collapsed: false
+              collapsible: true
+              icon: book
+              fields:
+
+                header.custom.pages :
+                  type: list
+                  style: vertical
+                  fields:
+                    .pageName :
+                      type: text
+                      label: "Solidify page name"
+                      placeholder: "ex: HomePage"
+                      help: "To inject this dictionary into some page, enter the page's template name, without extension."
+                    .entries :
+                      type : array
+                      label : "Key / value pairs."
+                      placeholder_key: "key.with.dots"
+                      placeholder_value: "Value"

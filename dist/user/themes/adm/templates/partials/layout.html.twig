@@ -1,0 +1,86 @@
+{% spaceless %}
+
+    {# meta sitename #}
+    {% set siteName = site.title|e('html') %}
+    {# meta title #}
+    {% set title = header.title ? header.title|e('html') : site.title|e('html') %}
+    {# meta description #}
+    {% set description = header.description ? header.description|e('html') : site.description|e('html') %}
+    {# meta image #}
+    {% set metaImage = "" %}
+    {# url canonique #}
+    {% set canonical = page.url(true, true) %}
+
+    <!DOCTYPE html>
+    <html lang="{{ locale }}">
+    <head>
+        {% block head %}
+            <meta charset="UTF-8">
+            <meta http-equiv="imagetoolbar" content="no">
+            <meta http-equiv="x-ua-compatible" content="IE=Edge">
+            <meta name="viewport"
+                  content="width=device-width, initial-scale=1, maximum-scale=1">
+
+            {# meta page #}
+            <title>{{ title }}</title>
+            <meta name="description" content="{{ description }}">
+            <link rel="canonical" href="{{ canonical }}"/>
+
+            {# meta facebook #}
+            <meta property="og:type" content="website">
+            <meta property="og:site_name" content="{{ siteName }}">
+            <meta property="og:url" content="{{ canonical }}">
+            <meta property="og:title" content="{{ title }}">
+            <meta property="og:description" content="{{ description }}">
+            <meta property="og:image" content="{{ metaImage }}">
+
+            {# meta twitter #}
+            <meta name="twitter:card" content="summary">
+            <meta name="twitter:site" content="{{ siteName }}">
+            <meta name="twitter:url" content="{{ canonical }}">
+            <meta name="twitter:title" content="{{ title }}">
+            <meta name="twitter:description" content="{{ description }}">
+            <meta name="twitter:image" content="{{ metaImage }}">
+
+            {# meta favicon TODO #}
+
+            {% block stylesheets %}
+                {% do assets.addCss('theme://assets/main.css') %}
+            {% endblock %}
+
+            {% block assets %}
+                {{ assets.css() }}
+            {% endblock %}
+
+            {# inject assets #}
+            {% block javascripts %}
+                {% do assets.addJs('theme://assets/main.bundle.js', {group:'bottom'}) %}
+            {% endblock %}
+
+        {% endblock head %}
+    </head>
+    <body>
+    <div class="AppView">
+
+        {# header #}
+        {% include "components/MainHeader.html.twig"
+            with { 'classElement': 'AppView_mainHeader' } %}
+
+        {# header #}
+        {% block content %}
+           {{ page.content }}
+        {% endblock %}
+
+        {# footer #}
+        {% include "components/MainFooter.html.twig"
+            with { 'classElement': 'AppView_mainFooter' } %}
+    </div>
+
+
+    {% block bottom %}
+        {{ assets.js('bottom') }}
+    {% endblock %}
+    </body>
+    </html>
+
+{% endspaceless %}

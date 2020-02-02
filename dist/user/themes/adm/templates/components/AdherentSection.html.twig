@@ -1,0 +1,50 @@
+<div class="AdherentSection {{ classElement }}">
+    <div class="AdherentSection_content">
+        {# adherent Block #}
+        {% include "components/AdherentBlock.html.twig"
+            with {
+            classElement: 'AdherentSection_adherentBlock',
+            blockModifier: 'adherent',
+            title: {
+                verb: data.adherent.verb,
+                calificatif: data.adherent.calificatif,
+            },
+            description: data.adherent.description,
+            text: data.adherent.text,
+            price: data.adherent.price,
+            labelPrice: data.adherent.labelPrice
+        } %}
+
+        <div class="AdherentSection_inlineWrapper">
+            {# adherent Block #}
+            {% include "components/AdherentBlock.html.twig"
+                with {
+                classElement: 'AdherentSection_adherentBlock',
+                blockModifier: 'fixe',
+                title: {
+                    verb: data.fixe.verb,
+                    calificatif: data.fixe.calificatif,
+                },
+                description: data.fixe.description,
+                text: data.fixe.text,
+                price: data.fixe.price,
+                labelPrice: data.fixe.labelPrice
+            } %}
+
+            {# adherent Block #}
+            {% include "components/AdherentBlock.html.twig"
+                with {
+                classElement: 'AdherentSection_adherentBlock',
+                blockModifier: 'nomade',
+                title: {
+                    verb: data.nomade.verb,
+                    calificatif: data.nomade.calificatif,
+                },
+                description: data.nomade.description,
+                text: data.nomade.text,
+                price: data.nomade.price,
+                labelPrice: data.nomade.labelPrice
+            } %}
+        </div>
+    </div>
+</div>

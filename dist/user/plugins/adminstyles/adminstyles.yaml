@@ -1,0 +1,22 @@
+enabled: true
+preview: false
+styles:
+  - grav_admin
+  - metal
+  - hoth
+  - light
+  - stark_contrast
+  - dark_ocean
+  - wine
+  - beach
+  - muted_beach
+  - sunrise
+  - navy_sunrise
+  - tan
+  - grey
+  - gold
+  - arctic
+  - amber
+  - antique
+current: metal
+type: radioimage

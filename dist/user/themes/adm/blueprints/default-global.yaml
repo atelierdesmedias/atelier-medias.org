@@ -1,0 +1,109 @@
+###
+# This blueprint represents a global structure base.
+# Use only by extending from another blueprint which defines the structure.
+# Do not extend for pages.
+#
+# Routable and visibility are disabled by default, so structures extending
+# this blueprint can be inside _global folder.
+###
+
+title: "Default - Global"
+
+extends@:
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+
+    tabs:
+      fields:
+
+        # Hide everything in content tab
+        content :
+          fields :
+
+            header.title :
+              type : ignore
+            content :
+              type : ignore
+            uploads :
+              type : ignore
+            header.media_order :
+              type : ignore
+
+        # Options are not ignored here.
+        # If you don't need this tab, ignore it in your blueprint
+        options:
+          type: ignore
+
+        # Clean useless fields in advanced tab
+        advanced:
+
+          # Stick tab to the right
+          ordering@: 100
+          fields:
+
+            columns:
+              fields:
+
+                # Remove body classes field
+                column1:
+                  fields:
+
+                    header.body_classes:
+                      type: ignore
+
+                # Set folder ordering enabled by default
+                column2:
+                  fields:
+
+                    ordering:
+                      highlight: 1
+                      default: 1
+
+            # Remove some override fields
+            overrides:
+              fields:
+
+                # Set routable and visible to false
+                header.routable:
+                  highlight: 0
+                  default: 0
+                header.visible:
+                  highlight: 0
+                  default: 0
+
+                # Remove other useless fields
+                header.dateformat:
+                  type: ignore
+                header.menu:
+                  type: ignore
+                header.slug:
+                  type: ignore
+                header.redirect:
+                  type: ignore
+                header.process:
+                  type: ignore
+                header.twig_first:
+                  type: ignore
+                header.never_cache_twig:
+                  type: ignore
+                header.child_type:
+                  type: ignore
+                header.cache_enable:
+                  type: ignore
+                header.debugger:
+                  type: ignore
+                header.template:
+                  type: ignore
+                header.append_url_extension:
+                  type: ignore
+
+            # Remove all route override fields
+            routes_only :
+              type: ignore
+
+            # Remove all admin override fields
+            admin_only:
+              type: ignore

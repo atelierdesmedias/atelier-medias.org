@@ -1,0 +1,44 @@
+name: ADM Grav
+version: 0.1.0
+description: ADM Grav theme
+icon: rocket
+author:
+  name: Willy Brauner
+  email: mail@willybrauner.com
+  url: http://willybrauner.com
+
+license: MIT
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: Plugin status
+      highlight: 1
+      default: 1
+      options:
+          1: Enabled
+          0: Disabled
+      validate:
+           type: bool
+
+    markdownProperties :
+      type: selectize
+      size: large
+      label: "Markdown property names to parse"
+      help: "Will parse all properties with those name with parsedown. Default root 'content' property is always parsed. If you add 'content' for example, all properties named like so will be parsed with parsedown, even deep in the tree."
+      classes: fancy
+      default: ""
+      validate:
+          type: commalist
+
+    yamlProperties :
+      type: selectize
+      size: large
+      label: "YAML property names to parse"
+      help: "Will parse all properties with those name with YAML. If you add 'yamlData' for example, all properties named like so will be parsed with YAML, even deep in the tree."
+      classes: fancy
+      default: ""
+      validate:
+          type: commalist

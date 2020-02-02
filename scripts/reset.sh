@@ -4,7 +4,7 @@ set -e
 echo "> Reset..."
 
 echo "> Remove assets folder..."
-rm -rf dist/public/assets/
+rm -rf dist/user/themes/grav-solid/assets
 
 # remove auto generate files...
 

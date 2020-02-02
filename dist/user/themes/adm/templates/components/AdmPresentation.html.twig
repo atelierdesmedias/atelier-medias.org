@@ -1,0 +1,17 @@
+<div class="AdmPresentation {{ classElement }}">
+    <section class="AdmPresentation_wrapper">
+        <div class="AdmPresentation_content">
+            {% if data.title %}
+            <h1 class="AdmPresentation_title">
+                {{ data.title }}
+            </h1>
+            {% endif %}
+            {% if data.text %}
+            <div class="AdmPresentation_text">
+                {{ data.text }}
+            </div>
+            {% endif %}
+        </div>
+    </section>
+</div>
+

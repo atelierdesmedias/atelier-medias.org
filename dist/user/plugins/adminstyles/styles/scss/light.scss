@@ -1,0 +1,96 @@
+// Load Third Party Libraries
+@import "base/configuration/template/base";
+@import "base/template/modules/bourbon_essentials";
+@import "base/template/modules/buttons";
+
+// Theme: Monochrome
+$theme-ivory: #fffff0; // Ivory
+$theme-baby-powder: #FCFCFC; // Baby Powder
+$theme-floral-white: #FCFCED; // Floral White
+$theme-ghost-white: #F8F8FF; // Ghost White
+$theme-anti-flash-white: #F2F2F2; // Anti-Flash White
+$theme-isabelline: #EDEDED; // Isabelline
+$theme-smoky-black: #08090A; // Smoky-Black
+$theme-text: #333333; // Jet-Black
+$theme-text-alt: #ffffff; // White
+
+// Logo
+$logo-bg:                       $theme-floral-white !default;
+$logo-link:                     $theme-smoky-black !default;
+
+// Nav
+$nav-bg:                        $theme-floral-white !default;
+$nav-text:                      $theme-text !default;
+$nav-link:                      $theme-smoky-black !default;
+$nav-selected-bg:               $theme-anti-flash-white !default;
+$nav-selected-link:             $theme-text !default;
+$nav-hover-bg:                  $theme-anti-flash-white !default;
+$nav-hover-link:                $theme-smoky-black !default;
+
+// Toolbar
+$toolbar-bg:                    $theme-text-alt !default;
+$toolbar-text:                  $theme-text !default;
+
+// Page
+$page-bg:                       $theme-text-alt !default;
+$page-text:                     $theme-text !default;
+$page-link:                     $theme-smoky-black !default;
+
+// Content
+$content-bg:                    $theme-text-alt !default;
+$content-text:                  $theme-text !default;
+$content-link:                  lighten($theme-text, 8%) !default;
+$content-link2:                 lighten($theme-text, 8%) !default;
+$content-header:                $theme-text !default;
+$content-tabs-bg:               $theme-anti-flash-white !default;
+$content-tabs-text:             $theme-text !default;
+
+// Buttons
+$button-bg:                     $theme-ghost-white !default;
+$button-text:                   $theme-smoky-black !default;
+
+// Notice
+$notice-bg:                     lighten($theme-text, 15%) !default;
+$notice-text:                   $theme-text-alt !default;
+
+// Updates
+$update-bg:                     lighten($theme-text, 16%) !default;
+$update-text:                   $theme-ivory !default;
+
+// Critical
+$critical-bg:                   adjust-color(lighten($theme-text, 15%), $red: 50) !default;
+$critical-text:                 $theme-text-alt !default;
+
+// Calculated values
+$primary-accent:                primary !default;
+$secondary-accent:              secondary !default;
+$tertiary-accent:               tertiary !default;
+
+// Initial values
+$primary-accent-bg:             $theme-ivory;
+$primary-accent-fg:             $theme-text;
+$secondary-accent-bg:           $theme-baby-powder;
+$secondary-accent-fg:           $theme-text;
+$tertiary-accent-bg:            $theme-ghost-white;
+$tertiary-accent-fg:            $theme-text;
+
+// Popularity-dashboard text color
+.ct-label {
+    fill: $theme-text;
+    color: $theme-text;
+}
+// 'Manage Pages'-specific overrides
+.pages-list .page-icon {
+    color: saturate(#c0b283, 15%);
+}
+.pages-list .page-icon.not-routable {
+    color: darken(#dcd0c0, 25%);
+}
+.pages-list .page-icon.not-visible {
+    color: darken(#f4f4f4, 15%);
+}
+.pages-list .page-icon.modular {
+    color: saturate(#373737, 15%);
+}
+
+@import "base/preset.scss";
