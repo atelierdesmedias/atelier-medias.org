@@ -18,7 +18,7 @@ styles:
   - arctic
   - amber
   - antique
-current: hoth
+current: grav_admin
 type: radioimage
 custom_styles:
   -
