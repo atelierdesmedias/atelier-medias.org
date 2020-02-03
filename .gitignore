@@ -1,20 +1,7 @@
-# Mac
-.DS_Store
-
-# Ignore ide files
-.idea/
-.cache/
-
-# Logs
-*.log
-
-# Dependency directory
-# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
-node_modules/
 
 # ------------------------------------------------------------------------------ SRC
 
-# atoms.ts
+# aurogenerate atoms.ts
 src/atoms/atoms.ts
 
 # env properties
@@ -25,8 +12,11 @@ src/atoms/atoms.ts
 # compiled asset from webpack
 dist/user/themes/adm/assets
 
-# grav cms
+# grav cms vendor
 dist/vendor/*
+dist/user/plugins/**/vendor/*
+
+# grav cms
 dist/backup/*
 !dist/backup/.gitkeep
 dist/cache/*
@@ -37,7 +27,14 @@ dist/tmp/*
 !dist/tmp/.gitkeep
 dist/images/*
 !dist/images/.gitkeep
-dist/user/plugins/**/vendor/*
-#dist/user/config/security.yaml
+dist/user/config/security.yaml
+
+# ------------------------------------------------------------------------------ OTHERS
+
+.DS_Store
+.idea/
+.cache/
+*.log
+node_modules/
 
 
