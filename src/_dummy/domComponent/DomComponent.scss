@@ -12,7 +12,7 @@
  */
 
 // common style & mixins
-@import '../../common.scss';
+@import '../../common';
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
@@ -42,8 +42,8 @@
     les placer dans "src/common/atoms/_properties.scss"
    */
 
-    // Call block element anywhere. Use it like this : .@{$this}_element
-    @this : DomComponent;
+    // Call block element anywhere. Use it like this : .#{$this}_element
+    $this : DomComponent;
 
   // --------------------------------------------------------------------------- BLOCK
 

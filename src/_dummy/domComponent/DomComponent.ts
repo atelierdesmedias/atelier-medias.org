@@ -6,7 +6,7 @@
 // ------------------------------------------------------------------------- IMPORTS
 
 import {DOMView} from '../../helpers/solidify-lib/core/DOMView';
-import './DomComponent.less';
+import './DomComponent.scss';
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
