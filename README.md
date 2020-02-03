@@ -49,6 +49,10 @@ $ npm run dev
    
 Application in dev mode should be available on `http://localhost:1234`.
 
+## Admin
+
+Grav admin access: 
+url: `http://localhost:1234/admin`
 
 ## More informations
 Check the [FR docs](docs/).
