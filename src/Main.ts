@@ -9,7 +9,6 @@ import Logs from './helpers/solidify-lib/core/Logs';
 import {GlobalConfig} from './data/GlobalConfig';
 import {AppView} from './components/appView/AppView';
 import {HomePage} from './pages/homePage/HomePage';
-import {EnvUtils} from './helpers/solidify-lib/utils/EnvUtils';
 
 // ----------------------------------------------------------------------------- EXPORT CLASS
 
@@ -101,9 +100,6 @@ export class main extends DOMView {
    * Init envName dependent stuff.
    */
   private initEnv(): void {
-    // Will add envName detection classes helpers to the body.
-    EnvUtils.addClasses();
-
     // add console.log depend of envName
     Logs.EnvLogs(GlobalConfig.instance.version);
   }

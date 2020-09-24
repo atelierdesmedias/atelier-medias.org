@@ -9,9 +9,8 @@ import {DOMView} from '../../helpers/solidify-lib/core/DOMView';
 import './MainHeader.scss';
 import {MainNav} from '../mainNav/MainNav';
 import {HamburgerButton} from '../hamburgerButton/HamburgerButton';
-import {TweenLite} from 'gsap';
+import {gsap} from 'gsap';
 import {breakPoint} from '../../helpers/breakPoint';
-import {ArrowDown} from '../../molecules/arrowDown/ArrowDown';
 
 // States de la mainNav Handler
 enum EToggleMainNavHandler {
@@ -61,6 +60,7 @@ export class MainHeader extends DOMView {
     );
   }
 
+  
   /**
    * prepare dependencies
    *
@@ -144,9 +144,10 @@ export class MainHeader extends DOMView {
   /**
    * Animer la mainNav en function du state
    */
-  protected mainNavAnim(pDuration = 0.1): void {
+  protected mainNavAnim(duration = 0.1): void {
     // animer l'apparition
-    TweenLite.to(this.$mainNav, pDuration, {
+    gsap.to(this.$mainNav, {
+      duration,
       autoAlpha: this._isOpen ? 1 : 0
     });
   }
@@ -154,16 +155,19 @@ export class MainHeader extends DOMView {
   /**
    * animation des lignes du hamburger Button
    */
-  protected hamburgerButtonLinesAnim(pDuration: number = 0.1): void {
+  protected hamburgerButtonLinesAnim(duration: number = 0.1): void {
     // animation des "lines" du HamburgerButton
-    TweenLite.to(this.$lineTop, pDuration, {
+    gsap.to(this.$lineTop, {
+      duration,
       rotation: this._isOpen ? 43 : 0,
       top: this._isOpen ? 6 : 0
     });
-    TweenLite.to(this.$lineCenter, pDuration, {
+    gsap.to(this.$lineCenter, {
+      duration,
       opacity: this._isOpen ? 0 : 1
     });
-    TweenLite.to(this.$lineBottom, pDuration, {
+    gsap.to(this.$lineBottom, {
+      duration,
       rotation: this._isOpen ? -43 : 0,
       bottom: this._isOpen ? 8 : 0
     });
