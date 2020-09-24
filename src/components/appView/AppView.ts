@@ -1,15 +1,8 @@
-/**
- * "AppView"
- */
-
-// ------------------------------------------------------------------------- IMPORTS
-
 import './AppView.scss';
 import {DOMView} from '../../helpers/solidify-lib/core/DOMView';
 import {MainHeader} from '../mainHeader/MainHeader';
 import {MainFooter} from '../mainFooter/MainFooter';
 
-// ------------------------------------------------------------------------- START EXPORT CLASS
 
 export class AppView extends DOMView {
   // ------------------------------------------------------------------------- TYPE
@@ -45,7 +38,4 @@ export class AppView extends DOMView {
    */
   protected afterInit() {}
 
-  // ------------------------------------------------------------------------- HANDLERS
-
-  // ------------------------------------------------------------------------- END EXPORT CLASS
 }

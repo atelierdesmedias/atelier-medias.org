@@ -1,67 +1,48 @@
 {
-	"compilerOptions": {
-		"module": "es2015",
-		"target": "es5",
-		"moduleResolution": "node",
-
-		"baseUrl": ".",
-		"removeComments": true,
-
-		"jsx": "react",
-
-		"noEmitOnError": false,
-		"isolatedModules": false,
-		"experimentalDecorators": true,
-		"allowSyntheticDefaultImports": true,
-		"emitDecoratorMetadata": true,
-		"declaration": false,
-		"noImplicitAny": false,
-
-		"strictPropertyInitialization": false,
-		"suppressImplicitAnyIndexErrors": true,
-		"preserveConstEnums": true,
-		"allowUnreachableCode": true,
-		"allowJs": true,
-
-		// disable about hot module reload
-		"importHelpers": false,
-		"noEmitHelpers": false
-	},
-
-	"lib": [
-		"es6",
-		"dom",
-		"es2015",
-		"es2015.promise"
-	],
-
-	"typesRoots": [
-		"node_modules/@types"
-	],
-
-	"types": [
-		"node"
-	],
-
-	"include" : [
-		"./src/**/**/*",
-		"./node_modules/solidify-lib/*",
-	],
-
-	"exclude" : [
-		"node_modules/*"
-	],
-
-	"paths": {
-		"solidify-lib": ["./node_modules/solidify-lib/*"]
-	},
-
-	"compileOnSave": false,
-	"buildOnSave": false,
-	"atom": {
-		"rewriteTsconfig": false
-	}
-
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es5",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "removeComments": true,
+    "noEmitOnError": false,
+    "isolatedModules": false,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "declaration": false,
+    "noImplicitAny": false,
+    "strictPropertyInitialization": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "preserveConstEnums": true,
+    "allowUnreachableCode": true,
+    "allowJs": true,
+    // disable about hot module reload
+    "importHelpers": false,
+    "noEmitHelpers": false,
+    "lib": [
+      "es6",
+      "dom",
+      "es2015",
+      "es2015.promise"
+    ],
+    "typesRoots": [
+      "node_modules/@types"
+    ],
+    "types": [
+      "node",
+      "zepto"
+    ],
+    "atom": {
+      "rewriteTsconfig": false
+    }
+  },
+  "include": [
+    "./src/**/**/**/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
 
 

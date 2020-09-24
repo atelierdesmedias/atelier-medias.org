@@ -7,7 +7,7 @@
 
 import {DOMView} from '../../helpers/solidify-lib/core/DOMView';
 import './BigCover.scss';
-import {TweenLite} from 'gsap';
+import {gsap} from 'gsap';
 import {breakPoint} from '../../helpers/breakPoint';
 import {EventBanner} from '../eventBanner/EventBanner';
 
@@ -72,7 +72,7 @@ export class BigCover extends DOMView {
     const columnGrid = $(window).width() / 12;
 
     // appliquer la taille du container a la video
-    TweenLite.set(this.$root, {
+    gsap.set(this.$root, {
       // hauteur de la video
       height: breakPoint('large')
         ? $(window).height() - columnGrid * 0.65 * 2

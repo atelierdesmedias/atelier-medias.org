@@ -28,8 +28,6 @@
         "kodus/psr7-server": "*",
         "nyholm/psr7": "^1.0",
         "twig/twig": "~1.40",
-        "erusev/parsedown": "1.6.4",
-        "erusev/parsedown-extra": "~0.7",
         "symfony/yaml": "~4.2.0",
         "symfony/console": "~4.2.0",
         "symfony/event-dispatcher": "~4.2.0",
@@ -42,9 +40,9 @@
         "matthiasmullie/minify": "^1.3",
         "monolog/monolog": "~1.0",
         "gregwar/image": "2.*",
-        "donatj/phpuseragentparser": "~0.10",
+        "donatj/phpuseragentparser": "~1.0",
         "pimple/pimple": "~3.2",
-        "rockettheme/toolbox": "~1.4",
+        "rockettheme/toolbox": "~1.4.0",
         "maximebf/debugbar": "~1.15",
         "league/climate": "^3.4",
         "antoligy/dom-string-iterators": "^1.0",
@@ -52,7 +50,7 @@
         "composer/ca-bundle": "^1.0",
         "dragonmantank/cron-expression": "^1.2",
         "phive/twig-extensions-deferred": "^1.0",
-        "willdurand/negotiation": "^2.3"
+        "willdurand/negotiation": "2.x-dev"
     },
     "require-dev": {
         "codeception/codeception": "^2.4",
@@ -86,7 +84,8 @@
             "Grav\\": "system/src/Grav"
         },
         "files": [
-            "system/defines.php"
+            "system/defines.php",
+            "system/aliases.php"
         ]
     },
     "archive": {
