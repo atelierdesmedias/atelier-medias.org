@@ -1,3 +1,34 @@
+# v1.9.16
+## 09/01/2020
+
+1. [](#bugfix)
+    * Fixed a glitch which allows user to delete entire pages directory [#1941](https://github.com/getgrav/grav-plugin-admin/issues/1941)
+    * Fixed the hidden login plugin toggle
+
+# v1.9.15
+## 06/08/2020
+
+1. [](#bugfix)
+    * Support markdown in `fieldset.text` [#2934](https://github.com/getgrav/grav/issues/2934)
+    * Fix data URLs in avatar images [#1889](https://github.com/getgrav/grav/issues/1889)
+    * Fix for deleting files in plugin configurations
+
+# v1.9.14
+## 04/27/2020
+
+1. [](#improved)
+    * Added `slug` and `type` to blueprints
+1. [](#bugfix)
+    * Support markdown in `fieldset.text` [#2934](https://github.com/getgrav/grav/issues/2934)
+
+# v1.9.13
+## 03/05/2020
+
+1. [](#improved)
+    * Updated vendor libs
+1. [](#bugfix)
+    * Fixed toggleable buttons no longer holding false state [form#406](ttps://github.com/getgrav/grav-plugin-form/issues/406)
+
 # v1.9.12
 ## 12/04/2019
 
