@@ -3,7 +3,8 @@
 
 
 {% for p in page.collection %}
-<h2>{{ p.title }}</h2>
+<h2>{{ p.header.custom.name }}</h2>
+<img src="coworkers/{{ p.title | lower }}/{{ p.header.custom.image }}" alt={{p.header.custom.name}}/>
 {{ p.summary }}
 {% endfor %}
 
