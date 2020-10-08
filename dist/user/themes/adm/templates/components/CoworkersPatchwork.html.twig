@@ -20,19 +20,21 @@
         <ul class="CoworkersPatchwork_items">
             {% for coworker in page.find('/coworkers').children %}
                 <li class="CoworkersPatchwork_item">
-                    <div class="CoworkersPatchwork_image"
-                         style="background-image: url( /coworkers/{{ coworker.title | lower }}/{{ coworker.header.custom.profile_picture }}) ">
-                        <div class="CoworkersPatchwork_description">
-                            <div class="CoworkersPatchwork_descriptionContent">
-                                <div class="CoworkersPatchwork_name">
-                                    <span>{{ coworker.header.custom.first_name }} </span>
-                                    <br/>
-                                    <span>{{ coworker.header.custom.last_name }}</span>
+                    <a href="/coworkers/{{ coworker.title | lower }}">
+                        <div class="CoworkersPatchwork_image"
+                             style="background-image: url( /coworkers/{{ coworker.title | lower }}/{{ coworker.header.custom.profile_picture }}) ">
+                            <div class="CoworkersPatchwork_description">
+                                <div class="CoworkersPatchwork_descriptionContent">
+                                    <div class="CoworkersPatchwork_name">
+                                        <span>{{ coworker.header.custom.first_name }} </span>
+                                        <br/>
+                                        <span>{{ coworker.header.custom.last_name }}</span>
+                                   </div>
+                                    <div class="CoworkersPatchwork_activity">{{ coworker.header.custom.activity }}</div>
                                 </div>
-                                <div class="CoworkersPatchwork_activity">{{ coworker.header.custom.activity }}</div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </li>
             {% endfor %}
         </ul>
