@@ -32,7 +32,9 @@
  ```shell
 $ git clone https://github.com/atelierdesmedias/atelier-medias.org.git && cd atelier-medias.org
  ```
- 
+
+- Setup a Apache server with PHP 7.3 so that <http://localhost> serves the `dist` directory (using Wamp/Mamp or this usefull link: <https://getgrav.org/blog/macos-bigsur-apache-multiple-php-versions>).
+
 - Install npm and composer dependencies 
 
 ```shell
@@ -47,7 +49,7 @@ $ npm i && ./composer-install.sh
 $ npm run dev
 ```
    
-Application in dev mode should be available on `http://localhost:1234`.
+Application in dev mode should be available on <http://localhost:1234>.
 
 ## Admin
 
