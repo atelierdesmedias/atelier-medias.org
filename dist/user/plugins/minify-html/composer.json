@@ -1,5 +1,5 @@
 {
-  "name": "grav-plugin-minify-html",
+  "name": "getgrav/grav-plugin-minify-html",
   "description": "plugin to minify HTML output",
   "license": "MIT",
   "authors": [
