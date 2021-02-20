@@ -2,11 +2,15 @@
 {% block content %}
 
    <div class="CoworkerPage">
-      <h1>{{ page.header.custom.first_name }} {{ page.header.custom.last_name }}</h1>
-      <img src="/coworkers/{{ page.title | lower }}/{{ page.header.custom.profile_picture }}" alt="{{page.header.custom.first_name}} {{page.header.custom.last_name}}"/>
+     <header class="CoworkerPage_header">
+     </header>
+     <section class="HomePage_content" role="main">
+       <h1>{{ page.header.custom.first_name }} {{ page.header.custom.last_name }}</h1>
+       <img src="/coworkers/{{ page.title | lower }}/{{ page.header.custom.profile_picture }}" alt="{{page.header.custom.first_name}} {{page.header.custom.last_name}}"/>
 
-      {{ page.summary }}
+       {{ page.summary }}
 
+     </section>
    </div>
 
 {% endblock %}
