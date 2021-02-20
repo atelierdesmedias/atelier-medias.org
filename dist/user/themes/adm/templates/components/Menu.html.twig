@@ -6,15 +6,13 @@
         {% if menu.header.custom.main.entries %}
             {% for item in menu.header.custom.main.entries %}
                 <li class="Menu_item">
-                    {% if item.link %}
-                        <a class="Menu_link" href="{{ item.link }}" target="_blank">
-                            {% if item.name %}
-                                <div class="Menu_innerLink">
-                                    {{ item.name }}
-                                </div>
-                            {% endif %}
-                        </a>
-                    {% endif %}
+                  <a class="Menu_link"
+                     href="{{ item.link }}"
+                     {% if item.external %} target="_blank" {% endif %}>
+                       <div class="Menu_innerLink">
+                         {{ item.name }}
+                       </div>
+                  </a>
                 </li>
             {% endfor %}
         {% endif %}
