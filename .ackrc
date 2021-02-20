@@ -1,0 +1,4 @@
+# Configuration for ack <https://beyondgrep.com>
+  --ignore-directory=is:dist/cache
+  --ignore-directory=is:cache
+  --ignore-file=is:main.bundle.js
