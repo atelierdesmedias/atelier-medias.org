@@ -1,12 +1,8 @@
 {% extends 'partials/layout.html.twig' %}
 {% block content %}
 
-  <div class="CoworkersPage {{ classElement }}">
-    {% for p in page.collection %}
-      <h2>{{ p.header.custom.first_name}} {{p.header.custom.last_name }}</h2>
-      <img src="coworkers/{{ p.slug | lower }}/{{ p.header.custom.profile_picture }}" alt="{{p.header.custom.first_name}} {{p.header.custom.last_name}}"/>
-      {{ p.summary }}
-    {% endfor %}
-  </div>
+  {# Patchwork #}
+  {% include "components/CoworkersPatchwork.html.twig"
+  with { classElement: 'HomePage_coworkersPatchwork' } %}
 
 {% endblock %}

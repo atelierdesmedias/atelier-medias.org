@@ -20,9 +20,9 @@
         <ul class="CoworkersPatchwork_items">
             {% for coworker in page.find('/coworkers').children %}
                 <li class="CoworkersPatchwork_item">
-                    <a href="/coworkers/{{ coworker.title | lower }}">
+                    <a href="/coworkers/{{ coworker.slug }}">
                         <div class="CoworkersPatchwork_image"
-                             style="background-image: url( /coworkers/{{ coworker.title | lower }}/{{ coworker.header.custom.profile_picture }}) ">
+                             style="background-image: url( /coworkers/{{ coworker.slug }}/{{ coworker.header.custom.profile_picture }}) ">
                             <div class="CoworkersPatchwork_description">
                                 <div class="CoworkersPatchwork_descriptionContent">
                                     <div class="CoworkersPatchwork_name">
