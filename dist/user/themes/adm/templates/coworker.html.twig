@@ -1,7 +1,6 @@
-{# Martin, le 8 octobre 2020: j'ai viré temporairement le bloc ci-dessous qui m'empêchait d'affiche le contenu qui suit #}
-{# {% extends 'partials/layout.html.twig' %} #}
-
+{% extends 'partials/layout.html.twig' %}
 {% block content %}
+
    <div class="CoworkerPage">
       <h1>{{ page.header.custom.first_name }} {{ page.header.custom.last_name }}</h1>
       <img src="/coworkers/{{ page.title | lower }}/{{ page.header.custom.profile_picture }}" alt="{{page.header.custom.first_name}} {{page.header.custom.last_name}}"/>
@@ -9,4 +8,5 @@
       {{ page.summary }}
 
    </div>
+
 {% endblock %}
