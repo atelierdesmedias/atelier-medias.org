@@ -1,32 +1,3 @@
-{# TODO sync with coworkers from XWIKI, need a Yaml or a json ? #}
-    {# TODO if it's json, we can request it from js templating and build Preact component #}
-    {% set coworkers = [
-        {
-            profile_picture : "https://i.picsum.photos/id/866/300/300.jpg",
-            first_name : "Alex",
-            last_name : "B.",
-            activity : "Developpeur",
-        },
-        {
-            profile_picture : "https://i.picsum.photos/id/866/300/300.jpg",
-            first_name : "Alex",
-            last_name : "B.",
-            activity : "Developpeur",
-        },
-        {
-            profile_picture : "https://i.picsum.photos/id/866/300/300.jpg",
-            first_name : "Alex",
-            last_name : "B.",
-            activity : "Developpeur",
-        },
-        {
-            profile_picture : "https://i.picsum.photos/id/866/300/300.jpg",
-            first_name : "Alex",
-            last_name : "B.",
-            activity : "Developpeur",
-        },
-    ] %}
-
 <div class="CoworkersPatchwork {{ classElement }}">
 
     {# activityFilterBar #}
@@ -47,21 +18,23 @@
 
     <div class="CoworkersPatchwork_content">
         <ul class="CoworkersPatchwork_items">
-            {% for coworker in coworkers %}
+            {% for coworker in page.find('/coworkers').children %}
                 <li class="CoworkersPatchwork_item">
-                    <div class="CoworkersPatchwork_image"
-                         style="background-image: url( {{ coworker.profile_picture }}) ">
-                        <div class="CoworkersPatchwork_description">
-                            <div class="CoworkersPatchwork_descriptionContent">
-                                <div class="CoworkersPatchwork_name">
-                                    <span>{{ coworker.first_name }} </span>
-                                    <br/>
-                                    <span>{{ coworker.last_name }}</span>
+                    <a href="/coworkers/{{ coworker.slug }}">
+                        <div class="CoworkersPatchwork_image"
+                             style="background-image: url( /coworkers/{{ coworker.slug }}/{{ coworker.header.custom.profile_picture }}) ">
+                            <div class="CoworkersPatchwork_description">
+                                <div class="CoworkersPatchwork_descriptionContent">
+                                    <div class="CoworkersPatchwork_name">
+                                        <span>{{ coworker.header.custom.first_name }} </span>
+                                        <br/>
+                                        <span>{{ coworker.header.custom.last_name }}</span>
+                                   </div>
+                                    <div class="CoworkersPatchwork_activity">{{ coworker.header.custom.activity }}</div>
                                 </div>
-                                <div class="CoworkersPatchwork_activity">{{ coworker.activity }}</div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </li>
             {% endfor %}
         </ul>

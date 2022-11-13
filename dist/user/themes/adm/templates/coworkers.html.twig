@@ -1,0 +1,8 @@
+{% extends 'partials/layout.html.twig' %}
+{% block content %}
+
+  {# Patchwork #}
+  {% include "components/CoworkersPatchwork.html.twig"
+  with { classElement: 'HomePage_coworkersPatchwork' } %}
+
+{% endblock %}
