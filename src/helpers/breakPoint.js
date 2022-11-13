@@ -15,9 +15,9 @@
 export function breakPoint(size) {
   let bp = {
     xsmall: 320,
-    small: 480,
-    medium: 768,
-    large: 1023,
+    small: 400,
+    medium: 600,
+    large: 800,
     xlarge: 1280,
     xxlarge: 1440,
     xxxlarge: 1800
