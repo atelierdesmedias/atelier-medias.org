@@ -23,7 +23,7 @@
     "@zouloux/files": "^0.6.0",
     "app-root-path": "^3.0.0",
     "bourbon": "^7.0.0",
-    "gsap": "^3.5.1",
+    "gsap": "^3.6.0",
     "html-webpack-plugin": "^4.5.0",
     "solidify-lib": "^1.9.9",
     "zepto-webpack": "^1.2.1"
